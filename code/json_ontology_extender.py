@@ -40,7 +40,6 @@ def add_data_to_node(node, df, node_field, data_field):
                 rowi = filtered.index[0]
                 for col, value in df.iteritems():
                     if col != data_field:
-                        # print("%s is %s" % (col, value[rowi]))
                         node[col] = value[rowi]
     except Exception as ex:
         logger.exception(ex)
@@ -114,8 +113,6 @@ def add_data_to_ontology_file(output="dist/merged_ontology_data.json", ontology_
         # ensure that the grouping columns are strings as we usually match string ids
         df[data_key] = df[data_key].astype(str)
 
-        # print(df)
-
         # loop over all children
         add_data_to_node(treeRoot, df, node_key, data_key)
 
@@ -134,7 +131,6 @@ def add_data_to_ontology_file(output="dist/merged_ontology_data.json", ontology_
         # add data in format for pie charts
         add_pie_data_to_node_and_children(treeRoot)
 
-        print("Writing to {}".format(output))
         with open(output, "w") as file:
             if format_out_json:
                 out_tree = json.dumps(treeRoot, indent=2, cls=NpEncoder)

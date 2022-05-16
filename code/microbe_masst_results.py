@@ -87,8 +87,6 @@ def export_ncbi_counts(id_matches_dict, out_tsv_file):
     df.reset_index(inplace=True)
     df = df.rename(columns={'index': 'ncbi'})
     df.to_csv(out_tsv_file, index=False, sep="\t")
-    print(df)
-
 
 if __name__ == '__main__':
     # parsing the arguments (all optional)
