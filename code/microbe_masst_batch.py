@@ -1,12 +1,15 @@
 import sys
 import logging
-import csv
 import pandas as pd
 from urllib import parse
 from tqdm import tqdm
 import re
+from datetime import timedelta
+import requests_cache
 
 import microbe_masst as microbemasst
+
+requests_cache.install_cache('fastmasst_cache', expire_after=timedelta(days=2))
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
