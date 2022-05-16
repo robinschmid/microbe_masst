@@ -1,3 +1,6 @@
 # Project exclude paths
 /code/lib/*
 /.idea/
+/venv/
+/output/*
+/code/fastmasst_cache.sqlite
