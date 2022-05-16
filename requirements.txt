@@ -1,0 +1,10 @@
+argparse==1.4.0
+requests==2.22.0
+anytree==2.8.0
+pronto==2.4.1
+bs4==0.0.1
+beautifulsoup4==4.9.3
+pandas==1.4.1
+tqdm==4.64.0
+numpy==1.21.5
+black==22.1.0
