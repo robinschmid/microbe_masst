@@ -79,7 +79,7 @@ def build_dist_html(input_html, output_html, data_json_file=None, compress=False
             # insert script element
             new_script = soup.new_tag('script')
             new_script.string = file_text
-            soup.html.body.append(new_script)
+            soup.body.append(new_script)
 
     # Find image tags.
     for tag in soup.find_all('img', src=True):
@@ -102,6 +102,7 @@ def build_dist_html(input_html, output_html, data_json_file=None, compress=False
             logger.exception(e)
 
     # Save onefile
+
     with open(output_html, "w", encoding="utf-8") as outfile:
         outfile.write(out_text)
 

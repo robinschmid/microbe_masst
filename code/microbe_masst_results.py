@@ -94,7 +94,7 @@ if __name__ == '__main__':
     # parsing the arguments (all optional)
     parser = argparse.ArgumentParser(description='Merge MASST results with microbeMASST metadata')
     parser.add_argument('--metadata_file', type=str, help='microbe masst metadata',
-                        default="../data/microbe_masst/microbe_masst_table.csv")
+                        default="../data/microbe_masst_table.csv")
     parser.add_argument('--masst_file', type=str, help='a tab separated file with additional data that is added to '
                                                        'metadata file',
                         default="../examples/phelylglycocholic_acid.tsv")

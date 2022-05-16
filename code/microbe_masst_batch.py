@@ -4,6 +4,7 @@ import csv
 import pandas as pd
 from urllib import parse
 from tqdm import tqdm
+import re
 
 import microbe_masst as micromasst
 
@@ -17,14 +18,14 @@ example_link = "https://robinschmid.github.io/GFOPontology/{}_{}.html"
 
 
 def run_job(file_name, usi_or_lib_id, compound_name):
-    out_html = "../{}_{}.html".format(file_name, compound_name.replace(" ", "_"))
+    out_html = "../output/{}_{}.html".format(file_name, compound_name.replace(" ", "_"))
 
     result = micromasst.run_microbe_masst(usi_or_lib_id, precursor_mz_tol=0.05, mz_tol=0.02, min_cos=0.7,
                                           in_html="collapsible_tree_v3.html",
-                                          in_ontology="../data/microbe_masst/ncbi.json",
-                                          metadata_file="../data/microbe_masst/microbe_masst_table.csv",
-                                          out_counts_file="dist/microbe_masst_counts.tsv",
-                                          out_json_tree="dist/merged_ncbi_ontology_data.json", format_out_json=True,
+                                          in_ontology="../data/ncbi.json",
+                                          metadata_file="../data/microbe_masst_table.csv",
+                                          out_counts_file="../output/microbe_masst_counts.tsv",
+                                          out_json_tree="../output/merged_ncbi_ontology_data.json", format_out_json=True,
                                           out_html=out_html, compress_out_html=True, node_key="NCBI", data_key="ncbi"
                                           )
 
@@ -74,10 +75,13 @@ def run_job(file_name, usi_or_lib_id, compound_name):
 #         "CCMSLIB00005727552": "Beauvericin_2"
 #     }
 
+def path_safe(file):
+    return re.sub('[^-a-zA-Z0-9_.() ]+', '_', file)
+
 if __name__ == '__main__':
     # jobs = {k: v.replace(" ", "_") for (k, v) in jobs.items()}
-    file_name ="emily/fast_microbeMasst"
-    finished_jobs_tsv = "../emily/example_links.tsv"
+    file_name ="fast_microbeMasst"
+    finished_jobs_tsv = "../output/example_links.tsv"
     try:
         finsihed_jobs_df = pd.read_csv(finished_jobs_tsv, sep="\t")
     except:
@@ -86,8 +90,10 @@ if __name__ == '__main__':
 
     # read list of jobs
     # jobs_df = pd.read_csv("../emily/Combinatorial_reactions_USIs - fatty acid amides.tsv", sep="\t")
-    jobs_df = pd.read_csv("../emily/Combinatorial_reactions_USIs - sulfated compounds.tsv", sep="\t")
-    jobs_df.rename(columns={'Output USI': 'ID', 'COMPOUND_NAME': 'Compound'}, inplace=True)
+    jobs_df = pd.read_csv("../examples/emily.csv", sep=",")
+    jobs_df.rename(columns={'USI': 'ID', 'COMPOUND_NAME': 'Compound'}, inplace=True)
+    # jobs_df.rename(columns={'Output USI': 'ID', 'COMPOUND_NAME': 'Compound'}, inplace=True)
+    jobs_df["Compound"] = jobs_df["Compound"].apply(path_safe)
 
     jobs_df["Tree"] = jobs_df.progress_apply(lambda row: run_job(file_name, row["ID"], row["Compound"]), axis=1)
 

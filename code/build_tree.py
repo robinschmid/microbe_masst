@@ -56,7 +56,7 @@ if __name__ == '__main__':
     # important use raw file on github!
     try:
         # tmp test microbe masst
-        create_tree_html("collapsible_tree_v3.html", "../data/microbe_masst/ncbi.json",
+        create_tree_html("collapsible_tree_v3.html", "../data/ncbi.json",
                          "dist/microbe_masst_counts.tsv", args.out_tree, args.format, args.out_html, args.compress,
                          "NCBI", "ncbi")
         # create_tree_html(args.in_html, args.ontology, args.in_data, args.out_tree, args.format, args.out_html,

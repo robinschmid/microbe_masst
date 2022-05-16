@@ -2,7 +2,6 @@ import sys
 import argparse
 import logging
 from pathlib import Path
-
 import masst_utils as masst
 import build_microbe_masst_tree as mmtree
 
@@ -11,8 +10,8 @@ logger = logging.getLogger(__name__)
 
 
 def run_microbe_masst(usi_or_lib_id, precursor_mz_tol=0.05, mz_tol=0.02, min_cos=0.7,
-                      in_html="collapsible_tree_v3.html", in_ontology="../data/microbe_masst/ncbi.json",
-                      metadata_file="../data/microbe_masst/microbe_masst_table.csv",
+                      in_html="collapsible_tree_v3.html", in_ontology="../data/ncbi.json",
+                      metadata_file="../data/microbe_masst_table.csv",
                       out_counts_file="dist/microbe_masst_counts.tsv",
                       out_json_tree="dist/merged_ncbi_ontology_data.json", format_out_json=True,
                       out_html="dist/oneindex.html", compress_out_html=True, node_key="NCBI", data_key="ncbi"
@@ -43,9 +42,9 @@ if __name__ == '__main__':
     parser.add_argument('--in_html', type=str, help='The input html file',
                         default="collapsible_tree_v3.html")
     parser.add_argument('--ontology', type=str, help='the json ontology file with children',
-                        default="../data/microbe_masst/ncbi.json")
+                        default="../data/ncbi.json")
     parser.add_argument('--metadata_file', type=str, help='microbe masst metadata',
-                        default="../data/microbe_masst/microbe_masst_table.csv")
+                        default="../data/microbe_masst_table.csv")
     parser.add_argument('--out_counts_file', type=str, help='the intermediate counts (matches) file. automatic: use '
                                                             'the masst_file name with suffix: _counts',
                         default="dist/microbe_masst_counts.tsv")
