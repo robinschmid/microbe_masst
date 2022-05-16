@@ -14,25 +14,26 @@ logger = logging.getLogger(__name__)
 # activate pandas tqdm progress_apply
 tqdm.pandas()
 
-example_link = "https://robinschmid.github.io/GFOPontology/{}_{}.html"
+example_link = "https://robinschmid.github.io/microbe_masst/{}_{}.html"
+
+
+def get_html_link(file_name, compound_name):
+    return example_link.format(file_name, parse.quote(compound_name))
 
 
 def run_job(file_name, usi_or_lib_id, compound_name):
-    out_html = "../output/{}_{}.html".format(file_name, compound_name.replace(" ", "_"))
+    out_html = "../{}_{}.html".format(file_name, compound_name.replace(" ", "_"))
 
     result = micromasst.run_microbe_masst(usi_or_lib_id, precursor_mz_tol=0.05, mz_tol=0.02, min_cos=0.7,
                                           in_html="collapsible_tree_v3.html",
                                           in_ontology="../data/ncbi.json",
                                           metadata_file="../data/microbe_masst_table.csv",
                                           out_counts_file="../output/microbe_masst_counts.tsv",
-                                          out_json_tree="../output/merged_ncbi_ontology_data.json", format_out_json=True,
+                                          out_json_tree="../output/merged_ncbi_ontology_data.json",
+                                          format_out_json=True,
                                           out_html=out_html, compress_out_html=True, node_key="NCBI", data_key="ncbi"
                                           )
-
-    if result is not None:
-        return example_link.format(file_name, parse.quote(compound_name))
-    else:
-        return "NO_SUCCESS"
+    return result
 
 
 # jobs = {
@@ -78,10 +79,13 @@ def run_job(file_name, usi_or_lib_id, compound_name):
 def path_safe(file):
     return re.sub('[^-a-zA-Z0-9_.() ]+', '_', file)
 
+
 if __name__ == '__main__':
     # jobs = {k: v.replace(" ", "_") for (k, v) in jobs.items()}
-    file_name ="fast_microbeMasst"
-    finished_jobs_tsv = "../output/example_links.tsv"
+    file_name = "emily/fast_microbeMasst"
+    finished_jobs_tsv = "../emily/finished.tsv"
+    masst_results_tsv = "../{}.tsv".format(file_name)
+
     try:
         finsihed_jobs_df = pd.read_csv(finished_jobs_tsv, sep="\t")
     except:
@@ -90,13 +94,28 @@ if __name__ == '__main__':
 
     # read list of jobs
     # jobs_df = pd.read_csv("../emily/Combinatorial_reactions_USIs - fatty acid amides.tsv", sep="\t")
-    jobs_df = pd.read_csv("../examples/emily.csv", sep=",")
+    jobs_df = pd.read_csv("../examples/emily_short.csv", sep=",")
     jobs_df.rename(columns={'USI': 'ID', 'COMPOUND_NAME': 'Compound'}, inplace=True)
     # jobs_df.rename(columns={'Output USI': 'ID', 'COMPOUND_NAME': 'Compound'}, inplace=True)
     jobs_df["Compound"] = jobs_df["Compound"].apply(path_safe)
 
-    jobs_df["Tree"] = jobs_df.progress_apply(lambda row: run_job(file_name, row["ID"], row["Compound"]), axis=1)
+    jobs_df["fastMASST"] = jobs_df.progress_apply(lambda row: run_job(file_name, row["ID"], row["Compound"]), axis=1)
+    jobs_df["Tree"] = jobs_df.progress_apply(lambda row:
+                                             get_html_link(file_name, row["Compound"]) if row["fastMASST"] is not
+                                                                                          None else None,
+                                             axis=1)
 
-    jobs_df.to_csv(finished_jobs_tsv, sep="\t")
+    # export masst results
+    # jobs_df['fastMASST'].apply(pd.Series)
+    masst_df = jobs_df.explode("fastMASST", ignore_index=True)
+    # masst_df = masst_df.merge(masst_df['fastMASST'].apply(pd.Series))
+    masst_df = masst_df.join(pd.json_normalize(masst_df['fastMASST']))
+    masst_df.rename(columns={"ID": "input_id"}, inplace=True)
+
+    masst_df.to_csv(masst_results_tsv, sep="\t", index=False)
+
+    # export the list of links
+    jobs_df.drop(columns=["fastMASST"], inplace=True)
+    jobs_df.to_csv(finished_jobs_tsv, sep="\t", index=False)
 
     sys.exit(0)
