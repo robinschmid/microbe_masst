@@ -108,11 +108,12 @@ if __name__ == '__main__':
         sep = args.separator
 
         # TODO remove temp import
-        in_file = "../emily/Combinatorial_reactions_USIs - fatty acid amides.tsv"
-        out_file = "emily/amides/fast_microbeMasst"
-        lib_id = "Output USI"
-        compound_header = "COMPOUND_NAME"
-        sep = "\t"
+        in_file = "../casmi/casmi_pos_IIMN_gnps_merged.csv"
+        out_file = "casmi/fast_microbeMasst"
+        # out_file = "emily/amides/fast_microbeMasst"
+        lib_id = "usi"
+        compound_header = "Compound Number"
+        sep = ","
 
         run_batch_fastmicrobe_masst(input_file=in_file, out_filename_no_ext=out_file,
                                     usi_or_lib_id=lib_id, compound_name_header=compound_header,
