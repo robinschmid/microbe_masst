@@ -4,3 +4,4 @@
 /venv/
 /output/*
 /code/fastmasst_cache.sqlite
+/tests/fastmasst_cache.sqlite
