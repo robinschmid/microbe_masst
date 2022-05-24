@@ -1,38 +1,38 @@
-ID,Compound,Tree
-CCMSLIB00005883671,GABA,https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_GABA.html
-CCMSLIB00006582001,phe_CA,https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_phe_CA.html
-CCMSLIB00006581985,glu_CA,https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_glu_CA.html
-CCMSLIB00000006885,surfactin_C13,https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_surfactin_C13.html
-CCMSLIB00000006895,surfactin_C15,https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_surfactin_C15.html
-CCMSLIB00005721043,salinosporamide_A,https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_salinosporamide_A.html
-CCMSLIB00006694017,salinomycin,https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_salinomycin.html
-CCMSLIB00000006871,actinomycin_d,https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_actinomycin_d.html
-CCMSLIB00003134958,actinomycin_d_nist14_match,https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_actinomycin_d_nist14_match.html
-CCMSLIB00000075066,arylomycin_a4,https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_arylomycin_a4.html
-CCMSLIB00005772087,kanamycin_a,https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_kanamycin_a.html
-CCMSLIB00005464333,PANTOTHENATE,https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_PANTOTHENATE.html
-CCMSLIB00005723628,acyl_ferrioxamine_2,https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_acyl_ferrioxamine_2.html
-CCMSLIB00000072229,PQS,https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_PQS.html
-CCMSLIB00000072137,NHQ,https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_NHQ.html
-CCMSLIB00000072038,putative_quinolone,https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_putative_quinolone.html
-CCMSLIB00003136275,lovastatin,https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_lovastatin.html
-CCMSLIB00005435739,lovastatin_2,https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_lovastatin_2.html
-CCMSLIB00004679270,peptaibol,https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_peptaibol.html
-CCMSLIB00003134635,azithromycin,https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_azithromycin.html
-CCMSLIB00000579271,Surugamide_A,https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_Surugamide_A.html
-CCMSLIB00000001621,Desferrioxamine_E,https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_Desferrioxamine_E.html
-CCMSLIB00000072100,Desferrioxamine_B,https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_Desferrioxamine_B.html
-CCMSLIB00005716848,Acyl_Desferrioxamine_C13_Promicroferrioxamine,https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_Acyl_Desferrioxamine_C13_Promicroferrioxamine.html
-CCMSLIB00003739952,Penicillin_G,https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_Penicillin_G.html
-CCMSLIB00005435755,Ferrichrome,https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_Ferrichrome.html
-CCMSLIB00000070253,Barbamide,https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_Barbamide.html
-CCMSLIB00000001562,Jamaicamide_A,https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_Jamaicamide_A.html
-CCMSLIB00000075016,Napsamycin,https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_Napsamycin.html
-CCMSLIB00001059079,triacylfusarin,https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_triacylfusarin.html
-CCMSLIB00000074975,Fusarin_A,https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_Fusarin_A.html
-CCMSLIB00004721498,Polymyxin_B,https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_Polymyxin_B.html
-CCMSLIB00005732667,Microcystin_LR,https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_Microcystin_LR.html
-CCMSLIB00000005120,Mycophenolic,https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_Mycophenolic.html
-CCMSLIB00005755738,Mycotoxin_F2,https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_Mycotoxin_F2.html
-CCMSLIB00005723573,Beauvericin,https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_Beauvericin.html
-CCMSLIB00005727552,Beauvericin_2,https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_Beauvericin_2.html
+ID	Compound	Tree
+CCMSLIB00005883671	GABA	https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_GABA.html
+CCMSLIB00006582001	phe_CA	https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_phe_CA.html
+CCMSLIB00006581985	glu_CA	https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_glu_CA.html
+CCMSLIB00000006885	surfactin_C13	https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_surfactin_C13.html
+CCMSLIB00000006895	surfactin_C15	https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_surfactin_C15.html
+CCMSLIB00005721043	salinosporamide_A	https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_salinosporamide_A.html
+CCMSLIB00006694017	salinomycin	https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_salinomycin.html
+CCMSLIB00000006871	actinomycin_d	https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_actinomycin_d.html
+CCMSLIB00003134958	actinomycin_d_nist14_match	https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_actinomycin_d_nist14_match.html
+CCMSLIB00000075066	arylomycin_a4	https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_arylomycin_a4.html
+CCMSLIB00005772087	kanamycin_a	https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_kanamycin_a.html
+CCMSLIB00005464333	PANTOTHENATE	https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_PANTOTHENATE.html
+CCMSLIB00005723628	acyl_ferrioxamine_2	https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_acyl_ferrioxamine_2.html
+CCMSLIB00000072229	PQS	https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_PQS.html
+CCMSLIB00000072137	NHQ	https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_NHQ.html
+CCMSLIB00000072038	putative_quinolone	https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_putative_quinolone.html
+CCMSLIB00003136275	lovastatin	https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_lovastatin.html
+CCMSLIB00005435739	lovastatin_2	https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_lovastatin_2.html
+CCMSLIB00004679270	peptaibol	https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_peptaibol.html
+CCMSLIB00003134635	azithromycin	https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_azithromycin.html
+CCMSLIB00000579271	Surugamide_A	https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_Surugamide_A.html
+CCMSLIB00000001621	Desferrioxamine_E	https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_Desferrioxamine_E.html
+CCMSLIB00000072100	Desferrioxamine_B	https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_Desferrioxamine_B.html
+CCMSLIB00005716848	Acyl_Desferrioxamine_C13_Promicroferrioxamine	https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_Acyl_Desferrioxamine_C13_Promicroferrioxamine.html
+CCMSLIB00003739952	Penicillin_G	https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_Penicillin_G.html
+CCMSLIB00005435755	Ferrichrome	https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_Ferrichrome.html
+CCMSLIB00000070253	Barbamide	https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_Barbamide.html
+CCMSLIB00000001562	Jamaicamide_A	https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_Jamaicamide_A.html
+CCMSLIB00000075016	Napsamycin	https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_Napsamycin.html
+CCMSLIB00001059079	triacylfusarin	https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_triacylfusarin.html
+CCMSLIB00000074975	Fusarin_A	https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_Fusarin_A.html
+CCMSLIB00004721498	Polymyxin_B	https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_Polymyxin_B.html
+CCMSLIB00005732667	Microcystin_LR	https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_Microcystin_LR.html
+CCMSLIB00000005120	Mycophenolic	https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_Mycophenolic.html
+CCMSLIB00005755738	Mycotoxin_F2	https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_Mycotoxin_F2.html
+CCMSLIB00005723573	Beauvericin	https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_Beauvericin.html
+CCMSLIB00005727552	Beauvericin_2	https://robinschmid.github.io/GFOPontology/examples/fast_microbeMasst_Beauvericin_2.html
