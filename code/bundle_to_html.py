@@ -42,7 +42,7 @@ def build_dist_html(input_html, output_html, data_json_file=None, compress=False
     :return: None
     """
     original_html_text = Path(input_html).read_text(encoding="utf-8")
-    soup = BeautifulSoup(original_html_text)
+    soup = BeautifulSoup(original_html_text, "lxml")
 
     # Find link tags. example: <link rel="stylesheet" href="css/somestyle.css">
     for tag in soup.find_all('link', href=True):

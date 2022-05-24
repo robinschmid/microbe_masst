@@ -87,11 +87,11 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Run fast microbeMASST in batch')
     parser.add_argument('--in_file', type=str,
                         help='input file that contains the two columns specified by usi_or_lib_id and compound_header',
-                        default="../emily/Combinatorial_reactions_USIs - sulfated compounds.tsv")
+                        default="../examples/example_links.tsv")
     parser.add_argument('--out_file', type=str, help='output html and other files, name without extension',
-                        default="emily/sulfated/fast_microbeMasst")
+                        default="output/fast_microbeMasst")
     parser.add_argument('--usi_or_lib_id', type=str, help='specify the usi or GNPS library id to search',
-                        default="USI")
+                        default="ID")
     parser.add_argument('--compound_header', type=str,
                         help='defines the header of the compound names, make sure to be path safe',
                         default="Compound")
@@ -106,14 +106,6 @@ if __name__ == '__main__':
         lib_id = args.usi_or_lib_id
         compound_header = args.compound_header
         sep = args.separator
-
-        # TODO remove temp import
-        in_file = "../casmi/casmi_pos_IIMN_gnps_merged.csv"
-        out_file = "casmi/fast_microbeMasst"
-        # out_file = "emily/amides/fast_microbeMasst"
-        lib_id = "usi"
-        compound_header = "Compound Number"
-        sep = ","
 
         run_batch_fastmicrobe_masst(input_file=in_file, out_filename_no_ext=out_file,
                                     usi_or_lib_id=lib_id, compound_name_header=compound_header,
