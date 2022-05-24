@@ -33,7 +33,7 @@ if __name__ == '__main__':
                                                  'create a distributable html file that internalizes all scripts, '
                                                  'data, etc. ')
     parser.add_argument('--in_html', type=str, help='The input html file',
-                        default="collapsible_tree_v3.html")
+                        default="../code/collapsible_tree_v3.html")
     parser.add_argument('--ontology', type=str, help='the json ontology file with children',
                         default="../data/GFOP.json")
     parser.add_argument('--in_data', type=str, help='a tab separated file with additional data that is added to the '
@@ -56,7 +56,7 @@ if __name__ == '__main__':
     # important use raw file on github!
     try:
         # tmp test microbe masst
-        create_tree_html("collapsible_tree_v3.html", "../data/ncbi.json",
+        create_tree_html("../code/collapsible_tree_v3.html", "../data/ncbi.json",
                          "../output/microbe_masst_counts.tsv", args.out_tree, args.format, args.out_html, args.compress,
                          "NCBI", "ncbi")
         # create_tree_html(args.in_html, args.ontology, args.in_data, args.out_tree, args.format, args.out_html,

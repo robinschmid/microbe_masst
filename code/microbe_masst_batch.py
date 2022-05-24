@@ -29,7 +29,7 @@ def run_job(file_name, usi_or_lib_id, compound_name):
     out_html = "../{}_{}.html".format(file_name, compound_name.replace(" ", "_"))
 
     result = microbemasst.run_microbe_masst(usi_or_lib_id, precursor_mz_tol=0.05, mz_tol=0.02, min_cos=0.7,
-                                            in_html="collapsible_tree_v3.html",
+                                            in_html="../code/collapsible_tree_v3.html",
                                             in_ontology="../data/ncbi.json",
                                             metadata_file="../data/microbe_masst_table.csv",
                                             out_counts_file="../output/microbe_masst_counts.tsv",

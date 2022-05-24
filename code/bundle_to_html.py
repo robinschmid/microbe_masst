@@ -17,11 +17,11 @@ def replace_by_local_file(path):
     :return: a local file or the original input string
     """
     if path == "https://d3js.org/d3.v3.min.js":
-        return "lib/d3.v3.min.js"
+        return "../code/lib/d3.v3.min.js"
     if path == "https://d3js.org/d3.v6.min.js":
-        return "lib/d3.v6.min.js"
+        return "../code/lib/d3.v6.min.js"
     if path == "https://code.jquery.com/jquery-3.6.0.min.js":
-        return "lib/jquery-3.6.0.min.js"
+        return "../code/lib/jquery-3.6.0.min.js"
     return path
 
 
@@ -114,7 +114,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Parse an HTML file and all dependencies to create a single '
                                                  'distributable HTML file')
     parser.add_argument('--in_html', type=str, help='The input html file',
-                        default="collapsible_tree_v3.html")
+                        default="../code/collapsible_tree_v3.html")
     parser.add_argument('--in_data', type=str, help='replace tree data with this json file. Use '
                                                     'json_ontology_extender.py to create a tree with data',
                         default="../output/merged_ontology_data.json")

@@ -11,7 +11,7 @@ logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
 
-def create_tree_html(in_html="collapsible_tree_v3.html", in_ontology="../data/ncbi.json",
+def create_tree_html(in_html="../code/collapsible_tree_v3.html", in_ontology="../data/ncbi.json",
                      metadata_file="../data/microbe_masst_table.csv",
                      masst_file="../examples/phelylglycocholic_acid.tsv", matching_usi_list=None,
                      out_counts_file="../output/microbe_masst_counts.tsv",
@@ -50,7 +50,7 @@ if __name__ == '__main__':
                                                  'create a distributable html file that internalizes all scripts, '
                                                  'data, etc. ')
     parser.add_argument('--in_html', type=str, help='The input html file',
-                        default="collapsible_tree_v3.html")
+                        default="../code/collapsible_tree_v3.html")
     parser.add_argument('--ontology', type=str, help='the json ontology file with children',
                         default="../data/ncbi.json")
     parser.add_argument('--metadata_file', type=str, help='microbe masst metadata',

@@ -10,12 +10,20 @@ logger = logging.getLogger(__name__)
 
 
 def run_microbe_masst(usi_or_lib_id, precursor_mz_tol=0.05, mz_tol=0.02, min_cos=0.7,
-                      in_html="collapsible_tree_v3.html", in_ontology="../data/ncbi.json",
+                      in_html="../code/collapsible_tree_v3.html", in_ontology="../data/ncbi.json",
                       metadata_file="../data/microbe_masst_table.csv",
                       out_counts_file="../output/microbe_masst_counts.tsv",
                       out_json_tree="../output/merged_ncbi_ontology_data.json", format_out_json=True,
                       out_html="../output/oneindex.html", compress_out_html=True, node_key="NCBI", data_key="ncbi"
                       ):
+    try:
+        # ensure output paths
+        Path(out_html).parent.mkdir(parents=True, exist_ok=True)
+        Path(out_counts_file).parent.mkdir(parents=True, exist_ok=True)
+        Path(out_json_tree).parent.mkdir(parents=True, exist_ok=True)
+    except Exception as e:
+        logger.exception(e)
+
     try:
         matches = masst.fast_masst(usi_or_lib_id, precursor_mz_tol, mz_tol, min_cos)
         if (matches is not None) and (len(matches) > 0):
@@ -40,7 +48,7 @@ if __name__ == '__main__':
                         default="mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00005883671")
     # default="mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00000001556")
     parser.add_argument('--in_html', type=str, help='The input html file',
-                        default="collapsible_tree_v3.html")
+                        default="../code/collapsible_tree_v3.html")
     parser.add_argument('--ontology', type=str, help='the json ontology file with children',
                         default="../data/ncbi.json")
     parser.add_argument('--metadata_file', type=str, help='microbe masst metadata',
