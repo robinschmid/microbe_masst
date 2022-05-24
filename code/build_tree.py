@@ -38,10 +38,10 @@ if __name__ == '__main__':
                         default="../data/GFOP.json")
     parser.add_argument('--in_data', type=str, help='a tab separated file with additional data that is added to the '
                                                     'ontology', default="../examples/caffeic_acid.tsv")
-    parser.add_argument('--out_html', type=str, help='output html file', default="dist/oneindex.html")
+    parser.add_argument('--out_html', type=str, help='output html file', default="../output/oneindex.html")
     parser.add_argument('--compress', type=bool, help='Compress output file (needs minify_html)',
                         default=True)
-    parser.add_argument('--out_tree', type=str, help='output file', default="dist/merged_ontology_data.json")
+    parser.add_argument('--out_tree', type=str, help='output file', default="../output/merged_ontology_data.json")
     parser.add_argument('--format', type=bool, help='Format the json output False or True',
                         default=True)
     parser.add_argument('--node_key', type=str, help='the field in the ontology to be compare to the field in the '
@@ -57,7 +57,7 @@ if __name__ == '__main__':
     try:
         # tmp test microbe masst
         create_tree_html("collapsible_tree_v3.html", "../data/ncbi.json",
-                         "dist/microbe_masst_counts.tsv", args.out_tree, args.format, args.out_html, args.compress,
+                         "../output/microbe_masst_counts.tsv", args.out_tree, args.format, args.out_html, args.compress,
                          "NCBI", "ncbi")
         # create_tree_html(args.in_html, args.ontology, args.in_data, args.out_tree, args.format, args.out_html,
         #                  args.compress, args.node_key, args.data_key)

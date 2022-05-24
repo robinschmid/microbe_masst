@@ -102,7 +102,7 @@ def add_pie_data_to_node_and_children(node):
             add_pie_data_to_node_and_children(child)
 
 
-def add_data_to_ontology_file(output="dist/merged_ontology_data.json", ontology_file="../data/GFOP.json",
+def add_data_to_ontology_file(output="../output/merged_ontology_data.json", ontology_file="../data/GFOP.json",
                               in_data="../examples/caffeic_acid.tsv", node_key="name", data_key="group_value",
                               format_out_json=True):
     with open(ontology_file) as json_file:
@@ -174,7 +174,7 @@ if __name__ == '__main__':
     parser.add_argument('--data_key', type=str,
                         help='the field in the data file to be compared to the field in the ontology',
                         default="group_value")
-    parser.add_argument('--out_tree', type=str, help='output file', default="dist/merged_ontology_data.json")
+    parser.add_argument('--out_tree', type=str, help='output file', default="../output/merged_ontology_data.json")
     parser.add_argument('--format', type=bool, help='Format the json output False or True',
                         default=True)
 

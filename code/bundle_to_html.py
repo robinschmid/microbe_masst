@@ -117,8 +117,8 @@ if __name__ == '__main__':
                         default="collapsible_tree_v3.html")
     parser.add_argument('--in_data', type=str, help='replace tree data with this json file. Use '
                                                     'json_ontology_extender.py to create a tree with data',
-                        default="dist/merged_ontology_data.json")
-    parser.add_argument('--out_html', type=str, help='output html file', default="dist/oneindex.html")
+                        default="../output/merged_ontology_data.json")
+    parser.add_argument('--out_html', type=str, help='output html file', default="../output/oneindex.html")
     parser.add_argument('--compress', type=bool, help='Compress output file (needs minify_html)',
                         default=True)
     args = parser.parse_args()

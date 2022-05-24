@@ -14,9 +14,9 @@ logger = logging.getLogger(__name__)
 def create_tree_html(in_html="collapsible_tree_v3.html", in_ontology="../data/ncbi.json",
                      metadata_file="../data/microbe_masst_table.csv",
                      masst_file="../examples/phelylglycocholic_acid.tsv", matching_usi_list=None,
-                     out_counts_file="dist/microbe_masst_counts.tsv",
-                     out_json_tree="dist/merged_ncbi_ontology_data.json", format_out_json=True,
-                     out_html="dist/oneindex.html", compress_out_html=True, node_key="NCBI", data_key="ncbi"):
+                     out_counts_file="../output/microbe_masst_counts.tsv",
+                     out_json_tree="../output/merged_ncbi_ontology_data.json", format_out_json=True,
+                     out_html="../output/oneindex.html", compress_out_html=True, node_key="NCBI", data_key="ncbi"):
     """
     Merges extra data into an ontology and creates a single distributable html file. Compression reduces the size of
     the html file.
@@ -32,7 +32,7 @@ def create_tree_html(in_html="collapsible_tree_v3.html", in_ontology="../data/nc
     :param compress_out_html: apply compression (reduces readability)
     """
     if out_counts_file == "auto" or out_counts_file == "automatic":
-        out_counts_file = "dist/{}_counts.tsv".format(Path(masst_file).stem)
+        out_counts_file = "../output/{}_counts.tsv".format(Path(masst_file).stem)
 
     if matching_usi_list is not None:
         microbe_masst_results.create_counts_file_from_usi(metadata_file, matching_usi_list, out_counts_file)
@@ -60,11 +60,11 @@ if __name__ == '__main__':
                         default="../examples/coprogen_b.tsv")
     parser.add_argument('--out_counts_file', type=str, help='the intermediate counts (matches) file. automatic: use '
                                                             'the masst_file name with suffix: _counts',
-                        default="dist/microbe_masst_counts.tsv")
-    parser.add_argument('--out_html', type=str, help='output html file', default="dist/microbeMasst_coprogen_b.html")
+                        default="../output/microbe_masst_counts.tsv")
+    parser.add_argument('--out_html', type=str, help='output html file', default="../output/microbeMasst_coprogen_b.html")
     parser.add_argument('--compress', type=bool, help='Compress output file (needs minify_html)',
                         default=True)
-    parser.add_argument('--out_tree', type=str, help='output file', default="dist/merged_ncbi_ontology_data.json")
+    parser.add_argument('--out_tree', type=str, help='output file', default="../output/merged_ncbi_ontology_data.json")
     parser.add_argument('--format', type=bool, help='Format the json output False or True',
                         default=True)
     parser.add_argument('--node_key', type=str, help='the field in the ontology to be compare to the field in the '

@@ -97,7 +97,7 @@ if __name__ == '__main__':
                                                        'metadata file',
                         default="../examples/phelylglycocholic_acid.tsv")
     parser.add_argument('--out_tsv_file', type=str, help='output file in .tsv format',
-                        default="dist/microbe_masst_counts.tsv")
+                        default="../output/microbe_masst_counts.tsv")
 
     args = parser.parse_args()
 
