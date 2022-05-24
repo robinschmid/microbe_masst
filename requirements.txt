@@ -4,9 +4,10 @@ requests_cache==0.9.4
 anytree==2.8.0
 pronto==2.4.5
 bs4==0.0.1
-beautifulsoup4==4.9.3
+beautifulsoup4==4.11.1
 pandas==1.4.1
 tqdm==4.64.0
 numpy==1.21.5
 minify_html==0.8.0
 black==22.3.0
+lxml==4.8.0
