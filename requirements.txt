@@ -11,3 +11,5 @@ minify_html==0.8.0
 black==22.3.0
 lxml==4.8.0
 pytest==7.1.2
+pyarrow==7.0.0
+pyteomics==4.5.3
