@@ -49,7 +49,8 @@ def fast_masst(
 
 
 def _fast_masst(params):
-    search_api_response = requests.get(URL, params=params, timeout=50)
+    search_api_response = requests.get(URL, params=params, timeout=150)
+    search_api_response.raise_for_status()
     search_api_response_json = search_api_response.json()
     datasets = search_api_response_json["grouped_by_dataset"]
     dataset_info_dict = dict([(e["Dataset"], e["title"]) for e in datasets])
@@ -65,26 +66,28 @@ def fast_masst_spectrum(
     precursor_mz,
     precursor_charge=1,
     precursor_mz_tol=0.05,
-    mz_tol=0.02,
+    mz_tol=0.05,
     min_cos=0.7,
-    analog=False,
+    analog=True,
     database=DataBase.gnpsdata_index,
 ):
     try:
-        dps = [[mz, intensity] for mz, intensity in zip(mzs, intensities)]
+        dps = [[round(mz, 4), round(intensity, 1)] for mz, intensity in zip(mzs, intensities)]
 
         spec_json = json.dumps(
             {
                 "n_peaks": len(dps),
                 "peaks": dps,
                 "precursor_mz": precursor_mz,
-                "precursor_charge": precursor_charge,
+                "precursor_charge": abs(precursor_charge),
             }
         )
 
         params = {
             "library": database.name,
             "analog": "Yes" if analog else "No",
+            "delta_mass_below": 130,
+            "delta_mass_above": 200,
             "pm_tolerance": precursor_mz_tol,
             "fragment_tolerance": mz_tol,
             "cosine_threshold": min_cos,

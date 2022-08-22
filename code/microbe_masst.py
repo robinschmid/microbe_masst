@@ -4,6 +4,7 @@ import logging
 from pathlib import Path
 import masst_utils as masst
 import build_microbe_masst_tree as mmtree
+import build_food_masst_tree as foodtree
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
@@ -16,6 +17,91 @@ def run_microbe_masst(usi_or_lib_id, precursor_mz_tol=0.05, mz_tol=0.02, min_cos
                       out_json_tree="../output/merged_ncbi_ontology_data.json", format_out_json=True,
                       out_html="../output/oneindex.html", compress_out_html=True, node_key="NCBI", data_key="ncbi"
                       ):
+    prepare_paths(out_counts_file, out_html, out_json_tree)
+
+    try:
+        matches = masst.fast_masst(usi_or_lib_id, precursor_mz_tol, mz_tol, min_cos)
+        return run_microbe_masst_for_matches(matches, in_html, in_ontology, metadata_file, out_counts_file,
+                                             out_json_tree, format_out_json, out_html, compress_out_html, node_key,
+                                             data_key)
+    except Exception as e:
+        # exit with error
+        logger.exception(e)
+    # default return None
+    return None
+
+
+def run_microbe_masst_for_spectrum(precursor_mz, precursor_charge, mzs, intensities, precursor_mz_tol=0.05, mz_tol=0.02,
+                                   min_cos=0.7,
+                                   in_html="../code/collapsible_tree_v3.html", in_ontology="../data/ncbi.json",
+                                   metadata_file="../data/microbe_masst_table.csv",
+                                   out_counts_file="../output/microbe_masst_counts.tsv",
+                                   out_json_tree="../output/merged_ncbi_ontology_data.json", format_out_json=True,
+                                   out_html="../output/oneindex.html", compress_out_html=True, node_key="NCBI",
+                                   data_key="ncbi"
+                                   ):
+    prepare_paths(out_counts_file, out_html, out_json_tree)
+
+    try:
+        matches = masst.fast_masst_spectrum(mzs, intensities, precursor_mz, precursor_charge, precursor_mz_tol, mz_tol,
+                                            min_cos)
+        return run_microbe_masst_for_matches(matches, in_html, in_ontology, metadata_file, out_counts_file,
+                                             out_json_tree, format_out_json, out_html, compress_out_html, node_key,
+                                             data_key)
+    except Exception as e:
+        # exit with error
+        logger.exception(e)
+    # default return None
+    return None
+
+
+def run_microbe_masst_for_matches(masst_matches,
+                                  in_html="../code/collapsible_tree_v3.html", in_ontology="../data/ncbi.json",
+                                  metadata_file="../data/microbe_masst_table.csv",
+                                  out_counts_file="../output/microbe_masst_counts.tsv",
+                                  out_json_tree="../output/merged_ncbi_ontology_data.json", format_out_json=True,
+                                  out_html="../output/oneindex.html", compress_out_html=True, node_key="NCBI",
+                                  data_key="ncbi"
+                                  ):
+    prepare_paths(out_counts_file, out_html, out_json_tree)
+
+    try:
+        if (masst_matches is not None) and (len(masst_matches) > 0):
+            match_usi_list = [match["USI"] for match in masst_matches]
+            mmtree.create_tree_html(in_html, in_ontology, metadata_file, None, match_usi_list, out_counts_file,
+                                    out_json_tree, format_out_json, out_html, compress_out_html, node_key, data_key)
+            return masst_matches
+    except Exception as e:
+        # exit with error
+        logger.exception(e)
+    # default return None
+    return None
+
+
+def run_food_masst_for_matches(masst_matches,
+                                  in_html="../code/collapsible_tree_v3.html", in_ontology="../data/GFOP.json",
+                                  metadata_file="../data/foodmasst_filtered.tsv",
+                                  out_counts_file="../output/food_masst_counts.tsv",
+                                  out_json_tree="../output/merged_gfop_ontology_data.json", format_out_json=True,
+                                  out_html="../output/oneindex.html", compress_out_html=True, node_key="name",
+                                  data_key="ontology_term"
+                                  ):
+    prepare_paths(out_counts_file, out_html, out_json_tree)
+
+    try:
+        if (masst_matches is not None) and (len(masst_matches) > 0):
+            match_usi_list = [match["USI"] for match in masst_matches]
+            foodtree.create_tree_html(in_html, in_ontology, metadata_file, None, match_usi_list, out_counts_file,
+                                    out_json_tree, format_out_json, out_html, compress_out_html, node_key, data_key)
+            return masst_matches
+    except Exception as e:
+        # exit with error
+        logger.exception(e)
+    # default return None
+    return None
+
+
+def prepare_paths(out_counts_file, out_html, out_json_tree):
     try:
         # ensure output paths
         Path(out_html).parent.mkdir(parents=True, exist_ok=True)
@@ -23,19 +109,6 @@ def run_microbe_masst(usi_or_lib_id, precursor_mz_tol=0.05, mz_tol=0.02, min_cos
         Path(out_json_tree).parent.mkdir(parents=True, exist_ok=True)
     except Exception as e:
         logger.exception(e)
-
-    try:
-        matches = masst.fast_masst(usi_or_lib_id, precursor_mz_tol, mz_tol, min_cos)
-        if (matches is not None) and (len(matches) > 0):
-            match_usi_list = [match["USI"] for match in matches]
-            mmtree.create_tree_html(in_html, in_ontology, metadata_file, None, match_usi_list, out_counts_file,
-                                    out_json_tree, format_out_json, out_html, compress_out_html, node_key, data_key)
-            return matches
-    except Exception as e:
-        # exit with error
-        logger.exception(e)
-    # default return None
-    return None
 
 
 if __name__ == '__main__':

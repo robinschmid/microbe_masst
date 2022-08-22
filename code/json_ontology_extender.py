@@ -117,8 +117,8 @@ def add_data_to_ontology_file(output="../output/merged_ontology_data.json", onto
         add_data_to_node(treeRoot, df, node_key, data_key)
 
         # check if group_size is available otherwise propagate
-        if field_missing(treeRoot, "NCBI", report_missing=True, replace_with_field="name") > 0:
-            logger.error("NCBI id is missing in a node")
+        if field_missing(treeRoot, node_key, report_missing=True, replace_with_field="name") > 0:
+            logger.error("{} id is missing in a node".format(node_key))
         if field_missing(treeRoot, "group_size") > 0:
             accumulate_field_in_parents(treeRoot, "group_size")
         if field_missing(treeRoot, "matched_size") > 0:

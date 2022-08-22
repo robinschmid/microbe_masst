@@ -34,11 +34,14 @@ def usi_massiveid_filename(usi):
     return split[1], split[2]
 
 
-def create_counts_file(metadata_file, masst_file, out_tsv_file):
-    metadata_df = pd.read_csv(metadata_file)
+def create_counts_file(metadata_file, masst_file, out_tsv_file, meta_col_header="Taxa_NCBI", out_id_col_header='ncbi'):
+    if str(metadata_file).endswith(".tsv"):
+        metadata_df = pd.read_csv(metadata_file, sep="\t")
+    else:
+        metadata_df = pd.read_csv(metadata_file)
     masst_file = pd.read_csv(masst_file, sep="\t")
 
-    metadata_df["Filepath"] = metadata_df["Filepath"].apply(clean_filename)
+    metadata_df["Filepath"] = metadata_df["Filename"].apply(clean_filename)
     masst_file["filename"] = masst_file["filename"].apply(clean_filename)
 
     # count matches per ID
@@ -48,16 +51,19 @@ def create_counts_file(metadata_file, masst_file, out_tsv_file):
         # might have multiple rows in the metadata table if multiple IDs
         matching_metadata = metadata_df.loc[metadata_df["Filepath"] == match_row["filename"]]
         for index2, meta_row in matching_metadata.iterrows():
-            ncbi_ = meta_row["Taxa_NCBI"]
+            ncbi_ = meta_row[meta_col_header]
             id_matches_dict[ncbi_] = id_matches_dict.get(ncbi_, 0) + 1
 
-    export_ncbi_counts(id_matches_dict, out_tsv_file)
+    export_ncbi_counts(id_matches_dict, out_tsv_file, out_id_col_header)
 
 
-def create_counts_file_from_usi(metadata_file, matching_usi_list, out_tsv_file):
-    metadata_df = pd.read_csv(metadata_file)
+def create_counts_file_from_usi(metadata_file, matching_usi_list, out_tsv_file, meta_col_header="Taxa_NCBI", out_id_col_header='ncbi'):
+    if str(metadata_file).endswith(".tsv"):
+        metadata_df = pd.read_csv(metadata_file, sep="\t")
+    else:
+        metadata_df = pd.read_csv(metadata_file)
 
-    metadata_df["fname"] = metadata_df["Filepath"].apply(filename_from_path)
+    metadata_df["fname"] = metadata_df["Filename"].apply(filename_from_path)
     matching_massive_file_list = [usi_massiveid_filename(usi) for usi in matching_usi_list]
 
     massive_to_fnames_dict = {}
@@ -73,19 +79,23 @@ def create_counts_file_from_usi(metadata_file, matching_usi_list, out_tsv_file):
 
     for (massive_id, fnames) in massive_to_fnames_dict.items():
         # might have multiple rows in the metadata table if multiple IDs
-        matching_metadata = metadata_df.loc[(metadata_df["fname"].isin(fnames)) & (metadata_df["MassIVE"] ==
+        if "MassIVE" in metadata_df:
+            matching_metadata = metadata_df.loc[(metadata_df["fname"].isin(fnames)) & (metadata_df["MassIVE"] ==
                                                                                    massive_id)]
+        else:
+            matching_metadata = metadata_df.loc[(metadata_df["fname"].isin(fnames))]
+
         for index2, meta_row in matching_metadata.iterrows():
-            ncbi_ = meta_row["Taxa_NCBI"]
+            ncbi_ = meta_row[meta_col_header]
             id_matches_dict[ncbi_] = id_matches_dict.get(ncbi_, 0) + 1
 
-    export_ncbi_counts(id_matches_dict, out_tsv_file)
+    export_ncbi_counts(id_matches_dict, out_tsv_file, out_id_col_header)
 
 
-def export_ncbi_counts(id_matches_dict, out_tsv_file):
+def export_ncbi_counts(id_matches_dict, out_tsv_file, out_id_col_header='ncbi'):
     df = pd.DataFrame().from_dict(id_matches_dict, orient='index', columns=['matched_size'])
     df.reset_index(inplace=True)
-    df = df.rename(columns={'index': 'ncbi'})
+    df = df.rename(columns={'index': out_id_col_header})
     df.to_csv(out_tsv_file, index=False, sep="\t")
 
 if __name__ == '__main__':
