@@ -178,10 +178,10 @@ if __name__ == '__main__':
                         help='input file either mgf with spectra or table that contains the two columns specified by '
                              'usi_or_lib_id and compound_header',
                         # default="../examples/alexey.csv")
-    default="../casmi_pos_sirius/prioneg_fixed.mgf")
+    default="../casmi_pos_sirius/small.mgf")
     # default="../examples/example_links.tsv")
     parser.add_argument('--out_file', type=str, help='output html and other files, name without extension',
-                        default="output/analog_neg_fast_microbeMasst")
+                        default="output/small_fast_microbeMasst")
     parser.add_argument('--usi_or_lib_id', type=str, help='specify the usi or GNPS library id to search',
                         default="USI")
     parser.add_argument('--compound_header', type=str,

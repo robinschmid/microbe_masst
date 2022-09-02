@@ -5,17 +5,27 @@ import requests_cache
 from enum import Enum, auto
 import json
 
-requests_cache.install_cache("fastmasst_cache", expire_after=timedelta(days=2))
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
+
+# requests_cache.install_cache("fastmasst_cache", expire_after=timedelta(days=2))
 
 URL = "https://fastlibrarysearch.ucsd.edu/search"
 
+# define the max number of datapoints as an estimate
+# limit for URL is 2048
+DATAPOINT_CHARACTERS = (10 + 5 + 10)
+MAX_N_DATAPOINTS = int((2048 - len("https://fastlibrarysearch.ucsd.edu/search?library=gnpsdata_index&analog=Yes"
+                              "&delta_mass_below=130" \
+           "&delta_mass_above=200&pm_tolerance=0.05&fragment_tolerance=0.02&cosine_threshold=0.7&query_spectrum=%7B" \
+           "%22n_peaks%22%3A+0%2C+%22peaks%22%3A+%5B%5D%2C+%22precursor_mz%22%3A+325.2349%2C+%22precursor_charge%22" \
+           "%3A+1%7D")) / DATAPOINT_CHARACTERS)
 
 class DataBase(Enum):
     gnpsdata_index = auto()  # all gnps data
     gnpslibrary = auto()  # gnps library
     massivedata_index = auto()
     massivekb_index = auto()
-
 
 # based on
 # https://github.com/mwang87/GNPS_LCMSDashboard/blob/a9971fa557c735c8e0ccd7681653eebd415a8636/app.py#L1632
@@ -45,7 +55,7 @@ def fast_masst(
         return _fast_masst(params)
     # except requests.exceptions.Timeout:
     except Exception:
-        logging.exception("Failed fastMASST.")
+        logging.exception("Failed fastMASST {}".format(usi_or_lib_id))
 
 
 def _fast_masst(params):
@@ -60,6 +70,7 @@ def _fast_masst(params):
     return matches
 
 
+
 def fast_masst_spectrum(
     mzs,
     intensities,
@@ -72,7 +83,16 @@ def fast_masst_spectrum(
     database=DataBase.gnpsdata_index,
 ):
     try:
-        dps = [[round(mz, 4), round(intensity, 1)] for mz, intensity in zip(mzs, intensities)]
+        max_intensity = max(intensities)
+        dps = [[round(mz, 4), round(intensity/max_intensity*100.0, 1)] for mz, intensity in zip(mzs, intensities)]
+
+        total_dps = len(dps)
+        if total_dps > MAX_N_DATAPOINTS:
+            sorted_dps = sorted(dps, key=lambda dp: -dp[1])[0:MAX_N_DATAPOINTS]
+            dps = sorted(sorted_dps, key=lambda dp: dp[0])
+            logger.info("Number of signals in spectrum was reduced to meet length limit {}-->{}".format(total_dps,
+                                                                                                        len(dps)))
+
 
         spec_json = json.dumps(
             {
@@ -95,7 +115,7 @@ def fast_masst_spectrum(
         }
         return _fast_masst(params)
     except Exception:
-        logging.exception("Failed fastMASST.")
+        logging.exception("Failed fastMASST on spectrum.")
 
 
 # example
