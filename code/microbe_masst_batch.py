@@ -13,7 +13,7 @@ import pyteomics.mgf
 
 import microbe_masst as microbemasst
 
-requests_cache.install_cache('fastmasst_cache', expire_after=timedelta(days=2))
+# requests_cache.install_cache('fastmasst_cache', expire_after=timedelta(days=2))
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
@@ -167,7 +167,7 @@ def export_masst_results(jobs_df: pd.DataFrame, masst_results_tsv: str):
         # might not be in the df
         masst_df.drop(columns=["mzs", "intensities"], inplace=True, axis=1)
     except Exception as e:
-        logger.exceptions("Error removing columns from export table", e)
+        logger.exception("Error removing columns from export table", e)
     masst_df.to_parquet(masst_results_tsv.replace(".tsv", ".parquet"))
 
 
