@@ -67,8 +67,7 @@ def run_microbe_masst_for_matches(masst_matches,
 
     try:
         if (masst_matches is not None) and (len(masst_matches) > 0):
-            match_usi_list = [match["USI"] for match in masst_matches]
-            mmtree.create_tree_html(in_html, in_ontology, metadata_file, None, match_usi_list, out_counts_file,
+            mmtree.create_tree_html(in_html, in_ontology, metadata_file, None, masst_matches["USI"], out_counts_file,
                                     out_json_tree, format_out_json, out_html, compress_out_html, node_key, data_key)
             return masst_matches
     except Exception as e:
@@ -90,8 +89,7 @@ def run_food_masst_for_matches(masst_matches,
 
     try:
         if (masst_matches is not None) and (len(masst_matches) > 0):
-            match_usi_list = [match["USI"] for match in masst_matches]
-            foodtree.create_tree_html(in_html, in_ontology, metadata_file, None, match_usi_list, out_counts_file,
+            foodtree.create_tree_html(in_html, in_ontology, metadata_file, None, masst_matches["USI"], out_counts_file,
                                     out_json_tree, format_out_json, out_html, compress_out_html, node_key, data_key)
             return masst_matches
     except Exception as e:

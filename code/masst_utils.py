@@ -30,8 +30,8 @@ def fast_masst(
         mz_tol=0.02,
         min_cos=0.7,
         analog=False,
-        analog_mass_below = 130,
-        analog_mass_above = 200,
+        analog_mass_below=130,
+        analog_mass_above=200,
         database=DataBase.gnpsdata_index,
 ):
     if str(usi_or_lib_id).startswith("CCMS"):
@@ -56,6 +56,7 @@ def fast_masst(
         logging.exception("Failed fastMASST {}".format(usi_or_lib_id))
         raise e
 
+
 def fast_masst_spectrum(
         mzs,
         intensities,
@@ -65,8 +66,8 @@ def fast_masst_spectrum(
         mz_tol=0.05,
         min_cos=0.7,
         analog=False,
-        analog_mass_below = 130,
-        analog_mass_above = 200,
+        analog_mass_below=130,
+        analog_mass_above=200,
         database=DataBase.gnpsdata_index,
 ):
     try:
@@ -115,9 +116,18 @@ def _fast_masst(params):
     search_api_response_json = search_api_response.json()
     return search_api_response_json
 
-def extract_matches_from_masst_results(results_dict, add_dataset_titles = False) -> pd.DataFrame:
-    """
 
+def filter_matches(df, precursor_mz_tol, min_matched_signals):
+    return df.loc[
+        (df["Delta Mass"].between(-precursor_mz_tol, precursor_mz_tol, inclusive="both")) & (df["Matching Peaks"] >=
+                                                                                           min_matched_signals)]
+
+
+def extract_matches_from_masst_results(results_dict,
+                                       precursor_mz_tol,
+                                       min_matched_signals,
+                                       add_dataset_titles=False) -> pd.DataFrame:
+    """
     :param results_dict: masst results
     :param add_dataset_titles: add dataset titles to each row
     :return: DataFrame of the individual matches
@@ -125,6 +135,7 @@ def extract_matches_from_masst_results(results_dict, add_dataset_titles = False)
     masst_df = pd.DataFrame(results_dict["results"])
     masst_df.drop(columns=["Unit Delta Mass", "Query Scan", "Query Filename", "Index UnitPM", "Index IdxInUnitPM",
                            "Filtered Input Spectrum Path"], inplace=True, axis=1)
+    masst_df = filter_matches(masst_df, precursor_mz_tol, min_matched_signals)
     if add_dataset_titles:
         datasets = results_dict["grouped_by_dataset"]
         dataset_info_dict = dict([(e["Dataset"], e["title"]) for e in datasets])
@@ -136,8 +147,14 @@ def extract_matches_from_masst_results(results_dict, add_dataset_titles = False)
 
     return masst_df
 
-def extract_datasets_from_masst_results(results_dict) -> pd.DataFrame:
-    return pd.DataFrame(results_dict["grouped_by_dataset"])
+
+def extract_datasets_from_masst_results(results_dict, matches_df: pd.DataFrame) -> pd.DataFrame:
+    datasets_df = pd.DataFrame(results_dict["grouped_by_dataset"])
+    # recalc frequency with filtered MASST results
+    new_dataset_df = matches_df.groupby("Dataset").size().reset_index(name="Frequency")
+    # transfer dataset title
+    new_dataset_df.merge(datasets_df, on="Dataset", how="left")
+    return new_dataset_df
 
 
 # example
