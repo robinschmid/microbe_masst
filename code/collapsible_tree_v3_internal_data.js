@@ -26,7 +26,7 @@ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.*/
 
 /* This modified version was created by Robin Schmid (https://github.com/robinschmid) for the global foodomics
- project (GFOP)
+ project (GFOP), foodMASST, and microbeMASST
  */
 
 // tree data internalized
@@ -48,6 +48,7 @@ var labelSize = 12;
 
 // base radius
 var isScalingActive = true;
+var sizeOption = "Ratio";
 const maxRadius = 20;
 var radius = 6;
 
@@ -180,7 +181,8 @@ function downloadSvg() {
 var allGroup = ["default", "contrast", "B+W"]
 
 // Initialize the button
-var dropdownButton = d3.select("#styleCombo")
+d3.select("#secondMenu").append('label').text("Style: ")
+var dropdownButton = d3.select("#secondMenu")
     .append('select')
 
 // add the options to the button
@@ -225,6 +227,31 @@ dropdownButton.on("change", function (d) {
     }
 
     pieColors = [matchColor, bgColor];
+    update(root);
+});
+
+
+var sizeOptions = ["Ratio", "Matches", "Samples"]
+d3.select("#secondMenu").append('label').text("   Size for: ")
+var sizeCombo = d3.select("#secondMenu").append('select')
+
+// add the options to the button
+sizeCombo // Add a button
+    .selectAll('myOptions') // add all options
+    .data(sizeOptions)
+    .enter()
+    .append('option')
+    .text(function (d) {
+        return d;
+    }) // text showed in the menu
+    .attr("value", function (d) {
+        return d;
+    }) // corresponding value returned by the button
+
+// When the button is changed, update style
+sizeCombo.on("change", function (d) {
+    // recover the option that has been chosen
+    sizeOption = d3.select(this).property("value");
     update(root);
 });
 
@@ -501,8 +528,21 @@ centerLeftNode(root);
  * @param matched_size
  * @returns {number}
  */
-function calcRadius(matched_size) {
-    return matched_size > 0 && isScalingActive ? Math.min(radius + Math.sqrt(matched_size), maxRadius) : radius;
+function calcRadius(data) {
+    if(!isScalingActive)
+        return radius;
+
+    switch (sizeOption) {
+        case "Ratio":
+            var ratio = data.group_size>0? data.matched_size / data.group_size : 0;
+            return radius + (maxRadius-radius) * ratio;
+        case "Matches":
+            var matched_size = data.matched_size;
+            return Math.min(radius + Math.sqrt(matched_size), maxRadius);
+        case "Samples":
+            var group_size = data.group_size;
+            return Math.min(radius + Math.sqrt(group_size), maxRadius);
+    }
 }
 
 // Toggle children on click.
@@ -575,6 +615,7 @@ function update(source) {
                 // show mouse over tooltip. Just for the fun count the clicks in the click method
                 "Name: " + d.name
                 + (d.NCBI != null ? "<br/>NCBI: " + d.NCBI : "")
+                + (d.Rank != null ? "<br/>Rank: " + d.Rank : "")
                 + (d.matched_size > 0 ? "<br/>Matches: " + d.matched_size : "")
                 + (d.occurrence_fraction > 0 ? "<br/>Occurance fraction: " + formatDecimals(d.occurrence_fraction, 3) : "")
                 + (d.group_size > 0 ? "<br/>Group size: " + d.group_size : "")
@@ -613,7 +654,7 @@ function update(source) {
             return pieColors[d.data.index];
         })
         .attr("d", function (d) {
-            return d3.svg.arc().outerRadius(calcRadius(d.data.matched_size))(d);
+            return d3.svg.arc().outerRadius(calcRadius(d.data))(d);
         });
 
 
@@ -686,7 +727,7 @@ function update(source) {
     node.select("circle.nodeCircle")
         .attr("r", function (d) {
             // set the radius if matches larger : otherwise default to X
-            return calcRadius(d.matched_size);
+            return calcRadius(d);
         })
         .style("stroke", nodeStrokeColor)
         .style("fill", function (d) {
@@ -725,7 +766,7 @@ function update(source) {
 
     nodeUpdate.selectAll("path.nodePie")
         .attr("d", function (d) {
-            return d3.svg.arc().outerRadius(calcRadius(d.data.matched_size))(d);
+            return d3.svg.arc().outerRadius(calcRadius(d.data))(d);
         })
         .attr("fill", function (d, i) {
             return pieColors[d.data.index];

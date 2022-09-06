@@ -5,6 +5,7 @@ from tqdm import tqdm
 import re
 import argparse
 import pyteomics.mgf
+import bundle_to_html
 
 import microbe_masst as microbemasst
 import masst_utils as masst
@@ -54,6 +55,10 @@ def process_matches(file_name, compound_name, matches, library_matches, precurso
                                                         data_key="ncbi"
                                                         )
 
+    lib_match_json = lib_matches_df.to_json(orient="records")
+    bundle_to_html.build_dist_html(input_html=out_html, output_html=out_html, data_json_file=lib_match_json,
+                                   placeholder_str="LIBRARY_JSON_DATA_PLACEHOLDER", compress=False)
+
     # foodMASST
     out_html = "{}_{}.html".format(common_file, "food")
     out_json_tree = "{}_{}.json".format(common_file, "food")
@@ -64,6 +69,9 @@ def process_matches(file_name, compound_name, matches, library_matches, precurso
                                                      out_html=out_html,
                                                      compress_out_html=True,
                                                      )
+    lib_match_json = lib_matches_df.to_json(orient="records")
+    bundle_to_html.build_dist_html(input_html=out_html, output_html=out_html, data_json_file=lib_match_json,
+                                   placeholder_str="LIBRARY_JSON_DATA_PLACEHOLDER", compress=False)
 
     return matches_df
 
@@ -89,6 +97,7 @@ def query_usi_or_id(file_name, usi_or_lib_id, compound_name,
         return process_matches(file_name, compound_name, matches, library_matches, precursor_mz_tol,
                                min_matched_signals)
     except Exception as e:
+        logger.exception(e)
         return None
 
 
@@ -197,11 +206,13 @@ def run_on_mgf(input_file,
 
     with pyteomics.mgf.MGF(input_file) as f_in:
         for spectrum_dict in tqdm(f_in):
-            ids.append(str(spectrum_dict["params"]["scans"]))
-            precursor_mzs.append(float(spectrum_dict["params"]["pepmass"][0]))
-            precursor_charges.append(int(spectrum_dict["params"]["charge"][0]))
-            mzs.append(spectrum_dict["m/z array"])
-            intensities.append(spectrum_dict["intensity array"])
+            abundances = spectrum_dict["intensity array"]
+            if len(abundances)>=min_matched_signals:
+                ids.append(str(spectrum_dict["params"]["scans"]))
+                precursor_mzs.append(float(spectrum_dict["params"]["pepmass"][0]))
+                precursor_charges.append(int(spectrum_dict["params"]["charge"][0]))
+                mzs.append(spectrum_dict["m/z array"])
+                intensities.append(abundances)
 
     jobs_df = pd.DataFrame(
         {
@@ -265,7 +276,9 @@ if __name__ == '__main__':
     parser.add_argument('--in_file', type=str,
                         help='input file either mgf with spectra or table that contains the two columns specified by '
                              'usi_or_lib_id and compound_header',
-                        default="../casmi_pos_sirius/small.mgf")
+                        default="../casmi_pos_sirius/bifido.mgf")
+                        # default="../casmi_pos_sirius/small.mgf")
+                        # default="../examples/example_links.tsv")
     parser.add_argument('--out_file', type=str, help='output html and other files, name without extension',
                         default="output/fastMASST")
 
@@ -277,7 +290,7 @@ if __name__ == '__main__':
                         default="Compound")
     parser.add_argument('--separator', type=str,
                         help='separator for input file, e.g., \\t for tab',
-                        default=",")
+                        default="\t")
 
     # MASST params
     parser.add_argument('--precursor_mz_tol', type=float,

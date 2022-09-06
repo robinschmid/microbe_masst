@@ -57,9 +57,17 @@
     }
 
 </style>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://d3js.org/d3.v3.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="lib/jquery.dataTables.min.css">
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
+    <script src="lib/makeTable.js"></script>
 <body>
+<!-- add table - library matches -->
+<div id='library_table'></div>
+
+<div style="margin-top:10px;">
+<!-- add controls -->
 <input type="button" id="downloadSvg" value="Download" onclick="downloadSvg()"
        title="Download the graph as an SVG file"/>
 <input type="button" value="Collapse" onclick="collapseAllAndUpdate()" title="Collapse all nodes"/>
@@ -79,8 +87,12 @@
 <input type="number" id="inputHeight" name="inputHeight" value=40 size="4" maxlength="4"
        title="Height per line">
 <!-- Style combobox - placeholder will be filled by d3 -->
-<div id="styleCombo"></div>
+ <div id="secondMenu"></div>
+
 <div id="tree-container"></div>
+</div>
+
 </body>
 <script src="../code/collapsible_tree_v3_internal_data.js"></script>
+<script src="../code/internalized_tables.js"></script>
 </html>

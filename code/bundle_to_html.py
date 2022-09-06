@@ -22,32 +22,53 @@ def replace_by_local_file(path):
         return "../code/lib/d3.v6.min.js"
     if path == "https://code.jquery.com/jquery-3.6.0.min.js":
         return "../code/lib/jquery-3.6.0.min.js"
+    if str(path).endswith("jquery.dataTables.min.js"):
+        return "../code/lib/jquery.dataTables.min.js"
+    if str(path).endswith("jquery.dataTables.min.css"):
+        return "../code/lib/jquery.dataTables.min.css"
     return path
 
 
-def replace_data_in_file(data_json_file, text):
-    tree_data = Path(data_json_file).read_text()
-    text = text.replace("PLACEHOLDER_JSON_DATA", tree_data, 1)
+def replace_data_in_file(data_json_file, text, placeholder_str):
+    """
+
+    :param data_json_file: data might be passed as file or other data structure like json
+    :param text: the text to search and replace in
+    :param placeholder_str: the placeholder string to replace
+    :return: the final text
+    """
+    try:
+        tree_data = Path(data_json_file).read_text()
+    except:
+        tree_data = data_json_file
+        pass
+    text = text.replace(placeholder_str, tree_data, 1)
 
     return text
 
 
-def build_dist_html(input_html, output_html, data_json_file=None, compress=False):
+def build_dist_html(input_html, output_html, data_json_file=None, compress=False,
+                    placeholder_str="PLACEHOLDER_JSON_DATA"):
     """
     Creates a single distributable HTML file.
     Reads the input_html and internalizes all CSS, JS, and data files into the output html. For web ressources: First
     try to load a local file, else try to download file.
     :param input_html: the input html file that defines all dependencies
     :param output_html: the bundled HTML file
+    :param data_json_file: data as a file or as json (or dictionary / array)
+    :param placeholder_str: the placeholder is replaced with the data
     :return: None
     """
+    # compress=False
     original_html_text = Path(input_html).read_text(encoding="utf-8")
     soup = BeautifulSoup(original_html_text, "lxml")
 
     # Find link tags. example: <link rel="stylesheet" href="css/somestyle.css">
     for tag in soup.find_all('link', href=True):
         if tag.has_attr('href'):
-            file_text = Path(tag['href']).read_text(encoding="utf-8")
+            path = tag['href']
+            path = replace_by_local_file(path)
+            file_text = Path(path).read_text(encoding="utf-8")
 
             # remove the tag from soup
             tag.extract()
@@ -69,10 +90,6 @@ def build_dist_html(input_html, output_html, data_json_file=None, compress=False
             else:
                 file_text = Path(path).read_text()
 
-            # try to replace data with PLACEHOLDER_JSON_DATA
-            if data_json_file is not None and "collapsible_tree" in path:
-                file_text = replace_data_in_file(data_json_file, file_text)
-
             # remove the tag from soup
             tag.extract()
 
@@ -91,6 +108,10 @@ def build_dist_html(input_html, output_html, data_json_file=None, compress=False
             tag['src'] = "data:image/png;base64, {}".format(base64_file_content.decode('ascii'))
 
     out_text = str(soup)
+
+    # try to replace data with PLACEHOLDER_JSON_DATA
+    if data_json_file is not None:
+        out_text = replace_data_in_file(data_json_file, out_text, placeholder_str)
 
     if compress:
         try:
