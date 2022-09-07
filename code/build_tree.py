@@ -24,7 +24,9 @@ def create_tree_html(in_html, in_ontology, in_data, out_json_tree, format_out_js
     """
     json_ontology_extender.add_data_to_ontology_file(out_json_tree, in_ontology, in_data, node_key, data_key,
                                                      format_out_json)
-    bundle_to_html.build_dist_html(in_html, out_html, out_json_tree, compress_out_html)
+
+    replace_dict = {"PLACEHOLDER_JSON_DATA": out_json_tree}
+    bundle_to_html.build_dist_html(in_html, out_html, replace_dict, compress_out_html)
 
 
 if __name__ == '__main__':

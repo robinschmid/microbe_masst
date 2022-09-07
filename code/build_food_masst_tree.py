@@ -16,7 +16,8 @@ def create_tree_html(in_html="../code/collapsible_tree_v3.html", in_ontology="..
                      masst_file="../examples/phelylglycocholic_acid.tsv", matching_usi_list=None,
                      out_counts_file="../output/food_masst_counts.tsv",
                      out_json_tree="../output/merged_gfop_ontology_data.json", format_out_json=True,
-                     out_html="../output/oneindex.html", compress_out_html=True, node_key="name", data_key="ontology_terminal_leaf"):
+                     out_html="../output/oneindex.html", compress_out_html=True, node_key="name",
+                     data_key="ontology_terminal_leaf", replace_dict=None):
     """
     Merges extra data into an ontology and creates a single distributable html file. Compression reduces the size of
     the html file.
@@ -35,13 +36,15 @@ def create_tree_html(in_html="../code/collapsible_tree_v3.html", in_ontology="..
         out_counts_file = "../output/{}_counts.tsv".format(Path(masst_file).stem)
 
     if matching_usi_list is not None:
-        microbe_masst_results.create_counts_file_from_usi(metadata_file, matching_usi_list, out_counts_file, meta_col_header=data_key, out_id_col_header=data_key)
+        microbe_masst_results.create_counts_file_from_usi(metadata_file, matching_usi_list, out_counts_file,
+                                                          meta_col_header=data_key, out_id_col_header=data_key)
     else:
-        microbe_masst_results.create_counts_file(metadata_file, masst_file, out_counts_file, meta_col_header=data_key, out_id_col_header=data_key)
+        microbe_masst_results.create_counts_file(metadata_file, masst_file, out_counts_file, meta_col_header=data_key,
+                                                 out_id_col_header=data_key)
 
     json_ontology_extender.add_data_to_ontology_file(out_json_tree, in_ontology, out_counts_file, node_key, data_key,
                                                      format_out_json)
-    return bundle_to_html.build_dist_html(in_html, out_html, out_json_tree, compress_out_html)
+    return bundle_to_html.build_dist_html(in_html, out_html, replace_dict, compress_out_html)
 
 
 if __name__ == '__main__':
@@ -61,7 +64,8 @@ if __name__ == '__main__':
     parser.add_argument('--out_counts_file', type=str, help='the intermediate counts (matches) file. automatic: use '
                                                             'the masst_file name with suffix: _counts',
                         default="../output/microbe_masst_counts.tsv")
-    parser.add_argument('--out_html', type=str, help='output html file', default="../output/microbeMasst_coprogen_b.html")
+    parser.add_argument('--out_html', type=str, help='output html file',
+                        default="../output/microbeMasst_coprogen_b.html")
     parser.add_argument('--compress', type=bool, help='Compress output file (needs minify_html)',
                         default=True)
     parser.add_argument('--out_tree', type=str, help='output file', default="../output/merged_ncbi_ontology_data.json")

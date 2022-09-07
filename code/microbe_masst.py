@@ -43,8 +43,9 @@ def run_microbe_masst_for_spectrum(precursor_mz, precursor_charge, mzs, intensit
     prepare_paths(out_counts_file, out_html, out_json_tree)
 
     try:
-        matches = masst.fast_masst_spectrum(mzs, intensities, precursor_mz, precursor_charge, precursor_mz_tol, mz_tol,
-                                            min_cos)
+        matches, _ = masst.fast_masst_spectrum(mzs, intensities, precursor_mz, precursor_charge, precursor_mz_tol,
+                                               mz_tol,
+                                               min_cos)
         return run_microbe_masst_for_matches(matches, in_html, in_ontology, metadata_file, out_counts_file,
                                              out_json_tree, format_out_json, out_html, compress_out_html, node_key,
                                              data_key)
@@ -61,14 +62,16 @@ def run_microbe_masst_for_matches(masst_matches,
                                   out_counts_file="../output/microbe_masst_counts.tsv",
                                   out_json_tree="../output/merged_ncbi_ontology_data.json", format_out_json=True,
                                   out_html="../output/oneindex.html", compress_out_html=True, node_key="NCBI",
-                                  data_key="ncbi"
+                                  data_key="ncbi",
+                                  replace_dict=None
                                   ):
     prepare_paths(out_counts_file, out_html, out_json_tree)
 
     try:
         if (masst_matches is not None) and (len(masst_matches) > 0):
             mmtree.create_tree_html(in_html, in_ontology, metadata_file, None, masst_matches["USI"], out_counts_file,
-                                    out_json_tree, format_out_json, out_html, compress_out_html, node_key, data_key)
+                                    out_json_tree, format_out_json, out_html, compress_out_html, node_key, data_key,
+                                    replace_dict=replace_dict)
             return masst_matches
     except Exception as e:
         # exit with error
@@ -78,19 +81,21 @@ def run_microbe_masst_for_matches(masst_matches,
 
 
 def run_food_masst_for_matches(masst_matches,
-                                  in_html="../code/collapsible_tree_v3.html", in_ontology="../data/GFOP.json",
-                                  metadata_file="../data/foodmasst_filtered.tsv",
-                                  out_counts_file="../output/food_masst_counts.tsv",
-                                  out_json_tree="../output/merged_gfop_ontology_data.json", format_out_json=True,
-                                  out_html="../output/oneindex.html", compress_out_html=True, node_key="name",
-                                  data_key="ontology_term"
-                                  ):
+                               in_html="../code/collapsible_tree_v3.html", in_ontology="../data/GFOP.json",
+                               metadata_file="../data/foodmasst_filtered.tsv",
+                               out_counts_file="../output/food_masst_counts.tsv",
+                               out_json_tree="../output/merged_gfop_ontology_data.json", format_out_json=True,
+                               out_html="../output/oneindex.html", compress_out_html=True, node_key="name",
+                               data_key="ontology_term",
+                               replace_dict=None
+                               ):
     prepare_paths(out_counts_file, out_html, out_json_tree)
 
     try:
         if (masst_matches is not None) and (len(masst_matches) > 0):
             foodtree.create_tree_html(in_html, in_ontology, metadata_file, None, masst_matches["USI"], out_counts_file,
-                                    out_json_tree, format_out_json, out_html, compress_out_html, node_key, data_key)
+                                      out_json_tree, format_out_json, out_html, compress_out_html, node_key, data_key,
+                                      replace_dict=replace_dict)
             return masst_matches
     except Exception as e:
         # exit with error

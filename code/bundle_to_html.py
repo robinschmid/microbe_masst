@@ -47,19 +47,21 @@ def replace_data_in_file(data_json_file, text, placeholder_str):
     return text
 
 
-def build_dist_html(input_html, output_html, data_json_file=None, compress=False,
-                    placeholder_str="PLACEHOLDER_JSON_DATA"):
+def build_dist_html(input_html, output_html, replace_dict=None, compress=False):
     """
     Creates a single distributable HTML file.
     Reads the input_html and internalizes all CSS, JS, and data files into the output html. For web ressources: First
     try to load a local file, else try to download file.
+    :param replace_dict: dict of key (placeholder string in HTML) and the value to insert either from a file or as a
+    string
     :param input_html: the input html file that defines all dependencies
     :param output_html: the bundled HTML file
     :param data_json_file: data as a file or as json (or dictionary / array)
     :param placeholder_str: the placeholder is replaced with the data
     :return: None
     """
-    # compress=False
+    if replace_dict is None:
+        replace_dict = {}
     original_html_text = Path(input_html).read_text(encoding="utf-8")
     soup = BeautifulSoup(original_html_text, "lxml")
 
@@ -110,8 +112,11 @@ def build_dist_html(input_html, output_html, data_json_file=None, compress=False
     out_text = str(soup)
 
     # try to replace data with PLACEHOLDER_JSON_DATA
-    if data_json_file is not None:
-        out_text = replace_data_in_file(data_json_file, out_text, placeholder_str)
+    for placeholder, replace_data in replace_dict.items():
+        if replace_data is not None:
+            out_text = replace_data_in_file(replace_data, out_text, placeholder)
+        else:
+            out_text = replace_data_in_file("", out_text, placeholder)
 
     if compress:
         try:
@@ -136,8 +141,8 @@ if __name__ == '__main__':
                                                  'distributable HTML file')
     parser.add_argument('--in_html', type=str, help='The input html file',
                         default="../code/collapsible_tree_v3.html")
-    parser.add_argument('--in_data', type=str, help='replace tree data with this json file. Use '
-                                                    'json_ontology_extender.py to create a tree with data',
+    parser.add_argument('--replace_dict', type=str, help='Replace placeholder strings with values or file contents. '
+                                                         'form of {"PLACEHOLDER": "FILE OR STRING"}',
                         default="../output/merged_ontology_data.json")
     parser.add_argument('--out_html', type=str, help='output html file', default="../output/oneindex.html")
     parser.add_argument('--compress', type=bool, help='Compress output file (needs minify_html)',
@@ -148,7 +153,7 @@ if __name__ == '__main__':
     # something like https://raw.githubusercontent.com/robinschmid/GFOPontology/master/data/GFOP.owl
     # important use raw file on github!
     try:
-        build_dist_html(args.in_html, args.out_html, args.in_data, args.compress)
+        build_dist_html(args.in_html, args.out_html, args.replace_dict, args.compress)
     except Exception as e:
         # exit with error
         logger.exception(e)

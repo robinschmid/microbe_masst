@@ -17,7 +17,7 @@ def test_fast_masst_spectrum():
         ]
     )
 
-    matches = masst_utils.fast_masst_spectrum(
+    matches,_ = masst_utils.fast_masst_spectrum(
         mzs, intensities, precursor_mz=183.078, precursor_charge=1
     )
     assert len(matches) > 1

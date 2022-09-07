@@ -70,6 +70,21 @@ def fast_masst_spectrum(
         analog_mass_above=200,
         database=DataBase.gnpsdata_index,
 ):
+    """
+
+    :param mzs:
+    :param intensities:
+    :param precursor_mz:
+    :param precursor_charge:
+    :param precursor_mz_tol:
+    :param mz_tol:
+    :param min_cos:
+    :param analog:
+    :param analog_mass_below:
+    :param analog_mass_above:
+    :param database:
+    :return: (MASST results as json, filtered data points as array of array [[x,y],[...]]
+    """
     try:
         # relative intensity and precision
         # filter out below 0.1% intensity
@@ -96,7 +111,7 @@ def fast_masst_spectrum(
             "cosine_threshold": min_cos,
             "query_spectrum": spec_json,
         }
-        return _fast_masst(params)
+        return _fast_masst(params), dps
     except Exception as e:
         logging.exception("Failed fastMASST on spectrum.")
         raise e

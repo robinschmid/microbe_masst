@@ -54,6 +54,7 @@ var radius = 6;
 
 // only show matched nodes by default
 var isFilterMatched = true;
+var minMatches = 1;
 
 // colors
 var lineColor = "#ccc";
@@ -132,6 +133,11 @@ function toggleScalingAndUpdate() {
     }
 }
 
+function setMinMatches(min) {
+    minMatches = min;
+    expandMatchedAndUpdate()
+}
+
 function toggleFilterMatched() {
     if (root) {
         isFilterMatched = !isFilterMatched;
@@ -155,6 +161,16 @@ d3.select("#inputFontSize").on("input", function (d) {
     setLabelSize(this.value);
 });
 
+d3.select("#inputLevel").on("input", function (d) {
+    collapseToLevel(this.value);
+    update(root);
+});
+
+d3.select("#inputMinMatch").on("input", function (d) {
+    setMinMatches(this.value);
+    update(root);
+});
+
 d3.select("#downloadSvg").on("click", function (d) {
     downloadSvg();
 });
@@ -176,6 +192,12 @@ function downloadSvg() {
         .html("download", "tree.svg");
 };
 
+// add label for input
+var inputLabel = "INPUT_LABEL_PLACEHOLDER";
+d3.select("#titleDiv").append('label').text(inputLabel)
+
+var paramsLabel = "PARAMS_PLACEHOLDER";
+d3.select("#paramsDiv").append('label').text(paramsLabel)
 
 // initialize drop down style menu
 var allGroup = ["default", "contrast", "B+W"]
@@ -521,8 +543,11 @@ root.y0 = 0;
 visitAll(root, filterMatched);
 // Layout the tree initially and center left on the root node.
 update(root);
-centerLeftNode(root);
+centerOnRoot();
 
+function centerOnRoot() {
+    centerLeftNode(root);
+}
 /**
  * Calculate radius for nodes and pie charts
  * @param matched_size
@@ -902,7 +927,7 @@ function sortTree() {
 
 // true if node has group_size>0 (matches)
 function hasMatches(node) {
-    return node.matched_size > 0;
+    return node.matched_size > minMatches;
 }
 
 // true if node has group_size>0 (matches)

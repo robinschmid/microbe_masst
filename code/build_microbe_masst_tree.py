@@ -16,7 +16,7 @@ def create_tree_html(in_html="../code/collapsible_tree_v3.html", in_ontology="..
                      masst_file="../examples/phelylglycocholic_acid.tsv", matching_usi_list=None,
                      out_counts_file="../output/microbe_masst_counts.tsv",
                      out_json_tree="../output/merged_ncbi_ontology_data.json", format_out_json=True,
-                     out_html="../output/oneindex.html", compress_out_html=True, node_key="NCBI", data_key="ncbi"):
+                     out_html="../output/oneindex.html", compress_out_html=True, node_key="NCBI", data_key="ncbi", replace_dict=None):
     """
     Merges extra data into an ontology and creates a single distributable html file. Compression reduces the size of
     the html file.
@@ -41,7 +41,7 @@ def create_tree_html(in_html="../code/collapsible_tree_v3.html", in_ontology="..
 
     json_ontology_extender.add_data_to_ontology_file(out_json_tree, in_ontology, out_counts_file, node_key, data_key,
                                                      format_out_json)
-    return bundle_to_html.build_dist_html(in_html, out_html, out_json_tree, compress_out_html)
+    return bundle_to_html.build_dist_html(in_html, out_html, replace_dict, compress_out_html)
 
 
 if __name__ == '__main__':
