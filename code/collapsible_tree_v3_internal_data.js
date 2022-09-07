@@ -190,6 +190,7 @@ d3.select("#inputFontSize").on("input", function (d) {
 
 d3.select("#inputLevel").on("input", function (d) {
     collapseToLevel(this.value);
+    centerOnRoot();
     update(root);
 });
 

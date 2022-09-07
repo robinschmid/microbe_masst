@@ -7,6 +7,9 @@ import argparse
 import pyteomics.mgf
 import bundle_to_html
 
+from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import wait
+
 import microbe_masst as microbemasst
 import masst_utils as masst
 
@@ -36,6 +39,8 @@ def process_matches(file_name, compound_name, matches, library_matches, precurso
                                                               )
     lib_matches_df.to_csv("{}_{}.tsv".format(common_file, "library"), index=False, sep="\t")
 
+    if "grouped_by_dataset" not in matches:
+        logger.debug("Missing datasets")
     # extract matches
     datasets_df = masst.extract_datasets_from_masst_results(matches, matches_df)
     datasets_df.to_csv("{}_{}.tsv".format(common_file, "datasets"), index=False, sep="\t")
@@ -46,6 +51,7 @@ def process_matches(file_name, compound_name, matches, library_matches, precurso
     # microbeMASST
     out_html = "{}_{}.html".format(common_file, "microbes")
     out_json_tree = "{}_{}.json".format(common_file, "microbes")
+    out_counts = "{}_{}.json".format(common_file, "counts_microbes")
     replace_dict = {
         "PLACEHOLDER_JSON_DATA": out_json_tree,
         "LIBRARY_JSON_DATA_PLACEHOLDER": lib_match_json,
@@ -53,16 +59,16 @@ def process_matches(file_name, compound_name, matches, library_matches, precurso
         "PARAMS_PLACEHOLDER": params_label
     }
 
-    logger.debug("Exporting microbeMASST")
+    logger.debug("Exporting microbeMASST %s", compound_name)
     result = microbemasst.run_microbe_masst_for_matches(matches_df,
                                                         in_html="../code/collapsible_tree_v3.html",
                                                         in_ontology="../data/ncbi.json",
                                                         metadata_file="../data/microbe_masst_table.csv",
-                                                        out_counts_file="../output/microbe_masst_counts.tsv",
+                                                        out_counts_file=out_counts,
                                                         out_json_tree=out_json_tree,
                                                         format_out_json=True,
                                                         out_html=out_html,
-                                                        compress_out_html=False,
+                                                        compress_out_html=True,
                                                         replace_dict=replace_dict,
                                                         node_key="NCBI",
                                                         data_key="ncbi"
@@ -71,15 +77,17 @@ def process_matches(file_name, compound_name, matches, library_matches, precurso
     # foodMASST
     out_html = "{}_{}.html".format(common_file, "food")
     out_json_tree = "{}_{}.json".format(common_file, "food")
+    out_counts = "{}_{}.json".format(common_file, "counts_food")
     replace_dict["PLACEHOLDER_JSON_DATA"] = out_json_tree
 
-    logger.debug("Exporting foodMASST")
+    logger.debug("Exporting foodMASST %s", compound_name)
     result = microbemasst.run_food_masst_for_matches(matches_df,
                                                      in_html="../code/collapsible_tree_v3.html",
+                                                     out_counts_file=out_counts,
                                                      out_json_tree=out_json_tree,
                                                      format_out_json=True,
                                                      out_html=out_html,
-                                                     compress_out_html=False,
+                                                     compress_out_html=True,
                                                      replace_dict=replace_dict,
                                                      )
 
@@ -96,9 +104,13 @@ def query_usi_or_id(file_name, usi_or_lib_id, compound_name,
                     analog_mass_above=200):
     # might raise exception for service
     try:
+        logger.debug("Query fastMASST id:%s  of %s", usi_or_lib_id, compound_name)
         matches = masst.fast_masst(usi_or_lib_id, precursor_mz_tol=precursor_mz_tol, mz_tol=mz_tol, min_cos=min_cos,
                                    analog=analog, analog_mass_below=analog_mass_below,
                                    analog_mass_above=analog_mass_above, database=masst.DataBase.gnpsdata_index)
+
+        if not matches or "results" not in matches or len(matches["results"]) == 0:
+            return None
 
         library_matches = masst.fast_masst(usi_or_lib_id, precursor_mz_tol=precursor_mz_tol, mz_tol=mz_tol,
                                            min_cos=min_cos,
@@ -137,6 +149,8 @@ def query_spectrum(file_name, compound_name, precursor_mz, precursor_charge, mzs
             analog_mass_above=analog_mass_above,
             database=masst.DataBase.gnpsdata_index
         )
+        if not matches or "results" not in matches or len(matches["results"]) == 0:
+            return None
 
         library_matches, _ = masst.fast_masst_spectrum(
             mzs=mzs,
@@ -153,8 +167,8 @@ def query_spectrum(file_name, compound_name, precursor_mz, precursor_charge, mzs
         params_label = create_params_label(analog, analog_mass_above, analog_mass_below, min_cos, min_matched_signals,
                                            mz_tol, precursor_mz_tol)
         input_label = "Descriptor: {};  Precursor m/z: {};  Data points:{}".format(compound_name, round(precursor_mz,
-                                                                                                      5),
-                                                                                 len(filtered_dps))
+                                                                                                        5),
+                                                                                   len(filtered_dps))
         return process_matches(file_name, compound_name, matches, library_matches, precursor_mz_tol,
                                min_matched_signals, input_label, params_label)
     except Exception as e:
@@ -184,7 +198,8 @@ def run_on_usi_and_id_list(input_file,
                            min_matched_signals=3,
                            analog=False,
                            analog_mass_below=150,
-                           analog_mass_above=200
+                           analog_mass_above=200,
+                           parallel_queries=100
                            ):
     jobs_df = pd.read_csv(input_file, sep=sep)
     jobs_df.rename(columns={usi_or_lib_id: 'input_id', compound_name_header: 'Compound'}, inplace=True)
@@ -193,18 +208,23 @@ def run_on_usi_and_id_list(input_file,
     jobs_df["Compound"] = jobs_df["Compound"].apply(path_safe)
 
     logger.debug("Running fast microbe masst on input")
-    jobs_df["fastMASST"] = jobs_df.progress_apply(
-        lambda row: query_usi_or_id(out_filename_no_ext,
-                                    row["input_id"],
-                                    row["Compound"],
-                                    precursor_mz_tol=precursor_mz_tol,
-                                    mz_tol=mz_tol,
-                                    min_cos=min_cos,
-                                    min_matched_signals=min_matched_signals,
-                                    analog=analog,
-                                    analog_mass_below=analog_mass_below,
-                                    analog_mass_above=analog_mass_above
-                                    ), axis=1)
+
+    with ThreadPoolExecutor(parallel_queries) as executor:
+        futures = [executor.submit(query_usi_or_id,
+                                   out_filename_no_ext,
+                                   id,
+                                   name,
+                                   precursor_mz_tol=precursor_mz_tol,
+                                   mz_tol=mz_tol,
+                                   min_cos=min_cos,
+                                   min_matched_signals=min_matched_signals,
+                                   analog=analog,
+                                   analog_mass_below=analog_mass_below,
+                                   analog_mass_above=analog_mass_above
+                                   ) for id, name in zip(jobs_df["input_id"], jobs_df["Compound"])]
+
+        wait(futures)
+        jobs_df["fastMASST"] = [f.result() for f in futures]
 
     save_masst_results(jobs_df, out_filename_no_ext)
 
@@ -217,7 +237,8 @@ def run_on_mgf(input_file,
                min_matched_signals=3,
                analog=False,
                analog_mass_below=150,
-               analog_mass_above=200
+               analog_mass_above=200,
+               parallel_queries=100
                ):
     ids, precursor_mzs, precursor_charges = [], [], []
     mzs, intensities = [], []
@@ -243,9 +264,15 @@ def run_on_mgf(input_file,
     )
 
     logger.info("Running fast microbe masst on input n={} spectra".format(len(jobs_df)))
-    jobs_df["fastMASST"] = jobs_df.progress_apply(
-        lambda row: query_spectrum(out_filename_no_ext, row["Compound"], row["precursor_mz"],
-                                   row["precursor_charge"], row["mzs"], row["intensities"],
+
+    with ThreadPoolExecutor(parallel_queries) as executor:
+        futures = [executor.submit(query_spectrum,
+                                   out_filename_no_ext,
+                                   name,
+                                   prec_mz,
+                                   prec_charge,
+                                   mz_array,
+                                   intensity_array,
                                    precursor_mz_tol=precursor_mz_tol,
                                    mz_tol=mz_tol,
                                    min_cos=min_cos,
@@ -253,7 +280,11 @@ def run_on_mgf(input_file,
                                    analog=analog,
                                    analog_mass_below=analog_mass_below,
                                    analog_mass_above=analog_mass_above
-                                   ), axis=1)
+                                   ) for name, prec_mz, prec_charge, mz_array, intensity_array in
+                   zip(ids, precursor_mzs, precursor_charges, mzs, intensities)]
+
+        wait(futures)
+        jobs_df["fastMASST"] = [f.result() for f in futures]
 
     save_masst_results(jobs_df, out_filename_no_ext)
 
@@ -306,8 +337,8 @@ if __name__ == '__main__':
                         help='input file either mgf with spectra or table that contains the two columns specified by '
                              'usi_or_lib_id and compound_header',
                         # default="../casmi_pos_sirius/bifido.mgf")
-    # default="../casmi_pos_sirius/small.mgf")
-    default="../examples/example_links.tsv")
+                        # default="../casmi_pos_sirius/small.mgf")
+                        default="../examples/example_links.tsv")
     parser.add_argument('--out_file', type=str, help='output html and other files, name without extension',
                         default="output/fastMASST")
 
@@ -343,6 +374,10 @@ if __name__ == '__main__':
     parser.add_argument('--analog_mass_above', type=float,
                         help='Maximum mass delta for analogs',
                         default="200")
+    parser.add_argument('--parallel_queries', type=int,
+                        help='the number of async queries. fastMASST step is IO bound so higher number than CPU '
+                             'speeds up the process',
+                        default="50")
 
     args = parser.parse_args()
 
@@ -361,6 +396,7 @@ if __name__ == '__main__':
         analog = args.analog
         analog_mass_below = args.analog_mass_below
         analog_mass_above = args.analog_mass_above
+        parallel_queries = args.parallel_queries
 
         if str(in_file).endswith(".mgf"):
             run_on_mgf(input_file=in_file,
@@ -371,7 +407,8 @@ if __name__ == '__main__':
                        min_matched_signals=min_matched_signals,
                        analog=analog,
                        analog_mass_below=analog_mass_below,
-                       analog_mass_above=analog_mass_above
+                       analog_mass_above=analog_mass_above,
+                       parallel_queries=parallel_queries
                        )
         else:
             run_on_usi_and_id_list(input_file=in_file,
@@ -385,7 +422,8 @@ if __name__ == '__main__':
                                    min_matched_signals=min_matched_signals,
                                    analog=analog,
                                    analog_mass_below=analog_mass_below,
-                                   analog_mass_above=analog_mass_above
+                                   analog_mass_above=analog_mass_above,
+                                   parallel_queries=parallel_queries
                                    )
     except Exception as e:
         # exit with error

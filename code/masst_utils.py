@@ -148,8 +148,13 @@ def extract_matches_from_masst_results(results_dict,
     :return: DataFrame of the individual matches
     """
     masst_df = pd.DataFrame(results_dict["results"])
-    masst_df.drop(columns=["Unit Delta Mass", "Query Scan", "Query Filename", "Index UnitPM", "Index IdxInUnitPM",
+    try:
+        masst_df.drop(columns=["Unit Delta Mass", "Query Scan", "Query Filename", "Index UnitPM", "Index IdxInUnitPM",
                            "Filtered Input Spectrum Path"], inplace=True, axis=1)
+    except Exception as e:
+        # fastMASST response is sometimes empty
+        return masst_df
+
     masst_df = filter_matches(masst_df, precursor_mz_tol, min_matched_signals)
     if add_dataset_titles:
         datasets = results_dict["grouped_by_dataset"]
