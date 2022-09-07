@@ -135,7 +135,12 @@ function toggleScalingAndUpdate() {
 
 function setMinMatches(min) {
     minMatches = min;
-    expandMatchedAndUpdate()
+
+    visitAll(root, filterMatched)
+    visitAll(root, n => {
+        if(n.matched_size < minMatches)
+            collapse(n)
+    })
 }
 
 function toggleFilterMatched() {
@@ -145,6 +150,28 @@ function toggleFilterMatched() {
 
         update(root);
         centerLeftNode(root);
+    }
+}
+function showFullTree() {
+    if (root) {
+        isFilterMatched = false;
+        visitAll(root, filterMatched)
+        expandAllAndUpdate()
+    }
+}
+
+function showMatchedAndOtherTree() {
+    if (root) {
+        isFilterMatched = false;
+        visitAll(root, filterMatched)
+        expandMatchedAndUpdate()
+    }
+}
+function showMatchedTree() {
+    if (root) {
+        isFilterMatched = true;
+        visitAll(root, filterMatched)
+        expandMatchedAndUpdate()
     }
 }
 
@@ -190,7 +217,38 @@ function downloadSvg() {
         .attr("href-lang", "image/svg+xml")
         .attr("href", "data:image/svg+xml;base64,\n" + btoa(unescape(encodeURIComponent(html))))
         .html("download", "tree.svg");
-};
+}
+
+// add drop down for tree selection
+d3.select("#firstMenu").append('label').text("  Tree: ")
+var treeOptions = ["Matched", "Matched+other", "Full"]
+var dropdownTree = d3.select("#firstMenu").append('select')
+
+// add the options to the button
+dropdownTree // Add a button
+    .selectAll('myOptions') // add all options
+    .data(treeOptions)
+    .enter()
+    .append('option')
+    .text(function (d) {
+        return d;
+    }) // text showed in the menu
+    .attr("value", function (d) {
+        return d;
+    }) // corresponding value returned by the button
+
+// When the button is changed, update style
+dropdownTree.on("change", function (d) {
+    // recover the option that has been chosen
+    var selectedOption = d3.select(this).property("value");
+    switch(selectedOption) {
+        case "Matched": showMatchedTree(); break;
+        case "Matched+other": showMatchedAndOtherTree(); break;
+        case "Full": showFullTree(); break;
+    }
+});
+
+
 
 // add label for input
 var inputLabel = "INPUT_LABEL_PLACEHOLDER";
@@ -927,7 +985,7 @@ function sortTree() {
 
 // true if node has group_size>0 (matches)
 function hasMatches(node) {
-    return node.matched_size > minMatches;
+    return node.matched_size >= minMatches;
 }
 
 // true if node has group_size>0 (matches)
@@ -984,12 +1042,12 @@ function filterMatched(d) {
 
     if (isFilterMatched) {
         if (d.children) {
-            d.filteredChildren = d.children.filter(child => !(child.matched_size > 0));
-            d.children = d.children.filter(child => child.matched_size > 0);
+            d.filteredChildren = d.children.filter(child => !(child.matched_size >= minMatches));
+            d.children = d.children.filter(child => child.matched_size >= minMatches);
         }
         if (d._children) {
-            d.filteredChildren = d._children.filter(child => !(child.matched_size > 0));
-            d.children = d._children.filter(child => child.matched_size > 0);
+            d.filteredChildren = d._children.filter(child => !(child.matched_size >= minMatches));
+            d.children = d._children.filter(child => child.matched_size >= minMatches);
         }
     }
 }

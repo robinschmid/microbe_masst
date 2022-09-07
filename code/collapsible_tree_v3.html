@@ -68,21 +68,22 @@
 
 <div id='paramsDiv' style="margin-top:5px; display:none;"></div>
 
-<div id=firstMenu" style="margin-top:10px;">
+<div id="firstMenu" style="margin-top:10px;">
 <!-- add controls -->
     <input type="button" value="LibraryID" onclick="showLibraryTable()" title="LibraryID"/>
     <input type="button" value="Params" onclick="showParameters()" title="Params"/>
     <input type="button" value="Center" onclick="centerOnRoot()" title="Center"/>
 <!--    <input type="button" id="downloadSvg" value="Download" onclick="downloadSvg()" title="graph as svg"/>-->
-    <input type="button" value="Expand matched" onclick="expandMatchedAndUpdate()" title="Expand all nodes with matches"/>
-    <input type="button" value="Expand" onclick="expandAllAndUpdate()" title="Expand full tree"/>
-    <input type="button" value="Only matched" onclick="toggleFilterMatched()" title="Toggle filtering by match"/>
+<!--    <input type="button" value="Expand matched" onclick="expandMatchedAndUpdate()" title="Expand all nodes with matches"/>-->
+<!--    <input type="button" value="Expand" onclick="expandAllAndUpdate()" title="Expand full tree"/>-->
+<!--    <input type="button" value="Only matched" onclick="toggleFilterMatched()" title="Toggle filtering by match"/>-->
 
     <label for="inputLevel">Show level:</label>
     <input id="inputLevel" style="width:3em" name="inputLevel" title="Level" type="number" value="4"/>
 
     <label for="inputMinMatch">Minimum matches:</label>
     <input id="inputMinMatch" style="width:3em" name="inputMinMatch" title="Min matches" type="number" value="1"/>
+</div>
 
     <!-- Style combobox - placeholder will be filled by d3 -->
      <div id="secondMenu" style="margin-top:5px;">
@@ -101,7 +102,6 @@
     <div id='titleDiv' style="margin-top:5px;"></div>
 
     <div id="tree-container"></div>
-</div>
 
 </body>
 <script src="../code/collapsible_tree_v3_internal_data.js"></script>
