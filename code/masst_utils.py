@@ -5,6 +5,8 @@ import requests_cache
 from enum import Enum, auto
 import json
 import pandas as pd
+import asyncio
+from aiohttp import ClientSession, ClientResponseError
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
@@ -24,7 +26,7 @@ class DataBase(Enum):
 # based on
 # https://github.com/mwang87/GNPS_LCMSDashboard/blob/a9971fa557c735c8e0ccd7681653eebd415a8636/app.py#L1632
 # usi = "mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00000001556"
-def fast_masst(
+async def fast_masst(
         usi_or_lib_id,
         precursor_mz_tol=0.05,
         mz_tol=0.02,
@@ -33,6 +35,7 @@ def fast_masst(
         analog_mass_below=130,
         analog_mass_above=200,
         database=DataBase.gnpsdata_index,
+        session=None
 ):
     if str(usi_or_lib_id).startswith("CCMS"):
         # handle library ID
@@ -50,7 +53,7 @@ def fast_masst(
             "cosine_threshold": min_cos,
         }
 
-        return _fast_masst(params)
+        return await _fast_masst_async(params, session)
     # except requests.exceptions.Timeout:
     except Exception as e:
         logging.exception("Failed fastMASST {}".format(usi_or_lib_id))
@@ -130,6 +133,28 @@ def _fast_masst(params):
     search_api_response.raise_for_status()
     search_api_response_json = search_api_response.json()
     return search_api_response_json
+
+
+async def _fast_masst_async(params, session):
+    """
+
+    :param params: dict of the query input and parameters
+    :return: dict with the masst results. [results] contains the individual matches, [grouped_by_dataset] contains
+    all datasets and their titles
+    """
+    try:
+        async with session.get(URL, data=params, timeout=15) as search_api_response:
+            resp = await search_api_response.json()
+            return resp
+    except ClientResponseError as e:
+        logging.warning(e.code)
+    except asyncio.TimeoutError:
+        logging.warning("Timeout")
+    except Exception as e:
+        logging.warning(e)
+    else:
+        return resp
+    return
 
 
 def filter_matches(df, precursor_mz_tol, min_matched_signals):

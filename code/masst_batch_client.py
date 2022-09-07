@@ -6,6 +6,8 @@ import re
 import argparse
 import pyteomics.mgf
 import bundle_to_html
+import asyncio
+from aiohttp import ClientSession, ClientResponseError
 
 import microbe_masst as microbemasst
 import masst_utils as masst
@@ -17,7 +19,7 @@ logger = logging.getLogger(__name__)
 tqdm.pandas()
 
 
-def process_matches(file_name, compound_name, matches, library_matches, precursor_mz_tol, min_matched_signals,
+async def process_matches(file_name, compound_name, matches, library_matches, precursor_mz_tol, min_matched_signals,
                     input_label, params_label):
     common_file = "../{}_{}".format(file_name, compound_name.replace(" ", "_"))
 
@@ -53,7 +55,7 @@ def process_matches(file_name, compound_name, matches, library_matches, precurso
         "PARAMS_PLACEHOLDER": params_label
     }
 
-    logger.debug("Exporting microbeMASST")
+    logger.debug("Exporting microbeMASST for %s", compound_name)
     result = microbemasst.run_microbe_masst_for_matches(matches_df,
                                                         in_html="../code/collapsible_tree_v3.html",
                                                         in_ontology="../data/ncbi.json",
@@ -86,28 +88,32 @@ def process_matches(file_name, compound_name, matches, library_matches, precurso
     return matches_df
 
 
-def query_usi_or_id(file_name, usi_or_lib_id, compound_name,
+async def query_usi_or_id(file_name, usi_or_lib_id, compound_name,
                     precursor_mz_tol=0.05,
                     mz_tol=0.02,
                     min_cos=0.7,
                     min_matched_signals=3,
                     analog=False,
                     analog_mass_below=150,
-                    analog_mass_above=200):
+                    analog_mass_above=200,
+                          session=None):
+    logger.debug("Querying id:%s  with %s", usi_or_lib_id, compound_name)
     # might raise exception for service
     try:
-        matches = masst.fast_masst(usi_or_lib_id, precursor_mz_tol=precursor_mz_tol, mz_tol=mz_tol, min_cos=min_cos,
+        matches = await masst.fast_masst(usi_or_lib_id, precursor_mz_tol=precursor_mz_tol, mz_tol=mz_tol,
+                                        min_cos=min_cos,
                                    analog=analog, analog_mass_below=analog_mass_below,
-                                   analog_mass_above=analog_mass_above, database=masst.DataBase.gnpsdata_index)
+                                   analog_mass_above=analog_mass_above, database=masst.DataBase.gnpsdata_index,
+                                         session=session)
 
-        library_matches = masst.fast_masst(usi_or_lib_id, precursor_mz_tol=precursor_mz_tol, mz_tol=mz_tol,
+        library_matches = await masst.fast_masst(usi_or_lib_id, precursor_mz_tol=precursor_mz_tol, mz_tol=mz_tol,
                                            min_cos=min_cos,
                                            analog=False, database=masst.DataBase.gnpslibrary)
 
         params_label = create_params_label(analog, analog_mass_above, analog_mass_below, min_cos, min_matched_signals,
                                            mz_tol, precursor_mz_tol)
         input_label = "ID: {};  Descriptor: {}".format(usi_or_lib_id, compound_name)
-        return process_matches(file_name, compound_name, matches, library_matches, precursor_mz_tol,
+        return await process_matches(file_name, compound_name, matches, library_matches, precursor_mz_tol,
                                min_matched_signals, input_label, params_label)
     except Exception as e:
         logger.exception(e)
@@ -153,8 +159,8 @@ def query_spectrum(file_name, compound_name, precursor_mz, precursor_charge, mzs
         params_label = create_params_label(analog, analog_mass_above, analog_mass_below, min_cos, min_matched_signals,
                                            mz_tol, precursor_mz_tol)
         input_label = "Descriptor: {};  Precursor m/z: {};  Data points:{}".format(compound_name, round(precursor_mz,
-                                                                                                      5),
-                                                                                 len(filtered_dps))
+                                                                                                        5),
+                                                                                   len(filtered_dps))
         return process_matches(file_name, compound_name, matches, library_matches, precursor_mz_tol,
                                min_matched_signals, input_label, params_label)
     except Exception as e:
@@ -173,19 +179,19 @@ def explode_masst_columns(jobs_df):
     return masst_df
 
 
-def run_on_usi_and_id_list(input_file,
-                           out_filename_no_ext,
-                           usi_or_lib_id="Output USI",
-                           compound_name_header="COMPOUND_NAME",
-                           sep=",",
-                           precursor_mz_tol=0.05,
-                           mz_tol=0.02,
-                           min_cos=0.7,
-                           min_matched_signals=3,
-                           analog=False,
-                           analog_mass_below=150,
-                           analog_mass_above=200
-                           ):
+async def run_on_usi_and_id_list(input_file,
+                                 out_filename_no_ext,
+                                 usi_or_lib_id="Output USI",
+                                 compound_name_header="COMPOUND_NAME",
+                                 sep=",",
+                                 precursor_mz_tol=0.05,
+                                 mz_tol=0.02,
+                                 min_cos=0.7,
+                                 min_matched_signals=3,
+                                 analog=False,
+                                 analog_mass_below=150,
+                                 analog_mass_above=200
+                                 ):
     jobs_df = pd.read_csv(input_file, sep=sep)
     jobs_df.rename(columns={usi_or_lib_id: 'input_id', compound_name_header: 'Compound'}, inplace=True)
     jobs_df = jobs_df[jobs_df["input_id"].notnull()]
@@ -193,32 +199,36 @@ def run_on_usi_and_id_list(input_file,
     jobs_df["Compound"] = jobs_df["Compound"].apply(path_safe)
 
     logger.debug("Running fast microbe masst on input")
-    jobs_df["fastMASST"] = jobs_df.progress_apply(
-        lambda row: query_usi_or_id(out_filename_no_ext,
-                                    row["input_id"],
-                                    row["Compound"],
-                                    precursor_mz_tol=precursor_mz_tol,
-                                    mz_tol=mz_tol,
-                                    min_cos=min_cos,
-                                    min_matched_signals=min_matched_signals,
-                                    analog=analog,
-                                    analog_mass_below=analog_mass_below,
-                                    analog_mass_above=analog_mass_above
-                                    ), axis=1)
+
+    async with ClientSession() as session:
+        # run requests async
+        jobs_df["fastMASST"] = await asyncio.gather(*[query_usi_or_id(out_filename_no_ext,
+                                                                  id,
+                                                                  compound,
+                                                                  precursor_mz_tol=precursor_mz_tol,
+                                                                  mz_tol=mz_tol,
+                                                                  min_cos=min_cos,
+                                                                  min_matched_signals=min_matched_signals,
+                                                                  analog=analog,
+                                                                  analog_mass_below=analog_mass_below,
+                                                                  analog_mass_above=analog_mass_above,
+                                                                  session=session)
+                                                  for id, compound in zip(jobs_df['input_id'], jobs_df["Compound"])])
 
     save_masst_results(jobs_df, out_filename_no_ext)
+    return True
 
 
-def run_on_mgf(input_file,
-               out_filename_no_ext,
-               precursor_mz_tol=0.05,
-               mz_tol=0.02,
-               min_cos=0.7,
-               min_matched_signals=3,
-               analog=False,
-               analog_mass_below=150,
-               analog_mass_above=200
-               ):
+async def run_on_mgf(input_file,
+                     out_filename_no_ext,
+                     precursor_mz_tol=0.05,
+                     mz_tol=0.02,
+                     min_cos=0.7,
+                     min_matched_signals=3,
+                     analog=False,
+                     analog_mass_below=150,
+                     analog_mass_above=200
+                     ):
     ids, precursor_mzs, precursor_charges = [], [], []
     mzs, intensities = [], []
 
@@ -256,6 +266,7 @@ def run_on_mgf(input_file,
                                    ), axis=1)
 
     save_masst_results(jobs_df, out_filename_no_ext)
+    return True
 
 
 def save_masst_results(jobs_df, out_filename_no_ext):
@@ -306,8 +317,8 @@ if __name__ == '__main__':
                         help='input file either mgf with spectra or table that contains the two columns specified by '
                              'usi_or_lib_id and compound_header',
                         # default="../casmi_pos_sirius/bifido.mgf")
-    # default="../casmi_pos_sirius/small.mgf")
-    default="../examples/example_links.tsv")
+                        # default="../casmi_pos_sirius/small.mgf")
+                        default="../examples/example_links.tsv")
     parser.add_argument('--out_file', type=str, help='output html and other files, name without extension',
                         default="output/fastMASST")
 
@@ -362,31 +373,38 @@ if __name__ == '__main__':
         analog_mass_below = args.analog_mass_below
         analog_mass_above = args.analog_mass_above
 
+        # for running async
         if str(in_file).endswith(".mgf"):
-            run_on_mgf(input_file=in_file,
-                       out_filename_no_ext=out_file,
-                       precursor_mz_tol=precursor_mz_tol,
-                       mz_tol=mz_tol,
-                       min_cos=min_cos,
-                       min_matched_signals=min_matched_signals,
-                       analog=analog,
-                       analog_mass_below=analog_mass_below,
-                       analog_mass_above=analog_mass_above
-                       )
+            results = asyncio.run(
+                run_on_mgf(input_file=in_file,
+                           out_filename_no_ext=out_file,
+                           precursor_mz_tol=precursor_mz_tol,
+                           mz_tol=mz_tol,
+                           min_cos=min_cos,
+                           min_matched_signals=min_matched_signals,
+                           analog=analog,
+                           analog_mass_below=analog_mass_below,
+                           analog_mass_above=analog_mass_above
+                           )
+            )
         else:
-            run_on_usi_and_id_list(input_file=in_file,
-                                   out_filename_no_ext=out_file,
-                                   usi_or_lib_id=lib_id,
-                                   compound_name_header=compound_header,
-                                   sep=sep,
-                                   precursor_mz_tol=precursor_mz_tol,
-                                   mz_tol=mz_tol,
-                                   min_cos=min_cos,
-                                   min_matched_signals=min_matched_signals,
-                                   analog=analog,
-                                   analog_mass_below=analog_mass_below,
-                                   analog_mass_above=analog_mass_above
-                                   )
+            results = asyncio.run(
+                run_on_usi_and_id_list(input_file=in_file,
+                                       out_filename_no_ext=out_file,
+                                       usi_or_lib_id=lib_id,
+                                       compound_name_header=compound_header,
+                                       sep=sep,
+                                       precursor_mz_tol=precursor_mz_tol,
+                                       mz_tol=mz_tol,
+                                       min_cos=min_cos,
+                                       min_matched_signals=min_matched_signals,
+                                       analog=analog,
+                                       analog_mass_below=analog_mass_below,
+                                       analog_mass_above=analog_mass_above
+                                       )
+            )
+
+
     except Exception as e:
         # exit with error
         logger.exception(e)
