@@ -68,7 +68,7 @@ def process_matches(file_name, compound_name, matches, library_matches, precurso
                                                         out_json_tree=out_json_tree,
                                                         format_out_json=True,
                                                         out_html=out_html,
-                                                        compress_out_html=True,
+                                                        compress_out_html=False,
                                                         replace_dict=replace_dict,
                                                         node_key="NCBI",
                                                         data_key="ncbi"
@@ -110,6 +110,7 @@ def query_usi_or_id(file_name, usi_or_lib_id, compound_name,
                                    analog_mass_above=analog_mass_above, database=masst.DataBase.gnpsdata_index)
 
         if not matches or "results" not in matches or len(matches["results"]) == 0:
+            logger.debug("Empty fastMASST response for compound %s with id %s", compound_name, usi_or_lib_id)
             return None
 
         library_matches = masst.fast_masst(usi_or_lib_id, precursor_mz_tol=precursor_mz_tol, mz_tol=mz_tol,
@@ -150,6 +151,7 @@ def query_spectrum(file_name, compound_name, precursor_mz, precursor_charge, mzs
             database=masst.DataBase.gnpsdata_index
         )
         if not matches or "results" not in matches or len(matches["results"]) == 0:
+            logger.debug("Empty fastMASST response for spectrum %s", compound_name)
             return None
 
         library_matches, _ = masst.fast_masst_spectrum(
@@ -249,7 +251,10 @@ def run_on_mgf(input_file,
             if len(abundances) >= min_matched_signals:
                 ids.append(str(spectrum_dict["params"]["scans"]))
                 precursor_mzs.append(float(spectrum_dict["params"]["pepmass"][0]))
-                precursor_charges.append(int(spectrum_dict["params"]["charge"][0]))
+                if "charge" in spectrum_dict["params"]:
+                    precursor_charges.append(int(spectrum_dict["params"]["charge"][0]))
+                else:
+                    precursor_charges.append(1)
                 mzs.append(spectrum_dict["m/z array"])
                 intensities.append(abundances)
 
@@ -339,8 +344,17 @@ if __name__ == '__main__':
                         # default="../casmi_pos_sirius/bifido.mgf")
                         # default="../casmi_pos_sirius/small.mgf")
                         default="../examples/example_links.tsv")
+                        # default="../casmi_pos_sirius/MIND.mgf")
+                        # default="../casmi_pos_sirius/T1000_Fecal.mgf")
+                        # default="../casmi_pos_sirius/lacphe.mgf")
+                        # default="../ipsita/USI_polyamines.csv")
+                        # default="D:\git\microbe_masst\ipsita\Monohydroxy\extracted_mgf_refined_query\extracted_1b102f3c-e969-4f8c-b0bd-17123b664836.mgf")
+                        # default="D:\git\microbe_masst\ipsita\Dihydroxy\extracted_mgf_refined_query\extracted_09e502ed-4ee2-4577-86b9-707b42eb707e.mgf")
+                        # default="D:\git\microbe_masst\ipsita\Dihydroxy\extracted_mgf_refined_query\extracted_28f09d11-808c-4741-b747-5c7b28917a92.mgf")
+                        # default="D:\git\microbe_masst\ipsita\Tetrahydroxy\extracted_mgf_refined_query\extracted_4af52ab1-2668-45dc-9774-d5c6aa1a2c6a.mgf")
+                        # default="D:\git\microbe_masst\examples\ROSMAP_gnps.mgf")
     parser.add_argument('--out_file', type=str, help='output html and other files, name without extension',
-                        default="output/fastMASST")
+                        default="output/aaafastMASST_")
 
     # only for USI or lib ID file
     parser.add_argument('--usi_or_lib_id', type=str, help='specify the usi or GNPS library id to search',
@@ -358,7 +372,7 @@ if __name__ == '__main__':
                         default="0.05")
     parser.add_argument('--mz_tol', type=float,
                         help='mz tolerance to match signals',
-                        default="0.02")
+                        default="0.05")
     parser.add_argument('--min_cos', type=float,
                         help='Minimum cosine score for a match',
                         default="0.7")
@@ -377,7 +391,7 @@ if __name__ == '__main__':
     parser.add_argument('--parallel_queries', type=int,
                         help='the number of async queries. fastMASST step is IO bound so higher number than CPU '
                              'speeds up the process',
-                        default="50")
+                        default="1")
 
     args = parser.parse_args()
 
