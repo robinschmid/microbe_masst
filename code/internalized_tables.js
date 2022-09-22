@@ -1,5 +1,5 @@
 var library_data = LIBRARY_JSON_DATA_PLACEHOLDER;
-var table_plot = makeTable()
+var table_plot = makeTable("libTable")
   .datum(library_data)
   .sortBy('Cosine', false)
   .filterCols(['Dataset', 'Status']);

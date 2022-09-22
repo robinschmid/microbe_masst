@@ -267,9 +267,9 @@ _fnGetCellData:B,_fnSetCellData:ib,_fnSplitObjNotation:La,_fnGetObjectDataFn:P,_
 _fnInfoMacros:Db,_fnInitialise:ia,_fnInitComplete:ta,_fnLengthChange:Ra,_fnFeatureHtmlLength:ob,_fnFeatureHtmlPaginate:tb,_fnPageChange:Ta,_fnFeatureHtmlProcessing:qb,_fnProcessingDisplay:C,_fnFeatureHtmlTable:rb,_fnScrollDraw:Z,_fnApplyToChildren:H,_fnCalculateColumnWidths:Ha,_fnThrottle:ua,_fnConvertToWidth:Fb,_fnGetWidestNode:Gb,_fnGetMaxLenString:Hb,_fnStringToCss:u,_fnSortFlatten:V,_fnSort:mb,_fnSortAria:Jb,_fnSortListener:Ua,_fnSortAttachListener:Oa,_fnSortingClasses:xa,_fnSortData:Ib,_fnSaveState:ya,
 _fnLoadState:Kb,_fnSettingsFromNode:za,_fnLog:J,_fnMap:F,_fnBindAction:Va,_fnCallbackReg:z,_fnCallbackFire:w,_fnLengthOverflow:Sa,_fnRenderer:Pa,_fnDataSource:y,_fnRowAttributes:Na,_fnCalculateEnd:function(){}});h.fn.dataTable=m;h.fn.dataTableSettings=m.settings;h.fn.dataTableExt=m.ext;h.fn.DataTable=function(a){return h(this).dataTable(a).api()};h.each(m,function(a,b){h.fn.DataTable[a]=b});return h.fn.dataTable};"function"===typeof define&&define.amd?define("datatables",["jquery"],S):"object"===
 typeof exports?module.exports=S(require("jquery")):jQuery&&!jQuery.fn.dataTable&&S(jQuery)})(window,document);
-</script><script>function makeTable() {
+</script><script>function makeTable(id) {
 	var data, sort_by, filter_cols; // Customizable variables
-
+    var tableID = id;
 	var table; // A reference to the main DataTable object
 
 	// This is a custom event dispatcher.
@@ -280,10 +280,7 @@ typeof exports?module.exports=S(require("jquery")):jQuery&&!jQuery.fn.dataTable&
 	  // Create and select table skeleton
 	  var tableSelect = targetDiv.append("table")
 	    .attr("class", "display compact")
-			// Generally, hard-coding Ids is wrong, because then
-			// you can't have 2 table plots in one page (both will have the same id).
-			// I will leave it for now for simplicity. TODO: remove hard-coded id.
-	    .attr("id", "gene_table")
+	    .attr("id", tableID)
 	    .style("visibility", "hidden"); // Hide table until style loads;
 
 	  // Set column names
@@ -315,7 +312,7 @@ typeof exports?module.exports=S(require("jquery")):jQuery&&!jQuery.fn.dataTable&
 
 	  // Apply DataTable formatting: https://www.datatables.net/
 	  $(document).ready(function() {
-	    table = $('#gene_table').DataTable({
+	    table = $('#'+tableID).DataTable({
 				// Here, I am supplying DataTable with the data to fill the table.
 				// This is more efficient than supplying an already contructed table.
 				// Refer to http://datatables.net/manual/data#Objects for details.
@@ -345,7 +342,7 @@ typeof exports?module.exports=S(require("jquery")):jQuery&&!jQuery.fn.dataTable&
 	    });
 
 	    tableSelect.style("visibility", "visible");
-      $('#gene_table tbody')
+      $('#'+tableID+' tbody')
         .on( 'mouseover', 'tr', function () { highlight(this, true); } )
         .on( 'mouseleave', 'tr', function () { highlight(this, false); } )
         .on('click', 'tr', function () { select(this); });
@@ -73644,7 +73641,7 @@ function setLineHeight(value) {
         update(root);
     }
 }</script><script>var library_data = [{"Delta Mass":0.0,"GNPSLibraryAccession":"CCMSLIB00005883950","USI":"mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00005883950","Charge":1,"Cosine":1.0,"Matching Peaks":5,"Dataset":"GNPS Library","Status":"HasID","CompoundName":"D-TRYPTOPHAN - 70.0 eV","Adduct":"M+H"},{"Delta Mass":0.0,"GNPSLibraryAccession":"CCMSLIB00003136916","USI":"mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00003136916","Charge":1,"Cosine":0.99,"Matching Peaks":5,"Dataset":"GNPS Library","Status":"HasID","CompoundName":"Spectral Match to L-Tryptophan from NIST14","Adduct":"M+H"},{"Delta Mass":0.0,"GNPSLibraryAccession":"CCMSLIB00004694540","USI":"mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00004694540","Charge":1,"Cosine":0.98,"Matching Peaks":5,"Dataset":"GNPS Library","Status":"HasID","CompoundName":"TRYPTOPHAN","Adduct":"[M+H]+"},{"Delta Mass":0.0,"GNPSLibraryAccession":"CCMSLIB00003137887","USI":"mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00003137887","Charge":1,"Cosine":0.97,"Matching Peaks":4,"Dataset":"GNPS Library","Status":"HasID","CompoundName":"Spectral Match to L-Tryptophan from NIST14","Adduct":"M+H"},{"Delta Mass":0.0,"GNPSLibraryAccession":"CCMSLIB00003138734","USI":"mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00003138734","Charge":1,"Cosine":0.92,"Matching Peaks":4,"Dataset":"GNPS Library","Status":"HasID","CompoundName":"Spectral Match to L-Tryptophan from NIST14","Adduct":"M+H"},{"Delta Mass":0.0,"GNPSLibraryAccession":"CCMSLIB00003135901","USI":"mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00003135901","Charge":1,"Cosine":0.92,"Matching Peaks":5,"Dataset":"GNPS Library","Status":"HasID","CompoundName":"Spectral Match to L-Tryptophan from NIST14","Adduct":"M+H"},{"Delta Mass":0.0,"GNPSLibraryAccession":"CCMSLIB00005883949","USI":"mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00005883949","Charge":1,"Cosine":0.91,"Matching Peaks":4,"Dataset":"GNPS Library","Status":"HasID","CompoundName":"D-TRYPTOPHAN - 60.0 eV","Adduct":"M+H"},{"Delta Mass":0.0,"GNPSLibraryAccession":"CCMSLIB00009950354","USI":"mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00009950354","Charge":1,"Cosine":0.9,"Matching Peaks":4,"Dataset":"GNPS Library","Status":"HasID","CompoundName":"Suspect related to L-Tryptophan (predicted molecular formula: unknown) with delta m\/z 17.027 (putative explanation: replacement of proton with ammonium ion; atomic difference: 3H,1N)","Adduct":"[M-NH3+H]+"},{"Delta Mass":0.0,"GNPSLibraryAccession":"CCMSLIB00006581653","USI":"mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00006581653","Charge":1,"Cosine":0.9,"Matching Peaks":5,"Dataset":"GNPS Library","Status":"HasID","CompoundName":"L-tryptophan","Adduct":"[M+H]+"},{"Delta Mass":0.0,"GNPSLibraryAccession":"CCMSLIB00003140220","USI":"mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00003140220","Charge":1,"Cosine":0.89,"Matching Peaks":5,"Dataset":"GNPS Library","Status":"HasID","CompoundName":"Spectral Match to L-Tryptophan from NIST14","Adduct":"M+H"},{"Delta Mass":0.0,"GNPSLibraryAccession":"CCMSLIB00000205169","USI":"mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00000205169","Charge":1,"Cosine":0.89,"Matching Peaks":4,"Dataset":"GNPS Library","Status":"HasID","CompoundName":"Massbank:BML01191 L-Tryptophan","Adduct":"[M+H]+"},{"Delta Mass":0.01,"GNPSLibraryAccession":"CCMSLIB00009950353","USI":"mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00009950353","Charge":1,"Cosine":0.88,"Matching Peaks":5,"Dataset":"GNPS Library","Status":"HasID","CompoundName":"Suspect related to L-Tryptophan (predicted molecular formula: unknown) with delta m\/z 17.017 (putative explanation: unspecified; atomic difference: unspecified)","Adduct":"[M-NH3+H]+"},{"Delta Mass":0.0,"GNPSLibraryAccession":"CCMSLIB00005778066","USI":"mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00005778066","Charge":1,"Cosine":0.86,"Matching Peaks":5,"Dataset":"GNPS Library","Status":"HasID","CompoundName":"Massbank:FIO00630 Tryptophan","Adduct":"M+H"},{"Delta Mass":0.0,"GNPSLibraryAccession":"CCMSLIB00003134676","USI":"mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00003134676","Charge":1,"Cosine":0.82,"Matching Peaks":3,"Dataset":"GNPS Library","Status":"HasID","CompoundName":"Spectral Match to L-Tryptophan from NIST14","Adduct":"M+H"},{"Delta Mass":0.0,"GNPSLibraryAccession":"CCMSLIB00006112850","USI":"mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00006112850","Charge":1,"Cosine":0.81,"Matching Peaks":4,"Dataset":"GNPS Library","Status":"HasID","CompoundName":"D-(+)-tryptophan - 40.0 eV","Adduct":"M+H"},{"Delta Mass":0.0,"GNPSLibraryAccession":"CCMSLIB00006112858","USI":"mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00006112858","Charge":1,"Cosine":0.81,"Matching Peaks":4,"Dataset":"GNPS Library","Status":"HasID","CompoundName":"D-(+)-tryptophan - 40.0 eV","Adduct":"M+H"},{"Delta Mass":0.0,"GNPSLibraryAccession":"CCMSLIB00006112855","USI":"mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00006112855","Charge":1,"Cosine":0.81,"Matching Peaks":4,"Dataset":"GNPS Library","Status":"HasID","CompoundName":"D-(+)-tryptophan - 40.0 eV","Adduct":"M+H"},{"Delta Mass":0.0,"GNPSLibraryAccession":"CCMSLIB00000222464","USI":"mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00000222464","Charge":1,"Cosine":0.79,"Matching Peaks":5,"Dataset":"GNPS Library","Status":"HasID","CompoundName":"Massbank:PB006084 Tryptophan|(2S)-2-amino-3-(1H-indol-3-yl)propanoic acid","Adduct":"[M+H]+"},{"Delta Mass":0.0,"GNPSLibraryAccession":"CCMSLIB00006112853","USI":"mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00006112853","Charge":1,"Cosine":0.77,"Matching Peaks":3,"Dataset":"GNPS Library","Status":"HasID","CompoundName":"D-(+)-tryptophan - 40.0 eV","Adduct":"M+H"},{"Delta Mass":0.0,"GNPSLibraryAccession":"CCMSLIB00006683066","USI":"mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00006683066","Charge":1,"Cosine":0.77,"Matching Peaks":3,"Dataset":"GNPS Library","Status":"HasID","CompoundName":"TRYPTOPHAN","Adduct":"M+H"},{"Delta Mass":0.0,"GNPSLibraryAccession":"CCMSLIB00006684051","USI":"mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00006684051","Charge":1,"Cosine":0.77,"Matching Peaks":4,"Dataset":"GNPS Library","Status":"HasID","CompoundName":"TRYPTOPHAN","Adduct":"M+H"},{"Delta Mass":0.0,"GNPSLibraryAccession":"CCMSLIB00006112860","USI":"mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00006112860","Charge":1,"Cosine":0.74,"Matching Peaks":3,"Dataset":"GNPS Library","Status":"HasID","CompoundName":"D-(+)-tryptophan - 40.0 eV","Adduct":"M+H"},{"Delta Mass":0.0,"GNPSLibraryAccession":"CCMSLIB00003138585","USI":"mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00003138585","Charge":1,"Cosine":0.73,"Matching Peaks":4,"Dataset":"GNPS Library","Status":"HasID","CompoundName":"Spectral Match to L-Tryptophan from NIST14","Adduct":"M+H"},{"Delta Mass":0.0,"GNPSLibraryAccession":"CCMSLIB00006683013","USI":"mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00006683013","Charge":1,"Cosine":0.71,"Matching Peaks":3,"Dataset":"GNPS Library","Status":"HasID","CompoundName":"TRYPTOPHAN","Adduct":"M+H"}];
-var table_plot = makeTable()
+var table_plot = makeTable("libTable")
   .datum(library_data)
   .sortBy('Cosine', false)
   .filterCols(['Dataset', 'Status']);
