@@ -53,10 +53,10 @@ def update_metadata_on_tree(in_ontology="../data/ncbi_microbe_tree.json",
             not_in_tree_df = df[~df[data_key].isin(ids)]
             not_in_tree_df.to_csv("../data/not_in_tree.csv", index=False)
 
-            with open("../data/ncbi2.json", "w") as file:
-                out_tree = json.dumps(treeRoot, indent=2, cls=NpEncoder)
-                print(out_tree, file=file)
-            return True
+        with open(in_ontology, "w") as file:
+            out_tree = json.dumps(treeRoot, indent=2, cls=NpEncoder)
+            print(out_tree, file=file)
+        return True
     except Exception as e:
         logger.exception(e)
         return False
