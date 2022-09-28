@@ -11,9 +11,9 @@ logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
 
-def create_tree_html(in_html="../code/collapsible_tree_v3.html", in_ontology="../data/ncbi.json",
+def create_tree_html(in_html="../code/collapsible_tree_v3.html", in_ontology="../data/ncbi_microbe_tree.json",
                      metadata_file="../data/microbe_masst_table.csv",
-                     masst_file="../examples/phelylglycocholic_acid.tsv", matching_usi_list=None,
+                     masst_file="../examples/phelylglycocholic_acid.tsv", matches_df=None,
                      out_counts_file="../output/microbe_masst_counts.tsv",
                      out_json_tree="../output/merged_ncbi_ontology_data.json", format_out_json=True,
                      out_html="../output/oneindex.html", compress_out_html=True, node_key="NCBI", data_key="ncbi", replace_dict=None):
@@ -23,8 +23,7 @@ def create_tree_html(in_html="../code/collapsible_tree_v3.html", in_ontology="..
 
     :param masst_file: imports masst results from file (classical masst). Is not used if a matching_usi_list is
     provided, e.g., from fastMASST
-    :param matching_usi_list: matching universal spectrum identifier list that refer to masst matches in datasets.
-    e.g., from fastMASST
+    :param matches_df: dataframe of matches with USI columns
     :param in_html: the base html file with different dependencies
     :param in_ontology: the input ontology
     :param out_json_tree: the merged tree data is exported to a json file
@@ -34,8 +33,8 @@ def create_tree_html(in_html="../code/collapsible_tree_v3.html", in_ontology="..
     if out_counts_file == "auto" or out_counts_file == "automatic":
         out_counts_file = "../output/{}_counts.tsv".format(Path(masst_file).stem)
 
-    if matching_usi_list is not None:
-        microbe_masst_results.create_counts_file_from_usi(metadata_file, matching_usi_list, out_counts_file)
+    if matches_df is not None:
+        microbe_masst_results.create_counts_file_from_usi(metadata_file, matches_df, out_counts_file)
     else:
         microbe_masst_results.create_counts_file(metadata_file, masst_file, out_counts_file)
 
@@ -52,7 +51,7 @@ if __name__ == '__main__':
     parser.add_argument('--in_html', type=str, help='The input html file',
                         default="../code/collapsible_tree_v3.html")
     parser.add_argument('--ontology', type=str, help='the json ontology file with children',
-                        default="../data/ncbi.json")
+                        default="../data/ncbi_microbe_tree.json")
     parser.add_argument('--metadata_file', type=str, help='microbe masst metadata',
                         default="../data/microbe_masst_table.csv")
     parser.add_argument('--masst_file', type=str, help='a tab separated file with additional data that is added to '

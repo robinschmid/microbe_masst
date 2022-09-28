@@ -5,13 +5,11 @@ from tqdm import tqdm
 import re
 import argparse
 import pyteomics.mgf
-import bundle_to_html
 
 from concurrent.futures import ThreadPoolExecutor
 from concurrent.futures import wait
 
-import microbe_masst as microbemasst
-import masst_utils as masst
+import masst_client
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
@@ -20,173 +18,8 @@ logger = logging.getLogger(__name__)
 tqdm.pandas()
 
 
-def process_matches(file_name, compound_name, matches, library_matches, precursor_mz_tol, min_matched_signals,
-                    input_label, params_label):
-    common_file = "../{}_{}".format(file_name, compound_name.replace(" ", "_"))
-
-    # extract results
-    matches_df = masst.extract_matches_from_masst_results(matches,
-                                                          precursor_mz_tol,
-                                                          min_matched_signals,
-                                                          False
-                                                          )
-    matches_df.to_csv("{}_{}.tsv".format(common_file, "matches"), index=False, sep="\t")
-
-    lib_matches_df = masst.extract_matches_from_masst_results(library_matches,
-                                                              precursor_mz_tol,
-                                                              min_matched_signals,
-                                                              False
-                                                              )
-    lib_matches_df.to_csv("{}_{}.tsv".format(common_file, "library"), index=False, sep="\t")
-
-    if "grouped_by_dataset" not in matches:
-        logger.debug("Missing datasets")
-    # extract matches
-    datasets_df = masst.extract_datasets_from_masst_results(matches, matches_df)
-    datasets_df.to_csv("{}_{}.tsv".format(common_file, "datasets"), index=False, sep="\t")
-
-    # add library matches to table
-    lib_match_json = lib_matches_df.to_json(orient="records")
-
-    # microbeMASST
-    out_html = "{}_{}.html".format(common_file, "microbes")
-    out_json_tree = "{}_{}.json".format(common_file, "microbes")
-    out_counts = "{}_{}.json".format(common_file, "counts_microbes")
-    replace_dict = {
-        "PLACEHOLDER_JSON_DATA": out_json_tree,
-        "LIBRARY_JSON_DATA_PLACEHOLDER": lib_match_json,
-        "INPUT_LABEL_PLACEHOLDER": input_label,
-        "PARAMS_PLACEHOLDER": params_label
-    }
-
-    logger.debug("Exporting microbeMASST %s", compound_name)
-    result = microbemasst.run_microbe_masst_for_matches(matches_df,
-                                                        in_html="../code/collapsible_tree_v3.html",
-                                                        in_ontology="../data/ncbi.json",
-                                                        metadata_file="../data/microbe_masst_table.csv",
-                                                        out_counts_file=out_counts,
-                                                        out_json_tree=out_json_tree,
-                                                        format_out_json=True,
-                                                        out_html=out_html,
-                                                        compress_out_html=False,
-                                                        replace_dict=replace_dict,
-                                                        node_key="NCBI",
-                                                        data_key="ncbi"
-                                                        )
-
-    # foodMASST
-    out_html = "{}_{}.html".format(common_file, "food")
-    out_json_tree = "{}_{}.json".format(common_file, "food")
-    out_counts = "{}_{}.json".format(common_file, "counts_food")
-    replace_dict["PLACEHOLDER_JSON_DATA"] = out_json_tree
-
-    logger.debug("Exporting foodMASST %s", compound_name)
-    result = microbemasst.run_food_masst_for_matches(matches_df,
-                                                     in_html="../code/collapsible_tree_v3.html",
-                                                     out_counts_file=out_counts,
-                                                     out_json_tree=out_json_tree,
-                                                     format_out_json=True,
-                                                     out_html=out_html,
-                                                     compress_out_html=True,
-                                                     replace_dict=replace_dict,
-                                                     )
-
-    return matches_df
-
-
-def query_usi_or_id(file_name, usi_or_lib_id, compound_name,
-                    precursor_mz_tol=0.05,
-                    mz_tol=0.02,
-                    min_cos=0.7,
-                    min_matched_signals=3,
-                    analog=False,
-                    analog_mass_below=150,
-                    analog_mass_above=200):
-    # might raise exception for service
-    try:
-        logger.debug("Query fastMASST id:%s  of %s", usi_or_lib_id, compound_name)
-        matches = masst.fast_masst(usi_or_lib_id, precursor_mz_tol=precursor_mz_tol, mz_tol=mz_tol, min_cos=min_cos,
-                                   analog=analog, analog_mass_below=analog_mass_below,
-                                   analog_mass_above=analog_mass_above, database=masst.DataBase.gnpsdata_index)
-
-        if not matches or "results" not in matches or len(matches["results"]) == 0:
-            logger.debug("Empty fastMASST response for compound %s with id %s", compound_name, usi_or_lib_id)
-            return None
-
-        library_matches = masst.fast_masst(usi_or_lib_id, precursor_mz_tol=precursor_mz_tol, mz_tol=mz_tol,
-                                           min_cos=min_cos,
-                                           analog=False, database=masst.DataBase.gnpslibrary)
-
-        params_label = create_params_label(analog, analog_mass_above, analog_mass_below, min_cos, min_matched_signals,
-                                           mz_tol, precursor_mz_tol)
-        input_label = "ID: {};  Descriptor: {}".format(usi_or_lib_id, compound_name)
-        return process_matches(file_name, compound_name, matches, library_matches, precursor_mz_tol,
-                               min_matched_signals, input_label, params_label)
-    except Exception as e:
-        logger.exception(e)
-        return None
-
-
-def query_spectrum(file_name, compound_name, precursor_mz, precursor_charge, mzs, intensities,
-                   precursor_mz_tol=0.05,
-                   mz_tol=0.02,
-                   min_cos=0.7,
-                   min_matched_signals=3,
-                   analog=False,
-                   analog_mass_below=150,
-                   analog_mass_above=200):
-    # might raise exception for service
-    try:
-        matches, filtered_dps = masst.fast_masst_spectrum(
-            mzs=mzs,
-            intensities=intensities,
-            precursor_mz=precursor_mz,
-            precursor_charge=precursor_charge,
-            precursor_mz_tol=precursor_mz_tol,
-            mz_tol=mz_tol,
-            min_cos=min_cos,
-            analog=analog,
-            analog_mass_below=analog_mass_below,
-            analog_mass_above=analog_mass_above,
-            database=masst.DataBase.gnpsdata_index
-        )
-        if not matches or "results" not in matches or len(matches["results"]) == 0:
-            logger.debug("Empty fastMASST response for spectrum %s", compound_name)
-            return None
-
-        library_matches, _ = masst.fast_masst_spectrum(
-            mzs=mzs,
-            intensities=intensities,
-            precursor_mz=precursor_mz,
-            precursor_charge=precursor_charge,
-            precursor_mz_tol=precursor_mz_tol,
-            mz_tol=mz_tol,
-            min_cos=min_cos,
-            analog=False,
-            database=masst.DataBase.gnpslibrary
-        )
-
-        params_label = create_params_label(analog, analog_mass_above, analog_mass_below, min_cos, min_matched_signals,
-                                           mz_tol, precursor_mz_tol)
-        input_label = "Descriptor: {};  Precursor m/z: {};  Data points:{}".format(compound_name, round(precursor_mz,
-                                                                                                        5),
-                                                                                   len(filtered_dps))
-        return process_matches(file_name, compound_name, matches, library_matches, precursor_mz_tol,
-                               min_matched_signals, input_label, params_label)
-    except Exception as e:
-        return None
-
-
 def path_safe(file):
     return re.sub('[^-a-zA-Z0-9_.() ]+', '_', file)
-
-
-def explode_masst_columns(jobs_df):
-    # multiple matches for each row split into multiple rows
-    masst_df = jobs_df.explode("fastMASST", ignore_index=True)
-    # each match is a dict so split into columns
-    masst_df = pd.concat([masst_df.drop(['fastMASST'], axis=1), masst_df['fastMASST'].apply(pd.Series)], axis=1)
-    return masst_df
 
 
 def run_on_usi_and_id_list(input_file,
@@ -212,9 +45,9 @@ def run_on_usi_and_id_list(input_file,
     logger.debug("Running fast microbe masst on input")
 
     with ThreadPoolExecutor(parallel_queries) as executor:
-        futures = [executor.submit(query_usi_or_id,
+        futures = [executor.submit(masst_client.query_usi_or_id,
                                    out_filename_no_ext,
-                                   id,
+                                   compound_id,
                                    name,
                                    precursor_mz_tol=precursor_mz_tol,
                                    mz_tol=mz_tol,
@@ -223,7 +56,7 @@ def run_on_usi_and_id_list(input_file,
                                    analog=analog,
                                    analog_mass_below=analog_mass_below,
                                    analog_mass_above=analog_mass_above
-                                   ) for id, name in zip(jobs_df["input_id"], jobs_df["Compound"])]
+                                   ) for compound_id, name in zip(jobs_df["input_id"], jobs_df["Compound"])]
 
         wait(futures)
         jobs_df["fastMASST"] = [f.result() for f in futures]
@@ -271,7 +104,7 @@ def run_on_mgf(input_file,
     logger.info("Running fast microbe masst on input n={} spectra".format(len(jobs_df)))
 
     with ThreadPoolExecutor(parallel_queries) as executor:
-        futures = [executor.submit(query_spectrum,
+        futures = [executor.submit(masst_client.query_spectrum,
                                    out_filename_no_ext,
                                    name,
                                    prec_mz,
@@ -344,15 +177,19 @@ if __name__ == '__main__':
                         # default="../casmi_pos_sirius/bifido.mgf")
                         # default="../casmi_pos_sirius/small.mgf")
                         default="../examples/example_links.tsv")
-                        # default="../casmi_pos_sirius/MIND.mgf")
-                        # default="../casmi_pos_sirius/T1000_Fecal.mgf")
-                        # default="../casmi_pos_sirius/lacphe.mgf")
-                        # default="../ipsita/USI_polyamines.csv")
-                        # default="D:\git\microbe_masst\ipsita\Monohydroxy\extracted_mgf_refined_query\extracted_1b102f3c-e969-4f8c-b0bd-17123b664836.mgf")
-                        # default="D:\git\microbe_masst\ipsita\Dihydroxy\extracted_mgf_refined_query\extracted_09e502ed-4ee2-4577-86b9-707b42eb707e.mgf")
-                        # default="D:\git\microbe_masst\ipsita\Dihydroxy\extracted_mgf_refined_query\extracted_28f09d11-808c-4741-b747-5c7b28917a92.mgf")
-                        # default="D:\git\microbe_masst\ipsita\Tetrahydroxy\extracted_mgf_refined_query\extracted_4af52ab1-2668-45dc-9774-d5c6aa1a2c6a.mgf")
-                        # default="D:\git\microbe_masst\examples\ROSMAP_gnps.mgf")
+    # default="../casmi_pos_sirius/MIND.mgf")
+    # default="../casmi_pos_sirius/T1000_Fecal.mgf")
+    # default="../casmi_pos_sirius/lacphe.mgf")
+    # default="../ipsita/USI_polyamines.csv")
+    # default="D:\git\microbe_masst\ipsita\Monohydroxy\extracted_mgf_refined_query\extracted_1b102f3c-e969-4f8c-b0bd
+    # -17123b664836.mgf")
+    # default="D:\git\microbe_masst\ipsita\Dihydroxy\extracted_mgf_refined_query\extracted_09e502ed-4ee2-4577-86b9
+    # -707b42eb707e.mgf")
+    # default="D:\git\microbe_masst\ipsita\Dihydroxy\extracted_mgf_refined_query\extracted_28f09d11-808c-4741-b747
+    # -5c7b28917a92.mgf")
+    # default="D:\git\microbe_masst\ipsita\Tetrahydroxy\extracted_mgf_refined_query\extracted_4af52ab1-2668-45dc-9774
+    # -d5c6aa1a2c6a.mgf")
+    # default="D:\git\microbe_masst\examples\ROSMAP_gnps.mgf")
     parser.add_argument('--out_file', type=str, help='output html and other files, name without extension',
                         default="output/aaafastMASST_")
 

@@ -4,6 +4,7 @@ from pathlib import Path
 import pandas as pd
 import numpy as np
 import logging
+from usi_utils import ensure_simple_file_usi
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
@@ -28,10 +29,10 @@ def massive_id_from_path(pathname):
 def usi_massiveid_filename(usi):
     """
     :param usi: input universal spectrum identifier
-    :return: tuple(MassIVE ID, sample name without extension)
+    :return: tuple(input usi, MassIVE ID, sample name without extension)
     """
     split = usi.split(":")
-    return split[1], split[2]
+    return usi, split[1], split[2]
 
 
 def create_counts_file(metadata_file, masst_file, out_tsv_file, meta_col_header="Taxa_NCBI", out_id_col_header='ncbi'):
@@ -57,39 +58,28 @@ def create_counts_file(metadata_file, masst_file, out_tsv_file, meta_col_header=
     export_ncbi_counts(id_matches_dict, out_tsv_file, out_id_col_header)
 
 
-def create_counts_file_from_usi(metadata_file, matching_usi_list, out_tsv_file, meta_col_header="Taxa_NCBI", out_id_col_header='ncbi'):
+def create_counts_file_from_usi(metadata_file, matches_df: pd.DataFrame, out_tsv_file, meta_col_header="Taxa_NCBI",
+                                out_id_col_header='ncbi'):
     if str(metadata_file).endswith(".tsv"):
         metadata_df = pd.read_csv(metadata_file, sep="\t")
     else:
         metadata_df = pd.read_csv(metadata_file)
 
-    metadata_df["fname"] = metadata_df["Filename"].apply(filename_from_path)
-    matching_massive_file_list = [usi_massiveid_filename(usi) for usi in matching_usi_list]
+    # create a usi column that only points to the dataset:file (not scan)
+    matches_df["file_usi"] = [ensure_simple_file_usi(usi) for usi in matches_df["USI"]]
+    matches_df = matches_df.sort_values(by=["Cosine", "Matching Peaks"], ascending=[False, False]).drop_duplicates(
+        "file_usi")
+    # join on the file usi
+    results_df = pd.concat([matches_df.set_index('file_usi'), metadata_df.set_index('file_usi')], axis=1,
+                           join='inner').reset_index()
+    grouped = results_df.groupby("Taxa_NCBI")
+    results_df = grouped.agg(matched_size=("Taxa_NCBI", "size"), taxa_name=("Taxaname_file", "first"))
+    results_df["matches_json"] = grouped['USI', 'Cosine', 'Matching Peaks'].apply(lambda x: x.to_json(
+        orient='records'))
 
-    massive_to_fnames_dict = {}
-    for (massive_id, fname) in matching_massive_file_list:
-        fnames = massive_to_fnames_dict.get(massive_id)
-        if fnames is None:
-            massive_to_fnames_dict[massive_id] = [fname]
-        else:
-            fnames.append(fname)
-
-    # count matches per ID
-    id_matches_dict = dict()
-
-    for (massive_id, fnames) in massive_to_fnames_dict.items():
-        # might have multiple rows in the metadata table if multiple IDs
-        if "MassIVE" in metadata_df:
-            matching_metadata = metadata_df.loc[(metadata_df["fname"].isin(fnames)) & (metadata_df["MassIVE"] ==
-                                                                                   massive_id)]
-        else:
-            matching_metadata = metadata_df.loc[(metadata_df["fname"].isin(fnames))]
-
-        for index2, meta_row in matching_metadata.iterrows():
-            ncbi_ = meta_row[meta_col_header]
-            id_matches_dict[ncbi_] = id_matches_dict.get(ncbi_, 0) + 1
-
-    export_ncbi_counts(id_matches_dict, out_tsv_file, out_id_col_header)
+    results_df = results_df.reset_index().rename(columns={'Taxa_NCBI': 'ncbi'})
+    # export file with ncbi, matched_size,
+    results_df.to_csv(out_tsv_file, index=False, sep="\t")
 
 
 def export_ncbi_counts(id_matches_dict, out_tsv_file, out_id_col_header='ncbi'):
@@ -97,6 +87,7 @@ def export_ncbi_counts(id_matches_dict, out_tsv_file, out_id_col_header='ncbi'):
     df.reset_index(inplace=True)
     df = df.rename(columns={'index': out_id_col_header})
     df.to_csv(out_tsv_file, index=False, sep="\t")
+
 
 if __name__ == '__main__':
     # parsing the arguments (all optional)

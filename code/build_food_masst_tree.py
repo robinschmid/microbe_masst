@@ -11,8 +11,8 @@ logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
 
-def create_tree_html(in_html="../code/collapsible_tree_v3.html", in_ontology="../data/GFOP.json",
-                     metadata_file="../data/foodmasst_metadata.tsv",
+def create_tree_html(in_html="../code/collapsible_tree_v3.html", in_ontology="../data/gfop_food_tree.json",
+                     metadata_file="../data/food_masst_metadata.tsv",
                      masst_file="../examples/phelylglycocholic_acid.tsv", matching_usi_list=None,
                      out_counts_file="../output/food_masst_counts.tsv",
                      out_json_tree="../output/merged_gfop_ontology_data.json", format_out_json=True,
@@ -55,7 +55,7 @@ if __name__ == '__main__':
     parser.add_argument('--in_html', type=str, help='The input html file',
                         default="../code/collapsible_tree_v3.html")
     parser.add_argument('--ontology', type=str, help='the json ontology file with children',
-                        default="../data/ncbi.json")
+                        default="../data/ncbi_microbe_tree.json")
     parser.add_argument('--metadata_file', type=str, help='microbe masst metadata',
                         default="../data/microbe_masst_table.csv")
     parser.add_argument('--masst_file', type=str, help='a tab separated file with additional data that is added to '

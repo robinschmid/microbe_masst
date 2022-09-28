@@ -37,7 +37,7 @@ if __name__ == '__main__':
     parser.add_argument('--in_html', type=str, help='The input html file',
                         default="../code/collapsible_tree_v3.html")
     parser.add_argument('--ontology', type=str, help='the json ontology file with children',
-                        default="../data/GFOP.json")
+                        default="../data/gfop_food_tree.json")
     parser.add_argument('--in_data', type=str, help='a tab separated file with additional data that is added to the '
                                                     'ontology', default="../examples/caffeic_acid.tsv")
     parser.add_argument('--out_html', type=str, help='output html file', default="../output/oneindex.html")
@@ -58,7 +58,7 @@ if __name__ == '__main__':
     # important use raw file on github!
     try:
         # tmp test microbe masst
-        create_tree_html("../code/collapsible_tree_v3.html", "../data/ncbi.json",
+        create_tree_html("../code/collapsible_tree_v3.html", "../data/ncbi_microbe_tree.json",
                          "../output/microbe_masst_counts.tsv", args.out_tree, args.format, args.out_html, args.compress,
                          "NCBI", "ncbi")
         # create_tree_html(args.in_html, args.ontology, args.in_data, args.out_tree, args.format, args.out_html,

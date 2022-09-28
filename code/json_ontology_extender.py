@@ -102,7 +102,7 @@ def add_pie_data_to_node_and_children(node):
             add_pie_data_to_node_and_children(child)
 
 
-def add_data_to_ontology_file(output="../output/merged_ontology_data.json", ontology_file="../data/GFOP.json",
+def add_data_to_ontology_file(output="../output/merged_ontology_data.json", ontology_file="../data/gfop_food_tree.json",
                               in_data="../examples/caffeic_acid.tsv", node_key="name", data_key="group_value",
                               format_out_json=True):
     with open(ontology_file) as json_file:
@@ -166,7 +166,7 @@ if __name__ == '__main__':
     # parsing the arguments (all optional)
     parser = argparse.ArgumentParser(description='merge an ontology with external data')
     parser.add_argument('--ontology', type=str, help='the json ontology file with children',
-                        default="../data/GFOP.json")
+                        default="../data/gfop_food_tree.json")
     parser.add_argument('--in_data', type=str, help='a tab separated file with additional data that is added to the '
                                                     'ontology', default="../examples/caffeic_acid.tsv")
     parser.add_argument('--node_key', type=str, help='the field in the ontology to be compare to the field in the '

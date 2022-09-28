@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 
 
 def run_microbe_masst(usi_or_lib_id, precursor_mz_tol=0.05, mz_tol=0.02, min_cos=0.7,
-                      in_html="../code/collapsible_tree_v3.html", in_ontology="../data/ncbi.json",
+                      in_html="../code/collapsible_tree_v3.html", in_ontology="../data/ncbi_microbe_tree.json",
                       metadata_file="../data/microbe_masst_table.csv",
                       out_counts_file="../output/microbe_masst_counts.tsv",
                       out_json_tree="../output/merged_ncbi_ontology_data.json", format_out_json=True,
@@ -33,7 +33,7 @@ def run_microbe_masst(usi_or_lib_id, precursor_mz_tol=0.05, mz_tol=0.02, min_cos
 
 def run_microbe_masst_for_spectrum(precursor_mz, precursor_charge, mzs, intensities, precursor_mz_tol=0.05, mz_tol=0.02,
                                    min_cos=0.7,
-                                   in_html="../code/collapsible_tree_v3.html", in_ontology="../data/ncbi.json",
+                                   in_html="../code/collapsible_tree_v3.html", in_ontology="../data/ncbi_microbe_tree.json",
                                    metadata_file="../data/microbe_masst_table.csv",
                                    out_counts_file="../output/microbe_masst_counts.tsv",
                                    out_json_tree="../output/merged_ncbi_ontology_data.json", format_out_json=True,
@@ -56,8 +56,8 @@ def run_microbe_masst_for_spectrum(precursor_mz, precursor_charge, mzs, intensit
     return None
 
 
-def run_microbe_masst_for_matches(masst_matches,
-                                  in_html="../code/collapsible_tree_v3.html", in_ontology="../data/ncbi.json",
+def run_microbe_masst_for_matches(matches_df,
+                                  in_html="../code/collapsible_tree_v3.html", in_ontology="../data/ncbi_microbe_tree.json",
                                   metadata_file="../data/microbe_masst_table.csv",
                                   out_counts_file="../output/microbe_masst_counts.tsv",
                                   out_json_tree="../output/merged_ncbi_ontology_data.json", format_out_json=True,
@@ -68,11 +68,11 @@ def run_microbe_masst_for_matches(masst_matches,
     prepare_paths(out_counts_file, out_html, out_json_tree)
 
     try:
-        if (masst_matches is not None) and (len(masst_matches) > 0):
-            mmtree.create_tree_html(in_html, in_ontology, metadata_file, None, masst_matches["USI"], out_counts_file,
+        if (matches_df is not None) and (len(matches_df) > 0):
+            mmtree.create_tree_html(in_html, in_ontology, metadata_file, None, matches_df, out_counts_file,
                                     out_json_tree, format_out_json, out_html, compress_out_html, node_key, data_key,
                                     replace_dict=replace_dict)
-            return masst_matches
+            return matches_df
     except Exception as e:
         # exit with error
         logger.exception(e)
@@ -81,8 +81,8 @@ def run_microbe_masst_for_matches(masst_matches,
 
 
 def run_food_masst_for_matches(masst_matches,
-                               in_html="../code/collapsible_tree_v3.html", in_ontology="../data/GFOP.json",
-                               metadata_file="../data/foodmasst_filtered.tsv",
+                               in_html="../code/collapsible_tree_v3.html", in_ontology="../data/gfop_food_tree.json",
+                               metadata_file="../data/food_masst_metadata.tsv",
                                out_counts_file="../output/food_masst_counts.tsv",
                                out_json_tree="../output/merged_gfop_ontology_data.json", format_out_json=True,
                                out_html="../output/oneindex.html", compress_out_html=True, node_key="name",
@@ -126,7 +126,7 @@ if __name__ == '__main__':
     parser.add_argument('--in_html', type=str, help='The input html file',
                         default="../code/collapsible_tree_v3.html")
     parser.add_argument('--ontology', type=str, help='the json ontology file with children',
-                        default="../data/ncbi.json")
+                        default="../data/ncbi_microbe_tree.json")
     parser.add_argument('--metadata_file', type=str, help='microbe masst metadata',
                         default="../data/microbe_masst_table.csv")
     parser.add_argument('--out_counts_file', type=str, help='the intermediate counts (matches) file. automatic: use '

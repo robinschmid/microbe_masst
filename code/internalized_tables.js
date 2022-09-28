@@ -14,6 +14,45 @@ function showLibraryTable() {
     div.style.display = "none";
   }
 }
+
+// add match table
+var match_data = getFullMatches();
+var match_table_plot = makeTable("dataTable")
+  .datum(match_data)
+  .sortBy('Cosine', false)
+  .filterCols([]);
+
+d3.select('#match_table').call(match_table_plot);
+
+function showMatchTable() {
+  var div = document.getElementById("match_table");
+  if (div.style.display === "none") {
+    div.style.display = "block";
+  } else {
+    div.style.display = "none";
+  }
+}
+
+
+function getFullMatches() {
+    var data = [];
+    visitAll(root, node => {
+        if (hasMatches(node)) {
+            var entry = {};
+            entry["Name"] = node.name ?? "";
+            entry["NCBI"] = node.NCBI ?? "";
+            entry["Rank"] = node.Rank ?? "";
+            entry["Matches"] = node.matched_size;
+            entry["Samples"] = node.group_size;
+            try {
+                entry["Fraction"] = Number.parseFloat(node.occurrence_fraction ?? 0).toFixed(4);
+            } catch(Exception) {}
+            data.push(entry);
+        }
+    });
+    return data;
+}
+
 function showParameters() {
   var div = document.getElementById("paramsDiv");
   if (div.style.display === "none") {
