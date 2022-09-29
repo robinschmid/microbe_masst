@@ -5,11 +5,40 @@ import requests_cache
 from enum import Enum, auto
 import json
 import pandas as pd
+from dataclasses import dataclass
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
 # requests_cache.install_cache("fastmasst_cache", expire_after=timedelta(days=2))
+
+
+@dataclass
+class SpecialMasst:
+    prefix: str
+    tree_file: str
+    metadata_file: str
+    tree_node_key: str
+    metadata_key: str
+
+
+MICROBE_MASST = SpecialMasst(
+    prefix="microbe",
+    tree_file="../data/ncbi_microbe_tree.json",
+    metadata_file="../data/microbe_masst_table.csv",
+    tree_node_key="NCBI",
+    metadata_key="Taxa_NCBI"
+)
+FOOD_MASST = SpecialMasst(
+    prefix="food",
+    tree_file="../data/gfop_food_tree.json",
+    metadata_file="../data/food_masst_metadata.csv",
+    tree_node_key="name",
+    metadata_key="node_id"
+)
+
+
+
 
 URL = "https://fastlibrarysearch.ucsd.edu/search"
 

@@ -10,8 +10,14 @@ import bundle_to_html
 from concurrent.futures import ThreadPoolExecutor
 from concurrent.futures import wait
 
+import microbe_masst
 import microbe_masst as microbemasst
 import masst_utils as masst
+import usi_utils
+
+MATCH_COLUMNS = ["USI", "Cosine", "Matching Peaks", "Status"]
+
+LIB_COLUMNS = ["USI", "GNPSLibraryAccession", "Cosine", "Matching Peaks", "CompoundName", "Adduct", "Charge"]
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
@@ -30,14 +36,20 @@ def process_matches(file_name, compound_name, matches, library_matches, precurso
                                                           min_matched_signals,
                                                           False
                                                           )
-    matches_df.to_csv("{}_{}.tsv".format(common_file, "matches"), index=False, sep="\t")
+
+    # create a usi column that only points to the dataset:file (not scan)
+    matches_df["file_usi"] = [usi_utils.ensure_simple_file_usi(usi) for usi in matches_df["USI"]]
+    matches_df = matches_df.sort_values(by=["Cosine", "Matching Peaks"], ascending=[False, False]).drop_duplicates(
+        "file_usi")
+
+    matches_df[MATCH_COLUMNS].to_csv("{}_{}.tsv".format(common_file, "matches"), index=False, sep="\t")
 
     lib_matches_df = masst.extract_matches_from_masst_results(library_matches,
                                                               precursor_mz_tol,
                                                               min_matched_signals,
                                                               False
                                                               )
-    lib_matches_df.to_csv("{}_{}.tsv".format(common_file, "library"), index=False, sep="\t")
+    lib_matches_df[LIB_COLUMNS].to_csv("{}_{}.tsv".format(common_file, "library"), index=False, sep="\t")
 
     if "grouped_by_dataset" not in matches:
         logger.debug("Missing datasets")
@@ -49,47 +61,28 @@ def process_matches(file_name, compound_name, matches, library_matches, precurso
     lib_match_json = lib_matches_df.to_json(orient="records")
 
     # microbeMASST
-    out_html = "{}_{}.html".format(common_file, "microbes")
-    out_json_tree = "{}_{}.json".format(common_file, "microbes")
-    out_counts = "{}_{}.json".format(common_file, "counts_microbes")
-    replace_dict = {
-        "PLACEHOLDER_JSON_DATA": out_json_tree,
-        "LIBRARY_JSON_DATA_PLACEHOLDER": lib_match_json,
-        "INPUT_LABEL_PLACEHOLDER": input_label,
-        "PARAMS_PLACEHOLDER": params_label
-    }
-
     logger.debug("Exporting microbeMASST %s", compound_name)
-    result = microbemasst.run_microbe_masst_for_matches(matches_df,
-                                                        in_html="../code/collapsible_tree_v3.html",
-                                                        in_ontology="../data/ncbi_microbe_tree.json",
-                                                        metadata_file="../data/microbe_masst_table.csv",
-                                                        out_counts_file=out_counts,
-                                                        out_json_tree=out_json_tree,
-                                                        format_out_json=True,
-                                                        out_html=out_html,
-                                                        compress_out_html=False,
-                                                        replace_dict=replace_dict,
-                                                        node_key="NCBI",
-                                                        data_key="ncbi"
-                                                        )
+    microbemasst.create_enriched_masst_tree(matches_df,
+                                            masst.MICROBE_MASST,
+                                            common_file=common_file,
+                                            lib_match_json=lib_match_json,
+                                            input_str=input_label,
+                                            parameter_str=params_label,
+                                            format_out_json=True,
+                                            compress_out_html=False
+                                            )
 
     # foodMASST
-    out_html = "{}_{}.html".format(common_file, "food")
-    out_json_tree = "{}_{}.json".format(common_file, "food")
-    out_counts = "{}_{}.json".format(common_file, "counts_food")
-    replace_dict["PLACEHOLDER_JSON_DATA"] = out_json_tree
-
     logger.debug("Exporting foodMASST %s", compound_name)
-    result = microbemasst.run_food_masst_for_matches(matches_df,
-                                                     in_html="../code/collapsible_tree_v3.html",
-                                                     out_counts_file=out_counts,
-                                                     out_json_tree=out_json_tree,
-                                                     format_out_json=True,
-                                                     out_html=out_html,
-                                                     compress_out_html=True,
-                                                     replace_dict=replace_dict,
-                                                     )
+    microbemasst.create_enriched_masst_tree(matches_df,
+                                            masst.FOOD_MASST,
+                                            common_file=common_file,
+                                            lib_match_json=lib_match_json,
+                                            input_str=input_label,
+                                            parameter_str=params_label,
+                                            format_out_json=True,
+                                            compress_out_html=False
+                                            )
 
     return matches_df
 

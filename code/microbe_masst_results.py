@@ -26,15 +26,6 @@ def massive_id_from_path(pathname):
             return massive_id
 
 
-def usi_massiveid_filename(usi):
-    """
-    :param usi: input universal spectrum identifier
-    :return: tuple(input usi, MassIVE ID, sample name without extension)
-    """
-    split = usi.split(":")
-    return usi, split[1], split[2]
-
-
 def create_counts_file(metadata_file, masst_file, out_tsv_file, meta_col_header="Taxa_NCBI", out_id_col_header='ncbi'):
     if str(metadata_file).endswith(".tsv"):
         metadata_df = pd.read_csv(metadata_file, sep="\t")

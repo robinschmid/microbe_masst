@@ -5,6 +5,8 @@ import json
 import numpy as np
 import logging
 
+from masst_utils import SpecialMasst
+
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
@@ -21,11 +23,11 @@ class NpEncoder(json.JSONEncoder):
             return super(NpEncoder, self).default(obj)
 
 
-def add_data_to_node(node, df, node_field, data_field):
+def add_data_to_node(node, meta_matched_df:pd.DataFrame, node_field, data_field):
     """
     Merge data into node and apply to all children
     :param node: the current node in a tree structure with ["children"] property
-    :param df: the data frame with additional data
+    :param meta_matched_df: the data frame with additional data
     :param node_field: node[field] determines the key to align tree and additional data
     :param data_field: data[field] determines the key to align tree and additional data
     """
@@ -35,18 +37,20 @@ def add_data_to_node(node, df, node_field, data_field):
             logger.warning("node has no id {}".format(node.get("name", "NONAME")))
         else:
             # use string for comparison of IDs
-            filtered = df[df[data_field] == str(ncbi)]
+            filtered = meta_matched_df[meta_matched_df[data_field] == str(ncbi)]
             if len(filtered) > 0:
                 rowi = filtered.index[0]
-                for col, value in df.iteritems():
-                    if col != data_field:
+                for col, value in meta_matched_df.iteritems():
+                    if col == "matches_json":
+                        node["matches"] = json.loads(value[rowi])
+                    elif col != data_field:
                         node[col] = value[rowi]
     except Exception as ex:
         logger.exception(ex)
     # apply to all children
     if "children" in node:
         for child in node["children"]:
-            add_data_to_node(child, df, node_field, data_field)
+            add_data_to_node(child, meta_matched_df, node_field, data_field)
 
 
 def accumulate_field_in_parents(node, field):
@@ -102,19 +106,24 @@ def add_pie_data_to_node_and_children(node):
             add_pie_data_to_node_and_children(child)
 
 
-def add_data_to_ontology_file(output="../output/merged_ontology_data.json", ontology_file="../data/gfop_food_tree.json",
-                              in_data="../examples/caffeic_acid.tsv", node_key="name", data_key="group_value",
+def add_data_to_ontology_file(special_masst: SpecialMasst,
+                              output="../output/merged_ontology_data.json",
+                              in_data="../examples/caffeic_acid.tsv",
+                              meta_matched_df: pd.DataFrame = None,
                               format_out_json=True):
-    with open(ontology_file) as json_file:
+    data_key = special_masst.metadata_key
+    node_key = special_masst.tree_node_key
+    with open(special_masst.tree_file) as json_file:
         treeRoot = json.load(json_file)
 
         # read the additional data
-        df = pd.read_csv(in_data, sep='\t')
+        if meta_matched_df is None:
+            meta_matched_df = pd.read_csv(in_data, sep='\t')
         # ensure that the grouping columns are strings as we usually match string ids
-        df[data_key] = df[data_key].astype(str)
+        meta_matched_df[data_key] = meta_matched_df[data_key].astype(str)
 
         # loop over all children
-        add_data_to_node(treeRoot, df, node_key, data_key)
+        add_data_to_node(treeRoot, meta_matched_df, node_key, data_key)
 
         # check if group_size is available otherwise propagate
         if field_missing(treeRoot, node_key, report_missing=True, replace_with_field="name") > 0:
@@ -158,7 +167,7 @@ def calc_root_stats(treeRoot):
 
     if treeRoot["group_size"] == 0:
         treeRoot["occurrence_fraction"] = 0
-    else :
+    else:
         treeRoot["occurrence_fraction"] = treeRoot["matched_size"] / treeRoot["group_size"]
 
 
