@@ -70,6 +70,7 @@
 <body>
 <!-- add table - library matches -->
 <div id='library_table' style="display:none;"></div>
+<div id="dataset_table" style="display:none;"></div>
 <div id='match_table' style="display:none;"></div>
 
 <div id='paramsDiv' style="margin-top:5px; display:none;"></div>
@@ -77,6 +78,7 @@
 <div id="firstMenu" style="margin-top:10px;">
 <!-- add controls -->
     <input type="button" value="LibraryID" onclick="showLibraryTable()" title="LibraryID"/>
+    <input onclick="showDatasetTable()" title="Datasets" type="button" value="Datasets"/>
     <input type="button" value="Matches" onclick="showMatchTable()" title="Matches"/>
     <input type="button" value="Params" onclick="showParameters()" title="Params"/>
     <input type="button" value="Center" onclick="centerOnRoot()" title="Center"/>
@@ -87,7 +89,6 @@
 
     <label for="inputLevel">Show level:</label>
     <input id="inputLevel" style="width:3em" name="inputLevel" title="Level" type="number" value="4"/>
-
     <label for="inputMinMatch">Minimum matches:</label>
     <input id="inputMinMatch" style="width:3em" name="inputMinMatch" title="Min matches" type="number" value="1"/>
 </div>

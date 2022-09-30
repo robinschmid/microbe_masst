@@ -6,33 +6,13 @@ var table_plot = makeTable("libTable")
 
 d3.select('#library_table').call(table_plot);
 
-function showLibraryTable() {
-  var div = document.getElementById("library_table");
-  if (div.style.display === "none") {
-    div.style.display = "block";
-  } else {
-    div.style.display = "none";
-  }
-}
-
 // add match table
 var match_data = getFullMatches();
 var match_table_plot = makeTable("dataTable")
   .datum(match_data)
-  .sortBy('Cosine', false)
-  .filterCols([]);
+  .sortBy('Matches', false)
 
 d3.select('#match_table').call(match_table_plot);
-
-function showMatchTable() {
-  var div = document.getElementById("match_table");
-  if (div.style.display === "none") {
-    div.style.display = "block";
-  } else {
-    div.style.display = "none";
-  }
-}
-
 
 function getFullMatches() {
     var data = [];
@@ -53,13 +33,61 @@ function getFullMatches() {
     return data;
 }
 
+// add match table
+var matched_datasets = getMatchedDatasets();
+var dataset_table_plot = makeTable("datasetTable")
+    .datum(matched_datasets)
+.sortBy('Cosine', false)
+// .filterCols([]);
+
+d3.select('#dataset_table').call(dataset_table_plot);
+
+function getMatchedDatasets() {
+    var data = [];
+    visitAll(root, node => {
+        if (node.matches) {
+            var count = node.matches.length;
+            for (var i = 0; i < count; i++) {
+                match = node.matches[i]
+                entry = {};
+                entry["Name"] = node.name ?? "";
+                entry["NCBI"] = node.NCBI ?? "";
+                entry["Rank"] = node.Rank ?? "";
+                entry["Cosine"] = match["Cosine"] ?? "";
+                entry["Matching signals"] = match["Matching Peaks"] ?? "";
+                entry["USI"] = match["USI"] ?? "";
+                entry["MassIVE"] = match["USI"].split(":")[1] ?? "";
+                entry["File"] = match["USI"].split(":scan:")[0] ?? "";
+                data.push(entry);
+            }
+        }
+    });
+    return data;
+}
+
+function showLibraryTable() {
+    toggleShowDiv("library_table");
+}
+
+function showMatchTable() {
+    toggleShowDiv("match_table");
+}
+
+function showDatasetTable() {
+    toggleShowDiv("dataset_table");
+}
+
 function showParameters() {
-  var div = document.getElementById("paramsDiv");
-  if (div.style.display === "none") {
-    div.style.display = "block";
-  } else {
-    div.style.display = "none";
-  }
+    toggleShowDiv("paramsDiv");
+}
+
+function toggleShowDiv(name) {
+    var div = document.getElementById(name);
+    if (div.style.display === "none") {
+        div.style.display = "block";
+    } else {
+        div.style.display = "none";
+    }
 }
 // table_plot.on('highlight', function(data, on_off){
 //   if(on_off){//if the data is highlighted
