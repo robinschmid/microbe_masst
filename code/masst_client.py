@@ -4,14 +4,8 @@ import pandas as pd
 from tqdm import tqdm
 import re
 import argparse
-import pyteomics.mgf
-import bundle_to_html
 
-from concurrent.futures import ThreadPoolExecutor
-from concurrent.futures import wait
-
-import microbe_masst
-import microbe_masst as microbemasst
+from masst_tree import create_enriched_masst_tree
 import masst_utils as masst
 import usi_utils
 
@@ -27,7 +21,7 @@ tqdm.pandas()
 
 
 def process_matches(file_name, compound_name, matches, library_matches, precursor_mz_tol, min_matched_signals,
-                    input_label, params_label):
+                    input_label, params_label, usi=None):
     common_file = "../{}_{}".format(file_name, compound_name.replace(" ", "_"))
 
     # extract results
@@ -62,27 +56,29 @@ def process_matches(file_name, compound_name, matches, library_matches, precurso
 
     # microbeMASST
     logger.debug("Exporting microbeMASST %s", compound_name)
-    microbemasst.create_enriched_masst_tree(matches_df,
-                                            masst.MICROBE_MASST,
-                                            common_file=common_file,
-                                            lib_match_json=lib_match_json,
-                                            input_str=input_label,
-                                            parameter_str=params_label,
-                                            format_out_json=True,
-                                            compress_out_html=False
-                                            )
+    create_enriched_masst_tree(matches_df,
+                               masst.MICROBE_MASST,
+                               common_file=common_file,
+                               lib_match_json=lib_match_json,
+                               input_str=input_label,
+                               parameter_str=params_label,
+                               usi=usi,
+                               format_out_json=True,
+                               compress_out_html=False
+                               )
 
     # foodMASST
     logger.debug("Exporting foodMASST %s", compound_name)
-    microbemasst.create_enriched_masst_tree(matches_df,
-                                            masst.FOOD_MASST,
-                                            common_file=common_file,
-                                            lib_match_json=lib_match_json,
-                                            input_str=input_label,
-                                            parameter_str=params_label,
-                                            format_out_json=True,
-                                            compress_out_html=False
-                                            )
+    create_enriched_masst_tree(matches_df,
+                               masst.FOOD_MASST,
+                               common_file=common_file,
+                               lib_match_json=lib_match_json,
+                               input_str=input_label,
+                               parameter_str=params_label,
+                               usi=usi,
+                               format_out_json=True,
+                               compress_out_html=False
+                               )
 
     return matches_df
 
@@ -114,7 +110,7 @@ def query_usi_or_id(file_name, usi_or_lib_id, compound_name,
                                            mz_tol, precursor_mz_tol)
         input_label = "ID: {};  Descriptor: {}".format(usi_or_lib_id, compound_name)
         return process_matches(file_name, compound_name, matches, library_matches, precursor_mz_tol,
-                               min_matched_signals, input_label, params_label)
+                               min_matched_signals, input_label, params_label, usi_utils.ensure_usi(usi_or_lib_id))
     except Exception as e:
         logger.exception(e)
         return None

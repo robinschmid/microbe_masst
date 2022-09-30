@@ -16,6 +16,7 @@ def create_enriched_masst_tree(matches_df,
                                lib_match_json,
                                input_str,
                                parameter_str,
+                               usi: str = None,
                                in_html="../code/collapsible_tree_v3.html",
                                format_out_json=True,
                                compress_out_html=True,
@@ -31,6 +32,7 @@ def create_enriched_masst_tree(matches_df,
             "PLACEHOLDER_JSON_DATA": out_json_tree,
             "LIBRARY_JSON_DATA_PLACEHOLDER": lib_match_json,
             "INPUT_LABEL_PLACEHOLDER": input_str,
+            "USI_LABEL_PLACEHOLDER": usi if usi else "",
             "PARAMS_PLACEHOLDER": parameter_str
         }
 

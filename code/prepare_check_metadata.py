@@ -47,15 +47,15 @@ def prepare_check_metadata_file(metadata_file, output_file):
 if __name__ == '__main__':
     # parsing the arguments (all optional)
     parser = argparse.ArgumentParser(description='Update metadata file and check')
-    # parser.add_argument('--metadata_file', type=str, help='input masst metadata',
-    #                     default="../data/202206_microbe_masst_table.csv")
-    # parser.add_argument('--output_file', type=str, help='output masst metadata',
-    #                     default="../data/microbe_masst_table.csv")
-    # foodmasst
     parser.add_argument('--metadata_file', type=str, help='input masst metadata',
-                        default="../data/food_masst_metadata.csv")
+                        default="../data/microbeMASST_final_table_update_fix.csv")
     parser.add_argument('--output_file', type=str, help='output masst metadata',
                         default="../data/food_masst_metadata.csv")
+    # foodmasst
+    # parser.add_argument('--metadata_file', type=str, help='input masst metadata',
+    #                     default="../data/food_masst_metadata.csv")
+    # parser.add_argument('--output_file', type=str, help='output masst metadata',
+    #                     default="../data/food_masst_metadata.csv")
     args = parser.parse_args()
 
     try:

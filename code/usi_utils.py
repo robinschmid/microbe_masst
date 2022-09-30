@@ -27,3 +27,17 @@ def create_file_usi_column(df, original_usi_col="USI", dataset_col="MassIVE", fi
             raise ValueError("Missing MassIVE column for datasets")
         df["file_usi"] = [create_simple_file_usi(filename, dataset) for filename, dataset in
                           zip(df[filename_col], df[dataset_col])]
+
+
+def ensure_usi(usi_or_lib_id):
+    """
+
+    :param usi_or_lib_id: USI or gnps library ID
+    :return: the input usi, the GNPS library usi, or None if not a USI
+    """
+    input = str(usi_or_lib_id)
+    if input.startswith("mzspec:"):
+        return input
+    elif input.startswith("CCMSLIB"):
+        return "mzspec:GNPS:GNPS-LIBRARY:accession:{}".format(input)
+    else: return None
