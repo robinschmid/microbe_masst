@@ -1,72 +1,12 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<style type="text/css">
-
-    .node {
-        cursor: pointer;
-    }
-
-    .overlay {
-        background-color: white;
-    }
-
-    .node circle {
-        fill: #fff;
-        stroke: steelblue;
-        stroke-width: 1.5px;
-    }
-
-    .node text {
-        font-size: 10px;
-        font-family: sans-serif;
-    }
-
-    .link {
-        fill: none;
-        stroke: #ccc;
-        stroke-width: 1.5px;
-    }
-
-    .templink {
-        fill: none;
-        stroke: #ff0000;
-        stroke-width: 3px;
-    }
-
-    .ghostCircle.show {
-        display: block;
-    }
-
-    .ghostCircle, .activeDrag .ghostCircle {
-        display: none;
-    }
-
-    div.tooltip {
-        position: absolute;
-        text-align: left;
-        padding: 2px;
-        font: 12px sans-serif;
-        background: lightsteelblue;
-        border: 0px;
-        border-radius: 8px;
-        pointer-events: none;
-    }
-
-    input[type='number']{
-        width: 5em;
-    }
-
-    label{
-        font-size: 13px;
-        font-family: sans-serif;
-    }
-
-</style>
-    <link rel="stylesheet" type="text/css" href="lib/dataTables.min.css">
-    <script src="https://d3js.org/d3.v3.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="lib/dataTables.min.js"></script>
-    <script src="lib/makeTable.js"></script>
+<link rel="stylesheet" type="text/css" href="lib/dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="lib/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="lib/tree_visualizer_style.css">
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="lib/dataTables.min.js"></script>
+<script src="lib/makeTable.js"></script>
 <body>
 <!-- add table - library matches -->
 <div id='library_table' style="display:none;"></div>
@@ -76,16 +16,16 @@
 <div id='paramsDiv' style="margin-top:5px; display:none;"></div>
 
 <div id="firstMenu" style="margin-top:10px;">
-<!-- add controls -->
+    <!-- add controls -->
     <input type="button" value="LibraryID" onclick="showLibraryTable()" title="LibraryID"/>
     <input onclick="showDatasetTable()" title="Datasets" type="button" value="Datasets"/>
     <input type="button" value="Matches" onclick="showMatchTable()" title="Matches"/>
     <input type="button" value="Params" onclick="showParameters()" title="Params"/>
     <input type="button" value="Center" onclick="centerOnRoot()" title="Center"/>
-<!--    <input type="button" id="downloadSvg" value="Download" onclick="downloadSvg()" title="graph as svg"/>-->
-<!--    <input type="button" value="Expand matched" onclick="expandMatchedAndUpdate()" title="Expand all nodes with matches"/>-->
-<!--    <input type="button" value="Expand" onclick="expandAllAndUpdate()" title="Expand full tree"/>-->
-<!--    <input type="button" value="Only matched" onclick="toggleFilterMatched()" title="Toggle filtering by match"/>-->
+    <!--    <input type="button" id="downloadSvg" value="Download" onclick="downloadSvg()" title="graph as svg"/>-->
+    <!--    <input type="button" value="Expand matched" onclick="expandMatchedAndUpdate()" title="Expand all nodes with matches"/>-->
+    <!--    <input type="button" value="Expand" onclick="expandAllAndUpdate()" title="Expand full tree"/>-->
+    <!--    <input type="button" value="Only matched" onclick="toggleFilterMatched()" title="Toggle filtering by match"/>-->
 
     <label for="inputLevel">Show level:</label>
     <input id="inputLevel" style="width:3em" name="inputLevel" title="Level" type="number" value="4"/>
@@ -93,23 +33,23 @@
     <input id="inputMinMatch" style="width:3em" name="inputMinMatch" title="Min matches" type="number" value="1"/>
 </div>
 
-    <!-- Style combobox - placeholder will be filled by d3 -->
-     <div id="secondMenu" style="margin-top:5px;">
-        <input type="button" value="Scale" onclick="toggleScalingAndUpdate()"
-               title="Toggle scaling of nodes depending on number of matches"/>
-        <label for="inputFontSize">Font:</label>
-        <input id="inputFontSize" style="width:3em" name="inputFontSize" title="Font size" type="number" value="12"/>
-        <label for="inputCharWidth">Width:</label>
-        <input id="inputCharWidth" style="width:3em" name="inputCharWidth" title="Width between classes (per character)"
-        type="number" step=0.1 value="2.5"/>
-        <label for="inputHeight">Height:</label>
-        <input id="inputHeight" style="width:3em" name="inputHeight" title="Height per line" type="number" value="40"/>
-     </div>
+<!-- Style combobox - placeholder will be filled by d3 -->
+<div id="secondMenu" style="margin-top:5px;">
+    <input type="button" value="Scale" onclick="toggleScalingAndUpdate()"
+           title="Toggle scaling of nodes depending on number of matches"/>
+    <label for="inputFontSize">Font:</label>
+    <input id="inputFontSize" style="width:3em" name="inputFontSize" title="Font size" type="number" value="12"/>
+    <label for="inputCharWidth">Width:</label>
+    <input id="inputCharWidth" style="width:3em" name="inputCharWidth" title="Width between classes (per character)"
+           type="number" step=0.1 value="2.5"/>
+    <label for="inputHeight">Height:</label>
+    <input id="inputHeight" style="width:3em" name="inputHeight" title="Height per line" type="number" value="40"/>
+</div>
 
 <!--  the title  -->
-    <div id='titleDiv' style="margin-top:5px;"></div>
+<div id='titleDiv' style="margin-top:5px;"></div>
 
-    <div id="tree-container"></div>
+<div id="tree-container"></div>
 
 </body>
 <script src="../code/collapsible_tree_v3_internal_data.js"></script>

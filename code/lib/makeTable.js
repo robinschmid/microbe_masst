@@ -11,6 +11,7 @@ function makeTable(id) {
         // Create and select table skeleton
         var tableSelect = targetDiv.append("table")
             .attr("class", "display compact")
+            .attr("width", "100%")
             .attr("id", tableID)
             .style("visibility", "hidden"); // Hide table until style loads;
 
@@ -49,13 +50,11 @@ function makeTable(id) {
                 // Here, I am supplying DataTable with the data to fill the table.
                 // This is more efficient than supplying an already contructed table.
                 // Refer to http://datatables.net/manual/data#Objects for details.
+                dom: 'Blfrtip',
                 data: data,
                 columns: colnames.map(function (e) {
                     return {
                         data: e,
-                        buttons: [
-                            'csv'
-                        ],
                         render: function (data, type, row, meta) {
                             if (type === 'display') {
                                 sdata = String(data);
@@ -65,7 +64,7 @@ function makeTable(id) {
                                 else if (sdata.startsWith("mzspec:")) {
                                     if (sdata.includes(":scan:") || sdata.includes("accession:CCMSLIB")) {
                                         // show mirror if input usi was not empty
-                                        if (inputUsi != null)
+                                        if (inputUsi != null && inputUsi.length>0)
                                             data = '<a href="https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=' + inputUsi
                                                 + '&usi2=' + data + '" target="_blank">' + data + '</a>';
                                         else {
