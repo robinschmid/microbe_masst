@@ -176,7 +176,8 @@ if __name__ == '__main__':
                              'usi_or_lib_id and compound_header',
                         # default="../casmi_pos_sirius/bifido.mgf")
                         # default="../casmi_pos_sirius/small.mgf")
-                        default="../examples/example_links.tsv")
+                        # default="../examples/example_links.tsv")
+                        default="../BASF/USI.csv")
     # default="../casmi_pos_sirius/MIND.mgf")
     # default="../casmi_pos_sirius/T1000_Fecal.mgf")
     # default="../casmi_pos_sirius/lacphe.mgf")
@@ -191,17 +192,17 @@ if __name__ == '__main__':
     # -d5c6aa1a2c6a.mgf")
     # default="D:\git\microbe_masst\examples\ROSMAP_gnps.mgf")
     parser.add_argument('--out_file', type=str, help='output html and other files, name without extension',
-                        default="output/aaafastMASST_")
+                        default="BASF/fastMASST_")
 
     # only for USI or lib ID file
     parser.add_argument('--usi_or_lib_id', type=str, help='specify the usi or GNPS library id to search',
                         default="USI")
     parser.add_argument('--compound_header', type=str,
                         help='defines the header of the compound names, make sure to be path safe',
-                        default="Compound")
+                        default="ID")
     parser.add_argument('--separator', type=str,
                         help='separator for input file, e.g., \\t for tab',
-                        default="\t")
+                        default=",")
 
     # MASST params
     parser.add_argument('--precursor_mz_tol', type=float,
@@ -228,7 +229,7 @@ if __name__ == '__main__':
     parser.add_argument('--parallel_queries', type=int,
                         help='the number of async queries. fastMASST step is IO bound so higher number than CPU '
                              'speeds up the process',
-                        default="1")
+                        default="2")
 
     args = parser.parse_args()
 

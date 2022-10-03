@@ -1,4 +1,8 @@
+import json
 from pathlib import Path
+import requests
+
+USI_URL = "https://metabolomics-usi.ucsd.edu/json/"
 
 def create_simple_file_usi(filename, dataset):
     filename = Path(filename).stem
@@ -41,3 +45,9 @@ def ensure_usi(usi_or_lib_id):
     elif input.startswith("CCMSLIB"):
         return "mzspec:GNPS:GNPS-LIBRARY:accession:{}".format(input)
     else: return None
+
+
+def get_spectrum(usi:str):
+    resp = requests.get(USI_URL, params={"usi1": usi})
+    resp.raise_for_status()
+    return json.loads(resp.text)

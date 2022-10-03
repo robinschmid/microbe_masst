@@ -10,6 +10,7 @@ from dataclasses import dataclass
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
+
 # requests_cache.install_cache("fastmasst_cache", expire_after=timedelta(days=2))
 
 
@@ -36,9 +37,6 @@ FOOD_MASST = SpecialMasst(
     tree_node_key="name",
     metadata_key="node_id"
 )
-
-
-
 
 URL = "https://fastlibrarysearch.ucsd.edu/search"
 
@@ -98,6 +96,7 @@ def fast_masst_spectrum(
         analog_mass_below=130,
         analog_mass_above=200,
         database=DataBase.gnpsdata_index,
+        min_signals=3
 ):
     """
 
@@ -114,20 +113,65 @@ def fast_masst_spectrum(
     :param database:
     :return: (MASST results as json, filtered data points as array of array [[x,y],[...]]
     """
+    # relative intensity and precision
+    dps = [[round(mz, 5), intensity] for mz, intensity in zip(mzs, intensities)]
+    spec_dict = {
+        "n_peaks": len(dps),
+        "peaks": dps,
+        "precursor_mz": precursor_mz,
+        "precursor_charge": abs(precursor_charge),
+    }
+    return fast_masst_spectrum_dict(spec_dict,
+                                    precursor_mz_tol,
+                                    mz_tol,
+                                    min_cos,
+                                    analog,
+                                    analog_mass_below,
+                                    analog_mass_above,
+                                    database,
+                                    min_signals
+                                    )
+
+
+def fast_masst_spectrum_dict(
+        spec_dict: dict,
+        precursor_mz_tol=0.05,
+        mz_tol=0.05,
+        min_cos=0.7,
+        analog=False,
+        analog_mass_below=130,
+        analog_mass_above=200,
+        database=DataBase.gnpsdata_index,
+        min_signals=3
+):
+    """
+
+    :param spec_dict: dictionary with GNPS json like spectrum. Example:
+    {"n_peaks":8,"peaks":[[80.97339630126953,955969.8125],[81.98159790039062,542119.1875],[98.98410034179688,
+    483893632.0],[116.99469757080078,1605324.25],[127.0155029296875,182958080.0],[131.01019287109375,878951.375],
+    [155.0467071533203,73527152.0],[183.07809448242188,16294011.0]],"precursor_charge":1,"precursor_mz":183.078,
+    "splash":"splash10-0002-9500000000-fe91737b5df956c7e69e"}
+    :param precursor_mz_tol:
+    :param mz_tol:
+    :param min_cos:
+    :param analog:
+    :param analog_mass_below:
+    :param analog_mass_above:
+    :param database:
+    :return: (MASST results as json, filtered data points as array of array [[x,y],[...]]
+    """
     try:
-        # relative intensity and precision
-        # filter out below 0.1% intensity
-        max_intensity = max(intensities)
-        dps = [[round(mz, 5), round(intensity / max_intensity * 100.0, 1)] for mz, intensity in zip(mzs, intensities)]
-        dps = [dp for dp in dps if dp[1] > 0]
+        max_intensity = max([v[1] for v in spec_dict["peaks"] ])
+        dps = [[round(dp[0], 5), round(dp[1] / max_intensity * 100.0, 1)] for dp in spec_dict["peaks"]]
+        dps = [dp for dp in dps if dp[1] >= 0.1]
+
+        spec_dict["peaks"] = dps
+        spec_dict["n_peaks"] = len(dps)
+        if spec_dict["n_peaks"] < min_signals:
+            return None, dps
 
         spec_json = json.dumps(
-            {
-                "n_peaks": len(dps),
-                "peaks": dps,
-                "precursor_mz": precursor_mz,
-                "precursor_charge": abs(precursor_charge),
-            }
+            spec_dict
         )
 
         params = {
@@ -164,7 +208,7 @@ def _fast_masst(params):
 def filter_matches(df, precursor_mz_tol, min_matched_signals):
     return df.loc[
         (df["Delta Mass"].between(-precursor_mz_tol, precursor_mz_tol, inclusive="both")) & (df["Matching Peaks"] >=
-                                                                                           min_matched_signals)]
+                                                                                             min_matched_signals)]
 
 
 def extract_matches_from_masst_results(results_dict,
@@ -179,7 +223,7 @@ def extract_matches_from_masst_results(results_dict,
     masst_df = pd.DataFrame(results_dict["results"])
     try:
         masst_df.drop(columns=["Unit Delta Mass", "Query Scan", "Query Filename", "Index UnitPM", "Index IdxInUnitPM",
-                           "Filtered Input Spectrum Path"], inplace=True, axis=1)
+                               "Filtered Input Spectrum Path"], inplace=True, axis=1)
     except Exception as e:
         # fastMASST response is sometimes empty
         return masst_df
