@@ -11,16 +11,16 @@ logger = logging.getLogger(__name__)
 
 
 def create_enriched_masst_tree(
-    matches_df,
-    special_masst: SpecialMasst,
-    common_file,
-    lib_match_json,
-    input_str,
-    parameter_str,
-    usi: str = None,
-    in_html="../code/collapsible_tree_v3.html",
-    format_out_json=True,
-    compress_out_html=True,
+        matches_df,
+        special_masst: SpecialMasst,
+        common_file,
+        lib_match_json,
+        input_str,
+        parameter_str,
+        usi: str = None,
+        in_html="../code/collapsible_tree_v3.html",
+        format_out_json=True,
+        compress_out_html=True,
 ):
     if (matches_df is None) or (len(matches_df) <= 0):
         return False
@@ -41,6 +41,9 @@ def create_enriched_masst_tree(
 
         # exports the counts file for all matches
         results_df = export_metadata_matches(special_masst, matches_df, out_counts_file)
+        if len(results_df) <= 0:
+            return None
+
         results_df = group_matches(special_masst, results_df)
         # adds them to the json ontology
         json_ontology_extender.add_data_to_ontology_file(
@@ -61,7 +64,7 @@ def create_enriched_masst_tree(
 
 
 def export_metadata_matches(
-    special_masst: SpecialMasst, matches_df: pd.DataFrame, out_tsv_file
+        special_masst: SpecialMasst, matches_df: pd.DataFrame, out_tsv_file
 ) -> pd.DataFrame:
     metadata_file = special_masst.metadata_file
     if str(metadata_file).endswith(".tsv"):

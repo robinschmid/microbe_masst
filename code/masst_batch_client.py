@@ -69,8 +69,6 @@ def run_on_usi_and_id_list(
         wait(futures)
         jobs_df["fastMASST"] = [f.result() for f in futures]
 
-    save_masst_results(jobs_df, out_filename_no_ext)
-
 
 def run_on_mgf(
     input_file,
@@ -112,10 +110,9 @@ def run_on_mgf(
 
     logger.info("Running fast microbe masst on input n={} spectra".format(len(jobs_df)))
 
-    with ThreadPoolExecutor(parallel_queries) as executor:
-        futures = [
-            executor.submit(
-                masst_client.query_spectrum,
+    if len(jobs_df) <= 1:
+        jobs_df["fastMASST"] = [
+            masst_client.query_spectrum(
                 out_filename_no_ext,
                 name,
                 prec_mz,
@@ -134,26 +131,32 @@ def run_on_mgf(
                 ids, precursor_mzs, precursor_charges, mzs, intensities
             )
         ]
+    else:
+        with ThreadPoolExecutor(parallel_queries) as executor:
+            futures = [
+                executor.submit(
+                    masst_client.query_spectrum,
+                    out_filename_no_ext,
+                    name,
+                    prec_mz,
+                    prec_charge,
+                    mz_array,
+                    intensity_array,
+                    precursor_mz_tol=precursor_mz_tol,
+                    mz_tol=mz_tol,
+                    min_cos=min_cos,
+                    min_matched_signals=min_matched_signals,
+                    analog=analog,
+                    analog_mass_below=analog_mass_below,
+                    analog_mass_above=analog_mass_above,
+                )
+                for name, prec_mz, prec_charge, mz_array, intensity_array in zip(
+                    ids, precursor_mzs, precursor_charges, mzs, intensities
+                )
+            ]
 
-        wait(futures)
-        jobs_df["fastMASST"] = [f.result() for f in futures]
-
-    save_masst_results(jobs_df, out_filename_no_ext)
-
-
-def save_masst_results(jobs_df, out_filename_no_ext):
-    finished_jobs_tsv = "../output/finished.tsv"
-    masst_results_tsv = "../{}.tsv".format(out_filename_no_ext)
-    # explode rows and export
-    # export_masst_results(jobs_df, masst_results_tsv)
-    # add tree links
-    jobs_df["Result"] = jobs_df.progress_apply(
-        lambda row: "Success" if row["fastMASST"] is not None else None, axis=1
-    )
-    # export the list of links
-    logger.info("Exporting finished_jobs_tsv %s", finished_jobs_tsv)
-    jobs_df.drop(columns=["fastMASST"], axis=1, inplace=True)
-    jobs_df.to_csv(finished_jobs_tsv, sep="\t", index=False)
+            wait(futures)
+            jobs_df["fastMASST"] = [f.result() for f in futures]
 
 
 def export_masst_results(jobs_df: pd.DataFrame, masst_results_tsv: str):
@@ -211,7 +214,7 @@ if __name__ == "__main__":
         help="input file either mgf with spectra or table that contains the two columns specified by "
         "usi_or_lib_id and compound_header",
         # default="../examples/example_links.tsv",
-        default="../examples/small.mgf"
+        default="../examples/small.mgf",
     )
 
     parser.add_argument(
