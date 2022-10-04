@@ -8,6 +8,7 @@ import numpy as np
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
+
 class NpEncoder(json.JSONEncoder):
     def default(self, obj):
         if isinstance(obj, np.integer):
@@ -19,6 +20,7 @@ class NpEncoder(json.JSONEncoder):
         else:
             return super(NpEncoder, self).default(obj)
 
+
 def update_group_size(node, metadata_df, node_key="NCBI", data_key="Taxa_NCBI"):
     group_size = (metadata_df[data_key].values == node[node_key]).sum()
     # apply to all children
@@ -27,6 +29,7 @@ def update_group_size(node, metadata_df, node_key="NCBI", data_key="Taxa_NCBI"):
             group_size += update_group_size(child, metadata_df, node_key, data_key)
     node["group_size"] = group_size
     return group_size
+
 
 def get_all_ids(ncbi_ids, node, node_key="NCBI"):
     ncbi_ids.append(node[node_key])
@@ -37,14 +40,16 @@ def get_all_ids(ncbi_ids, node, node_key="NCBI"):
     return ncbi_ids
 
 
-def update_metadata_on_tree(in_ontology="../data/ncbi_microbe_tree.json",
-                            metadata_file="../data/microbe_masst_table.csv",
-                            node_key="NCBI", data_key="Taxa_NCBI"
-                            ):
+def update_metadata_on_tree(
+    in_ontology="../data/ncbi_microbe_tree.json",
+    metadata_file="../data/microbe_masst_table.csv",
+    node_key="NCBI",
+    data_key="Taxa_NCBI",
+):
     try:
         with open(in_ontology) as json_file:
             treeRoot = json.load(json_file)
-            df = pd.read_csv(metadata_file, sep=',')
+            df = pd.read_csv(metadata_file, sep=",")
             # ensure that the grouping columns are strings as we usually match string ids
             df[data_key] = df[data_key].astype(str)
 
@@ -62,9 +67,11 @@ def update_metadata_on_tree(in_ontology="../data/ncbi_microbe_tree.json",
         return False
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # parsing the arguments (all optional)
-    parser = argparse.ArgumentParser(description='Update tree ontology with new metadata file')
+    parser = argparse.ArgumentParser(
+        description="Update tree ontology with new metadata file"
+    )
     # parser.add_argument('--ontology', type=str, help='the json ontology file with children',
     #                     default="../data/ncbi_microbe_tree.json")
     # parser.add_argument('--metadata_file', type=str, help='microbe masst metadata',
@@ -76,20 +83,37 @@ if __name__ == '__main__':
     #                     default="Taxa_NCBI")
 
     # food masst
-    parser.add_argument('--ontology', type=str, help='the json ontology file with children',
-                        default="../data/gfop_food_tree.json")
-    parser.add_argument('--metadata_file', type=str, help='microbe masst metadata',
-                        default="../data/food_masst_metadata.csv")
-    parser.add_argument('--node_key', type=str, help='the field in the ontology to be compare to the field in the '
-                                                     'data file', default="name")
-    parser.add_argument('--data_key', type=str,
-                        help='the field in the data file to be compared to the field in the ontology',
-                        default="node_id")
+    parser.add_argument(
+        "--ontology",
+        type=str,
+        help="the json ontology file with children",
+        default="../data/gfop_food_tree.json",
+    )
+    parser.add_argument(
+        "--metadata_file",
+        type=str,
+        help="microbe masst metadata",
+        default="../data/food_masst_metadata.csv",
+    )
+    parser.add_argument(
+        "--node_key",
+        type=str,
+        help="the field in the ontology to be compare to the field in the " "data file",
+        default="name",
+    )
+    parser.add_argument(
+        "--data_key",
+        type=str,
+        help="the field in the data file to be compared to the field in the ontology",
+        default="node_id",
+    )
 
     args = parser.parse_args()
 
     try:
-        update_metadata_on_tree(args.ontology, args.metadata_file, args.node_key, args.data_key)
+        update_metadata_on_tree(
+            args.ontology, args.metadata_file, args.node_key, args.data_key
+        )
     except Exception as e:
         # exit with error
         logger.exception(e)

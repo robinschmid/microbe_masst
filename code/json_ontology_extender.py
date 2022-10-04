@@ -23,7 +23,7 @@ class NpEncoder(json.JSONEncoder):
             return super(NpEncoder, self).default(obj)
 
 
-def add_data_to_node(node, meta_matched_df:pd.DataFrame, node_field, data_field):
+def add_data_to_node(node, meta_matched_df: pd.DataFrame, node_field, data_field):
     """
     Merge data into node and apply to all children
     :param node: the current node in a tree structure with ["children"] property
@@ -90,15 +90,15 @@ def field_missing(node, field, report_missing=False, replace_with_field=None):
 
 def add_pie_data_to_node_and_children(node):
     # the pie data needs an array with multiple entries - therefore use fraction and 1-fraction
-    node["pie_data"] = [{}, {}];
-    node["pie_data"][0]["occurrence_fraction"] = node["occurrence_fraction"];
-    node["pie_data"][0]["index"] = 0;
-    node["pie_data"][0]["group_size"] = node["group_size"];
-    node["pie_data"][0]["matched_size"] = node["matched_size"];
-    node["pie_data"][1]["occurrence_fraction"] = 1.0 - node["occurrence_fraction"];
-    node["pie_data"][1]["index"] = 1;
-    node["pie_data"][1]["group_size"] = node["group_size"];
-    node["pie_data"][1]["matched_size"] = node["matched_size"];
+    node["pie_data"] = [{}, {}]
+    node["pie_data"][0]["occurrence_fraction"] = node["occurrence_fraction"]
+    node["pie_data"][0]["index"] = 0
+    node["pie_data"][0]["group_size"] = node["group_size"]
+    node["pie_data"][0]["matched_size"] = node["matched_size"]
+    node["pie_data"][1]["occurrence_fraction"] = 1.0 - node["occurrence_fraction"]
+    node["pie_data"][1]["index"] = 1
+    node["pie_data"][1]["group_size"] = node["group_size"]
+    node["pie_data"][1]["matched_size"] = node["matched_size"]
 
     # apply to all children
     if "children" in node:
@@ -106,11 +106,13 @@ def add_pie_data_to_node_and_children(node):
             add_pie_data_to_node_and_children(child)
 
 
-def add_data_to_ontology_file(special_masst: SpecialMasst,
-                              output="../output/merged_ontology_data.json",
-                              in_data="../examples/caffeic_acid.tsv",
-                              meta_matched_df: pd.DataFrame = None,
-                              format_out_json=True):
+def add_data_to_ontology_file(
+    special_masst: SpecialMasst,
+    output="../output/merged_ontology_data.json",
+    in_data="../examples/caffeic_acid.tsv",
+    meta_matched_df: pd.DataFrame = None,
+    format_out_json=True,
+):
     data_key = special_masst.metadata_key
     node_key = special_masst.tree_node_key
     with open(special_masst.tree_file) as json_file:
@@ -118,7 +120,7 @@ def add_data_to_ontology_file(special_masst: SpecialMasst,
 
         # read the additional data
         if meta_matched_df is None:
-            meta_matched_df = pd.read_csv(in_data, sep='\t')
+            meta_matched_df = pd.read_csv(in_data, sep="\t")
         # ensure that the grouping columns are strings as we usually match string ids
         meta_matched_df[data_key] = meta_matched_df[data_key].astype(str)
 
@@ -126,7 +128,12 @@ def add_data_to_ontology_file(special_masst: SpecialMasst,
         add_data_to_node(treeRoot, meta_matched_df, node_key, data_key)
 
         # check if group_size is available otherwise propagate
-        if field_missing(treeRoot, node_key, report_missing=True, replace_with_field="name") > 0:
+        if (
+            field_missing(
+                treeRoot, node_key, report_missing=True, replace_with_field="name"
+            )
+            > 0
+        ):
             logger.error("{} id is missing in a node".format(node_key))
         if field_missing(treeRoot, "group_size") > 0:
             accumulate_field_in_parents(treeRoot, "group_size")
@@ -168,24 +175,48 @@ def calc_root_stats(treeRoot):
     if treeRoot["group_size"] == 0:
         treeRoot["occurrence_fraction"] = 0
     else:
-        treeRoot["occurrence_fraction"] = treeRoot["matched_size"] / treeRoot["group_size"]
+        treeRoot["occurrence_fraction"] = (
+            treeRoot["matched_size"] / treeRoot["group_size"]
+        )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # parsing the arguments (all optional)
-    parser = argparse.ArgumentParser(description='merge an ontology with external data')
-    parser.add_argument('--ontology', type=str, help='the json ontology file with children',
-                        default="../data/gfop_food_tree.json")
-    parser.add_argument('--in_data', type=str, help='a tab separated file with additional data that is added to the '
-                                                    'ontology', default="../examples/caffeic_acid.tsv")
-    parser.add_argument('--node_key', type=str, help='the field in the ontology to be compare to the field in the '
-                                                     'data file', default="name")
-    parser.add_argument('--data_key', type=str,
-                        help='the field in the data file to be compared to the field in the ontology',
-                        default="group_value")
-    parser.add_argument('--out_tree', type=str, help='output file', default="../output/merged_ontology_data.json")
-    parser.add_argument('--format', type=bool, help='Format the json output False or True',
-                        default=True)
+    parser = argparse.ArgumentParser(description="merge an ontology with external data")
+    parser.add_argument(
+        "--ontology",
+        type=str,
+        help="the json ontology file with children",
+        default="../data/gfop_food_tree.json",
+    )
+    parser.add_argument(
+        "--in_data",
+        type=str,
+        help="a tab separated file with additional data that is added to the "
+        "ontology",
+        default="../examples/caffeic_acid.tsv",
+    )
+    parser.add_argument(
+        "--node_key",
+        type=str,
+        help="the field in the ontology to be compare to the field in the " "data file",
+        default="name",
+    )
+    parser.add_argument(
+        "--data_key",
+        type=str,
+        help="the field in the data file to be compared to the field in the ontology",
+        default="group_value",
+    )
+    parser.add_argument(
+        "--out_tree",
+        type=str,
+        help="output file",
+        default="../output/merged_ontology_data.json",
+    )
+    parser.add_argument(
+        "--format", type=bool, help="Format the json output False or True", default=True
+    )
 
     args = parser.parse_args()
 
@@ -193,8 +224,14 @@ if __name__ == '__main__':
     # something like https://raw.githubusercontent.com/robinschmid/GFOPontology/master/data/GFOP.owl
     # important use raw file on github!
     try:
-        add_data_to_ontology_file(output=args.out_tree, ontology_file=args.ontology, in_data=args.in_data,
-                                  node_key=args.node_key, data_key=args.data_key, format_out_json=args.format)
+        add_data_to_ontology_file(
+            output=args.out_tree,
+            ontology_file=args.ontology,
+            in_data=args.in_data,
+            node_key=args.node_key,
+            data_key=args.data_key,
+            format_out_json=args.format,
+        )
     except Exception as e:
         # exit with error
         logger.exception(e)

@@ -28,14 +28,14 @@ MICROBE_MASST = SpecialMasst(
     tree_file="../data/ncbi_microbe_tree.json",
     metadata_file="../data/microbe_masst_table.csv",
     tree_node_key="NCBI",
-    metadata_key="Taxa_NCBI"
+    metadata_key="Taxa_NCBI",
 )
 FOOD_MASST = SpecialMasst(
     prefix="food",
     tree_file="../data/gfop_food_tree.json",
     metadata_file="../data/food_masst_metadata.csv",
     tree_node_key="name",
-    metadata_key="node_id"
+    metadata_key="node_id",
 )
 
 URL = "https://fastlibrarysearch.ucsd.edu/search"
@@ -52,14 +52,14 @@ class DataBase(Enum):
 # https://github.com/mwang87/GNPS_LCMSDashboard/blob/a9971fa557c735c8e0ccd7681653eebd415a8636/app.py#L1632
 # usi = "mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00000001556"
 def fast_masst(
-        usi_or_lib_id,
-        precursor_mz_tol=0.05,
-        mz_tol=0.02,
-        min_cos=0.7,
-        analog=False,
-        analog_mass_below=130,
-        analog_mass_above=200,
-        database=DataBase.gnpsdata_index,
+    usi_or_lib_id,
+    precursor_mz_tol=0.05,
+    mz_tol=0.02,
+    min_cos=0.7,
+    analog=False,
+    analog_mass_below=130,
+    analog_mass_above=200,
+    database=DataBase.gnpsdata_index,
 ):
     if str(usi_or_lib_id).startswith("CCMS"):
         # handle library ID
@@ -85,18 +85,18 @@ def fast_masst(
 
 
 def fast_masst_spectrum(
-        mzs,
-        intensities,
-        precursor_mz,
-        precursor_charge=1,
-        precursor_mz_tol=0.05,
-        mz_tol=0.05,
-        min_cos=0.7,
-        analog=False,
-        analog_mass_below=130,
-        analog_mass_above=200,
-        database=DataBase.gnpsdata_index,
-        min_signals=3
+    mzs,
+    intensities,
+    precursor_mz,
+    precursor_charge=1,
+    precursor_mz_tol=0.05,
+    mz_tol=0.05,
+    min_cos=0.7,
+    analog=False,
+    analog_mass_below=130,
+    analog_mass_above=200,
+    database=DataBase.gnpsdata_index,
+    min_signals=3,
 ):
     """
 
@@ -121,28 +121,29 @@ def fast_masst_spectrum(
         "precursor_mz": precursor_mz,
         "precursor_charge": abs(precursor_charge),
     }
-    return fast_masst_spectrum_dict(spec_dict,
-                                    precursor_mz_tol,
-                                    mz_tol,
-                                    min_cos,
-                                    analog,
-                                    analog_mass_below,
-                                    analog_mass_above,
-                                    database,
-                                    min_signals
-                                    )
+    return fast_masst_spectrum_dict(
+        spec_dict,
+        precursor_mz_tol,
+        mz_tol,
+        min_cos,
+        analog,
+        analog_mass_below,
+        analog_mass_above,
+        database,
+        min_signals,
+    )
 
 
 def fast_masst_spectrum_dict(
-        spec_dict: dict,
-        precursor_mz_tol=0.05,
-        mz_tol=0.05,
-        min_cos=0.7,
-        analog=False,
-        analog_mass_below=130,
-        analog_mass_above=200,
-        database=DataBase.gnpsdata_index,
-        min_signals=3
+    spec_dict: dict,
+    precursor_mz_tol=0.05,
+    mz_tol=0.05,
+    min_cos=0.7,
+    analog=False,
+    analog_mass_below=130,
+    analog_mass_above=200,
+    database=DataBase.gnpsdata_index,
+    min_signals=3,
 ):
     """
 
@@ -161,8 +162,11 @@ def fast_masst_spectrum_dict(
     :return: (MASST results as json, filtered data points as array of array [[x,y],[...]]
     """
     try:
-        max_intensity = max([v[1] for v in spec_dict["peaks"] ])
-        dps = [[round(dp[0], 5), round(dp[1] / max_intensity * 100.0, 1)] for dp in spec_dict["peaks"]]
+        max_intensity = max([v[1] for v in spec_dict["peaks"]])
+        dps = [
+            [round(dp[0], 5), round(dp[1] / max_intensity * 100.0, 1)]
+            for dp in spec_dict["peaks"]
+        ]
         dps = [dp for dp in dps if dp[1] >= 0.1]
 
         spec_dict["peaks"] = dps
@@ -170,9 +174,7 @@ def fast_masst_spectrum_dict(
         if spec_dict["n_peaks"] < min_signals:
             return None, dps
 
-        spec_json = json.dumps(
-            spec_dict
-        )
+        spec_json = json.dumps(spec_dict)
 
         params = {
             "library": database.name,
@@ -197,9 +199,7 @@ def _fast_masst(params):
     :return: dict with the masst results. [results] contains the individual matches, [grouped_by_dataset] contains
     all datasets and their titles
     """
-    search_api_response = requests.post(URL, data=params
-                                        , timeout=150
-                                        )
+    search_api_response = requests.post(URL, data=params, timeout=150)
     search_api_response.raise_for_status()
     search_api_response_json = search_api_response.json()
     return search_api_response_json
@@ -207,14 +207,18 @@ def _fast_masst(params):
 
 def filter_matches(df, precursor_mz_tol, min_matched_signals):
     return df.loc[
-        (df["Delta Mass"].between(-precursor_mz_tol, precursor_mz_tol, inclusive="both")) & (df["Matching Peaks"] >=
-                                                                                             min_matched_signals)]
+        (
+            df["Delta Mass"].between(
+                -precursor_mz_tol, precursor_mz_tol, inclusive="both"
+            )
+        )
+        & (df["Matching Peaks"] >= min_matched_signals)
+    ]
 
 
-def extract_matches_from_masst_results(results_dict,
-                                       precursor_mz_tol,
-                                       min_matched_signals,
-                                       add_dataset_titles=False) -> pd.DataFrame:
+def extract_matches_from_masst_results(
+    results_dict, precursor_mz_tol, min_matched_signals, add_dataset_titles=False
+) -> pd.DataFrame:
     """
     :param results_dict: masst results
     :param add_dataset_titles: add dataset titles to each row
@@ -222,8 +226,18 @@ def extract_matches_from_masst_results(results_dict,
     """
     masst_df = pd.DataFrame(results_dict["results"])
     try:
-        masst_df.drop(columns=["Unit Delta Mass", "Query Scan", "Query Filename", "Index UnitPM", "Index IdxInUnitPM",
-                               "Filtered Input Spectrum Path"], inplace=True, axis=1)
+        masst_df.drop(
+            columns=[
+                "Unit Delta Mass",
+                "Query Scan",
+                "Query Filename",
+                "Index UnitPM",
+                "Index IdxInUnitPM",
+                "Filtered Input Spectrum Path",
+            ],
+            inplace=True,
+            axis=1,
+        )
     except Exception as e:
         # fastMASST response is sometimes empty
         return masst_df
@@ -241,7 +255,9 @@ def extract_matches_from_masst_results(results_dict,
     return masst_df
 
 
-def extract_datasets_from_masst_results(results_dict, matches_df: pd.DataFrame) -> pd.DataFrame:
+def extract_datasets_from_masst_results(
+    results_dict, matches_df: pd.DataFrame
+) -> pd.DataFrame:
     datasets_df = pd.DataFrame(results_dict["grouped_by_dataset"])
     # recalc frequency with filtered MASST results
     new_dataset_df = matches_df.groupby("Dataset").size().reset_index(name="Frequency")

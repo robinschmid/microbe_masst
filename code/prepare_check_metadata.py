@@ -10,9 +10,9 @@ logger = logging.getLogger(__name__)
 
 def prepare_check_metadata_file(metadata_file, output_file):
     if metadata_file.endswith(".tsv"):
-        df = pd.read_csv(metadata_file, sep='\t')
+        df = pd.read_csv(metadata_file, sep="\t")
     else:
-        df = pd.read_csv(metadata_file, sep=',')
+        df = pd.read_csv(metadata_file, sep=",")
 
     # remove white space around values in columns
     df = df.applymap(lambda x: x.strip() if isinstance(x, str) else x)
@@ -24,9 +24,10 @@ def prepare_check_metadata_file(metadata_file, output_file):
     if "Taxa_NCBI" in df.columns:
         # check uniqueness of files
         logger.info("duplicated usi")
-        duplicates = df[df.duplicated(['file_usi'], keep=False)].sort_values(by=["file_usi", "Taxa_Assigment",
-                                                                                 "Taxa_NCBI"],
-                                                                             ascending=[True, False, False])
+        duplicates = df[df.duplicated(["file_usi"], keep=False)].sort_values(
+            by=["file_usi", "Taxa_Assigment", "Taxa_NCBI"],
+            ascending=[True, False, False],
+        )
         logger.info(duplicates)
 
         try:
@@ -34,8 +35,10 @@ def prepare_check_metadata_file(metadata_file, output_file):
                 duplicates.to_csv("../data/duplicates.csv", index=False)
         except:
             logger.warning("Cannot export duplicates file")
-        df = df.sort_values(by=["file_usi", "Taxa_Assigment", "Taxa_NCBI"], ascending=[True, False,
-                                                                                   False]).drop_duplicates(["file_usi"])
+        df = df.sort_values(
+            by=["file_usi", "Taxa_Assigment", "Taxa_NCBI"],
+            ascending=[True, False, False],
+        ).drop_duplicates(["file_usi"])
 
     # export final table
     if output_file.endswith(".tsv"):
@@ -44,13 +47,21 @@ def prepare_check_metadata_file(metadata_file, output_file):
         df.to_csv(output_file, index=False)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # parsing the arguments (all optional)
-    parser = argparse.ArgumentParser(description='Update metadata file and check')
-    parser.add_argument('--metadata_file', type=str, help='input masst metadata',
-                        default="../data/microbeMASST_final_table_update_fix.csv")
-    parser.add_argument('--output_file', type=str, help='output masst metadata',
-                        default="../data/food_masst_metadata.csv")
+    parser = argparse.ArgumentParser(description="Update metadata file and check")
+    parser.add_argument(
+        "--metadata_file",
+        type=str,
+        help="input masst metadata",
+        default="../data/microbeMASST_final_table_update_fix.csv",
+    )
+    parser.add_argument(
+        "--output_file",
+        type=str,
+        help="output masst metadata",
+        default="../data/food_masst_metadata.csv",
+    )
     # foodmasst
     # parser.add_argument('--metadata_file', type=str, help='input masst metadata',
     #                     default="../data/food_masst_metadata.csv")

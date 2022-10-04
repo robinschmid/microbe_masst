@@ -66,9 +66,9 @@ def build_dist_html(input_html, output_html, replace_dict=None, compress=False):
     soup = BeautifulSoup(original_html_text, "lxml")
 
     # Find link tags. example: <link rel="stylesheet" href="css/somestyle.css">
-    for tag in soup.find_all('link', href=True):
-        if tag.has_attr('href'):
-            path = tag['href']
+    for tag in soup.find_all("link", href=True):
+        if tag.has_attr("href"):
+            path = tag["href"]
             path = replace_by_local_file(path)
             file_text = Path(path).read_text(encoding="utf-8")
 
@@ -76,14 +76,14 @@ def build_dist_html(input_html, output_html, replace_dict=None, compress=False):
             tag.extract()
 
             # insert style element
-            new_style = soup.new_tag('style')
+            new_style = soup.new_tag("style")
             new_style.string = file_text
             soup.html.head.append(new_style)
 
     # Find script tags. example: <script src="js/somescript.js"></script>
-    for tag in soup.find_all('script', src=True):
-        if tag.has_attr('src'):
-            path = tag['src']
+    for tag in soup.find_all("script", src=True):
+        if tag.has_attr("src"):
+            path = tag["src"]
             path = replace_by_local_file(path)
             if path.startswith("http"):
                 response = requests.get(path)
@@ -96,18 +96,20 @@ def build_dist_html(input_html, output_html, replace_dict=None, compress=False):
             tag.extract()
 
             # insert script element
-            new_script = soup.new_tag('script')
+            new_script = soup.new_tag("script")
             new_script.string = file_text
             soup.body.append(new_script)
 
     # Find image tags.
-    for tag in soup.find_all('img', src=True):
-        if tag.has_attr('src'):
-            file_content = Path(tag['src']).read_bytes()
+    for tag in soup.find_all("img", src=True):
+        if tag.has_attr("src"):
+            file_content = Path(tag["src"]).read_bytes()
 
             # replace filename with base64 of the content of the file
             base64_file_content = base64.b64encode(file_content)
-            tag['src'] = "data:image/png;base64, {}".format(base64_file_content.decode('ascii'))
+            tag["src"] = "data:image/png;base64, {}".format(
+                base64_file_content.decode("ascii")
+            )
 
     out_text = str(soup)
 
@@ -121,6 +123,7 @@ def build_dist_html(input_html, output_html, replace_dict=None, compress=False):
     if compress:
         try:
             import minify_html
+
             out_text = minify_html.minify(out_text, minify_js=True, minify_css=True)
 
         except Exception as e:
@@ -135,18 +138,37 @@ def build_dist_html(input_html, output_html, replace_dict=None, compress=False):
     return True
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # parsing the arguments (all optional)
-    parser = argparse.ArgumentParser(description='Parse an HTML file and all dependencies to create a single '
-                                                 'distributable HTML file')
-    parser.add_argument('--in_html', type=str, help='The input html file',
-                        default="../code/collapsible_tree_v3.html")
-    parser.add_argument('--replace_dict', type=str, help='Replace placeholder strings with values or file contents. '
-                                                         'form of {"PLACEHOLDER": "FILE OR STRING"}',
-                        default="../output/merged_ontology_data.json")
-    parser.add_argument('--out_html', type=str, help='output html file', default="../output/oneindex.html")
-    parser.add_argument('--compress', type=bool, help='Compress output file (needs minify_html)',
-                        default=True)
+    parser = argparse.ArgumentParser(
+        description="Parse an HTML file and all dependencies to create a single "
+        "distributable HTML file"
+    )
+    parser.add_argument(
+        "--in_html",
+        type=str,
+        help="The input html file",
+        default="../code/collapsible_tree_v3.html",
+    )
+    parser.add_argument(
+        "--replace_dict",
+        type=str,
+        help="Replace placeholder strings with values or file contents. "
+        'form of {"PLACEHOLDER": "FILE OR STRING"}',
+        default="../output/merged_ontology_data.json",
+    )
+    parser.add_argument(
+        "--out_html",
+        type=str,
+        help="output html file",
+        default="../output/oneindex.html",
+    )
+    parser.add_argument(
+        "--compress",
+        type=bool,
+        help="Compress output file (needs minify_html)",
+        default=True,
+    )
     args = parser.parse_args()
 
     # is a url - try to download file
