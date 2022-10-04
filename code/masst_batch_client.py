@@ -210,14 +210,15 @@ if __name__ == "__main__":
         type=str,
         help="input file either mgf with spectra or table that contains the two columns specified by "
         "usi_or_lib_id and compound_header",
-        default="../examples/example_links.tsv",
+        # default="../examples/example_links.tsv",
+        default="../examples/small.mgf"
     )
 
     parser.add_argument(
         "--out_file",
         type=str,
         help="output html and other files, name without extension",
-        default="output/fastMASST_",
+        default="../output/fastMASST",
     )
 
     # only for USI or lib ID file

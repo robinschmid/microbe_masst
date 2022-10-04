@@ -39,7 +39,10 @@ def process_matches(
     params_label,
     usi=None,
 ):
-    common_file = "../{}_{}".format(file_name, compound_name.replace(" ", "_"))
+    if compound_name:
+        common_file = "{}_{}".format(file_name, compound_name.replace(" ", "_"))
+    else:
+        common_file = "{}".format(file_name)
 
     # extract results
     matches_df = masst.extract_matches_from_masst_results(
@@ -326,12 +329,12 @@ if __name__ == "__main__":
         "--out_file",
         type=str,
         help="output html and other files, name without extension",
-        default="output/aaaafastMASST_",
+        default="../output/fastMASST",
     )
 
     # only for USI or lib ID file
     parser.add_argument(
-        "--compound_name", type=str, help="compound name", default="phe_ca"
+        "--compound_name", type=str, help="compound name", default=""
     )
 
     # MASST params
