@@ -91,7 +91,7 @@ def run_on_mgf(
         for spectrum_dict in tqdm(f_in):
             abundances = spectrum_dict["intensity array"]
             if len(abundances) >= min_matched_signals:
-                ids.append(str(spectrum_dict["params"]["scans"]))
+                ids.append(spectrum_dict["params"].get("scans", None))
                 precursor_mzs.append(float(spectrum_dict["params"]["pepmass"][0]))
                 if "charge" in spectrum_dict["params"]:
                     precursor_charges.append(int(spectrum_dict["params"]["charge"][0]))
