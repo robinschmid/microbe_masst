@@ -90,7 +90,7 @@ def process_matches(
         parameter_str=params_label,
         usi=usi,
         format_out_json=True,
-        compress_out_html=False,
+        compress_out_html=True,
     )
 
     # foodMASST
@@ -104,7 +104,7 @@ def process_matches(
         parameter_str=params_label,
         usi=usi,
         format_out_json=True,
-        compress_out_html=False,
+        compress_out_html=True,
     )
 
     return matches_df
