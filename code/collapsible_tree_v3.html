@@ -8,6 +8,12 @@
 <script src="lib/datatables.min.js"></script>
 <script src="lib/makeTable.js"></script>
 <body>
+<div>
+    <input onclick="showLibraryTable()" title="LibraryID" type="button" value="LibraryID"/>
+    <input onclick="showDatasetTable()" title="Datasets" type="button" value="Datasets"/>
+    <input onclick="showMatchTable()" title="Matches" type="button" value="Matches"/>
+    <input onclick="showParameters()" title="Params" type="button" value="Params"/>
+</div>
 <!-- add table - library matches -->
 <div id='library_table' style="display:none;"></div>
 <div id="dataset_table" style="display:none;"></div>
@@ -17,16 +23,7 @@
 
 <div id="firstMenu" style="margin-top:10px;">
     <!-- add controls -->
-    <input type="button" value="LibraryID" onclick="showLibraryTable()" title="LibraryID"/>
-    <input onclick="showDatasetTable()" title="Datasets" type="button" value="Datasets"/>
-    <input type="button" value="Matches" onclick="showMatchTable()" title="Matches"/>
-    <input type="button" value="Params" onclick="showParameters()" title="Params"/>
     <input type="button" value="Center" onclick="centerOnRoot()" title="Center"/>
-    <!--    <input type="button" id="downloadSvg" value="Download" onclick="downloadSvg()" title="graph as svg"/>-->
-    <!--    <input type="button" value="Expand matched" onclick="expandMatchedAndUpdate()" title="Expand all nodes with matches"/>-->
-    <!--    <input type="button" value="Expand" onclick="expandAllAndUpdate()" title="Expand full tree"/>-->
-    <!--    <input type="button" value="Only matched" onclick="toggleFilterMatched()" title="Toggle filtering by match"/>-->
-
     <label for="inputLevel">Show level:</label>
     <input id="inputLevel" style="width:3em" name="inputLevel" title="Level" type="number" value="4"/>
     <label for="inputMinMatch">Minimum matches:</label>
@@ -52,6 +49,6 @@
 <div id="tree-container"></div>
 
 </body>
-<script src="../code/collapsible_tree_v3_internal_data.js"></script>
-<script src="../code/internalized_tables.js"></script>
+    <script src="../code/collapsible_tree_v3_internal_data.js"></script>
+    <script src="../code/internalized_tables.js"></script>
 </html>
