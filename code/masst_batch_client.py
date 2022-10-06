@@ -5,6 +5,7 @@ from tqdm import tqdm
 import re
 import argparse
 import pyteomics.mgf
+from pathlib import Path
 
 from concurrent.futures import ThreadPoolExecutor
 from concurrent.futures import wait
@@ -23,19 +24,20 @@ def path_safe(file):
 
 
 def run_on_usi_and_id_list(
-    input_file,
-    out_filename_no_ext,
-    usi_or_lib_id="Output USI",
-    compound_name_header="COMPOUND_NAME",
-    sep=",",
-    precursor_mz_tol=0.05,
-    mz_tol=0.02,
-    min_cos=0.7,
-    min_matched_signals=3,
-    analog=False,
-    analog_mass_below=150,
-    analog_mass_above=200,
-    parallel_queries=100,
+        input_file,
+        out_filename_no_ext,
+        usi_or_lib_id="Output USI",
+        compound_name_header="COMPOUND_NAME",
+        sep=",",
+        precursor_mz_tol=0.05,
+        mz_tol=0.02,
+        min_cos=0.7,
+        min_matched_signals=3,
+        analog=False,
+        analog_mass_below=150,
+        analog_mass_above=200,
+        parallel_queries=100,
+        skip_existing=False,
 ):
     jobs_df = pd.read_csv(input_file, sep=sep)
     jobs_df.rename(
@@ -46,7 +48,17 @@ def run_on_usi_and_id_list(
     jobs_df = jobs_df.astype({"Compound": "string"})
     jobs_df["Compound"] = jobs_df["Compound"].apply(path_safe)
 
-    logger.debug("Running fast microbe masst on input")
+    if skip_existing:
+        all_len = len(jobs_df)
+        jobs_df["file_path"] = [
+            "{}_matches.tsv".format(masst_client.common_base_file_name(compound_name, out_filename_no_ext))
+            for compound_name in jobs_df["Compound"]]
+        jobs_df["finished"] = [Path(file).is_file() for file in jobs_df["file_path"]]
+        jobs_df = jobs_df[~jobs_df["finished"]]
+        logger.info("Running fast microbe masst on input n={} spectra (total with already finished was {} spectra)"
+                    .format(len(jobs_df), all_len))
+    else:
+        logger.info("Running fast microbe masst on input n={} spectra".format(len(jobs_df)))
 
     with ThreadPoolExecutor(parallel_queries) as executor:
         futures = [
@@ -71,16 +83,17 @@ def run_on_usi_and_id_list(
 
 
 def run_on_mgf(
-    input_file,
-    out_filename_no_ext,
-    precursor_mz_tol=0.05,
-    mz_tol=0.02,
-    min_cos=0.7,
-    min_matched_signals=3,
-    analog=False,
-    analog_mass_below=150,
-    analog_mass_above=200,
-    parallel_queries=100,
+        input_file,
+        out_filename_no_ext,
+        precursor_mz_tol=0.05,
+        mz_tol=0.02,
+        min_cos=0.7,
+        min_matched_signals=3,
+        analog=False,
+        analog_mass_below=150,
+        analog_mass_above=200,
+        parallel_queries=100,
+        skip_existing=False,
 ):
     ids, precursor_mzs, precursor_charges = [], [], []
     mzs, intensities = [], []
@@ -108,7 +121,17 @@ def run_on_mgf(
         }
     )
 
-    logger.info("Running fast microbe masst on input n={} spectra".format(len(jobs_df)))
+    if skip_existing:
+        all_len = len(jobs_df)
+        jobs_df["file_path"] = [
+            "{}_matches.tsv".format(masst_client.common_base_file_name(compound_name, out_filename_no_ext))
+            for compound_name in ids]
+        jobs_df["finished"] = [Path(file).is_file() for file in jobs_df["file_path"]]
+        jobs_df = jobs_df[~jobs_df["finished"]]
+        logger.info("Running fast microbe masst on input n={} spectra (total with already finished was {} spectra)"
+                    .format(len(jobs_df), all_len))
+    else:
+        logger.info("Running fast microbe masst on input n={} spectra".format(len(jobs_df)))
 
     if len(jobs_df) <= 1:
         jobs_df["fastMASST"] = [
@@ -128,7 +151,8 @@ def run_on_mgf(
                 analog_mass_above=analog_mass_above,
             )
             for name, prec_mz, prec_charge, mz_array, intensity_array in zip(
-                ids, precursor_mzs, precursor_charges, mzs, intensities
+                jobs_df["Compound"], jobs_df["precursor_mz"], jobs_df["precursor_charge"], jobs_df["mzs"],
+                jobs_df["intensities"]
             )
         ]
     else:
@@ -151,7 +175,8 @@ def run_on_mgf(
                     analog_mass_above=analog_mass_above,
                 )
                 for name, prec_mz, prec_charge, mz_array, intensity_array in zip(
-                    ids, precursor_mzs, precursor_charges, mzs, intensities
+                    jobs_df["Compound"], jobs_df["precursor_mz"], jobs_df["precursor_charge"], jobs_df["mzs"],
+                    jobs_df["intensities"]
                 )
             ]
 
@@ -159,38 +184,14 @@ def run_on_mgf(
             jobs_df["fastMASST"] = [f.result() for f in futures]
 
 
-def export_masst_results(jobs_df: pd.DataFrame, masst_results_tsv: str):
-    # export masst results
-    logger.info("Exporting masst results summary to %s", masst_results_tsv)
-    # jobs_df = explode_masst_columns(jobs_df)
-    # drop data points
-    try:
-        jobs_df.drop(
-            columns=[
-                "Query Scan",
-                "Query Filename",
-                "Index UnitPM",
-                "Index IdxInUnitPM",
-                "Filtered Input Spectrum Path",
-            ],
-            inplace=True,
-            axis=1,
-        )
-        # might not be in the df
-        jobs_df.drop(columns=["mzs", "intensities"], inplace=True, axis=1)
-    except Exception as e:
-        logger.exception("Error removing columns from export table", e)
-    jobs_df.to_csv(masst_results_tsv, sep="\t", index=False)
-
-
 def create_params_label(
-    analog,
-    analog_mass_above,
-    analog_mass_below,
-    min_cos,
-    min_matched_signals,
-    mz_tol,
-    precursor_mz_tol,
+        analog,
+        analog_mass_above,
+        analog_mass_below,
+        min_cos,
+        min_matched_signals,
+        mz_tol,
+        precursor_mz_tol,
 ):
     params_label = (
         "min matched signals: {};  min cosine: {};  precursor m/z tolerance: {};  m/z "
@@ -212,17 +213,17 @@ if __name__ == "__main__":
         "--in_file",
         type=str,
         help="input file either mgf with spectra or table that contains the two columns specified by "
-        "usi_or_lib_id and compound_header",
+             "usi_or_lib_id and compound_header",
         # default="../examples/example_links.tsv",
         # default="../examples/small.mgf",
-        default="../examples/input_spectra.mgf",
+        default="../examples/empty.mgf",
     )
 
     parser.add_argument(
         "--out_file",
         type=str,
         help="output html and other files, name without extension",
-        default="../output/fastMASST",
+        default="../output/aafastMASST",
     )
 
     # only for USI or lib ID file
@@ -256,7 +257,7 @@ if __name__ == "__main__":
         "--min_cos", type=float, help="Minimum cosine score for a match", default="0.7"
     )
     parser.add_argument(
-        "--min_matched_signals", type=int, help="Minimum matched signals", default="3"
+        "--min_matched_signals", type=int, help="Minimum matched signals", default="4"
     )
     parser.add_argument(
         "--analog",
@@ -280,8 +281,14 @@ if __name__ == "__main__":
         "--parallel_queries",
         type=int,
         help="the number of async queries. fastMASST step is IO bound so higher number than CPU "
-        "speeds up the process",
-        default="2",
+             "speeds up the process",
+        default="1",
+    )
+    parser.add_argument(
+        "--skip_existing",
+        type=bool,
+        help="skip existing already processed entries",
+        default=True,
     )
 
     args = parser.parse_args()
@@ -315,6 +322,7 @@ if __name__ == "__main__":
                 analog_mass_below=analog_mass_below,
                 analog_mass_above=analog_mass_above,
                 parallel_queries=parallel_queries,
+                skip_existing=args.skip_existing
             )
         else:
             run_on_usi_and_id_list(

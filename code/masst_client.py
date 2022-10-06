@@ -39,10 +39,7 @@ def process_matches(
     params_label,
     usi=None,
 ):
-    if compound_name:
-        common_file = "{}_{}".format(file_name, compound_name.replace(" ", "_"))
-    else:
-        common_file = "{}".format(file_name)
+    common_file = common_base_file_name(compound_name, file_name)
 
     # extract results
     matches_df = masst.extract_matches_from_masst_results(
@@ -58,14 +55,14 @@ def process_matches(
     ).drop_duplicates("file_usi")
 
     matches_df[MATCH_COLUMNS].to_csv(
-        "{}_{}.tsv".format(common_file, "matches"), index=False, sep="\t"
+        "{}_matches.tsv".format(common_file), index=False, sep="\t"
     )
 
     lib_matches_df = masst.extract_matches_from_masst_results(
         library_matches, precursor_mz_tol, min_matched_signals, False
     )
     lib_matches_df[LIB_COLUMNS].to_csv(
-        "{}_{}.tsv".format(common_file, "library"), index=False, sep="\t"
+        "{}_library.tsv".format(common_file), index=False, sep="\t"
     )
 
     if "grouped_by_dataset" not in matches:
@@ -73,7 +70,7 @@ def process_matches(
     # extract matches
     datasets_df = masst.extract_datasets_from_masst_results(matches, matches_df)
     datasets_df.to_csv(
-        "{}_{}.tsv".format(common_file, "datasets"), index=False, sep="\t"
+        "{}_datasets.tsv".format(common_file), index=False, sep="\t"
     )
 
     # add library matches to table
@@ -108,6 +105,13 @@ def process_matches(
     )
 
     return matches_df
+
+
+def common_base_file_name(compound_name, file_name):
+    if compound_name:
+        return "{}_{}".format(file_name, compound_name.replace(" ", "_"))
+    else:
+        return "{}".format(file_name)
 
 
 def query_usi_or_id(
@@ -210,6 +214,12 @@ def query_spectrum(
             database=masst.DataBase.gnpsdata_index,
         )
         if not matches or "results" not in matches or len(matches["results"]) == 0:
+            try:
+                path = "{}_matches.tsv".format(common_base_file_name(compound_name, file_name))
+                with open(path, "w") as file:
+                    file.write("USI	Cosine	Matching Peaks	Status\n")
+            except:
+                pass
             logger.debug("Empty fastMASST response for spectrum %s", compound_name)
             return None
 
