@@ -7,13 +7,13 @@ logger = logging.getLogger(__name__)
 
 if __name__ == "__main__":
     files = [
-        ("D:\Robin\git\microbe_masst\local_files\ipsita\Dihydroxy_MSCluster.mgf", "../output/fastMASSTDiOHBA"),
-        ("D:\Robin\git\microbe_masst\local_files\ipsita\Monohydroxy_MSCluster.mgf", "../output/fastMASSTMonoOHBA"),
-        ("D:\Robin\git\microbe_masst\local_files\ipsita\Tetrahydroxy_MSCluster.mgf", "../output/fastMASSTTetraOHBA"),
-        ("D:\Robin\git\microbe_masst\local_files\ipsita\Trihydroxy_MSCluster.mgf", "../output/fastMASSTTriOHBA"),
-        ("D:\Robin\git\microbe_masst\local_files\casmi_pos_sirius\MIND.mgf", "../output/MIND/fastMASST_MIND"),
+        # ("D:\Robin\git\microbe_masst\local_files\ipsita\Dihydroxy_MSCluster.mgf", "../output/fastMASSTDiOHBA"),
+        # ("D:\Robin\git\microbe_masst\local_files\ipsita\Monohydroxy_MSCluster.mgf", "../output/fastMASSTMonoOHBA"),
+        # ("D:\Robin\git\microbe_masst\local_files\ipsita\Tetrahydroxy_MSCluster.mgf", "../output/fastMASSTTetraOHBA"),
+        # ("D:\Robin\git\microbe_masst\local_files\ipsita\Trihydroxy_MSCluster.mgf", "../output/fastMASSTTriOHBA"),
         (r"D:\Robin\git\microbe_masst\local_files\casmi_pos_sirius\bifido.mgf", "../output/bifido/fastMASST_"),
-        # ("", "../output/fastMASST"),
+        ("D:\Robin\git\microbe_masst\local_files\casmi_pos_sirius\MIND.mgf", "../output/MIND/fastMASST_MIND"),
+        (r"D:\Robin\git\microbe_masst\local_files\221005_gwas_rats_fbmn.mgf", "../output/gwas/fastMASST_gwas"),
     ]
 
     for file, out_file in files:
