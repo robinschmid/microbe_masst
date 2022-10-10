@@ -69,9 +69,7 @@ def process_matches(
         logger.debug("Missing datasets")
     # extract matches
     datasets_df = masst.extract_datasets_from_masst_results(matches, matches_df)
-    datasets_df.to_csv(
-        "{}_datasets.tsv".format(common_file), index=False, sep="\t"
-    )
+    datasets_df.to_csv("{}_datasets.tsv".format(common_file), index=False, sep="\t")
 
     # add library matches to table
     lib_match_json = lib_matches_df.to_json(orient="records")
@@ -126,6 +124,10 @@ def query_usi_or_id(
     analog_mass_below=150,
     analog_mass_above=200,
 ):
+    """
+
+    :return: True if fast masst query was successful otherwise False
+    """
     # might raise exception for service
     try:
         logger.debug("Query fastMASST id:%s  of %s", usi_or_lib_id, compound_name)
@@ -140,13 +142,19 @@ def query_usi_or_id(
             database=masst.DataBase.gnpsdata_index,
         )
 
-        if not matches or "results" not in matches or len(matches["results"]) == 0:
+        if not matches or "results" not in matches:
             logger.debug(
                 "Empty fastMASST response for compound %s with id %s",
                 compound_name,
                 usi_or_lib_id,
             )
-            return None
+            return False
+
+        if len(matches["results"]) == 0:
+            export_empty_masst_results(compound_name, file_name)
+            # succeeded with 0 matches
+            # currently fastMASST returns empty response without results dictionary
+            return True
 
         library_matches = masst.fast_masst(
             usi_or_lib_id,
@@ -167,7 +175,7 @@ def query_usi_or_id(
             precursor_mz_tol,
         )
         input_label = "ID: {};  Descriptor: {}".format(usi_or_lib_id, compound_name)
-        return process_matches(
+        process_matches(
             file_name,
             compound_name,
             matches,
@@ -178,9 +186,10 @@ def query_usi_or_id(
             params_label,
             usi_utils.ensure_usi(usi_or_lib_id),
         )
+        return True
     except Exception as e:
-        logger.exception(e)
-        return None
+        # logger.exception(e)
+        return False
 
 
 def query_spectrum(
@@ -198,6 +207,10 @@ def query_spectrum(
     analog_mass_below=150,
     analog_mass_above=200,
 ):
+    """
+
+    :return: True if fast masst query was successful otherwise False
+    """
     # might raise exception for service
     try:
         matches, filtered_dps = masst.fast_masst_spectrum(
@@ -213,15 +226,14 @@ def query_spectrum(
             analog_mass_above=analog_mass_above,
             database=masst.DataBase.gnpsdata_index,
         )
-        if not matches or "results" not in matches or len(matches["results"]) == 0:
-            try:
-                path = "{}_matches.tsv".format(common_base_file_name(compound_name, file_name))
-                with open(path, "w") as file:
-                    file.write("USI	Cosine	Matching Peaks	Status\n")
-            except:
-                pass
+        if not matches or "results" not in matches:
+            # export empty masst results file to signal that service was successful
             logger.debug("Empty fastMASST response for spectrum %s", compound_name)
-            return None
+            return False
+
+        if len(matches["results"]) == 0:
+            export_empty_masst_results(compound_name, file_name)
+            return True
 
         library_matches, _ = masst.fast_masst_spectrum(
             mzs=mzs,
@@ -247,7 +259,7 @@ def query_spectrum(
         input_label = "Descriptor: {};  Precursor m/z: {};  Data points:{}".format(
             compound_name, round(precursor_mz, 5), len(filtered_dps)
         )
-        return process_matches(
+        process_matches(
             file_name,
             compound_name,
             matches,
@@ -257,51 +269,22 @@ def query_spectrum(
             input_label,
             params_label,
         )
+        return True
     except Exception as e:
-        return None
+        return False
+
+
+def export_empty_masst_results(compound_name, file_name):
+    try:
+        path = "{}_matches.tsv".format(common_base_file_name(compound_name, file_name))
+        with open(path, "w") as file:
+            file.write("USI	Cosine	Matching Peaks	Status\n")
+    except:
+        pass
 
 
 def path_safe(file):
     return re.sub("[^-a-zA-Z0-9_.() ]+", "_", file)
-
-
-def save_masst_results(jobs_df, out_filename_no_ext):
-    finished_jobs_tsv = "../output/finished.tsv"
-    masst_results_tsv = "../{}.tsv".format(out_filename_no_ext)
-    # explode rows and export
-    # export_masst_results(jobs_df, masst_results_tsv)
-    # add tree links
-    jobs_df["Result"] = jobs_df.progress_apply(
-        lambda row: "Success" if row["fastMASST"] is not None else None, axis=1
-    )
-    # export the list of links
-    logger.info("Exporting finished_jobs_tsv %s", finished_jobs_tsv)
-    jobs_df.drop(columns=["fastMASST"], axis=1, inplace=True)
-    jobs_df.to_csv(finished_jobs_tsv, sep="\t", index=False)
-
-
-def export_masst_results(jobs_df: pd.DataFrame, masst_results_tsv: str):
-    # export masst results
-    logger.info("Exporting masst results summary to %s", masst_results_tsv)
-    # jobs_df = explode_masst_columns(jobs_df)
-    # drop data points
-    try:
-        jobs_df.drop(
-            columns=[
-                "Query Scan",
-                "Query Filename",
-                "Index UnitPM",
-                "Index IdxInUnitPM",
-                "Filtered Input Spectrum Path",
-            ],
-            inplace=True,
-            axis=1,
-        )
-        # might not be in the df
-        jobs_df.drop(columns=["mzs", "intensities"], inplace=True, axis=1)
-    except Exception as e:
-        logger.exception("Error removing columns from export table", e)
-    jobs_df.to_csv(masst_results_tsv, sep="\t", index=False)
 
 
 def create_params_label(
@@ -343,9 +326,7 @@ if __name__ == "__main__":
     )
 
     # only for USI or lib ID file
-    parser.add_argument(
-        "--compound_name", type=str, help="compound name", default=""
-    )
+    parser.add_argument("--compound_name", type=str, help="compound name", default="")
 
     # MASST params
     parser.add_argument(

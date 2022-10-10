@@ -80,7 +80,7 @@ def fast_masst(
         return _fast_masst(params)
     # except requests.exceptions.Timeout:
     except Exception as e:
-        logging.exception("Failed fastMASST {}".format(usi_or_lib_id))
+        # logging.exception("Failed fastMASST {}".format(usi_or_lib_id))
         raise e
 
 
@@ -188,7 +188,7 @@ def fast_masst_spectrum_dict(
         }
         return _fast_masst(params), dps
     except Exception as e:
-        logging.exception("Failed fastMASST on spectrum.")
+        # logging.exception("Failed fastMASST on spectrum.")
         raise e
 
 
@@ -199,7 +199,8 @@ def _fast_masst(params):
     :return: dict with the masst results. [results] contains the individual matches, [grouped_by_dataset] contains
     all datasets and their titles
     """
-    search_api_response = requests.post(URL, data=params, timeout=150)
+    search_api_response = requests.post(URL, data=params, timeout=300)
+    logging.debug("fastMASST response={}".format(search_api_response.status_code))
     search_api_response.raise_for_status()
     search_api_response_json = search_api_response.json()
     return search_api_response_json
