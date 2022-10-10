@@ -143,7 +143,6 @@ def query_usi_or_id(
         )
 
         if not matches or "results" not in matches:
-            export_empty_masst_results(compound_name, file_name)
             logger.debug(
                 "Empty fastMASST response for compound %s with id %s",
                 compound_name,
@@ -152,6 +151,7 @@ def query_usi_or_id(
             return False
 
         if len(matches["results"]) == 0:
+            export_empty_masst_results(compound_name, file_name)
             # succeeded with 0 matches
             # currently fastMASST returns empty response without results dictionary
             return True
@@ -188,7 +188,7 @@ def query_usi_or_id(
         )
         return True
     except Exception as e:
-        logger.exception(e)
+        # logger.exception(e)
         return False
 
 
@@ -228,11 +228,11 @@ def query_spectrum(
         )
         if not matches or "results" not in matches:
             # export empty masst results file to signal that service was successful
-            export_empty_masst_results(compound_name, file_name)
             logger.debug("Empty fastMASST response for spectrum %s", compound_name)
             return False
 
         if len(matches["results"]) == 0:
+            export_empty_masst_results(compound_name, file_name)
             return True
 
         library_matches, _ = masst.fast_masst_spectrum(

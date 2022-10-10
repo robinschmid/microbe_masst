@@ -1,6 +1,7 @@
 import pytest
 
 import masst_utils
+import usi_utils
 
 
 def test_fast_masst_spectrum():
@@ -17,12 +18,19 @@ def test_fast_masst_spectrum():
         ]
     )
 
-    matches,_ = masst_utils.fast_masst_spectrum(
+    matches, _ = masst_utils.fast_masst_spectrum(
         mzs, intensities, precursor_mz=183.078, precursor_charge=1
     )
     assert len(matches) > 1
+
 
 def test_fast_masst_usi():
     usi = "mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00005883671"
     matches = masst_utils.fast_masst(usi)
     assert len(matches) > 1
+
+
+def test_get_spectrum():
+    spec = usi_utils.get_spectrum("mzspec:MSV000090162:peak/F2202_NRP_purification_check_mzXML/Sample_10_RB5_01_63425"
+                                  ".mzXML:scan:583")
+    assert spec["precursor_mz"] > 0
