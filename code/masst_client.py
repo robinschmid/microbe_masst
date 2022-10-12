@@ -43,16 +43,12 @@ def process_matches(
 
     # extract results
     matches_df = masst.extract_matches_from_masst_results(
-        matches, precursor_mz_tol, min_matched_signals, False
+        matches,
+        precursor_mz_tol,
+        min_matched_signals,
+        limit_to_best_match_in_file=True,
+        add_dataset_titles=False,
     )
-
-    # create a usi column that only points to the dataset:file (not scan)
-    matches_df["file_usi"] = [
-        usi_utils.ensure_simple_file_usi(usi) for usi in matches_df["USI"]
-    ]
-    matches_df = matches_df.sort_values(
-        by=["Cosine", "Matching Peaks"], ascending=[False, False]
-    ).drop_duplicates("file_usi")
 
     matches_df[MATCH_COLUMNS].to_csv(
         "{}_matches.tsv".format(common_file), index=False, sep="\t"

@@ -29,6 +29,14 @@ def test_fast_masst_usi():
     matches = masst_utils.fast_masst(usi)
     assert len(matches) > 1
 
+def test_fastmasst_trp():
+    usi = "mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00005883950"
+    matches = masst_utils.fast_masst(usi, precursor_mz_tol=0.05)
+    df = masst_utils.extract_matches_from_masst_results(matches, precursor_mz_tol=0.5, min_matched_signals=4,
+                                                        limit_to_best_match_in_file=True)
+    assert len(df) > 1
+    assert len(df.index) > 50,000
+
 
 def test_get_spectrum():
     spec = usi_utils.get_spectrum("mzspec:MSV000090162:peak/F2202_NRP_purification_check_mzXML/Sample_10_RB5_01_63425"
