@@ -202,6 +202,7 @@ def query_spectrum(
     analog=False,
     analog_mass_below=150,
     analog_mass_above=200,
+    lib_id=None,
 ):
     """
 
@@ -255,6 +256,9 @@ def query_spectrum(
         input_label = "Descriptor: {};  Precursor m/z: {};  Data points:{}".format(
             compound_name, round(precursor_mz, 5), len(filtered_dps)
         )
+
+        usi = usi_utils.ensure_usi(lib_id)
+
         process_matches(
             file_name,
             compound_name,
@@ -264,6 +268,7 @@ def query_spectrum(
             min_matched_signals,
             input_label,
             params_label,
+            usi,
         )
         return True
     except Exception as e:
