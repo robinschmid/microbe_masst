@@ -1,11 +1,11 @@
-import logging
 from pathlib import Path
 import pandas as pd
 
 from masst_utils import SpecialMasst
+from utils import prepare_paths
 import bundle_to_html
 import json_ontology_extender
-
+import logging
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
@@ -37,7 +37,7 @@ def create_enriched_masst_tree(
             "PARAMS_PLACEHOLDER": parameter_str,
         }
 
-        prepare_paths(out_counts_file, out_html, out_json_tree)
+        prepare_paths(files=[out_counts_file, out_html, out_json_tree])
 
         # exports the counts file for all matches
         results_df = export_metadata_matches(special_masst, matches_df, out_counts_file)
@@ -80,7 +80,8 @@ def export_metadata_matches(
     ).reset_index()
 
     # export file with ncbi, matched_size,
-    results_df.to_csv(out_tsv_file, index=False, sep="\t")
+    if len(results_df) > 0:
+        results_df.to_csv(out_tsv_file, index=False, sep="\t")
     return results_df
 
 
@@ -91,13 +92,3 @@ def group_matches(special_masst: SpecialMasst, results_df) -> pd.DataFrame:
         lambda x: x.to_json(orient="records")
     )
     return results_df.reset_index()
-
-
-def prepare_paths(out_counts_file, out_html, out_json_tree):
-    try:
-        # ensure output paths
-        Path(out_html).parent.mkdir(parents=True, exist_ok=True)
-        Path(out_counts_file).parent.mkdir(parents=True, exist_ok=True)
-        Path(out_json_tree).parent.mkdir(parents=True, exist_ok=True)
-    except Exception as e:
-        logger.exception(e)
