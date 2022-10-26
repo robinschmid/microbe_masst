@@ -111,7 +111,7 @@ def add_data_to_ontology_file(
     output="../output/merged_ontology_data.json",
     in_data="../examples/caffeic_acid.tsv",
     meta_matched_df: pd.DataFrame = None,
-    format_out_json=True,
+    format_out_json=False,
 ):
     data_key = special_masst.metadata_key
     node_key = special_masst.tree_node_key

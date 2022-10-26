@@ -19,7 +19,7 @@ def create_enriched_masst_tree(
         parameter_str,
         usi: str = None,
         in_html="../code/collapsible_tree_v3.html",
-        format_out_json=True,
+        format_out_json=False,
         compress_out_html=True,
 ):
     if (matches_df is None) or (len(matches_df) <= 0):

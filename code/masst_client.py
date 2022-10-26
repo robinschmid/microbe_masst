@@ -85,7 +85,7 @@ def process_matches(
         input_str=input_label,
         parameter_str=params_label,
         usi=usi,
-        format_out_json=True,
+        format_out_json=False,
         compress_out_html=True,
     )
 
@@ -99,7 +99,7 @@ def process_matches(
         input_str=input_label,
         parameter_str=params_label,
         usi=usi,
-        format_out_json=True,
+        format_out_json=False,
         compress_out_html=True,
     )
 
