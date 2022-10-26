@@ -6,10 +6,13 @@ bs4==0.0.1
 beautifulsoup4==4.11.1
 pandas==1.4.1
 tqdm==4.64.0
-numpy==1.21.5
 minify_html==0.8.0
 black==22.3.0
 lxml==4.8.0
 pytest==7.1.2
 pyarrow==7.0.0
 pyteomics==4.5.3
+seaborn[scipy]==0.12.1
+scipy==1.9.3
+numpy==1.23.4
+fastcluster
