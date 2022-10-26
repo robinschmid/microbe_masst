@@ -24,22 +24,22 @@ def path_safe(file):
 
 
 def run_on_usi_list_or_mgf_file(
-        in_file,
-        out_file_no_extension="../output/fastMASST",
-        # only for USI list
-        usi_or_lib_id="USI",
-        compound_name_header="Compound",
-        sep=",",
-        # general matching parameters
-        precursor_mz_tol=0.05,
-        mz_tol=0.05,
-        min_cos=0.7,
-        min_matched_signals=3,
-        analog: bool = False,
-        analog_mass_below=150,
-        analog_mass_above=200,
-        parallel_queries=100,
-        skip_existing=False,
+    in_file,
+    out_file_no_extension="../output/fastMASST",
+    # only for USI list
+    usi_or_lib_id="USI",
+    compound_name_header="Compound",
+    sep=",",
+    # general matching parameters
+    precursor_mz_tol=0.05,
+    mz_tol=0.05,
+    min_cos=0.7,
+    min_matched_signals=3,
+    analog: bool = False,
+    analog_mass_below=150,
+    analog_mass_above=200,
+    parallel_queries=10,
+    skip_existing=False,
 ):
     """
 
@@ -230,7 +230,8 @@ def run_on_mgf(
             "Running fast microbe masst on input n={} spectra".format(len(jobs_df))
         )
 
-    if len(jobs_df) <= 1:
+    total_jobs = len(jobs_df)
+    if total_jobs <= 1:
         jobs_df["success"] = [
             masst_client.query_spectrum(
                 out_filename_no_ext,
@@ -394,8 +395,8 @@ if __name__ == "__main__":
         "--parallel_queries",
         type=int,
         help="the number of async queries. fastMASST step is IO bound so higher number than CPU "
-             "speeds up the process",
-        default="1",
+        "speeds up the process",
+        default="10",
     )
     parser.add_argument(
         "--skip_existing",

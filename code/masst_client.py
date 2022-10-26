@@ -5,6 +5,7 @@ from tqdm import tqdm
 import re
 import argparse
 
+from utils import prepare_paths
 from masst_tree import create_enriched_masst_tree
 import masst_utils as masst
 import usi_utils
@@ -49,23 +50,27 @@ def process_matches(
         limit_to_best_match_in_file=True,
         add_dataset_titles=False,
     )
-
+    # always export match table even with 0 matches to mark that it was successful
+    masst_file = "{}_matches.tsv".format(common_file)
+    prepare_paths(file=masst_file)
     matches_df[MATCH_COLUMNS].to_csv(
-        "{}_matches.tsv".format(common_file), index=False, sep="\t"
+        masst_file, index=False, sep="\t"
     )
 
     lib_matches_df = masst.extract_matches_from_masst_results(
         library_matches, precursor_mz_tol, min_matched_signals, False
     )
-    lib_matches_df[LIB_COLUMNS].to_csv(
-        "{}_library.tsv".format(common_file), index=False, sep="\t"
-    )
+    if len(lib_matches_df) > 0:
+        lib_matches_df[LIB_COLUMNS].to_csv(
+            "{}_library.tsv".format(common_file), index=False, sep="\t"
+        )
 
     if "grouped_by_dataset" not in matches:
         logger.debug("Missing datasets")
     # extract matches
     datasets_df = masst.extract_datasets_from_masst_results(matches, matches_df)
-    datasets_df.to_csv("{}_datasets.tsv".format(common_file), index=False, sep="\t")
+    if len(datasets_df) > 0:
+        datasets_df.to_csv("{}_datasets.tsv".format(common_file), index=False, sep="\t")
 
     # add library matches to table
     lib_match_json = lib_matches_df.to_json(orient="records")
