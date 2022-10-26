@@ -20,25 +20,33 @@ def prepare_check_metadata_file(metadata_file, output_file):
     if "file_usi" not in df.columns:
         create_file_usi_column(df)
 
+    # check uniqueness of files
+    logger.info("Checking duplicated usi")
     # microbe masst specific
     if "Taxa_NCBI" in df.columns:
-        # check uniqueness of files
-        logger.info("duplicated usi")
         duplicates = df[df.duplicated(["file_usi"], keep=False)].sort_values(
             by=["file_usi", "Taxa_Assigment", "Taxa_NCBI"],
             ascending=[True, False, False],
         )
-        logger.info(duplicates)
+    else:
+        duplicates = df[df.duplicated(["file_usi"], keep=False)].sort_values(
+            by=["file_usi"],
+            ascending=[True],
+        )
 
-        try:
-            if len(duplicates) > 0:
-                duplicates.to_csv("../data/duplicates.csv", index=False)
-        except:
-            logger.warning("Cannot export duplicates file")
-        df = df.sort_values(
-            by=["file_usi", "Taxa_Assigment", "Taxa_NCBI"],
-            ascending=[True, False, False],
-        ).drop_duplicates(["file_usi"])
+    try:
+        if len(duplicates) > 0:
+            logger.info(duplicates)
+            duplicates.to_csv("../data/duplicates.csv", index=False)
+        else:
+            logger.info("NO DUPLICATES")
+    except:
+        logger.warning("Cannot export duplicates file")
+
+    df = df.sort_values(
+        by=["file_usi", "Taxa_Assigment", "Taxa_NCBI"],
+        ascending=[True, False, False],
+    ).drop_duplicates(["file_usi"])
 
     # export final table
     if output_file.endswith(".tsv"):
@@ -54,13 +62,13 @@ if __name__ == "__main__":
         "--metadata_file",
         type=str,
         help="input masst metadata",
-        default="../data/microbeMASST_final_table_update_fix.csv",
+        default="../data/table_microbeMASST_manula_fix_final.csv",
     )
     parser.add_argument(
         "--output_file",
         type=str,
         help="output masst metadata",
-        default="../data/food_masst_metadata.csv",
+        default="../data/mmast_masst_metadata.csv",
     )
     # foodmasst
     # parser.add_argument('--metadata_file', type=str, help='input masst metadata',
