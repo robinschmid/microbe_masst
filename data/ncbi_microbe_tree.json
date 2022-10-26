@@ -140,122 +140,6 @@
           "type": "node",
           "children": [
             {
-              "name": "Arthropoda",
-              "duplication": "N",
-              "type": "node",
-              "children": [
-                {
-                  "name": "Insecta",
-                  "duplication": "N",
-                  "type": "node",
-                  "children": [
-                    {
-                      "name": "Coleoptera",
-                      "duplication": "N",
-                      "type": "node",
-                      "children": [
-                        {
-                          "name": "Passalidae",
-                          "duplication": "N",
-                          "type": "node",
-                          "children": [
-                            {
-                              "name": "Odontotaenius",
-                              "duplication": "N",
-                              "type": "node",
-                              "children": [
-                                {
-                                  "name": "Odontotaenius_disjunctus",
-                                  "duplication": "Y",
-                                  "type": "leaf",
-                                  "NCBI": "295546",
-                                  "group_size": 23,
-                                  "Rank": "species"
-                                }
-                              ],
-                              "NCBI": "295545",
-                              "Rank": "genus",
-                              "group_size": 23
-                            }
-                          ],
-                          "NCBI": "110046",
-                          "Rank": "family",
-                          "group_size": 23
-                        }
-                      ],
-                      "NCBI": "7041",
-                      "Rank": "order",
-                      "group_size": 23
-                    }
-                  ],
-                  "NCBI": "50557",
-                  "Rank": "class",
-                  "group_size": 23
-                }
-              ],
-              "NCBI": "6656",
-              "Rank": "phylum",
-              "group_size": 23
-            },
-            {
-              "name": "Cnidaria",
-              "duplication": "Y",
-              "type": "node",
-              "children": [
-                {
-                  "name": "Anthozoa",
-                  "duplication": "N",
-                  "type": "node",
-                  "children": [
-                    {
-                      "name": "Scleractinia",
-                      "duplication": "Y",
-                      "type": "node",
-                      "children": [
-                        {
-                          "name": "Merulinidae",
-                          "duplication": "N",
-                          "type": "node",
-                          "children": [
-                            {
-                              "name": "Orbicella",
-                              "duplication": "Y",
-                              "type": "node",
-                              "children": [
-                                {
-                                  "name": "Orbicella_annularis",
-                                  "duplication": "N",
-                                  "type": "leaf",
-                                  "NCBI": "48500",
-                                  "group_size": 44,
-                                  "Rank": "species"
-                                }
-                              ],
-                              "NCBI": "1920453",
-                              "Rank": "genus",
-                              "group_size": 44
-                            }
-                          ],
-                          "NCBI": "46736",
-                          "Rank": "family",
-                          "group_size": 44
-                        }
-                      ],
-                      "NCBI": "6125",
-                      "Rank": "order",
-                      "group_size": 44
-                    }
-                  ],
-                  "NCBI": "6101",
-                  "Rank": "class",
-                  "group_size": 44
-                }
-              ],
-              "NCBI": "6073",
-              "Rank": "phylum",
-              "group_size": 44
-            },
-            {
               "name": "Chordata",
               "duplication": "Y",
               "type": "node",
@@ -316,7 +200,7 @@
           ],
           "NCBI": "33208",
           "Rank": "kingdom",
-          "group_size": 1262
+          "group_size": 1195
         },
         {
           "name": "Fungi",
@@ -4108,7 +3992,7 @@
                         },
                         {
                           "name": "Geomyces",
-                          "duplication": "N",
+                          "duplication": "Y",
                           "type": "node",
                           "children": [
                             {
@@ -4121,8 +4005,8 @@
                             }
                           ],
                           "NCBI": "610258",
-                          "group_size": 1,
-                          "Rank": "genus"
+                          "Rank": "genus",
+                          "group_size": 1
                         },
                         {
                           "name": "Pseudogymnoascus",
@@ -4529,23 +4413,23 @@
                                   "duplication": "N",
                                   "type": "leaf",
                                   "NCBI": "2050816",
-                                  "group_size": 25,
+                                  "group_size": 13,
                                   "Rank": "species"
                                 }
                               ],
                               "NCBI": "548659",
                               "Rank": "genus",
-                              "group_size": 25
+                              "group_size": 13
                             }
                           ],
                           "NCBI": "45131",
                           "Rank": "family",
-                          "group_size": 25
+                          "group_size": 13
                         }
                       ],
                       "NCBI": "451869",
                       "Rank": "order",
-                      "group_size": 25
+                      "group_size": 13
                     },
                     {
                       "name": "Mytilinidiales",
@@ -5359,13 +5243,13 @@
                                   "duplication": "Y",
                                   "type": "leaf",
                                   "NCBI": "1707701",
-                                  "group_size": 8,
+                                  "group_size": 5,
                                   "Rank": "species"
                                 }
                               ],
                               "NCBI": "37463",
                               "Rank": "genus",
-                              "group_size": 8
+                              "group_size": 5
                             },
                             {
                               "name": "Leptosphaerulina",
@@ -5414,7 +5298,7 @@
                           ],
                           "NCBI": "683158",
                           "Rank": "family",
-                          "group_size": 26
+                          "group_size": 23
                         },
                         {
                           "name": "Lentitheciaceae",
@@ -5546,14 +5430,14 @@
                                       "Rank": "strain"
                                     }
                                   ],
-                                  "NCBI": "1263492",
-                                  "group_size": 4,
-                                  "Rank": "strain"
+                                  "NCBI": "5503",
+                                  "group_size": 2,
+                                  "Rank": "species"
                                 }
                               ],
                               "NCBI": "5502",
                               "Rank": "genus",
-                              "group_size": 5
+                              "group_size": 3
                             },
                             {
                               "name": "Alternaria",
@@ -5600,12 +5484,12 @@
                           ],
                           "NCBI": "28556",
                           "Rank": "family",
-                          "group_size": 475
+                          "group_size": 473
                         }
                       ],
                       "NCBI": "92860",
                       "Rank": "order",
-                      "group_size": 549
+                      "group_size": 544
                     },
                     {
                       "name": "Dothideales",
@@ -5710,7 +5594,7 @@
                   ],
                   "NCBI": "147541",
                   "Rank": "class",
-                  "group_size": 623
+                  "group_size": 606
                 },
                 {
                   "name": "Eurotiomycetes",
@@ -6104,9 +5988,9 @@
                                       "Rank": "strain"
                                     }
                                   ],
-                                  "NCBI": "1314793",
-                                  "group_size": 4,
-                                  "Rank": "strain"
+                                  "NCBI": "69773",
+                                  "group_size": 2,
+                                  "Rank": "species"
                                 },
                                 {
                                   "name": "Penicillium_philippinense",
@@ -6193,7 +6077,7 @@
                                   "duplication": "N",
                                   "type": "leaf",
                                   "NCBI": "104259",
-                                  "group_size": 23,
+                                  "group_size": 13,
                                   "Rank": "species"
                                 },
                                 {
@@ -6347,7 +6231,7 @@
                                   "duplication": "N",
                                   "type": "leaf",
                                   "NCBI": "5081",
-                                  "group_size": 24,
+                                  "group_size": 17,
                                   "Rank": "species"
                                 },
                                 {
@@ -6384,7 +6268,7 @@
                                 }
                               ],
                               "NCBI": "5073",
-                              "group_size": 129,
+                              "group_size": 110,
                               "Rank": "genus"
                             },
                             {
@@ -6421,7 +6305,7 @@
                                   "duplication": "N",
                                   "type": "leaf",
                                   "NCBI": "1341132",
-                                  "group_size": 10,
+                                  "group_size": 6,
                                   "Rank": "species"
                                 },
                                 {
@@ -6438,9 +6322,9 @@
                                       "Rank": "strain"
                                     }
                                   ],
-                                  "NCBI": "1163405",
-                                  "group_size": 14,
-                                  "Rank": "strain"
+                                  "NCBI": "5062",
+                                  "group_size": 7,
+                                  "Rank": "species"
                                 },
                                 {
                                   "name": "Aspergillus_fumigatus",
@@ -6554,23 +6438,23 @@
                                 }
                               ],
                               "NCBI": "5052",
-                              "group_size": 616,
+                              "group_size": 602,
                               "Rank": "genus"
                             }
                           ],
                           "NCBI": "1131492",
                           "Rank": "family",
-                          "group_size": 745
+                          "group_size": 712
                         }
                       ],
                       "NCBI": "5042",
                       "Rank": "order",
-                      "group_size": 759
+                      "group_size": 726
                     }
                   ],
                   "NCBI": "147545",
                   "Rank": "class",
-                  "group_size": 777
+                  "group_size": 744
                 },
                 {
                   "name": "Sordariomycetes",
@@ -6673,18 +6557,18 @@
                                   "duplication": "Y",
                                   "type": "leaf",
                                   "NCBI": "1756133",
-                                  "group_size": 9,
+                                  "group_size": 5,
                                   "Rank": "species"
                                 }
                               ],
                               "NCBI": "36922",
                               "Rank": "genus",
-                              "group_size": 9
+                              "group_size": 5
                             }
                           ],
                           "NCBI": "767018",
                           "Rank": "family",
-                          "group_size": 9
+                          "group_size": 5
                         },
                         {
                           "name": "Apoharknessiaceae",
@@ -6701,23 +6585,23 @@
                                   "duplication": "N",
                                   "type": "leaf",
                                   "NCBI": "308536",
-                                  "group_size": 23,
+                                  "group_size": 12,
                                   "Rank": "species"
                                 }
                               ],
                               "NCBI": "308535",
                               "Rank": "genus",
-                              "group_size": 23
+                              "group_size": 12
                             }
                           ],
                           "NCBI": "2041451",
                           "Rank": "family",
-                          "group_size": 23
+                          "group_size": 12
                         }
                       ],
                       "NCBI": "5114",
                       "Rank": "order",
-                      "group_size": 32
+                      "group_size": 17
                     },
                     {
                       "name": "Microascales",
@@ -7285,7 +7169,7 @@
                                   "duplication": "Y",
                                   "type": "leaf",
                                   "NCBI": "1769485",
-                                  "group_size": 10,
+                                  "group_size": 5,
                                   "Rank": "species"
                                 },
                                 {
@@ -7299,12 +7183,12 @@
                               ],
                               "NCBI": "42360",
                               "Rank": "genus",
-                              "group_size": 12
+                              "group_size": 7
                             }
                           ],
                           "NCBI": "2033035",
                           "Rank": "family",
-                          "group_size": 12
+                          "group_size": 7
                         },
                         {
                           "name": "Apiosporaceae",
@@ -7329,13 +7213,13 @@
                                   "duplication": "N",
                                   "type": "leaf",
                                   "NCBI": "114231",
-                                  "group_size": 17,
+                                  "group_size": 9,
                                   "Rank": "species"
                                 }
                               ],
                               "NCBI": "114230",
                               "Rank": "genus",
-                              "group_size": 19
+                              "group_size": 11
                             },
                             {
                               "name": "Arthrinium",
@@ -7358,7 +7242,7 @@
                           ],
                           "NCBI": "106263",
                           "Rank": "family",
-                          "group_size": 22
+                          "group_size": 14
                         },
                         {
                           "name": "Sporocadaceae",
@@ -7381,7 +7265,7 @@
                       ],
                       "NCBI": "37989",
                       "Rank": "order",
-                      "group_size": 38
+                      "group_size": 25
                     },
                     {
                       "name": "Hypocreales",
@@ -8230,7 +8114,7 @@
                   ],
                   "NCBI": "147550",
                   "Rank": "class",
-                  "group_size": 689
+                  "group_size": 661
                 },
                 {
                   "name": "Saccharomycetes",
@@ -8459,11 +8343,11 @@
               ],
               "NCBI": "4890",
               "Rank": "phylum",
-              "group_size": 8274
+              "group_size": 8196
             }
           ],
           "NCBI": "4751",
-          "group_size": 11713,
+          "group_size": 11319,
           "Rank": "kingdom"
         },
         {
@@ -8633,7 +8517,7 @@
       ],
       "NCBI": "2759",
       "Rank": "superkingdom",
-      "group_size": 13108
+      "group_size": 12647
     },
     {
       "name": "Euryarchaeota",
@@ -10623,7 +10507,7 @@
                                   "duplication": "N",
                                   "type": "leaf",
                                   "NCBI": "1931",
-                                  "group_size": 3177,
+                                  "group_size": 3130,
                                   "Rank": "species"
                                 },
                                 {
@@ -10742,17 +10626,17 @@
                                 }
                               ],
                               "NCBI": "1883",
-                              "group_size": 4722,
+                              "group_size": 4654,
                               "Rank": "genus"
                             }
                           ],
                           "NCBI": "2062",
                           "Rank": "family",
-                          "group_size": 4743
+                          "group_size": 4675
                         }
                       ],
                       "NCBI": "85011",
-                      "group_size": 4759,
+                      "group_size": 4691,
                       "Rank": "order"
                     },
                     {
@@ -12826,14 +12710,14 @@
                                       "Rank": "strain"
                                     }
                                   ],
-                                  "NCBI": "1763",
-                                  "group_size": 2,
+                                  "NCBI": "1773",
+                                  "group_size": 197,
                                   "Rank": "species"
                                 }
                               ],
                               "NCBI": "1763",
                               "Rank": "genus",
-                              "group_size": 35
+                              "group_size": 230
                             },
                             {
                               "name": "Mycolicibacterium",
@@ -12970,7 +12854,7 @@
                           ],
                           "NCBI": "1762",
                           "Rank": "family",
-                          "group_size": 75
+                          "group_size": 270
                         },
                         {
                           "name": "Corynebacteriaceae",
@@ -13029,7 +12913,7 @@
                       ],
                       "NCBI": "85007",
                       "Rank": "order",
-                      "group_size": 152
+                      "group_size": 347
                     },
                     {
                       "name": "Bifidobacteriales",
@@ -14251,12 +14135,12 @@
                     }
                   ],
                   "NCBI": "1760",
-                  "group_size": 8251,
+                  "group_size": 8378,
                   "Rank": "class"
                 }
               ],
               "NCBI": "201174",
-              "group_size": 10847,
+              "group_size": 10862,
               "Rank": "phylum"
             },
             {
@@ -15336,7 +15220,7 @@
                                   "type": "leaf",
                                   "NCBI": "2930568",
                                   "group_size": 4,
-                                  "Rank": "no rank"
+                                  "Rank": "strain"
                                 }
                               ],
                               "NCBI": "1148",
@@ -15498,7 +15382,7 @@
                 }
               ],
               "NCBI": "1117",
-              "group_size": 4628,
+              "group_size": 4624,
               "Rank": "phylum"
             },
             {
@@ -16354,19 +16238,19 @@
                                       "Rank": "strain"
                                     }
                                   ],
-                                  "NCBI": "1121121",
-                                  "group_size": 72,
-                                  "Rank": "strain"
+                                  "NCBI": "1465",
+                                  "group_size": 36,
+                                  "Rank": "species"
                                 }
                               ],
                               "NCBI": "55080",
-                              "group_size": 80,
+                              "group_size": 44,
                               "Rank": "genus"
                             }
                           ],
                           "NCBI": "186822",
                           "Rank": "family",
-                          "group_size": 113
+                          "group_size": 77
                         },
                         {
                           "name": "Planococcaceae",
@@ -16742,9 +16626,9 @@
                                       "Rank": "strain"
                                     }
                                   ],
-                                  "NCBI": "1423688",
-                                  "group_size": 72,
-                                  "Rank": "strain"
+                                  "NCBI": "1408",
+                                  "group_size": 36,
+                                  "Rank": "species"
                                 },
                                 {
                                   "name": "Bacillus_smithii",
@@ -16868,13 +16752,13 @@
                                 }
                               ],
                               "NCBI": "1386",
-                              "group_size": 549,
+                              "group_size": 513,
                               "Rank": "genus"
                             }
                           ],
                           "NCBI": "186817",
                           "Rank": "family",
-                          "group_size": 600
+                          "group_size": 564
                         },
                         {
                           "name": "Staphylococcaceae",
@@ -17147,12 +17031,12 @@
                                       "type": "leaf",
                                       "NCBI": "451516",
                                       "group_size": 99,
-                                      "Rank": "no rank"
+                                      "Rank": "strain"
                                     }
                                   ],
                                   "NCBI": "1280",
                                   "group_size": 3416,
-                                  "Rank": "genus"
+                                  "Rank": "species"
                                 }
                               ],
                               "NCBI": "1279",
@@ -17167,7 +17051,7 @@
                       ],
                       "NCBI": "1385",
                       "Rank": "order",
-                      "group_size": 5060
+                      "group_size": 4988
                     },
                     {
                       "name": "Lactobacillales",
@@ -17198,19 +17082,19 @@
                                       "Rank": "strain"
                                     }
                                   ],
-                                  "NCBI": "1255596",
-                                  "group_size": 6,
-                                  "Rank": "strain"
+                                  "NCBI": "2751",
+                                  "group_size": 3,
+                                  "Rank": "species"
                                 }
                               ],
                               "NCBI": "2747",
                               "Rank": "genus",
-                              "group_size": 6
+                              "group_size": 3
                             }
                           ],
                           "NCBI": "186828",
                           "Rank": "family",
-                          "group_size": 6
+                          "group_size": 3
                         },
                         {
                           "name": "Aerococcaceae",
@@ -17769,7 +17653,7 @@
                                       "type": "leaf",
                                       "NCBI": "134262",
                                       "group_size": 4,
-                                      "Rank": "no rank"
+                                      "Rank": "strain"
                                     }
                                   ],
                                   "NCBI": "28037",
@@ -18471,12 +18355,12 @@
                       ],
                       "NCBI": "186826",
                       "Rank": "order",
-                      "group_size": 477
+                      "group_size": 474
                     }
                   ],
                   "NCBI": "91061",
                   "Rank": "class",
-                  "group_size": 5537
+                  "group_size": 5462
                 },
                 {
                   "name": "Clostridia",
@@ -19453,7 +19337,7 @@
               ],
               "NCBI": "1239",
               "Rank": "phylum",
-              "group_size": 5933
+              "group_size": 5858
             },
             {
               "name": "Fusobacteria",
@@ -20408,9 +20292,9 @@
                                       "Rank": "strain"
                                     }
                                   ],
-                                  "NCBI": "1121890",
-                                  "group_size": 6,
-                                  "Rank": "strain"
+                                  "NCBI": "99286",
+                                  "group_size": 3,
+                                  "Rank": "species"
                                 },
                                 {
                                   "name": "Flavobacterium_frigoris",
@@ -20423,7 +20307,7 @@
                               ],
                               "NCBI": "237",
                               "Rank": "genus",
-                              "group_size": 25
+                              "group_size": 22
                             },
                             {
                               "name": "Algibacter",
@@ -20480,17 +20364,17 @@
                           ],
                           "NCBI": "49546",
                           "Rank": "family",
-                          "group_size": 66
+                          "group_size": 63
                         }
                       ],
                       "NCBI": "200644",
                       "Rank": "order",
-                      "group_size": 78
+                      "group_size": 75
                     }
                   ],
                   "NCBI": "117743",
                   "Rank": "class",
-                  "group_size": 78
+                  "group_size": 75
                 },
                 {
                   "name": "Bacteroidia",
@@ -21600,7 +21484,7 @@
                 }
               ],
               "NCBI": "976",
-              "group_size": 1495,
+              "group_size": 1492,
               "Rank": "phylum"
             },
             {
@@ -22312,23 +22196,23 @@
                                 }
                               ],
                               "NCBI": "32008",
-                              "group_size": 905,
+                              "group_size": 888,
                               "Rank": "genus"
                             }
                           ],
                           "NCBI": "119060",
                           "Rank": "family",
-                          "group_size": 920
+                          "group_size": 903
                         }
                       ],
                       "NCBI": "80840",
                       "Rank": "order",
-                      "group_size": 1036
+                      "group_size": 1019
                     }
                   ],
                   "NCBI": "28216",
                   "Rank": "class",
-                  "group_size": 1052
+                  "group_size": 1035
                 },
                 {
                   "name": "Alphaproteobacteria",
@@ -23375,7 +23259,7 @@
                                       "type": "leaf",
                                       "NCBI": "454594",
                                       "group_size": 28,
-                                      "Rank": "no rank"
+                                      "Rank": "strain"
                                     }
                                   ],
                                   "NCBI": "346",
@@ -23536,14 +23420,14 @@
                                       "Rank": "strain"
                                     }
                                   ],
-                                  "NCBI": "1454202",
-                                  "group_size": 12,
-                                  "Rank": "strain"
+                                  "NCBI": "659",
+                                  "group_size": 6,
+                                  "Rank": "species"
                                 }
                               ],
                               "NCBI": "657",
                               "Rank": "genus",
-                              "group_size": 12
+                              "group_size": 6
                             },
                             {
                               "name": "Vibrio",
@@ -23616,12 +23500,12 @@
                           ],
                           "NCBI": "641",
                           "Rank": "family",
-                          "group_size": 45
+                          "group_size": 39
                         }
                       ],
                       "NCBI": "135623",
                       "Rank": "order",
-                      "group_size": 45
+                      "group_size": 39
                     },
                     {
                       "name": "Enterobacterales",
@@ -24106,7 +23990,7 @@
                                           "type": "leaf",
                                           "NCBI": "511145",
                                           "group_size": 1,
-                                          "Rank": "no rank"
+                                          "Rank": "strain"
                                         },
                                         {
                                           "name": "Escherichia_coli_str._K-12_substr._W3110",
@@ -24114,7 +23998,7 @@
                                           "type": "leaf",
                                           "NCBI": "316407",
                                           "group_size": 16,
-                                          "Rank": "no rank"
+                                          "Rank": "strain"
                                         }
                                       ],
                                       "NCBI": "83333",
@@ -24587,12 +24471,12 @@
                                       "type": "leaf",
                                       "NCBI": "235275",
                                       "group_size": 3,
-                                      "Rank": "no rank"
+                                      "Rank": "strain"
                                     }
                                   ],
-                                  "NCBI": "235275",
-                                  "group_size": 6,
-                                  "Rank": "no rank"
+                                  "NCBI": "53409",
+                                  "group_size": 3,
+                                  "Rank": "species"
                                 },
                                 {
                                   "name": "Pseudomonas_psychrophila",
@@ -24645,7 +24529,7 @@
                                       "type": "leaf",
                                       "NCBI": "59511",
                                       "group_size": 3,
-                                      "Rank": "no rank"
+                                      "Rank": "strain"
                                     }
                                   ],
                                   "NCBI": "251701",
@@ -24671,7 +24555,7 @@
                                       "type": "leaf",
                                       "NCBI": "322",
                                       "group_size": 3,
-                                      "Rank": "no rank"
+                                      "Rank": "strain"
                                     }
                                   ],
                                   "NCBI": "47877",
@@ -25100,18 +24984,18 @@
                                 }
                               ],
                               "NCBI": "286",
-                              "group_size": 8305,
+                              "group_size": 8302,
                               "Rank": "genus"
                             }
                           ],
                           "NCBI": "135621",
                           "Rank": "family",
-                          "group_size": 8307
+                          "group_size": 8304
                         }
                       ],
                       "NCBI": "72274",
                       "Rank": "order",
-                      "group_size": 8330
+                      "group_size": 8327
                     },
                     {
                       "name": "Alteromonadales",
@@ -25315,7 +25199,7 @@
                     }
                   ],
                   "NCBI": "1236",
-                  "group_size": 10193,
+                  "group_size": 10184,
                   "Rank": "class"
                 },
                 {
@@ -25602,31 +25486,31 @@
                 }
               ],
               "NCBI": "1224",
-              "group_size": 11593,
+              "group_size": 11567,
               "Rank": "phylum"
             }
           ],
           "NCBI": "2",
-          "group_size": 45670,
+          "group_size": 44836,
           "Rank": "superkingdom"
         }
       ],
-      "NCBI": "2",
-      "group_size": 56624,
-      "Rank": "superkingdom-placeholder"
+      "NCBI": "2_placeholder",
+      "group_size": 44836,
+      "Rank": "superkingdom_placeholder"
     },
     {
       "name": "blank",
       "NCBI": "blank",
-      "group_size": 1651
+      "group_size": 1649
     },
     {
       "name": "qc",
       "NCBI": "qc",
-      "group_size": 1153
+      "group_size": 1150
     }
   ],
   "NCBI": "131567",
   "Rank": "cellular organisms",
-  "group_size": 72560
+  "group_size": 60306
 }

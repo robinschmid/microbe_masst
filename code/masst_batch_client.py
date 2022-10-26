@@ -93,20 +93,20 @@ def run_on_usi_list_or_mgf_file(
 
 
 def run_on_usi_and_id_list(
-    input_file,
-    out_filename_no_ext,
-    usi_or_lib_id="Output USI",
-    compound_name_header="COMPOUND_NAME",
-    sep=",",
-    precursor_mz_tol=0.05,
-    mz_tol=0.02,
-    min_cos=0.7,
-    min_matched_signals=3,
-    analog=False,
-    analog_mass_below=150,
-    analog_mass_above=200,
-    parallel_queries=100,
-    skip_existing=False,
+        input_file,
+        out_filename_no_ext,
+        usi_or_lib_id="Output USI",
+        compound_name_header="COMPOUND_NAME",
+        sep=",",
+        precursor_mz_tol=0.05,
+        mz_tol=0.02,
+        min_cos=0.7,
+        min_matched_signals=3,
+        analog=False,
+        analog_mass_below=150,
+        analog_mass_above=200,
+        parallel_queries=100,
+        skip_existing=False,
 ):
     jobs_df = pd.read_csv(input_file, sep=sep)
     jobs_df.rename(
@@ -163,38 +163,46 @@ def run_on_usi_and_id_list(
     return 1 if total_jobs == 0 else len(jobs_df[jobs_df["success"]]) / float(total_jobs)
 
 
+
 def run_on_mgf(
-    input_file,
-    out_filename_no_ext,
-    precursor_mz_tol=0.05,
-    mz_tol=0.02,
-    min_cos=0.7,
-    min_matched_signals=3,
-    analog=False,
-    analog_mass_below=150,
-    analog_mass_above=200,
-    parallel_queries=100,
-    skip_existing=False,
+        input_file,
+        out_filename_no_ext,
+        precursor_mz_tol=0.05,
+        mz_tol=0.02,
+        min_cos=0.7,
+        min_matched_signals=3,
+        analog=False,
+        analog_mass_below=150,
+        analog_mass_above=200,
+        parallel_queries=100,
+        skip_existing=False,
 ):
-    ids, precursor_mzs, precursor_charges = [], [], []
+    ids, precursor_mzs, precursor_charges, lib_ids = [], [], [], []
     mzs, intensities = [], []
 
     with pyteomics.mgf.MGF(input_file) as f_in:
         for spectrum_dict in tqdm(f_in):
             abundances = spectrum_dict["intensity array"]
             if len(abundances) >= min_matched_signals:
-                ids.append(spectrum_dict["params"].get("scans", None))
+                # GNPS library mgf has SPECTRUMID for IDs
+                specid = spectrum_dict["params"].get("spectrumid", None)
+                lib_ids.append(specid)
+                specid = "_{}".format(specid) if specid else ""
+                # scan number and optional specid
+                ids.append(spectrum_dict["params"].get("scans", "") + specid)
                 precursor_mzs.append(float(spectrum_dict["params"]["pepmass"][0]))
                 if "charge" in spectrum_dict["params"]:
                     precursor_charges.append(int(spectrum_dict["params"]["charge"][0]))
                 else:
                     precursor_charges.append(1)
+
                 mzs.append(spectrum_dict["m/z array"])
                 intensities.append(abundances)
 
     jobs_df = pd.DataFrame(
         {
             "Compound": ids,
+            "lib_id": lib_ids,
             "precursor_mz": precursor_mzs,
             "precursor_charge": precursor_charges,
             "mzs": mzs,
@@ -239,9 +247,11 @@ def run_on_mgf(
                 analog=analog,
                 analog_mass_below=analog_mass_below,
                 analog_mass_above=analog_mass_above,
+                lib_id=lib_id,
             )
-            for name, prec_mz, prec_charge, mz_array, intensity_array in zip(
+            for name, lib_id, prec_mz, prec_charge, mz_array, intensity_array in zip(
                 jobs_df["Compound"],
+                jobs_df["lib_id"],
                 jobs_df["precursor_mz"],
                 jobs_df["precursor_charge"],
                 jobs_df["mzs"],
@@ -266,9 +276,11 @@ def run_on_mgf(
                     analog=analog,
                     analog_mass_below=analog_mass_below,
                     analog_mass_above=analog_mass_above,
+                    lib_id=lib_id,
                 )
-                for name, prec_mz, prec_charge, mz_array, intensity_array in zip(
+                for name, lib_id, prec_mz, prec_charge, mz_array, intensity_array in zip(
                     jobs_df["Compound"],
+                    jobs_df["lib_id"],
                     jobs_df["precursor_mz"],
                     jobs_df["precursor_charge"],
                     jobs_df["mzs"],
@@ -280,17 +292,20 @@ def run_on_mgf(
             jobs_df["success"] = [f.result() for f in futures]
 
     # return success rate
-    return 1 if total_jobs==0 else len(jobs_df[jobs_df["success"]]) / float(total_jobs)
+    total_jobs = len(jobs_df)
+    return (
+        1 if total_jobs == 0 else len(jobs_df[jobs_df["success"]]) / float(total_jobs)
+    )
 
 
 def create_params_label(
-    analog,
-    analog_mass_above,
-    analog_mass_below,
-    min_cos,
-    min_matched_signals,
-    mz_tol,
-    precursor_mz_tol,
+        analog,
+        analog_mass_above,
+        analog_mass_below,
+        min_cos,
+        min_matched_signals,
+        mz_tol,
+        precursor_mz_tol,
 ):
     params_label = (
         "min matched signals: {};  min cosine: {};  precursor m/z tolerance: {};  m/z "
@@ -312,9 +327,9 @@ if __name__ == "__main__":
         "--in_file",
         type=str,
         help="input file either mgf with spectra or table that contains the two columns specified by "
-        "usi_or_lib_id and compound_header",
-        default="../examples/example_links.tsv",
-        # default="../examples/small.mgf",
+             "usi_or_lib_id and compound_header",
+        # default="../examples/example_links.tsv",
+        default="../examples/small.mgf",
         # default="../examples/empty.mgf",
     )
 
@@ -411,7 +426,10 @@ if __name__ == "__main__":
             parallel_queries=args.parallel_queries,
             skip_existing=args.skip_existing,
         )
-        logger.info("Batch microbe MASST success rate (fastMASST query success) was %.3f", success_rate)
+        logger.info(
+            "Batch microbe MASST success rate (fastMASST query success) was %.3f",
+            success_rate,
+        )
         if success_rate < 1:
             sys.exit(1)
     except Exception as e:

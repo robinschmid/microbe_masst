@@ -46,6 +46,8 @@ def ensure_usi(usi_or_lib_id):
     :param usi_or_lib_id: USI or gnps library ID
     :return: the input usi, the GNPS library usi, or None if not a USI
     """
+    if not usi_or_lib_id:
+        return None
     input = str(usi_or_lib_id)
     if input.startswith("mzspec:"):
         return input

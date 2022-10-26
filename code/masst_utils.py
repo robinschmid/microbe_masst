@@ -6,6 +6,7 @@ from enum import Enum, auto
 import json
 import pandas as pd
 from dataclasses import dataclass
+import usi_utils
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
@@ -218,7 +219,11 @@ def filter_matches(df, precursor_mz_tol, min_matched_signals):
 
 
 def extract_matches_from_masst_results(
-    results_dict, precursor_mz_tol, min_matched_signals, add_dataset_titles=False
+    results_dict,
+    precursor_mz_tol,
+    min_matched_signals,
+    limit_to_best_match_in_file: bool = False,
+    add_dataset_titles=False,
 ) -> pd.DataFrame:
     """
     :param results_dict: masst results
@@ -253,6 +258,14 @@ def extract_matches_from_masst_results(
         for match in masst_df:
             match["dataset_title"] = dataset_info_dict.get(match["Dataset"], None)
 
+    if limit_to_best_match_in_file:
+        # create a usi column that only points to the dataset:file (not scan)
+        masst_df["file_usi"] = [
+            usi_utils.ensure_simple_file_usi(usi) for usi in masst_df["USI"]
+        ]
+        masst_df = masst_df.sort_values(
+            by=["Cosine", "Matching Peaks"], ascending=[False, False]
+        ).drop_duplicates("file_usi")
     return masst_df
 
 
