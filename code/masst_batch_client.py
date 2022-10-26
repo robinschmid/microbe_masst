@@ -38,7 +38,7 @@ def run_on_usi_list_or_mgf_file(
     analog: bool = False,
     analog_mass_below=150,
     analog_mass_above=200,
-    parallel_queries=100,
+    parallel_queries=10,
     skip_existing=False,
 ):
     """
@@ -222,7 +222,8 @@ def run_on_mgf(
             "Running fast microbe masst on input n={} spectra".format(len(jobs_df))
         )
 
-    if len(jobs_df) <= 1:
+    total_jobs = len(jobs_df)
+    if total_jobs <= 1:
         jobs_df["success"] = [
             masst_client.query_spectrum(
                 out_filename_no_ext,
@@ -279,7 +280,6 @@ def run_on_mgf(
             jobs_df["success"] = [f.result() for f in futures]
 
     # return success rate
-    total_jobs = len(jobs_df)
     return 1 if total_jobs==0 else len(jobs_df[jobs_df["success"]]) / float(total_jobs)
 
 
@@ -381,7 +381,7 @@ if __name__ == "__main__":
         type=int,
         help="the number of async queries. fastMASST step is IO bound so higher number than CPU "
         "speeds up the process",
-        default="1",
+        default="10",
     )
     parser.add_argument(
         "--skip_existing",
