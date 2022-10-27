@@ -10,17 +10,79 @@ logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
 
+def create_quant_summary(
+        quant_csv,
+        summary_df: pd.DataFrame,
+        out_file=None,
+        sum_as_binary_presence=False,
+) -> pd.DataFrame:
+    """
+    Creates a table of samples (columns) and MASST matches (like NCBI id) as rows. The intensity in the quant table
+    is row normalized to the relative intensity in the row. then multiplied and summed for each feature that had a
+    match to a specific MASST metadata entry
+
+    :param quant_csv: imports the quant table from MZmine
+    :param summary_df: summary of MASST matches with the feature id as columns
+    :param out_file: saves the results to csv
+    :return: the final data frame
+    """
+    summary_df.columns = pd.to_numeric(summary_df.columns)
+    quant_df = import_quantdf(quant_csv)
+    quant_df = quant_df[quant_df.index.get_level_values("row ID").isin(summary_df.columns)]
+    if sum_as_binary_presence:
+        quant_df = quant_df.ge(0.01)
+
+    samples = quant_df.columns
+    final_df = pd.DataFrame(index=summary_df.index, columns=samples).fillna(0)
+
+    summary_df.columns = pd.to_numeric(summary_df.columns)
+    features = summary_df.columns
+    for f in tqdm(features):
+        try:
+            # take first row
+            _, quant_row = next(quant_df[quant_df.index.get_level_values("row ID") == f].iterrows())
+
+            # add MASST matches to samples
+            for sample in samples:
+                final_df[sample] += summary_df[f] * quant_row[sample]
+        except:
+            logger.warning("This error should not happen, every row ID should be available in the table")
+            pass
+
+    if out_file:
+        final_df.to_csv(out_file)
+    return final_df
+
+
+def import_quantdf(quant_csv):
+    quant_df = pd.read_csv(quant_csv)
+    samples = [col[:-10] for col in quant_df.columns if col.endswith(" Peak area")]
+    quant_df.rename(columns=
+                    dict([(col, col[:-10]) for col in quant_df.columns if col.endswith(" Peak area")]), inplace=True
+                    )
+    # ensure numeric columns, set index and retain only sample columns
+    quant_df["row ID"] = pd.to_numeric(quant_df["row ID"])
+    quant_df["row m/z"] = pd.to_numeric(quant_df["row m/z"])
+    quant_df["row retention time"] = pd.to_numeric(quant_df["row retention time"])
+    quant_df.set_index(["row ID", "row m/z", "row retention time"], inplace=True)
+    quant_df = quant_df[samples]
+    # relative intensities in rows
+    quant_df = quant_df.div(quant_df.max(axis=1), axis=0) * 100
+    quant_df.round(3)
+    return quant_df
+
+
 def create_summary_file(
-    parent_directory,
-    special_masst: SpecialMasst,
-    out_file=None,
-    min_matches=1,
-    matches_to_binary_presence=True,
+        parent_directory,
+        special_masst: SpecialMasst,
+        out_file=None,
+        min_matches=1,
+        matches_to_binary_presence=True,
 ) -> pd.DataFrame:
     dfs = []
     node_id = special_masst.tree_node_key
     for file in tqdm(glob.glob(parent_directory + f"*{special_masst.prefix}.json")):
-        comp_id = re.search(r"_(CCMSLIB\d+)_", file).group(1)
+        comp_id = re.search(r"_(\d+)_microbe.", file).group(1)
         df = json_to_dataframe(file, node_key=node_id, min_matches=min_matches)
         if df is None:
             continue
@@ -36,6 +98,8 @@ def create_summary_file(
         df = df.drop(columns=["matched_size"])
         if len(df) > 0:
             dfs.append(df)
+        # if len(dfs) > 10:
+        #     break
 
     merged_df = pd.concat(dfs, join="outer", axis=1).fillna(0)
     if out_file:
@@ -81,11 +145,40 @@ def create_multi_index(df: pd.DataFrame, special_masst: SpecialMasst) -> pd.Data
     )
 
 
-if __name__ == "__main__":
+def create_all_summary_files(masst_directory, quant_csv, out_base_file, min_matches=1, ):
     merged_df = create_summary_file(
-        parent_directory=r"D:\\git\\microbe_masst\\output\\library\\",
-        out_file=r"D:\git\microbe_masst\output\summary_gnps_lib2.csv",
+        parent_directory=masst_directory,
+        out_file=out_base_file + "_spectral_matches.csv",
         special_masst=masst_utils.MICROBE_MASST,
-        min_matches=2,
+        min_matches=1,
         matches_to_binary_presence=True,
+    )
+
+    create_quant_summary(
+        quant_csv=quant_csv,
+        summary_df=merged_df,
+        out_file=out_base_file + "_samples_binary.csv",
+        sum_as_binary_presence=True,
+    )
+
+    create_quant_summary(
+        quant_csv=quant_csv,
+        summary_df=merged_df,
+        out_file=out_base_file + "_samples_row_normalized.csv",
+        sum_as_binary_presence=False,
+    )
+
+
+if __name__ == "__main__":
+    create_all_summary_files(
+        r"D:\Robin\git\microbe_masst\output\beam\fecal\\",
+        r"D:\Robin\git\microbe_masst\local_files\BEAM\quant_table_BEAM_fecal.csv",
+        r"D:\Robin\git\microbe_masst\output\mmast_summary_beam_fecal",
+        min_matches = 1,
+    )
+    create_all_summary_files(
+        r"D:\Robin\git\microbe_masst\output\beam\serum\\",
+        r"D:\Robin\git\microbe_masst\local_files\BEAM\quant_table_BEAM_serum.csv",
+        r"D:\Robin\git\microbe_masst\output\mmast_summary_beam_serum",
+        min_matches = 1,
     )
