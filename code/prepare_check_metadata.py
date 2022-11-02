@@ -62,13 +62,13 @@ if __name__ == "__main__":
         "--metadata_file",
         type=str,
         help="input masst metadata",
-        default="../data/table_microbeMASST_manula_fix_final.csv",
+        default="../data/microbe_masst_table.csv",
     )
     parser.add_argument(
         "--output_file",
         type=str,
         help="output masst metadata",
-        default="../data/mmast_masst_metadata.csv",
+        default="../data/microbe_masst_table.csv",
     )
     # foodmasst
     # parser.add_argument('--metadata_file', type=str, help='input masst metadata',
