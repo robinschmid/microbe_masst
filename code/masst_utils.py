@@ -39,6 +39,8 @@ FOOD_MASST = SpecialMasst(
     metadata_key="node_id",
 )
 
+SPECIAL_MASSTS = [FOOD_MASST, MICROBE_MASST]
+
 URL = "https://fastlibrarysearch.ucsd.edu/search"
 
 
