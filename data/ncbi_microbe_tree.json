@@ -758,8 +758,8 @@
                               "duplication": "Y",
                               "type": "leaf",
                               "NCBI": "2806070",
-                              "Rank": "genus",
-                              "group_size": 2
+                              "group_size": 2,
+                              "Rank": "genus"
                             }
                           ],
                           "NCBI": "68749",
@@ -2198,8 +2198,8 @@
                               "duplication": "Y",
                               "type": "leaf",
                               "NCBI": "2872513",
-                              "Rank": "species",
-                              "group_size": 1
+                              "group_size": 1,
+                              "Rank": "species"
                             },
                             {
                               "name": "Coriolopsis",
@@ -2242,8 +2242,8 @@
                               "duplication": "N",
                               "type": "leaf",
                               "NCBI": "2810564",
-                              "Rank": "species",
-                              "group_size": 1
+                              "group_size": 1,
+                              "Rank": "species"
                             },
                             {
                               "name": "Daedaleopsis",
@@ -2367,8 +2367,8 @@
                                   "duplication": "N",
                                   "type": "leaf",
                                   "NCBI": "2806377",
-                                  "Rank": "species",
-                                  "group_size": 1
+                                  "group_size": 1,
+                                  "Rank": "species"
                                 },
                                 {
                                   "name": "Trametes_orientalis",
@@ -5431,8 +5431,8 @@
                                     }
                                   ],
                                   "NCBI": "5503",
-                                  "group_size": 2,
-                                  "Rank": "species"
+                                  "Rank": "species",
+                                  "group_size": 2
                                 }
                               ],
                               "NCBI": "5502",
@@ -5989,8 +5989,8 @@
                                     }
                                   ],
                                   "NCBI": "69773",
-                                  "group_size": 2,
-                                  "Rank": "species"
+                                  "Rank": "species",
+                                  "group_size": 2
                                 },
                                 {
                                   "name": "Penicillium_philippinense",
@@ -6323,8 +6323,8 @@
                                     }
                                   ],
                                   "NCBI": "5062",
-                                  "group_size": 7,
-                                  "Rank": "species"
+                                  "Rank": "species",
+                                  "group_size": 7
                                 },
                                 {
                                   "name": "Aspergillus_fumigatus",
@@ -7480,8 +7480,8 @@
                                 }
                               ],
                               "NCBI": "1892809",
-                              "Rank": "genus",
-                              "group_size": 5
+                              "group_size": 5,
+                              "Rank": "genus"
                             },
                             {
                               "name": "Beauveria",
@@ -10571,8 +10571,8 @@
                                   "duplication": "N",
                                   "type": "leaf",
                                   "NCBI": "1961",
-                                  "Rank": "species",
-                                  "group_size": 1
+                                  "group_size": 1,
+                                  "Rank": "species"
                                 },
                                 {
                                   "name": "Streptomyces_atratus",
@@ -16239,8 +16239,8 @@
                                     }
                                   ],
                                   "NCBI": "1465",
-                                  "group_size": 36,
-                                  "Rank": "species"
+                                  "Rank": "species",
+                                  "group_size": 36
                                 }
                               ],
                               "NCBI": "55080",
@@ -16627,8 +16627,8 @@
                                     }
                                   ],
                                   "NCBI": "1408",
-                                  "group_size": 36,
-                                  "Rank": "species"
+                                  "Rank": "species",
+                                  "group_size": 36
                                 },
                                 {
                                   "name": "Bacillus_smithii",
@@ -16663,8 +16663,8 @@
                                     }
                                   ],
                                   "NCBI": "492670",
-                                  "Rank": "species",
-                                  "group_size": 14
+                                  "group_size": 14,
+                                  "Rank": "species"
                                 },
                                 {
                                   "name": "Bacillus_halotolerans",
@@ -17083,8 +17083,8 @@
                                     }
                                   ],
                                   "NCBI": "2751",
-                                  "group_size": 3,
-                                  "Rank": "species"
+                                  "Rank": "species",
+                                  "group_size": 3
                                 }
                               ],
                               "NCBI": "2747",
@@ -20293,8 +20293,8 @@
                                     }
                                   ],
                                   "NCBI": "99286",
-                                  "group_size": 3,
-                                  "Rank": "species"
+                                  "Rank": "species",
+                                  "group_size": 3
                                 },
                                 {
                                   "name": "Flavobacterium_frigoris",
@@ -20899,8 +20899,8 @@
                                     }
                                   ],
                                   "NCBI": "823",
-                                  "Rank": "species",
-                                  "group_size": 5
+                                  "group_size": 5,
+                                  "Rank": "species"
                                 }
                               ],
                               "NCBI": "375288",
@@ -21273,8 +21273,8 @@
                                     }
                                   ],
                                   "NCBI": "47678",
-                                  "Rank": "species",
-                                  "group_size": 8
+                                  "group_size": 8,
+                                  "Rank": "species"
                                 },
                                 {
                                   "name": "Bacteroides_sp.",
@@ -21307,8 +21307,8 @@
                                     }
                                   ],
                                   "NCBI": "818",
-                                  "Rank": "species",
-                                  "group_size": 685
+                                  "group_size": 685,
+                                  "Rank": "species"
                                 },
                                 {
                                   "name": "Bacteroides_fragilis",
@@ -23421,8 +23421,8 @@
                                     }
                                   ],
                                   "NCBI": "659",
-                                  "group_size": 6,
-                                  "Rank": "species"
+                                  "Rank": "species",
+                                  "group_size": 6
                                 }
                               ],
                               "NCBI": "657",
@@ -24475,8 +24475,8 @@
                                     }
                                   ],
                                   "NCBI": "53409",
-                                  "group_size": 3,
-                                  "Rank": "species"
+                                  "Rank": "species",
+                                  "group_size": 3
                                 },
                                 {
                                   "name": "Pseudomonas_psychrophila",
@@ -25496,8 +25496,8 @@
         }
       ],
       "NCBI": "2_placeholder",
-      "group_size": 44836,
-      "Rank": "superkingdom_placeholder"
+      "Rank": "superkingdom_placeholder",
+      "group_size": 44836
     },
     {
       "name": "blank",
