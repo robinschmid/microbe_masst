@@ -78,11 +78,11 @@ def create_summary_file(
         out_file=None,
         min_matches=1,
         matches_to_binary_presence=True,
-) -> pd.DataFrame:
+) -> pd.DataFrame | None:
     dfs = []
     node_id = special_masst.tree_node_key
     for file in tqdm(glob.glob(parent_directory + f"*{special_masst.prefix}.json")):
-        comp_id = re.search(r"_(\d+)_microbe.", file).group(1)
+        comp_id = re.search(r"_(\d+)_"+special_masst.prefix, file).group(1)
         df = json_to_dataframe(file, node_key=node_id, min_matches=min_matches)
         if df is None:
             continue
@@ -100,6 +100,9 @@ def create_summary_file(
             dfs.append(df)
         # if len(dfs) > 10:
         #     break
+
+    if len(dfs) == 0:
+        return None
 
     merged_df = pd.concat(dfs, join="outer", axis=1).fillna(0)
     if out_file:
@@ -145,40 +148,75 @@ def create_multi_index(df: pd.DataFrame, special_masst: SpecialMasst) -> pd.Data
     )
 
 
-def create_all_summary_files(masst_directory, quant_csv, out_base_file, min_matches=1, ):
+def create_all_summary_files(special_masst:SpecialMasst, masst_directory, quant_csv, out_base_file, min_matches=1):
+    out_base_file = "{}_{}".format(out_base_file, special_masst.prefix)
     merged_df = create_summary_file(
         parent_directory=masst_directory,
-        out_file=out_base_file + "_spectral_matches.csv",
-        special_masst=masst_utils.MICROBE_MASST,
-        min_matches=1,
+        out_file= "{}_spectral_matches.csv".format(out_base_file),
+        special_masst=special_masst,
+        min_matches=min_matches,
         matches_to_binary_presence=True,
     )
+    if merged_df is None:
+        return
 
-    create_quant_summary(
-        quant_csv=quant_csv,
-        summary_df=merged_df,
-        out_file=out_base_file + "_samples_binary.csv",
-        sum_as_binary_presence=True,
-    )
+    if quant_csv is not None:
+        create_quant_summary(
+            quant_csv=quant_csv,
+            summary_df=merged_df,
+            out_file=out_base_file + "_samples_binary.csv",
+            sum_as_binary_presence=True,
+        )
 
-    create_quant_summary(
-        quant_csv=quant_csv,
-        summary_df=merged_df,
-        out_file=out_base_file + "_samples_row_normalized.csv",
-        sum_as_binary_presence=False,
-    )
+        create_quant_summary(
+            quant_csv=quant_csv,
+            summary_df=merged_df,
+            out_file=out_base_file + "_samples_row_normalized.csv",
+            sum_as_binary_presence=False,
+        )
+
+def create_all_masst_summaries(masst_directory, quant_csv, out_base_file, min_matches=1, ):
+    for special_masst in masst_utils.SPECIAL_MASSTS:
+        create_all_summary_files(special_masst, masst_directory, quant_csv, out_base_file, min_matches)
 
 
 if __name__ == "__main__":
-    create_all_summary_files(
-        r"D:\Robin\git\microbe_masst\output\beam\fecal\\",
-        r"D:\Robin\git\microbe_masst\local_files\BEAM\quant_table_BEAM_fecal.csv",
-        r"D:\Robin\git\microbe_masst\output\mmast_summary_beam_fecal",
+    # create_all_masst_summaries(
+    #     r"D:\Robin\git\microbe_masst\output\beam\fecal\\",
+    #     r"D:\Robin\git\microbe_masst\local_files\BEAM\quant_table_BEAM_fecal.csv",
+    #     r"D:\Robin\git\microbe_masst\output\mmast_summary_beam_fecal",
+    #     min_matches = 1,
+    # )
+    # create_all_masst_summaries(
+    #     r"D:\Robin\git\microbe_masst\output\beam\serum\\",
+    #     r"D:\Robin\git\microbe_masst\local_files\BEAM\quant_table_BEAM_serum.csv",
+    #     r"D:\Robin\git\microbe_masst\output\mmast_summary_beam_serum",
+    #     min_matches = 1,
+    # )
+    # create_all_masst_summaries(
+    #     r"D:\Robin\git\microbe_masst\output\nina_space\\",
+    #     r"D:\Robin\git\microbe_masst\local_files\nina_space\20221017_3DMM_pos_rerun_BlankSubtract_OneDetection.csv",
+    #     r"D:\Robin\git\microbe_masst\output\mmast_summary_nina_in_space",
+    #     min_matches = 1,
+    # )
+
+    create_all_masst_summaries(
+        r"D:\Robin\git\microbe_masst\output\bile2\\",
+        None,
+        r"D:\Robin\git\microbe_masst\output\mmast_summary_bile_refined",
         min_matches = 1,
     )
-    create_all_summary_files(
-        r"D:\Robin\git\microbe_masst\output\beam\serum\\",
-        r"D:\Robin\git\microbe_masst\local_files\BEAM\quant_table_BEAM_serum.csv",
-        r"D:\Robin\git\microbe_masst\output\mmast_summary_beam_serum",
+
+    create_all_masst_summaries(
+        r"D:\Robin\git\microbe_masst\output\bile_unrefined\\",
+        None,
+        r"D:\Robin\git\microbe_masst\output\mmast_summary_bile_unrefined",
+        min_matches = 1,
+    )
+
+    create_all_masst_summaries(
+        r"D:\Robin\git\microbe_masst\output\gwas\\",
+        None,
+        r"D:\Robin\git\microbe_masst\output\mmast_summary_gwas",
         min_matches = 1,
     )

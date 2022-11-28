@@ -41,6 +41,7 @@ FOOD_MASST = SpecialMasst(
 
 # URL = "https://fastlibrarysearch.ucsd.edu/search"
 URL = "https://fasst.gnps2.org/search"
+SPECIAL_MASSTS = [FOOD_MASST, MICROBE_MASST]
 
 
 class DataBase(Enum):
