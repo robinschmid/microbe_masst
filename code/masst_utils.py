@@ -39,7 +39,8 @@ FOOD_MASST = SpecialMasst(
     metadata_key="node_id",
 )
 
-URL = "https://fastlibrarysearch.ucsd.edu/search"
+# URL = "https://fastlibrarysearch.ucsd.edu/search"
+URL = "https://fasst.gnps2.org/search"
 
 
 class DataBase(Enum):
