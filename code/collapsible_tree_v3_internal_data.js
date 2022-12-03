@@ -47,7 +47,7 @@ var lineHeight = 40;
 var labelSize = 12;
 
 // base radius
-var isScalingActive = true;
+var isScalingActive = false;
 var sizeOption = "Ratio";
 const maxRadius = 20;
 var radius = 6;
@@ -338,8 +338,8 @@ sizeCombo.on("change", function (d) {
 });
 
 // size of the diagram
-viewerWidth = $(document).width();
-viewerHeight = $(document).height();
+viewerWidth = $(document).width()-40;
+viewerHeight = $(document).height()-150;
 
 tree = d3.layout.tree()
     .size([viewerHeight, viewerWidth]);
@@ -701,9 +701,9 @@ function update(source) {
                 "Name: " + d.name
                 + (d.NCBI != null ? "<br/>NCBI: " + d.NCBI : "")
                 + (d.Rank != null ? "<br/>Rank: " + d.Rank : "")
-                + (d.matched_size > 0 ? "<br/>Matches: " + d.matched_size : "")
-                + (d.occurrence_fraction > 0 ? "<br/>Occurance fraction: " + formatDecimals(d.occurrence_fraction, 3) : "")
-                + (d.group_size > 0 ? "<br/>Group size: " + d.group_size : "")
+                + (d.matched_size > 0 ? "<br/>Matching samples: " + d.matched_size : "")
+                + (d.group_size > 0 ? "<br/>Available samples: " + d.group_size : "")
+                + (d.occurrence_fraction > 0 ? "<br/>Occurrence: " + formatDecimals(d.occurrence_fraction, 3) : "")
             )
                 .style("left", (d3.event.pageX) + "px")
                 .style("top", (d3.event.pageY - 28) + "px");
