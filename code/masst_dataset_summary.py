@@ -181,42 +181,9 @@ def create_all_masst_summaries(masst_directory, quant_csv, out_base_file, min_ma
 
 
 if __name__ == "__main__":
-    # create_all_masst_summaries(
-    #     r"D:\Robin\git\microbe_masst\output\beam\fecal\\",
-    #     r"D:\Robin\git\microbe_masst\local_files\BEAM\quant_table_BEAM_fecal.csv",
-    #     r"D:\Robin\git\microbe_masst\output\mmast_summary_beam_fecal",
-    #     min_matches = 1,
-    # )
-    # create_all_masst_summaries(
-    #     r"D:\Robin\git\microbe_masst\output\beam\serum\\",
-    #     r"D:\Robin\git\microbe_masst\local_files\BEAM\quant_table_BEAM_serum.csv",
-    #     r"D:\Robin\git\microbe_masst\output\mmast_summary_beam_serum",
-    #     min_matches = 1,
-    # )
-    # create_all_masst_summaries(
-    #     r"D:\Robin\git\microbe_masst\output\nina_space\\",
-    #     r"D:\Robin\git\microbe_masst\local_files\nina_space\20221017_3DMM_pos_rerun_BlankSubtract_OneDetection.csv",
-    #     r"D:\Robin\git\microbe_masst\output\mmast_summary_nina_in_space",
-    #     min_matches = 1,
-    # )
-
     create_all_masst_summaries(
-        r"D:\Robin\git\microbe_masst\output\bile2\\",
-        None,
-        r"D:\Robin\git\microbe_masst\output\mmast_summary_bile_refined",
-        min_matches = 1,
-    )
-
-    create_all_masst_summaries(
-        r"D:\Robin\git\microbe_masst\output\bile_unrefined\\",
-        None,
-        r"D:\Robin\git\microbe_masst\output\mmast_summary_bile_unrefined",
-        min_matches = 1,
-    )
-
-    create_all_masst_summaries(
-        r"D:\Robin\git\microbe_masst\output\gwas\\",
-        None,
-        r"D:\Robin\git\microbe_masst\output\mmast_summary_gwas",
+        r"D:\git\microbe_masst\output\sydney\\",
+        r"D:\git\microbe_masst\local_files\SEED_Grant_iimn_gnps_quant.csv",
+        r"D:\git\microbe_masst\output\mmasst_summary_seed_grant",
         min_matches = 1,
     )
