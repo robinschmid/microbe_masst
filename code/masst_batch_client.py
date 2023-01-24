@@ -4,6 +4,7 @@ import pandas as pd
 from tqdm import tqdm
 import re
 import argparse
+from distutils.util import strtobool
 import pyteomics.mgf
 from pathlib import Path
 
@@ -375,7 +376,7 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--analog",
-        type=bool,
+        type=lambda x: bool(strtobool(str(x.strip()))),
         help="Search for analogs within mass window",
         default=False,
     )
@@ -400,7 +401,7 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--skip_existing",
-        type=bool,
+        type=lambda x: bool(strtobool(str(x.strip()))),
         help="skip existing already processed entries",
         default=True,
     )

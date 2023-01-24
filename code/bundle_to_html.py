@@ -4,6 +4,7 @@ import base64
 import requests
 import sys
 import argparse
+from distutils.util import strtobool
 import logging
 
 logging.basicConfig(level=logging.DEBUG)
@@ -165,7 +166,7 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--compress",
-        type=bool,
+        type=lambda x: bool(strtobool(str(x.strip()))),
         help="Compress output file (needs minify_html)",
         default=True,
     )

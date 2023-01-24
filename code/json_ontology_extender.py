@@ -3,6 +3,7 @@ import sys
 import pandas as pd
 import json
 import numpy as np
+from distutils.util import strtobool
 import logging
 
 from masst_utils import SpecialMasst
@@ -215,7 +216,10 @@ if __name__ == "__main__":
         default="../output/merged_ontology_data.json",
     )
     parser.add_argument(
-        "--format", type=bool, help="Format the json output False or True", default=True
+        "--format",
+        type=lambda x: bool(strtobool(str(x.strip()))),
+        help="Format the json output False or True",
+        default=True
     )
 
     args = parser.parse_args()

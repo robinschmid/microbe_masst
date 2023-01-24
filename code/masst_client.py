@@ -4,6 +4,7 @@ import pandas as pd
 from tqdm import tqdm
 import re
 import argparse
+from distutils.util import strtobool
 
 from utils import prepare_paths
 from masst_tree import create_enriched_masst_tree
@@ -349,7 +350,7 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--analog",
-        type=bool,
+        type=lambda x: bool(strtobool(str(x.strip()))),
         help="Search for analogs within mass window",
         default=False,
     )
