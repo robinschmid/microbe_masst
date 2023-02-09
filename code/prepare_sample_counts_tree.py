@@ -72,10 +72,21 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description="Update tree ontology with new metadata file"
     )
+    # parser.add_argument('--ontology', type=str, help='the json ontology file with children',
+    #                     default="../data/ncbi_microbe_tree.json")
+    # parser.add_argument('--metadata_file', type=str, help='microbe masst metadata',
+    #                     default="../data/microbe_masst_table.csv")
+    # parser.add_argument('--node_key', type=str, help='the field in the ontology to be compare to the field in the '
+    #                                                  'data file', default="NCBI")
+    # parser.add_argument('--data_key', type=str,
+    #                     help='the field in the data file to be compared to the field in the ontology',
+    #                     default="Taxa_NCBI")
+
+    # plant masst
     parser.add_argument('--ontology', type=str, help='the json ontology file with children',
-                        default="../data/ncbi_microbe_tree.json")
-    parser.add_argument('--metadata_file', type=str, help='microbe masst metadata',
-                        default="../data/microbe_masst_table.csv")
+                        default="../data/plant_masst_tree.json")
+    parser.add_argument('--metadata_file', type=str, help='masst file metadata',
+                        default="../data/plant_masst_metadata.csv")
     parser.add_argument('--node_key', type=str, help='the field in the ontology to be compare to the field in the '
                                                      'data file', default="NCBI")
     parser.add_argument('--data_key', type=str,
