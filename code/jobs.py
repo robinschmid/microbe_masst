@@ -1,4 +1,6 @@
 import logging
+import sys
+
 import masst_batch_client
 
 logging.basicConfig(level=logging.DEBUG)
@@ -8,10 +10,10 @@ files = [
     # ("D:\Robin\git\microbe_masst\local_files\ipsita\Dihydroxy_MSCluster.mgf", "../output/fastMASSTDiOHBA"),
     (r"../examples/example_links.tsv", "../output/examples/fastMASST_"),
     (r"../examples/example_links2.tsv", "../output/examples/fastMASST_"),
+    (r"../examples/example_links3.tsv", "../output/examples/fastMASST_"),
 ]
 
 if __name__ == "__main__":
-
     for file, out_file in files:
         try:
             logger.info("Starting new job for input: {}".format(file))
@@ -20,9 +22,11 @@ if __name__ == "__main__":
                 in_file=file,
                 out_file_no_extension=out_file,
                 min_matched_signals=4,
-                parallel_queries=5,
+                parallel_queries=22,
                 skip_existing=True,
                 sep=sep
             )
         except:
             pass
+    # exit with OK
+    sys.exit(0)

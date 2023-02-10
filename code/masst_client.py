@@ -90,6 +90,20 @@ def process_matches(
         compress_out_html=True,
     )
 
+    # microbeMASST
+    logger.debug("Exporting plantMASST %s", compound_name)
+    create_enriched_masst_tree(
+        matches_df,
+        masst.PLANT_MASST,
+        common_file=common_file,
+        lib_match_json=lib_match_json,
+        input_str=input_label,
+        parameter_str=params_label,
+        usi=usi,
+        format_out_json=False,
+        compress_out_html=True,
+    )
+
     # foodMASST
     logger.debug("Exporting foodMASST %s", compound_name)
     create_enriched_masst_tree(
@@ -323,7 +337,9 @@ if __name__ == "__main__":
         "--usi_or_lib_id",
         type=str,
         help="usi or GNPS library ID",
-        default="CCMSLIB00006582001",
+        default="CCMSLIB00005883945", # tryptophan 6
+        # default="CCMSLIB00004679239", # commendamide
+        # default="CCMSLIB00006582001",
     )
     parser.add_argument(
         "--out_file",

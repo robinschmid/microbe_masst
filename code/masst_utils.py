@@ -38,10 +38,17 @@ FOOD_MASST = SpecialMasst(
     tree_node_key="name",
     metadata_key="node_id",
 )
+PLANT_MASST = SpecialMasst(
+    prefix="plant",
+    tree_file="../data/plant_masst_tree.json",
+    metadata_file="../data/plant_masst_metadata.csv",
+    tree_node_key="NCBI",
+    metadata_key="Taxa_NCBI",
+)
 
 # URL = "https://fastlibrarysearch.ucsd.edu/search"
 URL = "https://fasst.gnps2.org/search"
-SPECIAL_MASSTS = [FOOD_MASST, MICROBE_MASST]
+SPECIAL_MASSTS = [FOOD_MASST, MICROBE_MASST, PLANT_MASST]
 
 
 class DataBase(Enum):
