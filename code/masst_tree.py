@@ -2,10 +2,13 @@ from pathlib import Path
 import pandas as pd
 
 from masst_utils import SpecialMasst
+from masst_utils import SPECIAL_MASSTS
 from utils import prepare_paths
 import bundle_to_html
 import json_ontology_extender
 import logging
+import json
+
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
@@ -52,6 +55,74 @@ def create_enriched_masst_tree(
             meta_matched_df=results_df,
             format_out_json=format_out_json,
         )
+        # bundles the final html
+        return bundle_to_html.build_dist_html(
+            in_html, out_html, replace_dict, compress_out_html
+        )
+    except Exception as e:
+        # exit with error
+        logger.exception(e)
+    # default return None
+    return None
+
+
+def create_combined_masst_tree(
+        matches_df,
+        common_file,
+        lib_match_json,
+        input_str,
+        parameter_str,
+        usi: str = None,
+        in_html="../code/collapsible_tree_v3.html",
+        format_out_json=False,
+        compress_out_html=True,
+):
+    if (matches_df is None) or (len(matches_df) <= 0):
+        return False
+
+    tree_roots = []
+    for special_masst in SPECIAL_MASSTS:
+        try:
+            out_json_tree = "{}_{}.json".format(common_file, special_masst.prefix)
+            with open(out_json_tree) as json_file:
+                # load all trees, add masst_type to identify, rename root
+                treeRoot = json.load(json_file)
+                json_ontology_extender.set_field_in_all_nodes(treeRoot, "masst_type", special_masst.root)
+                treeRoot["name"] = special_masst.root
+                tree_roots.append(treeRoot)
+        except:
+            pass
+
+    # there were no trees = no matches
+    if len(tree_roots) == 0:
+        return False
+
+    combined_root = {
+        "name": "root",
+        "children": tree_roots
+    }
+
+    try:
+        combined_prefix = "combined"
+        out_json_tree = "{}_{}.json".format(common_file, combined_prefix)
+        prepare_paths(files=[out_json_tree])
+
+        with open(out_json_tree, "w") as file:
+            if format_out_json:
+                out_tree = json.dumps(combined_root, indent=2, cls=json_ontology_extender.NpEncoder)
+            else:
+                out_tree = json.dumps(combined_root, cls=json_ontology_extender.NpEncoder)
+            print(out_tree, file=file)
+
+        out_html = "{}_{}.html".format(common_file, combined_prefix)
+        replace_dict = {
+            "PLACEHOLDER_JSON_DATA": out_json_tree,
+            "LIBRARY_JSON_DATA_PLACEHOLDER": lib_match_json,
+            "INPUT_LABEL_PLACEHOLDER": input_str,
+            "USI_LABEL_PLACEHOLDER": usi if usi else "",
+            "PARAMS_PLACEHOLDER": parameter_str,
+        }
+
         # bundles the final html
         return bundle_to_html.build_dist_html(
             in_html, out_html, replace_dict, compress_out_html

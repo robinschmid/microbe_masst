@@ -8,6 +8,7 @@ from distutils.util import strtobool
 
 from utils import prepare_paths
 from masst_tree import create_enriched_masst_tree
+from masst_tree import create_combined_masst_tree
 import masst_utils as masst
 import usi_utils
 
@@ -109,6 +110,19 @@ def process_matches(
     create_enriched_masst_tree(
         matches_df,
         masst.FOOD_MASST,
+        common_file=common_file,
+        lib_match_json=lib_match_json,
+        input_str=input_label,
+        parameter_str=params_label,
+        usi=usi,
+        format_out_json=False,
+        compress_out_html=True,
+    )
+
+    # combined from all
+    logger.debug("Exporting combined tree %s", compound_name)
+    create_combined_masst_tree(
+        matches_df,
         common_file=common_file,
         lib_match_json=lib_match_json,
         input_str=input_label,

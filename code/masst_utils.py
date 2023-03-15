@@ -18,6 +18,7 @@ logger = logging.getLogger(__name__)
 @dataclass
 class SpecialMasst:
     prefix: str
+    root: str
     tree_file: str
     metadata_file: str
     tree_node_key: str
@@ -26,6 +27,7 @@ class SpecialMasst:
 
 MICROBE_MASST = SpecialMasst(
     prefix="microbe",
+    root="microbes",
     tree_file="../data/ncbi_microbe_tree.json",
     metadata_file="../data/microbe_masst_table.csv",
     tree_node_key="NCBI",
@@ -33,6 +35,7 @@ MICROBE_MASST = SpecialMasst(
 )
 FOOD_MASST = SpecialMasst(
     prefix="food",
+    root="food",
     tree_file="../data/gfop_food_tree.json",
     metadata_file="../data/food_masst_metadata.csv",
     tree_node_key="name",
@@ -40,11 +43,13 @@ FOOD_MASST = SpecialMasst(
 )
 PLANT_MASST = SpecialMasst(
     prefix="plant",
+    root="plants",
     tree_file="../data/plant_masst_tree.json",
     metadata_file="../data/plant_masst_metadata.csv",
     tree_node_key="NCBI",
     metadata_key="Taxa_NCBI",
 )
+
 
 # URL = "https://fastlibrarysearch.ucsd.edu/search"
 URL = "https://fasst.gnps2.org/search"

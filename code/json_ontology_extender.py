@@ -69,6 +69,17 @@ def accumulate_field_in_parents(node, field):
     return node_value
 
 
+def set_field_in_all_nodes(node, field, value):
+    """
+    set field to value in all nodes
+    """
+    node[field] = value
+    # apply to all children
+    if "children" in node:
+        for child in node["children"]:
+            set_field_in_all_nodes(child, field, value)
+
+
 def field_missing(node, field, report_missing=False, replace_with_field=None):
     """
     check if the node or any children down the tree lacks the field
@@ -108,11 +119,11 @@ def add_pie_data_to_node_and_children(node):
 
 
 def add_data_to_ontology_file(
-    special_masst: SpecialMasst,
-    output="../output/merged_ontology_data.json",
-    in_data="../examples/caffeic_acid.tsv",
-    meta_matched_df: pd.DataFrame = None,
-    format_out_json=False,
+        special_masst: SpecialMasst,
+        output="../output/merged_ontology_data.json",
+        in_data="../examples/caffeic_acid.tsv",
+        meta_matched_df: pd.DataFrame = None,
+        format_out_json=False,
 ):
     data_key = special_masst.metadata_key
     node_key = special_masst.tree_node_key
@@ -130,10 +141,10 @@ def add_data_to_ontology_file(
 
         # check if group_size is available otherwise propagate
         if (
-            field_missing(
-                treeRoot, node_key, report_missing=True, replace_with_field="name"
-            )
-            > 0
+                field_missing(
+                    treeRoot, node_key, report_missing=True, replace_with_field="name"
+                )
+                > 0
         ):
             logger.error("{} id is missing in a node".format(node_key))
         if field_missing(treeRoot, "group_size") > 0:
@@ -177,7 +188,7 @@ def calc_root_stats(treeRoot):
         treeRoot["occurrence_fraction"] = 0
     else:
         treeRoot["occurrence_fraction"] = (
-            treeRoot["matched_size"] / treeRoot["group_size"]
+                treeRoot["matched_size"] / treeRoot["group_size"]
         )
 
 
@@ -194,7 +205,7 @@ if __name__ == "__main__":
         "--in_data",
         type=str,
         help="a tab separated file with additional data that is added to the "
-        "ontology",
+             "ontology",
         default="../examples/caffeic_acid.tsv",
     )
     parser.add_argument(
