@@ -69,15 +69,21 @@ def accumulate_field_in_parents(node, field):
     return node_value
 
 
-def set_field_in_all_nodes(node, field, value):
+def set_field_in_all_nodes(node, field, value, in_pie_data=True):
     """
     set field to value in all nodes
     """
-    node[field] = value
+    if in_pie_data:
+        node["pie_data"][0][field] = value
+        node["pie_data"][1][field] = value
+    else:
+        node[field] = value
+
+
     # apply to all children
     if "children" in node:
         for child in node["children"]:
-            set_field_in_all_nodes(child, field, value)
+            set_field_in_all_nodes(child, field, value, in_pie_data)
 
 
 def field_missing(node, field, report_missing=False, replace_with_field=None):
@@ -100,7 +106,7 @@ def field_missing(node, field, report_missing=False, replace_with_field=None):
     return missing
 
 
-def add_pie_data_to_node_and_children(node):
+def add_pie_data_to_node_and_children(node, apply_to_children=True):
     # the pie data needs an array with multiple entries - therefore use fraction and 1-fraction
     node["pie_data"] = [{}, {}]
     node["pie_data"][0]["occurrence_fraction"] = node["occurrence_fraction"]
@@ -113,7 +119,7 @@ def add_pie_data_to_node_and_children(node):
     node["pie_data"][1]["matched_size"] = node["matched_size"]
 
     # apply to all children
-    if "children" in node:
+    if "children" in node and apply_to_children:
         for child in node["children"]:
             add_pie_data_to_node_and_children(child)
 

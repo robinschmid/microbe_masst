@@ -93,14 +93,18 @@ def create_combined_masst_tree(
         except:
             pass
 
-    # there were no trees = no matches
-    if len(tree_roots) == 0:
+    # skip if no or only one tree was detected
+    if len(tree_roots) <= 1:
         return False
 
     combined_root = {
         "name": "root",
         "children": tree_roots
     }
+
+    # add values to root
+    json_ontology_extender.calc_root_stats(combined_root)
+    json_ontology_extender.add_pie_data_to_node_and_children(combined_root, False)
 
     try:
         combined_prefix = "combined"

@@ -64,6 +64,12 @@ var hasChildrenColor = "#e8f4fa";
 var bgColor = "gold";
 var matchColor = "#095b85";
 var pieColors = [matchColor, bgColor];
+var combinedMatchColor = "#212D56";
+var combinedPieColorsDict = {
+    "plants": [combinedMatchColor, "#06845D"],
+    "food": [combinedMatchColor, "gold"],
+    "microbes": [combinedMatchColor, "#BF2C84"]
+};
 
 // Calculate total nodes, max label length
 var totalNodes = 0;
@@ -736,6 +742,10 @@ function update(source) {
         .append("svg:path")
         .attr('class', 'nodePie')
         .attr("fill", function (d, i) {
+            if(d.data.masst_type!=null) {
+                return combinedPieColorsDict[d.data.masst_type][d.data.index]
+            }
+
             return pieColors[d.data.index];
         })
         .attr("d", function (d) {
@@ -854,6 +864,9 @@ function update(source) {
             return d3.svg.arc().outerRadius(calcRadius(d.data))(d);
         })
         .attr("fill", function (d, i) {
+            if(d.data.masst_type!=null) {
+                return combinedPieColorsDict[d.data.masst_type][d.data.index]
+            }
             return pieColors[d.data.index];
         });
 
