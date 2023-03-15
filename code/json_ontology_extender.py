@@ -41,7 +41,7 @@ def add_data_to_node(node, meta_matched_df: pd.DataFrame, node_field, data_field
             filtered = meta_matched_df[meta_matched_df[data_field] == str(ncbi)]
             if len(filtered) > 0:
                 rowi = filtered.index[0]
-                for col, value in meta_matched_df.iteritems():
+                for col, value in meta_matched_df.items():
                     if col == "matches_json":
                         node["matches"] = json.loads(value[rowi])
                     elif col != data_field:
