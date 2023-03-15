@@ -8,9 +8,10 @@ logger = logging.getLogger(__name__)
 
 files = [
     # ("D:\Robin\git\microbe_masst\local_files\ipsita\Dihydroxy_MSCluster.mgf", "../output/fastMASSTDiOHBA"),
-    (r"../examples/example_links.tsv", "../output/examples/fastMASST_"),
-    (r"../examples/example_links2.tsv", "../output/examples/fastMASST_"),
-    (r"../examples/example_links3.tsv", "../output/examples/fastMASST_"),
+    (r"../examples/plant_mass_examples.tsv", "../output/plant/fastMASST_"),
+    # (r"../examples/example_links.tsv", "../output/examples/fastMASST_"),
+    # (r"../examples/example_links2.tsv", "../output/examples/fastMASST_"),
+    # (r"../examples/example_links3.tsv", "../output/examples/fastMASST_"),
 ]
 
 if __name__ == "__main__":
