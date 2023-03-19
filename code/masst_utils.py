@@ -301,7 +301,7 @@ def extract_datasets_from_masst_results(
 # %5Ct955969.8%5Cn81.9816%5Ct542119.2%5Cn98.9841%5Ct483893630.0%5Cn116.9947%5Ct1605324.2%5Cn127.0155%5Ct182958080.0
 # %5Cn131.0102%5Ct878951.4%5Cn155.0467%5Ct73527150.0%5Cn183.0781%5Ct16294011.0%22%7D
 if __name__ == "__main__":
-    usi = "mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00005883671"
+    usi = "mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00005883948"
     matches = fast_masst(usi)
 
     print(len(matches))

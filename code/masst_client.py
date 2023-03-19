@@ -12,7 +12,7 @@ from masst_tree import create_combined_masst_tree
 import masst_utils as masst
 import usi_utils
 
-MATCH_COLUMNS = ["USI", "Cosine", "Matching Peaks", "Status"]
+MATCH_COLUMNS = ["Delta Mass", "USI", "Cosine", "Matching Peaks", "Status"]
 
 LIB_COLUMNS = [
     "USI",
