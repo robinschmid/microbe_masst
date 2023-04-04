@@ -67,7 +67,7 @@ var pieColors = [matchColor, bgColor];
 var combinedMatchColor = "#212D56";
 var combinedPieColorsDict = {
     "plants": [combinedMatchColor, "#06845D"],
-    "food": [combinedMatchColor, "gold"],
+    "food": [combinedMatchColor, "gold"], // FFD700
     "microbes": [combinedMatchColor, "#BF2C84"]
 };
 

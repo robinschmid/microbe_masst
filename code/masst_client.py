@@ -38,9 +38,10 @@ def process_matches(
     library_matches,
     precursor_mz_tol,
     min_matched_signals,
+    analog,
     input_label,
     params_label,
-    usi=None,
+    usi=None
 ):
     common_file = common_base_file_name(compound_name, file_name)
 
@@ -49,6 +50,7 @@ def process_matches(
         matches,
         precursor_mz_tol,
         min_matched_signals,
+        analog,
         limit_to_best_match_in_file=True,
         add_dataset_titles=False,
     )
@@ -60,7 +62,7 @@ def process_matches(
     )
 
     lib_matches_df = masst.extract_matches_from_masst_results(
-        library_matches, precursor_mz_tol, min_matched_signals, False
+        library_matches, precursor_mz_tol, min_matched_signals, analog, False
     )
     if len(lib_matches_df) > 0:
         lib_matches_df[LIB_COLUMNS].to_csv(
@@ -212,6 +214,7 @@ def query_usi_or_id(
             library_matches,
             precursor_mz_tol,
             min_matched_signals,
+            analog,
             input_label,
             params_label,
             usi_utils.ensure_usi(usi_or_lib_id),
@@ -300,6 +303,7 @@ def query_spectrum(
             library_matches,
             precursor_mz_tol,
             min_matched_signals,
+            analog,
             input_label,
             params_label,
             usi,

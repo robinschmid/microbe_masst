@@ -221,21 +221,28 @@ def _fast_masst(params):
     return search_api_response_json
 
 
-def filter_matches(df, precursor_mz_tol, min_matched_signals):
-    return df.loc[
-        (
-            df["Delta Mass"].between(
-                -precursor_mz_tol, precursor_mz_tol, inclusive="both"
+def filter_matches(df, precursor_mz_tol, min_matched_signals, analog):
+    # DO NOT FILTER BY MZ FOR ANALOG
+    if analog:
+        return df.loc[
+            df["Matching Peaks"] >= min_matched_signals
+            ]
+    else:
+        return df.loc[
+            (
+                df["Delta Mass"].between(
+                    -precursor_mz_tol, precursor_mz_tol, inclusive="both"
+                )
             )
-        )
-        & (df["Matching Peaks"] >= min_matched_signals)
-    ]
+            & (df["Matching Peaks"] >= min_matched_signals)
+        ]
 
 
 def extract_matches_from_masst_results(
     results_dict,
     precursor_mz_tol,
     min_matched_signals,
+    analog,
     limit_to_best_match_in_file: bool = False,
     add_dataset_titles=False,
 ) -> pd.DataFrame:
@@ -262,7 +269,7 @@ def extract_matches_from_masst_results(
         # fastMASST response is sometimes empty
         return masst_df
 
-    masst_df = filter_matches(masst_df, precursor_mz_tol, min_matched_signals)
+    masst_df = filter_matches(masst_df, precursor_mz_tol, min_matched_signals, analog)
     if add_dataset_titles:
         datasets = results_dict["grouped_by_dataset"]
         dataset_info_dict = dict([(e["Dataset"], e["title"]) for e in datasets])
