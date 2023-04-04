@@ -33,9 +33,17 @@ def test_fastmasst_trp():
     usi = "mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00005883950"
     matches = masst_utils.fast_masst(usi, precursor_mz_tol=0.05)
     df = masst_utils.extract_matches_from_masst_results(matches, precursor_mz_tol=0.5, min_matched_signals=4,
-                                                        limit_to_best_match_in_file=True)
+                                                        analog=False, limit_to_best_match_in_file=True)
     assert len(df) > 1
     assert len(df.index) > 50,000
+
+def test_fastmasst_trp_analog():
+    usi = "mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00005883950"
+    matches = masst_utils.fast_masst(usi, precursor_mz_tol=0.05, analog=True)
+    df = masst_utils.extract_matches_from_masst_results(matches, precursor_mz_tol=0.5, min_matched_signals=4,
+                                                        analog=True, limit_to_best_match_in_file=True)
+    assert len(df) > 1
+    assert len(df.index) > 444,000
 
 
 def test_get_spectrum():
