@@ -1,0 +1,41 @@
+Compound,class,USI
+Morphine,Alkaloid,mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00009919518
+Paclitaxel (taxol),Alkaloid,mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00010114208
+Artemisinin,Sesquiterpene lactone,mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00010111842
+Physostigmine,Alkaloid,mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00010116841
+Quinidine,Alkaloid,mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00006399843
+Emetine,Alkaloid,mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00005749386
+Rutin,O-glycosylated flavonoid,mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00003139483
+Isoschaftoside,2x C-glycosilated flavonoid,mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00005778294
+Orientin,1x C-glycosilated flavonoid,mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00004696818
+Dicaffeoylquinic acid,quinic acid with phenylpropanoids,mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00005724378
+Digalloylquinic acid,quinic acid with galloyl,mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00004692123
+Tetrahydropapaveroline,Benzylisoquinoline alkaloids,mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00000222377
+Aurantiamide acetate,dipeptide alkaloid,mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00005727351
+Makisterone A,ecdysteroid,mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00004717894
+6-Hydroxyloganin,iridoid,mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00000853770
+Karakin,Nitropropanoyl glucoside,mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00010007469
+Procyanidin B2,condensed tannin,mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00000081689
+Bufotenine,Triptamine,mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00004678666
+secoisolariciresinol,lignan,mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00005741229
+epiyangambin,neolignan,mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00004719556
+"12b-O-[deca-2Z,4E-dienoyl]-13_-isobutyroyloxy-4b-deoxyphorbol",Tigliane diterpenoids,mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00000840337
+Morphine,Alkaloid,mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00009919518
+Paclitaxel (taxol),Alkaloid,mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00010114208
+Artemisinin,Sesquiterpene lactone,mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00010111842
+Physostigmine,Alkaloid,mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00010116841
+Quinidine,Alkaloid,mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00006399843
+Emetine,Alkaloid,mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00005749386
+(+)-Dihydrokavain,,CCMSLIB00004692704
+kavain,,CCMSLIB00004692271
+Spectral Match to Kavain,,CCMSLIB00003140064
+3-METHYLGLUTACONIC ACID,,CCMSLIB00006679331
+3_methylglutaconic_acid,,CCMSLIB00006673416
+methyllycaconitine,,CCMSLIB00006565396
+lappaconitine,,CCMSLIB00006563354
+Lappaconitine2,,CCMSLIB00004720452
+CAPSAICIN,,CCMSLIB00004694036
+dihydrocapsaicin,,CCMSLIB00004719863
+Piperlongumine CollisionEnergy:205060,,CCMSLIB00010117596
+piperine CollisionEnergy:205060,,CCMSLIB00010116021
+cineol,,CCMSLIB00005788004
