@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 import requests
 
-USI_URL = "https://metabolomics-usi.ucsd.edu/json/"
+USI_URL = "https://metabolomics-usi.gnps2.org/json/"
 
 
 def create_simple_file_usi(filename, dataset):
