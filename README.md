@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/492844724.svg)](https://zenodo.org/badge/latestdoi/492844724)
+
 # fast microbeMASST
 Using MASST or fastMASST to search all public datasets on GNPS/MassIVE, adding extensive metadata onto an ontology for microbes.
 
