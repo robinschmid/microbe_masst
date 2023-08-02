@@ -45,7 +45,7 @@ PLANT_MASST = SpecialMasst(
     prefix="plant",
     root="plants",
     tree_file="../data/plant_masst_tree.json",
-    metadata_file="../data/plant_masst_metadata.csv",
+    metadata_file="../data/plant_masst_table.csv",
     tree_node_key="NCBI",
     metadata_key="Taxa_NCBI",
 )
