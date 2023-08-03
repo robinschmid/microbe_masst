@@ -205,7 +205,7 @@ if __name__ == "__main__":
         "--ontology",
         type=str,
         help="the json ontology file with children",
-        default="../data/gfop_food_tree.json",
+        default="../data/food_masst_tree.json",
     )
     parser.add_argument(
         "--in_data",
