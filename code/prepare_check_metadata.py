@@ -74,21 +74,21 @@ if __name__ == "__main__":
         "--metadata_file",
         type=str,
         help="input metadata table",
-        default="../data/plant_masst_table.csv",
-        # default="../data/microbe_masst_table.csv",
+        # default="../data/plant_masst_table.csv",
+        default="../data/microbe_masst_table.csv",
     )
     parser.add_argument(
         "--output_file",
         type=str,
         help="output metadata table",
-        default="../data/plant_masst_table.csv",
-        # default="../data/microbe_masst_table.csv",
+        # default="../data/plant_masst_table.csv",
+        default="../data/microbe_masst_table.csv",
     )
     # foodmasst
     # parser.add_argument('--metadata_file', type=str, help='input masst metadata',
-    #                     default="../data/food_masst_metadata.csv")
+    #                     default="../data/food_masst_table.csv")
     # parser.add_argument('--output_file', type=str, help='output masst metadata',
-    #                     default="../data/food_masst_metadata.csv")
+    #                     default="../data/food_masst_table.csv")
     args = parser.parse_args()
 
     try:

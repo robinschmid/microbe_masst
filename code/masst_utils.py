@@ -28,7 +28,7 @@ class SpecialMasst:
 MICROBE_MASST = SpecialMasst(
     prefix="microbe",
     root="microbes",
-    tree_file="../data/ncbi_microbe_tree.json",
+    tree_file="../data/microbe_masst_tree.json",
     metadata_file="../data/microbe_masst_table.csv",
     tree_node_key="NCBI",
     metadata_key="Taxa_NCBI",
@@ -36,8 +36,8 @@ MICROBE_MASST = SpecialMasst(
 FOOD_MASST = SpecialMasst(
     prefix="food",
     root="food",
-    tree_file="../data/gfop_food_tree.json",
-    metadata_file="../data/food_masst_metadata.csv",
+    tree_file="../data/food_masst_tree.json",
+    metadata_file="../data/food_masst_table.csv",
     tree_node_key="name",
     metadata_key="node_id",
 )
