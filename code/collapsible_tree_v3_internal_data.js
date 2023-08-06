@@ -144,7 +144,7 @@ function setMinMatches(min) {
 
     visitAll(root, filterMatched)
     visitAll(root, n => {
-        if(n.matched_size < minMatches)
+        if (n.matched_size < minMatches)
             collapse(n)
     })
 }
@@ -158,6 +158,7 @@ function toggleFilterMatched() {
         centerLeftNode(root);
     }
 }
+
 function showFullTree() {
     if (root) {
         isFilterMatched = false;
@@ -173,6 +174,7 @@ function showMatchedAndOtherTree() {
         expandMatchedAndUpdate()
     }
 }
+
 function showMatchedTree() {
     if (root) {
         isFilterMatched = true;
@@ -248,25 +250,30 @@ dropdownTree // Add a button
 dropdownTree.on("change", function (d) {
     // recover the option that has been chosen
     var selectedOption = d3.select(this).property("value");
-    switch(selectedOption) {
-        case "Matched": showMatchedTree(); break;
-        case "Matched+other": showMatchedAndOtherTree(); break;
-        case "Full": showFullTree(); break;
+    switch (selectedOption) {
+        case "Matched":
+            showMatchedTree();
+            break;
+        case "Matched+other":
+            showMatchedAndOtherTree();
+            break;
+        case "Full":
+            showFullTree();
+            break;
     }
 });
 
 
-
 // add label for input
 var inputLabel = "INPUT_LABEL_PLACEHOLDER";
-var inputUsi = 	"USI_LABEL_PLACEHOLDER";
+var inputUsi = "USI_LABEL_PLACEHOLDER";
 d3.select("#titleDiv").append('label').text(inputLabel)
 
 var paramsLabel = "PARAMS_PLACEHOLDER";
 d3.select("#paramsDiv").append('label').text(paramsLabel)
 
 // initialize drop down style menu
-var allGroup = ["default", "contrast", "B+W"]
+var allGroup = ["default", "microbes", "food", 'plants', "contrast", "B+W"]
 
 // Initialize the button
 d3.select("#secondMenu").append('label').text("Style: ")
@@ -291,14 +298,19 @@ dropdownButton.on("change", function (d) {
     // recover the option that has been chosen
     var selectedOption = d3.select(this).property("value");
 
-    if ("default" === selectedOption) {
-        noChildrenColor = "white";
-        hasChildrenColor = "#e8f4fa";
+    noChildrenColor = "white";
+    hasChildrenColor = "#e8f4fa";
+    lineColor = "#ccc";
+    matchColor = "#095b85";
+    nodeStrokeColor = "steelblue";
+    if ("default" === selectedOption || "food" === selectedOption) {
         bgColor = "gold";
-        matchColor = "#095b85";
-        lineColor = "#ccc";
-        nodeStrokeColor = "steelblue";
-    } else if ("contrast" === selectedOption) {
+    } else if ("plants" === selectedOption) {
+        bgColor = "#06845D";
+    } else if ("microbes" === selectedOption) {
+        bgColor = "#BF2C84";
+    }
+    else if ("contrast" === selectedOption) {
         noChildrenColor = "white";
         hasChildrenColor = "#e8f4fa";
         bgColor = "#E3BAFF";
@@ -344,8 +356,8 @@ sizeCombo.on("change", function (d) {
 });
 
 // size of the diagram
-viewerWidth = $(document).width()-40;
-viewerHeight = $(document).height()-150;
+viewerWidth = $(document).width() - 40;
+viewerHeight = $(document).height() - 150;
 
 tree = d3.layout.tree()
     .size([viewerHeight, viewerWidth]);
@@ -614,19 +626,20 @@ centerOnRoot();
 function centerOnRoot() {
     centerLeftNode(root);
 }
+
 /**
  * Calculate radius for nodes and pie charts
  * @param matched_size
  * @returns {number}
  */
 function calcRadius(data) {
-    if(!isScalingActive)
+    if (!isScalingActive)
         return radius;
 
     switch (sizeOption) {
         case "Ratio":
-            var ratio = data.group_size>0? data.matched_size / data.group_size : 0;
-            return radius + (maxRadius-radius) * ratio;
+            var ratio = data.group_size > 0 ? data.matched_size / data.group_size : 0;
+            return radius + (maxRadius - radius) * ratio;
         case "Matches":
             var matched_size = data.matched_size;
             return Math.min(radius + Math.sqrt(matched_size), maxRadius);
@@ -742,7 +755,7 @@ function update(source) {
         .append("svg:path")
         .attr('class', 'nodePie')
         .attr("fill", function (d, i) {
-            if(d.data.masst_type!=null) {
+            if (d.data.masst_type != null) {
                 return combinedPieColorsDict[d.data.masst_type][d.data.index]
             }
 
@@ -864,7 +877,7 @@ function update(source) {
             return d3.svg.arc().outerRadius(calcRadius(d.data))(d);
         })
         .attr("fill", function (d, i) {
-            if(d.data.masst_type!=null) {
+            if (d.data.masst_type != null) {
                 return combinedPieColorsDict[d.data.masst_type][d.data.index]
             }
             return pieColors[d.data.index];
