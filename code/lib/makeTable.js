@@ -65,10 +65,10 @@ function makeTable(id) {
                                     if (sdata.includes(":scan:") || sdata.includes("accession:CCMSLIB")) {
                                         // show mirror if input usi was not empty
                                         if (inputUsi != null && inputUsi.length>0)
-                                            data = '<a href="https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=' + inputUsi
+                                            data = '<a href="https://metabolomics-usi.gnps2.org/dashinterface/?usi1=' + inputUsi
                                                 + '&usi2=' + data + '" target="_blank">' + data + '</a>';
                                         else {
-                                            data = '<a href="https://metabolomics-usi.ucsd.edu/dashinterface/?usi1=' +
+                                            data = '<a href="https://metabolomics-usi.gnps2.org/dashinterface/?usi1=' +
                                                 data + '" target="_blank">' + data + '</a>';
                                         }
                                     } else {
