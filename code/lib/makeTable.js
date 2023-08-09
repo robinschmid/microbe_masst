@@ -72,7 +72,7 @@ function makeTable(id) {
                                                 data + '" target="_blank">' + data + '</a>';
                                         }
                                     } else {
-                                        data = '<a href="https://gnps-lcms.ucsd.edu/?usi=' + data
+                                        data = '<a href="https://dashboard.gnps2.org/?usi=' + data
                                             + '" target="_blank">Open file</a>';
                                     }
                                 } else if (sdata.startsWith("MSV0"))
