@@ -4,7 +4,10 @@ var table_plot = makeTable("libTable")
   .sortBy('Cosine', false)
   .filterCols(['Dataset', 'Status']);
 
-d3.select('#library_table').call(table_plot);
+try {
+    // table may be empty
+    d3.select('#library_table').call(table_plot);
+} catch(ex) {}
 
 // add match table
 var match_data = getFullMatches();
