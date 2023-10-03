@@ -182,7 +182,7 @@ def create_all_masst_summaries(masst_directory, quant_csv, out_base_file, min_ma
 
 if __name__ == "__main__":
     create_all_masst_summaries(
-        r"D:\git\microbe_masst\output\sydney\\",
+        r"D:\git\microbe_masst\output\piper_vs_microbiome\\",
         r"D:\git\microbe_masst\local_files\SEED_Grant_iimn_gnps_quant.csv",
         r"D:\git\microbe_masst\output\mmasst_summary_seed_grant",
         min_matches = 1,

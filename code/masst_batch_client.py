@@ -94,20 +94,20 @@ def run_on_usi_list_or_mgf_file(
 
 
 def run_on_usi_and_id_list(
-        input_file,
-        out_filename_no_ext,
-        usi_or_lib_id="Output USI",
-        compound_name_header="COMPOUND_NAME",
-        sep=",",
-        precursor_mz_tol=0.05,
-        mz_tol=0.02,
-        min_cos=0.7,
-        min_matched_signals=3,
-        analog=False,
-        analog_mass_below=150,
-        analog_mass_above=200,
-        parallel_queries=100,
-        skip_existing=False,
+    input_file,
+    out_filename_no_ext,
+    usi_or_lib_id="Output USI",
+    compound_name_header="COMPOUND_NAME",
+    sep=",",
+    precursor_mz_tol=0.05,
+    mz_tol=0.02,
+    min_cos=0.7,
+    min_matched_signals=3,
+    analog=False,
+    analog_mass_below=150,
+    analog_mass_above=200,
+    parallel_queries=100,
+    skip_existing=False,
 ):
     jobs_df = pd.read_csv(input_file, sep=sep)
     jobs_df.rename(
@@ -161,22 +161,23 @@ def run_on_usi_and_id_list(
 
     # return success rate
     total_jobs = len(jobs_df)
-    return 1 if total_jobs == 0 else len(jobs_df[jobs_df["success"]]) / float(total_jobs)
-
+    return (
+        1 if total_jobs == 0 else len(jobs_df[jobs_df["success"]]) / float(total_jobs)
+    )
 
 
 def run_on_mgf(
-        input_file,
-        out_filename_no_ext,
-        precursor_mz_tol=0.05,
-        mz_tol=0.02,
-        min_cos=0.7,
-        min_matched_signals=3,
-        analog=False,
-        analog_mass_below=150,
-        analog_mass_above=200,
-        parallel_queries=100,
-        skip_existing=False,
+    input_file,
+    out_filename_no_ext,
+    precursor_mz_tol=0.05,
+    mz_tol=0.02,
+    min_cos=0.7,
+    min_matched_signals=3,
+    analog=False,
+    analog_mass_below=150,
+    analog_mass_above=200,
+    parallel_queries=100,
+    skip_existing=False,
 ):
     ids, precursor_mzs, precursor_charges, lib_ids = [], [], [], []
     mzs, intensities = [], []
@@ -300,13 +301,13 @@ def run_on_mgf(
 
 
 def create_params_label(
-        analog,
-        analog_mass_above,
-        analog_mass_below,
-        min_cos,
-        min_matched_signals,
-        mz_tol,
-        precursor_mz_tol,
+    analog,
+    analog_mass_above,
+    analog_mass_below,
+    min_cos,
+    min_matched_signals,
+    mz_tol,
+    precursor_mz_tol,
 ):
     params_label = (
         "min matched signals: {};  min cosine: {};  precursor m/z tolerance: {};  m/z "
@@ -328,7 +329,7 @@ if __name__ == "__main__":
         "--in_file",
         type=str,
         help="input file either mgf with spectra or table that contains the two columns specified by "
-             "usi_or_lib_id and compound_header",
+        "usi_or_lib_id and compound_header",
         # default="../examples/example_links.tsv",
         default="../examples/small.mgf",
         # default="../examples/empty.mgf",

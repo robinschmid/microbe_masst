@@ -224,9 +224,7 @@ def _fast_masst(params):
 def filter_matches(df, precursor_mz_tol, min_matched_signals, analog):
     # DO NOT FILTER BY MZ FOR ANALOG
     if analog:
-        return df.loc[
-            df["Matching Peaks"] >= min_matched_signals
-            ]
+        return df.loc[df["Matching Peaks"] >= min_matched_signals]
     else:
         return df.loc[
             (

@@ -14,16 +14,16 @@ logger = logging.getLogger(__name__)
 
 
 def create_enriched_masst_tree(
-        matches_df,
-        special_masst: SpecialMasst,
-        common_file,
-        lib_match_json,
-        input_str,
-        parameter_str,
-        usi: str = None,
-        in_html="../code/collapsible_tree_v3.html",
-        format_out_json=False,
-        compress_out_html=True,
+    matches_df,
+    special_masst: SpecialMasst,
+    common_file,
+    lib_match_json,
+    input_str,
+    parameter_str,
+    usi: str = None,
+    in_html="../code/collapsible_tree_v3.html",
+    format_out_json=False,
+    compress_out_html=True,
 ):
     if (matches_df is None) or (len(matches_df) <= 0):
         return False
@@ -67,15 +67,15 @@ def create_enriched_masst_tree(
 
 
 def create_combined_masst_tree(
-        matches_df,
-        common_file,
-        lib_match_json,
-        input_str,
-        parameter_str,
-        usi: str = None,
-        in_html="../code/collapsible_tree_v3.html",
-        format_out_json=False,
-        compress_out_html=True,
+    matches_df,
+    common_file,
+    lib_match_json,
+    input_str,
+    parameter_str,
+    usi: str = None,
+    in_html="../code/collapsible_tree_v3.html",
+    format_out_json=False,
+    compress_out_html=True,
 ):
     if (matches_df is None) or (len(matches_df) <= 0):
         return False
@@ -87,7 +87,9 @@ def create_combined_masst_tree(
             with open(out_json_tree) as json_file:
                 # load all trees, add masst_type to identify, rename root
                 treeRoot = json.load(json_file)
-                json_ontology_extender.set_field_in_all_nodes(treeRoot, "masst_type", special_masst.root)
+                json_ontology_extender.set_field_in_all_nodes(
+                    treeRoot, "masst_type", special_masst.root
+                )
                 treeRoot["name"] = special_masst.root
                 tree_roots.append(treeRoot)
         except:
@@ -97,10 +99,7 @@ def create_combined_masst_tree(
     if len(tree_roots) <= 1:
         return False
 
-    combined_root = {
-        "name": "root",
-        "children": tree_roots
-    }
+    combined_root = {"name": "root", "children": tree_roots}
 
     # add values to root
     json_ontology_extender.calc_root_stats(combined_root)
@@ -113,9 +112,13 @@ def create_combined_masst_tree(
 
         with open(out_json_tree, "w") as file:
             if format_out_json:
-                out_tree = json.dumps(combined_root, indent=2, cls=json_ontology_extender.NpEncoder)
+                out_tree = json.dumps(
+                    combined_root, indent=2, cls=json_ontology_extender.NpEncoder
+                )
             else:
-                out_tree = json.dumps(combined_root, cls=json_ontology_extender.NpEncoder)
+                out_tree = json.dumps(
+                    combined_root, cls=json_ontology_extender.NpEncoder
+                )
             print(out_tree, file=file)
 
         out_html = "{}_{}.html".format(common_file, combined_prefix)
@@ -139,7 +142,7 @@ def create_combined_masst_tree(
 
 
 def export_metadata_matches(
-        special_masst: SpecialMasst, matches_df: pd.DataFrame, out_tsv_file
+    special_masst: SpecialMasst, matches_df: pd.DataFrame, out_tsv_file
 ) -> pd.DataFrame:
     metadata_file = special_masst.metadata_file
     if str(metadata_file).endswith(".tsv"):

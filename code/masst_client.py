@@ -41,7 +41,7 @@ def process_matches(
     analog,
     input_label,
     params_label,
-    usi=None
+    usi=None,
 ):
     common_file = common_base_file_name(compound_name, file_name)
 
@@ -57,9 +57,7 @@ def process_matches(
     # always export match table even with 0 matches to mark that it was successful
     masst_file = "{}_matches.tsv".format(common_file)
     prepare_paths(file=masst_file)
-    matches_df[MATCH_COLUMNS].to_csv(
-        masst_file, index=False, sep="\t"
-    )
+    matches_df[MATCH_COLUMNS].to_csv(masst_file, index=False, sep="\t")
 
     lib_matches_df = masst.extract_matches_from_masst_results(
         library_matches, precursor_mz_tol, min_matched_signals, analog, False
@@ -355,7 +353,7 @@ if __name__ == "__main__":
         "--usi_or_lib_id",
         type=str,
         help="usi or GNPS library ID",
-        default="CCMSLIB00005883945", # tryptophan 6
+        default="CCMSLIB00005883945",  # tryptophan 6
         # default="CCMSLIB00004679239", # commendamide
         # default="CCMSLIB00006582001",
     )

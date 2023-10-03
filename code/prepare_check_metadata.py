@@ -24,9 +24,9 @@ def prepare_check_metadata_file(metadata_file, output_file):
     logger.info("Checking duplicated usi")
     # microbe masst specific
     duplicates = df[df.duplicated(subset=["file_usi"], keep=False)].sort_values(
-            by=["file_usi"],
-            ascending=[True],
-        )
+        by=["file_usi"],
+        ascending=[True],
+    )
     duplicates = sort_metadata_rows(duplicates)
 
     try:
