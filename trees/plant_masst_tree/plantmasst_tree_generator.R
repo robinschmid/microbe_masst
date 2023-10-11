@@ -10,15 +10,15 @@ unique_ncbi <- data %>% distinct(Taxa_NCBI) %>% dplyr::filter(Taxa_NCBI != "QC")
 unique_ncbi$Taxa_NCBI <- as.numeric(unique_ncbi$Taxa_NCBI)
 
 # Classify nodes tree
-Sys.setenv(ENTREZ_KEY = "enter you key here")
+Sys.setenv(ENTREZ_KEY = "1fe3926142adbdbca5c501c115ffe8698f09")
 
 plant_lineage <- classification(unique_ncbi$Taxa_NCBI, db = 'ncbi', batch_size = 4) # it is slow and can return HTTP error
 plant_lineage_df <- do.call(rbind, plant_lineage) %>% distinct(id, .keep_all = TRUE)
 plant_lineage_df_filter <- plant_lineage_df %>% dplyr::filter(rank %in% c("no rank", "superkingdom", "kingdom", "phylum",
                                                                           "class", "order", "family", "genus", "subgenus",
-                                                                          "species", "varietas", "subspecies"))
+                                                                          "species", "varietas", "subspecies", "forma"))
 
-#write_csv(plant_lineage_df_filter, "list_ncbi_plantmasst.csv")
+write_csv(plant_lineage_df_filter, "list_ncbi_plantmasst.csv")
 # I have saved the NCBI IDs as a list to generate a newick tree with ETE3 --> move to jupyter notebook
 
 
@@ -37,7 +37,7 @@ matching <- plantmasst_ids %>% left_join(tree_ids, by = c("id" = "NCBI"))
 extra_nodes <- tree_ids %>% anti_join(plantmasst_ids, by = c("NCBI" = "id")) %>% dplyr::select(NCBI)
 # these nodes will have to be removed from the final JSON cause it will otherwise affect the tree visualization levels
 
-#write_csv(extra_nodes, "nodes_to_remove.csv") #remeber to remove NA from csv before reading it in the jupyter notebook
+write_csv(extra_nodes, "nodes_to_remove.csv") #remeber to remove NA from csv before reading it in the jupyter notebook
 
 # Check number of available files per NCBI ID
 availability <- data %>% group_by(Taxa_NCBI) %>% summarise(Presence = n()) %>% arrange(desc(Presence))

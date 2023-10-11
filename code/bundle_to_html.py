@@ -64,7 +64,7 @@ def build_dist_html(input_html, output_html, replace_dict=None, compress=False):
     if replace_dict is None:
         replace_dict = {}
     original_html_text = Path(input_html).read_text(encoding="utf-8")
-    soup = BeautifulSoup(original_html_text, "lxml")
+    soup = BeautifulSoup(original_html_text, "html.parser")
 
     # Find link tags. example: <link rel="stylesheet" href="css/somestyle.css">
     for tag in soup.find_all("link", href=True):

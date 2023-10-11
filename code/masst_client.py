@@ -91,7 +91,7 @@ def process_matches(
         compress_out_html=True,
     )
 
-    # microbeMASST
+    # plantMASST
     logger.debug("Exporting plantMASST %s", compound_name)
     create_enriched_masst_tree(
         matches_df,
