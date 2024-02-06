@@ -74,67 +74,46 @@ if __name__ == "__main__":
     )
 
     # microbemasst
-    #parser.add_argument(
-    #    "--ontology",
-    #    type=str,
-    #    help="the json ontology file with children",
-    #    default="../data/microbe_masst_tree.json",
-    #)
-    #parser.add_argument(
-    #    "--metadata_file",
-    #    type=str,
-    #    help="microbe masst metadata",
-    #    default="../data/microbe_masst_table.csv",
-    #)
-    #parser.add_argument(
-    #    "--node_key",
-    #    type=str,
-    #    help="the field in the ontology to be compare to the field in the " "data file",
-    #    default="NCBI",
-    #)
-    #parser.add_argument(
-    #    "--data_key",
-    #    type=str,
-    #    help="the field in the data file to be compared to the field in the ontology",
-    #    default="Taxa_NCBI",
-    #)
+    #parser.add_argument("--ontology", type=str, help="the json ontology file with children",
+    #    default="../data/microbe_masst_tree.json")
+    #parser.add_argument("--metadata_file", type=str, help="microbe masst metadata",
+    #    default="../data/microbe_masst_table.csv")
+    #parser.add_argument( "--node_key", type=str, help="the field in the ontology to be compare to the field in the " "data file",
+    #    default="NCBI")
+    #parser.add_argument("--data_key", type=str, help="the field in the data file to be compared to the field in the ontology",
+    #    default="Taxa_NCBI")
 
     # plantmasst
+    #parser.add_argument('--ontology', type=str, help='the json ontology file with children',
+    #                    default="../data/plant_masst_tree.json")
+    #parser.add_argument('--metadata_file', type=str, help='masst file metadata',
+    #                    default="../data/plant_masst_table.csv")
+    #parser.add_argument('--node_key', type=str, help='the field in the ontology to be compare to the field in the '
+    #                                                 'data file', default="NCBI")
+    #parser.add_argument('--data_key', type=str,
+    #                    help='the field in the data file to be compared to the field in the ontology',
+    #                    default="Taxa_NCBI")
+
+    # globalmasst
     parser.add_argument('--ontology', type=str, help='the json ontology file with children',
-                        default="../data/plant_masst_tree.json")
+                        default="../data/global_masst_tree.json")
     parser.add_argument('--metadata_file', type=str, help='masst file metadata',
-                        default="../data/plant_masst_table.csv")
+                        default="../data/global_masst_table.csv")
     parser.add_argument('--node_key', type=str, help='the field in the ontology to be compare to the field in the '
-                                                     'data file', default="NCBI")
+                                                     'data file', default="ID")
     parser.add_argument('--data_key', type=str,
                         help='the field in the data file to be compared to the field in the ontology',
-                        default="Taxa_NCBI")
+                        default="ID")
 
     # foodmasst
-    # parser.add_argument(
-    #     "--ontology",
-    #     type=str,
-    #     help="the json ontology file with children",
-    #     default="../data/food_masst_tree.json",
-    # )
-    # parser.add_argument(
-    #     "--metadata_file",
-    #     type=str,
-    #     help="microbe masst metadata",
-    #     default="../data/food_masst_table.csv",
-    # )
-    # parser.add_argument(
-    #     "--node_key",
-    #     type=str,
-    #     help="the field in the ontology to be compare to the field in the " "data file",
-    #     default="name",
-    # )
-    # parser.add_argument(
-    #     "--data_key",
-    #     type=str,
-    #     help="the field in the data file to be compared to the field in the ontology",
-    #     default="node_id",
-    # )
+    # parser.add_argument("--ontology", type=str, help="the json ontology file with children",
+    #     default="../data/food_masst_tree.json")
+    # parser.add_argument("--metadata_file", type=str, help="microbe masst metadata",
+    #     default="../data/food_masst_table.csv")
+    # parser.add_argument("--node_key", type=str, help="the field in the ontology to be compare to the field in the " "data file",
+    #     default="name")
+    # parser.add_argument("--data_key", type=str, help="the field in the data file to be compared to the field in the ontology",
+    #     default="node_id")
 
     args = parser.parse_args()
 

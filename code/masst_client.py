@@ -105,6 +105,20 @@ def process_matches(
         compress_out_html=True,
     )
 
+    # globalMASST
+    logger.debug("Exporting globalMASST %s", compound_name)
+    create_enriched_masst_tree(
+        matches_df,
+        masst.GLOABL_MASST,
+        common_file=common_file,
+        lib_match_json=lib_match_json,
+        input_str=input_label,
+        parameter_str=params_label,
+        usi=usi,
+        format_out_json=False,
+        compress_out_html=True,
+    )
+
     # foodMASST
     logger.debug("Exporting foodMASST %s", compound_name)
     create_enriched_masst_tree(
@@ -156,7 +170,7 @@ def query_usi_or_id(
 ):
     """
 
-    :return: True if fast masst query was successful otherwise False
+    :return: True if fastmasst query was successful otherwise False
     """
     # might raise exception for service
     try:
