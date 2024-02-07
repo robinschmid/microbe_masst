@@ -7,13 +7,9 @@ logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
 files = [
-    # (r"D:\git\microbe_masst\local_files\piper_vs_microbiome_iimn_gnps.mgf", "../output/piper_vs_microbiome/fastMASST_"),
-    # (r"D:\Data\salt_infusion\iimn\salt_infusion_iimn_gnps.mgf", "../output/salt_infusion/fastMASST_"),
-    # (r"../examples/plant_mass_examples.tsv", "../output/plant/MASST_"),
-    # (r"../examples/wender_plants.csv", "../output/wender/MASST_"),
-    # (r"../examples/example_links.tsv", "../output/examples/fastMASST_"),
-    # (r"../examples/example_links2.tsv", "../output/examples/fastMASST_"),
-    (r"../examples/example_links3.tsv", "../output/examples/fastMASST_"),
+    #(r"../examples/plant_mass_examples.tsv", "../output/plant/MASST_"),
+    (r"../examples/example_links5.csv", "../output/global/example_links6"),
+    #(r"../examples/vta_filter.mgf", "../output/examples/vta_"),
 ]
 
 if __name__ == "__main__":
@@ -24,12 +20,16 @@ if __name__ == "__main__":
                 "," if file.endswith("csv") else "\t"
             )  # only used if tabular format not for mgf
             masst_batch_client.run_on_usi_list_or_mgf_file(
-                in_file=file,
-                out_file_no_extension=out_file,
-                min_matched_signals=4,
-                parallel_queries=5,
-                skip_existing=True,
-                sep=sep,
+                in_file = file,
+                out_file_no_extension = out_file,
+                min_cos = 0.7,
+                mz_tol = 0.02,
+                precursor_mz_tol = 0.02,
+                min_matched_signals = 4,
+                parallel_queries = 6,
+                skip_existing = True,
+                analog = False,
+                sep = sep,
             )
         except:
             pass
