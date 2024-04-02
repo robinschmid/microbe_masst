@@ -68,7 +68,8 @@ var combinedMatchColor = "#212D56";
 var combinedPieColorsDict = {
     "plants": [combinedMatchColor, "#06845D"],
     "food": [combinedMatchColor, "gold"], // FFD700
-    "microbes": [combinedMatchColor, "#BF2C84"]
+    "microbes": [combinedMatchColor, "#BF2C84"],
+    "global": [combinedMatchColor, "#3391c1"]
 };
 
 // Calculate total nodes, max label length

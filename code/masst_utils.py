@@ -13,6 +13,7 @@ logger = logging.getLogger(__name__)
 
 # requests_cache.install_cache("fastmasst_cache", expire_after=timedelta(days=2))
 
+
 @dataclass
 class SpecialMasst:
     prefix: str
@@ -21,6 +22,7 @@ class SpecialMasst:
     metadata_file: str
     tree_node_key: str
     metadata_key: str
+
 
 MICROBE_MASST = SpecialMasst(
     prefix="microbe",
@@ -46,9 +48,9 @@ PLANT_MASST = SpecialMasst(
     tree_node_key="NCBI",
     metadata_key="Taxa_NCBI",
 )
-GLOABL_MASST = SpecialMasst(
-    prefix="gloabl",
-    root="gloabl",
+GLOBAL_MASST = SpecialMasst(
+    prefix="global",
+    root="global",
     tree_file="../data/global_masst_tree.json",
     metadata_file="../data/global_masst_table.csv",
     tree_node_key="ID",
@@ -56,13 +58,15 @@ GLOABL_MASST = SpecialMasst(
 )
 
 URL = "https://fasst.gnps2.org/search"
-SPECIAL_MASSTS = [FOOD_MASST, MICROBE_MASST, PLANT_MASST, GLOABL_MASST]
+SPECIAL_MASSTS = [FOOD_MASST, MICROBE_MASST, PLANT_MASST, GLOBAL_MASST]
+
 
 class DataBase(Enum):
     gnpsdata_index = auto()  # all gnps data
     gnpslibrary = auto()  # gnps library
     massivedata_index = auto()
     massivekb_index = auto()
+
 
 # based on
 # https://github.com/mwang87/GNPS_LCMSDashboard/blob/a9971fa557c735c8e0ccd7681653eebd415a8636/app.py#L1632
@@ -298,6 +302,7 @@ def extract_datasets_from_masst_results(
     # transfer dataset title
     new_dataset_df.merge(datasets_df, on="Dataset", how="left")
     return new_dataset_df
+
 
 # example
 # https://fastlibrarysearch.ucsd.edu/fastsearch/?usi1=mzspec%3AGNPS%3AGNPS-LIBRARY%3Aaccession%3ACCMSLIB00000579622
