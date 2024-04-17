@@ -232,6 +232,7 @@ def query_usi_or_id(
             precursor_mz_tol,
         )
         input_label = "ID: {};  Descriptor: {}".format(usi_or_lib_id, compound_name)
+
         process_matches(
             file_name,
             compound_name,

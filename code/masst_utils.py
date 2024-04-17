@@ -86,9 +86,13 @@ def fast_masst(
         usi_or_lib_id = "mzspec:GNPS:GNPS-LIBRARY:accession:{}".format(usi_or_lib_id)
 
     try:
+        # trying to get database name, check if string or enum
+        if isinstance(database, DataBase):
+            database = database.name
+
         params = {
             "usi": usi_or_lib_id,
-            "library": str(database.name),
+            "library": str(database),
             "analog": "Yes" if analog else "No",
             "delta_mass_below": analog_mass_below,
             "delta_mass_above": analog_mass_above,
@@ -196,8 +200,12 @@ def fast_masst_spectrum_dict(
 
         spec_json = json.dumps(spec_dict)
 
+        # trying to get database name, check if string or enum
+        if isinstance(database, DataBase):
+            database = database.name
+
         params = {
-            "library": database.name,
+            "library": str(database),
             "analog": "Yes" if analog else "No",
             "delta_mass_below": analog_mass_below,
             "delta_mass_above": analog_mass_above,
