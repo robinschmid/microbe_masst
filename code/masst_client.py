@@ -406,6 +406,9 @@ if __name__ == "__main__":
     # only for USI or lib ID file
     parser.add_argument("--compound_name", type=str, help="compound name", default="")
 
+    # search database
+    parser.add_argument("--database", type=str, help="fasst database", default=None)
+
     # MASST params
     parser.add_argument(
         "--precursor_mz_tol", type=float, help="precursor mz tolerance", default="0.05"
@@ -453,6 +456,7 @@ if __name__ == "__main__":
         analog = args.analog
         analog_mass_below = args.analog_mass_below
         analog_mass_above = args.analog_mass_above
+        database = args.database
 
         query_usi_or_id(
             out_file,
@@ -465,6 +469,7 @@ if __name__ == "__main__":
             analog=analog,
             analog_mass_below=analog_mass_below,
             analog_mass_above=analog_mass_above,
+            database=database
         )
     except Exception as e:
         # exit with error
