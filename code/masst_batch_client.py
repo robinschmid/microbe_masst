@@ -12,6 +12,7 @@ from concurrent.futures import ThreadPoolExecutor
 from concurrent.futures import wait
 
 import masst_client
+from masst_utils import DataBase
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
@@ -39,6 +40,8 @@ def run_on_usi_list_or_mgf_file(
     analog: bool = False,
     analog_mass_below=150,
     analog_mass_above=200,
+    database: str | DataBase = None,
+    library: str | DataBase = None,
     parallel_queries=10,
     skip_existing=False,
 ):
@@ -71,6 +74,8 @@ def run_on_usi_list_or_mgf_file(
             analog=analog,
             analog_mass_below=analog_mass_below,
             analog_mass_above=analog_mass_above,
+            database=database,
+            library=library,
             parallel_queries=parallel_queries,
             skip_existing=skip_existing,
         )
@@ -88,6 +93,8 @@ def run_on_usi_list_or_mgf_file(
             analog=analog,
             analog_mass_below=analog_mass_below,
             analog_mass_above=analog_mass_above,
+            database=database,
+            library=library,
             parallel_queries=parallel_queries,
             skip_existing=skip_existing,
         )
@@ -106,6 +113,8 @@ def run_on_usi_and_id_list(
     analog=False,
     analog_mass_below=150,
     analog_mass_above=200,
+    database: str = None,
+    library: str = None,
     parallel_queries=100,
     skip_existing=False,
 ):
@@ -152,6 +161,8 @@ def run_on_usi_and_id_list(
                 analog=analog,
                 analog_mass_below=analog_mass_below,
                 analog_mass_above=analog_mass_above,
+                database=database,
+                library=library,
             )
             for compound_id, name in zip(jobs_df["input_id"], jobs_df["Compound"])
         ]
@@ -176,6 +187,8 @@ def run_on_mgf(
     analog=False,
     analog_mass_below=150,
     analog_mass_above=200,
+    database: str = None,
+    library: str = None,
     parallel_queries=100,
     skip_existing=False,
 ):
@@ -249,6 +262,8 @@ def run_on_mgf(
                 analog=analog,
                 analog_mass_below=analog_mass_below,
                 analog_mass_above=analog_mass_above,
+                database=database,
+                library=library,
                 lib_id=lib_id,
             )
             for name, lib_id, prec_mz, prec_charge, mz_array, intensity_array in zip(
@@ -278,6 +293,8 @@ def run_on_mgf(
                     analog=analog,
                     analog_mass_below=analog_mass_below,
                     analog_mass_above=analog_mass_above,
+                    database=database,
+                    library=library,
                     lib_id=lib_id,
                 )
                 for name, lib_id, prec_mz, prec_charge, mz_array, intensity_array in zip(
@@ -361,6 +378,13 @@ if __name__ == "__main__":
         help="separator for input file, e.g., \\t for tab",
         default="\t",
     )
+    # search database
+    parser.add_argument(
+        "--database", type=str, help="fasst database for public data", default=None
+    )
+    parser.add_argument(
+        "--library", type=str, help="fasst library for reference spectra", default=None
+    )
 
     # MASST params
     parser.add_argument(
@@ -425,6 +449,8 @@ if __name__ == "__main__":
             analog=args.analog,
             analog_mass_below=args.analog_mass_below,
             analog_mass_above=args.analog_mass_above,
+            database=args.database,
+            library=args.library,
             parallel_queries=args.parallel_queries,
             skip_existing=args.skip_existing,
         )
