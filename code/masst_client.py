@@ -1,11 +1,11 @@
 import sys
 import logging
-import pandas as pd
 from tqdm import tqdm
 import re
 import argparse
 from distutils.util import strtobool
 
+from masst_utils import DataBase
 from utils import prepare_paths
 from masst_tree import create_enriched_masst_tree
 from masst_tree import create_combined_masst_tree
@@ -167,11 +167,12 @@ def query_usi_or_id(
     analog=False,
     analog_mass_below=150,
     analog_mass_above=200,
-    database=None,
+    database: str | DataBase = None,
+    library: str | DataBase = None,
 ):
     """
-    NOTE: database is the fasst database, if None, we fall back on defaults provided by the system, otherwise we can set a string
-    
+    NOTE: database and library are the fasst database, if None, we fall back on defaults provided by the system, otherwise we can set a string
+
     :return: True if fastmasst query was successful otherwise False
     """
     # might raise exception for service
@@ -179,9 +180,7 @@ def query_usi_or_id(
         logger.debug("Query fastMASST id:%s  of %s", usi_or_lib_id, compound_name)
 
         if database is None:
-            search_database = masst.DataBase.gnpsdata_index
-        else:
-            search_database = database
+            database = masst.DataBase.gnpsdata_index
 
         matches = masst.fast_masst(
             usi_or_lib_id,
@@ -191,7 +190,7 @@ def query_usi_or_id(
             analog=analog,
             analog_mass_below=analog_mass_below,
             analog_mass_above=analog_mass_above,
-            database=search_database,
+            database=database,
         )
 
         if not matches or "results" not in matches:
@@ -207,11 +206,9 @@ def query_usi_or_id(
             # succeeded with 0 matches
             # currently fastMASST returns empty response without results dictionary
             return True
-        
-        if database is None:
-            search_database = masst.DataBase.gnpslibrary
-        else:
-            search_database = database
+
+        if library is None:
+            library = masst.DataBase.gnpslibrary
 
         library_matches = masst.fast_masst(
             usi_or_lib_id,
@@ -219,7 +216,7 @@ def query_usi_or_id(
             mz_tol=mz_tol,
             min_cos=min_cos,
             analog=False,
-            database=search_database,
+            database=library,
         )
 
         params_label = create_params_label(
@@ -266,19 +263,18 @@ def query_spectrum(
     analog_mass_below=150,
     analog_mass_above=200,
     lib_id=None,
-    database=None
+    database: str | DataBase = None,
+    library: str | DataBase = None,
 ):
     """
-    NOTE: database is the fasst database, if None, we fall back on defaults provided by the system, otherwise we can set a string
+    NOTE: database and library are the fasst database, if None, we fall back on defaults provided by the system, otherwise we can set a string
 
     :return: True if fast masst query was successful otherwise False
     """
     # might raise exception for service
     try:
         if database is None:
-            search_database = masst.DataBase.gnpsdata_index
-        else:
-            search_database = database
+            database = masst.DataBase.gnpsdata_index
 
         matches, filtered_dps = masst.fast_masst_spectrum(
             mzs=mzs,
@@ -291,7 +287,7 @@ def query_spectrum(
             analog=analog,
             analog_mass_below=analog_mass_below,
             analog_mass_above=analog_mass_above,
-            database=search_database,
+            database=database,
         )
         if not matches or "results" not in matches:
             # export empty masst results file to signal that service was successful
@@ -302,10 +298,8 @@ def query_spectrum(
             export_empty_masst_results(compound_name, file_name)
             return True
 
-        if database is None:
-            search_database = masst.DataBase.gnpslibrary
-        else:
-            search_database = database
+        if library is None:
+            library = masst.DataBase.gnpslibrary
 
         library_matches, _ = masst.fast_masst_spectrum(
             mzs=mzs,
@@ -316,7 +310,7 @@ def query_spectrum(
             mz_tol=mz_tol,
             min_cos=min_cos,
             analog=False,
-            database=search_database,
+            database=library,
         )
 
         params_label = create_params_label(
@@ -408,7 +402,12 @@ if __name__ == "__main__":
     parser.add_argument("--compound_name", type=str, help="compound name", default="")
 
     # search database
-    parser.add_argument("--database", type=str, help="fasst database", default=None)
+    parser.add_argument(
+        "--database", type=str, help="fasst database for public data", default=None
+    )
+    parser.add_argument(
+        "--library", type=str, help="fasst library for reference spectra", default=None
+    )
 
     # MASST params
     parser.add_argument(
@@ -458,6 +457,7 @@ if __name__ == "__main__":
         analog_mass_below = args.analog_mass_below
         analog_mass_above = args.analog_mass_above
         database = args.database
+        library = args.library
 
         query_usi_or_id(
             out_file,
@@ -470,7 +470,8 @@ if __name__ == "__main__":
             analog=analog,
             analog_mass_below=analog_mass_below,
             analog_mass_above=analog_mass_above,
-            database=database
+            database=database,
+            library=library,
         )
     except Exception as e:
         # exit with error

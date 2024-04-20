@@ -63,6 +63,7 @@ SPECIAL_MASSTS = [FOOD_MASST, MICROBE_MASST, PLANT_MASST, GLOBAL_MASST]
 
 class DataBase(Enum):
     gnpsdata_index = auto()  # all gnps data
+    gnpsdata_index_11_25_23 = auto()  # all gnps data
     gnpslibrary = auto()  # gnps library
     massivedata_index = auto()
     massivekb_index = auto()
