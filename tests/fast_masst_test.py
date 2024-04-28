@@ -29,24 +29,50 @@ def test_fast_masst_usi():
     matches = masst_utils.fast_masst(usi)
     assert len(matches) > 1
 
+
+def test_fast_masst_moroidin():
+    usi = "mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00005435899"
+    matches = masst_utils.fast_masst(
+        usi,
+        database=masst_utils.DataBase.gnpsdata_index_11_25_23,
+        mz_tol=0.05,
+    )
+    assert len(matches) > 1
+    # this currently fails when mz_tol is 0.05 - fixed by setting 0.02
+    assert len(matches["results"]) > 1
+
+
 def test_fastmasst_trp():
     usi = "mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00005883950"
     matches = masst_utils.fast_masst(usi, precursor_mz_tol=0.05)
-    df = masst_utils.extract_matches_from_masst_results(matches, precursor_mz_tol=0.5, min_matched_signals=4,
-                                                        analog=False, limit_to_best_match_in_file=True)
+    df = masst_utils.extract_matches_from_masst_results(
+        matches,
+        precursor_mz_tol=0.5,
+        min_matched_signals=4,
+        analog=False,
+        limit_to_best_match_in_file=True,
+    )
     assert len(df) > 1
-    assert len(df.index) > 50,000
+    assert len(df.index) > 50, 000
+
 
 def test_fastmasst_trp_analog():
     usi = "mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00005883950"
     matches = masst_utils.fast_masst(usi, precursor_mz_tol=0.05, analog=True)
-    df = masst_utils.extract_matches_from_masst_results(matches, precursor_mz_tol=0.5, min_matched_signals=4,
-                                                        analog=True, limit_to_best_match_in_file=True)
+    df = masst_utils.extract_matches_from_masst_results(
+        matches,
+        precursor_mz_tol=0.5,
+        min_matched_signals=4,
+        analog=True,
+        limit_to_best_match_in_file=True,
+    )
     assert len(df) > 1
-    assert len(df.index) > 444,000
+    assert len(df.index) > 444, 000
 
 
 def test_get_spectrum():
-    spec = usi_utils.get_spectrum("mzspec:MSV000090162:peak/F2202_NRP_purification_check_mzXML/Sample_10_RB5_01_63425"
-                                  ".mzXML:scan:583")
+    spec = usi_utils.get_spectrum(
+        "mzspec:MSV000090162:peak/F2202_NRP_purification_check_mzXML/Sample_10_RB5_01_63425"
+        ".mzXML:scan:583"
+    )
     assert spec["precursor_mz"] > 0

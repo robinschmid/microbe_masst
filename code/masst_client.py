@@ -5,6 +5,7 @@ import re
 import argparse
 from distutils.util import strtobool
 
+import masst_utils
 from masst_utils import DataBase
 from utils import prepare_paths
 from masst_tree import create_enriched_masst_tree
@@ -165,7 +166,7 @@ def query_usi_or_id(
     min_cos=0.7,
     min_matched_signals=3,
     analog=False,
-    analog_mass_below=150,
+    analog_mass_below=130,
     analog_mass_above=200,
     database: str | DataBase = None,
     library: str | DataBase = None,
@@ -260,7 +261,7 @@ def query_spectrum(
     min_cos=0.7,
     min_matched_signals=3,
     analog=False,
-    analog_mass_below=150,
+    analog_mass_below=130,
     analog_mass_above=200,
     lib_id=None,
     database: str | DataBase = None,
@@ -387,7 +388,8 @@ if __name__ == "__main__":
         "--usi_or_lib_id",
         type=str,
         help="usi or GNPS library ID",
-        default="CCMSLIB00005883945",  # tryptophan 6
+        default="CCMSLIB00005435899",  # moroidin
+        # default="CCMSLIB00005883945",  # tryptophan 6
         # default="CCMSLIB00004679239", # commendamide
         # default="CCMSLIB00006582001",
     )
@@ -414,7 +416,7 @@ if __name__ == "__main__":
         "--precursor_mz_tol", type=float, help="precursor mz tolerance", default="0.05"
     )
     parser.add_argument(
-        "--mz_tol", type=float, help="mz tolerance to match signals", default="0.05"
+        "--mz_tol", type=float, help="mz tolerance to match signals", default="0.02"
     )
     parser.add_argument(
         "--min_cos", type=float, help="Minimum cosine score for a match", default="0.7"
@@ -430,13 +432,13 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--analog_mass_below",
-        type=float,
+        type=int,
         help="Maximum mass delta for analogs",
-        default="150",
+        default="130",
     )
     parser.add_argument(
         "--analog_mass_above",
-        type=float,
+        type=int,
         help="Maximum mass delta for analogs",
         default="200",
     )
