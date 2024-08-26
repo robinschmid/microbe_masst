@@ -405,7 +405,10 @@ if __name__ == "__main__":
 
     # search database
     parser.add_argument(
-        "--database", type=str, help="fasst database for public data", default=None
+        "--database",
+        type=str,
+        help="fasst database for public data",
+        default="metabolomicspanrepo_index_latest",
     )
     parser.add_argument(
         "--library", type=str, help="fasst library for reference spectra", default=None
