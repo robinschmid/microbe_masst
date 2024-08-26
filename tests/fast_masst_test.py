@@ -34,7 +34,7 @@ def test_fast_masst_moroidin():
     usi = "mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00005435899"
     matches = masst_utils.fast_masst(
         usi,
-        database=masst_utils.DataBase.gnpsdata_index_11_25_23,
+        database=masst_utils.DataBase.metabolomicspanrepo_index_latest,
         mz_tol=0.05,
     )
     assert len(matches) > 1
