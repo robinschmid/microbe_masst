@@ -44,7 +44,11 @@ def test_fast_masst_moroidin():
 
 def test_fastmasst_trp():
     usi = "mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00005883950"
-    matches = masst_utils.fast_masst(usi, precursor_mz_tol=0.05)
+    matches = masst_utils.fast_masst(
+        usi,
+        precursor_mz_tol=0.05,
+        mz_tol=0.05,
+    )
     df = masst_utils.extract_matches_from_masst_results(
         matches,
         precursor_mz_tol=0.5,

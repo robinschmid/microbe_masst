@@ -21,7 +21,9 @@ def ensure_simple_file_usi(usi):
         elements = usi[:scan].split(":")
     else:
         elements = usi.split(":")
-    return "mzspec:{}:{}".format(elements[1], elements[-1])
+    # only use filename instead of full path for matching
+    filename = Path(elements[-1]).stem
+    return "mzspec:{}:{}".format(elements[1], filename)
 
 
 def create_file_usi_column(
