@@ -9,8 +9,9 @@ logger = logging.getLogger(__name__)
 
 files = [
     # (r"../examples/plant_mass_examples.tsv", "../output/plant/MASST_"),
-    # (r"../examples/example_links5.csv", "../output/plant/example"),
-    (r"../examples/presentation.csv", "../output/presentation2/preset"),
+    # (r"../examples/example_links3.tsv", "../output/plant/example"),
+    (r"../examples/example_careproduct.csv", "../output/care/example"),
+    # (r"../examples/presentation.csv", "../output/presentation2/preset"),
     # (r"../examples/vta_filter.mgf", "../output/examples/vta_"),
 ]
 
@@ -29,7 +30,7 @@ if __name__ == "__main__":
                 precursor_mz_tol=0.05,
                 min_matched_signals=3,
                 database=masst_utils.DataBase.metabolomicspanrepo_index_latest,
-                parallel_queries=3,
+                parallel_queries=5,
                 skip_existing=False,
                 analog=False,
                 sep=sep,
