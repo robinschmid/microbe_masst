@@ -56,9 +56,17 @@ GLOBAL_MASST = SpecialMasst(
     tree_node_key="ID",
     metadata_key="ID",
 )
+PERSONALCAREPRODUCT_MASST = SpecialMasst(
+    prefix="personalCareProduct",
+    root="personal care product",
+    tree_file="../data/personalCareProduct_masst_tree.json",
+    metadata_file="../data/personalCareProduct_masst_table.csv",
+    tree_node_key="name",
+    metadata_key="node_id",
+)
 
 URL = "https://fasst.gnps2.org/search"
-SPECIAL_MASSTS = [FOOD_MASST, MICROBE_MASST, PLANT_MASST, GLOBAL_MASST]
+SPECIAL_MASSTS = [FOOD_MASST, MICROBE_MASST, PLANT_MASST, GLOBAL_MASST, PERSONALCAREPRODUCT_MASST]
 
 
 class DataBase(Enum):

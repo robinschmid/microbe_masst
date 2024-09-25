@@ -1,0 +1,625 @@
+{
+    "ID": "Root",
+    "duplication": "Y",
+    "type": "node",
+    "name": "Root",
+    "group_size": 940,
+    "children": [
+        {
+            "ID": "Root_Personal Care",
+            "duplication": "Y",
+            "type": "node",
+            "name": "Personal Care",
+            "group_size": 876,
+            "children": [
+                {
+                    "ID": "Root_Personal Care_Cosmetics",
+                    "duplication": "Y",
+                    "type": "node",
+                    "name": "Cosmetics",
+                    "group_size": 632,
+                    "children": [
+                        {
+                            "ID": "Root_Personal Care_Cosmetics_Skin Care",
+                            "duplication": "Y",
+                            "type": "node",
+                            "name": "Skin Care",
+                            "group_size": 404,
+                            "children": [
+                                {
+                                    "ID": "Root_Personal Care_Cosmetics_Skin Care_Facial Cleanser",
+                                    "duplication": "Y",
+                                    "type": "node",
+                                    "name": "Facial Cleanser",
+                                    "group_size": 68,
+                                    "children": []
+                                },
+                                {
+                                    "ID": "Root_Personal Care_Cosmetics_Skin Care_Exfoliant",
+                                    "duplication": "Y",
+                                    "type": "node",
+                                    "name": "Exfoliant",
+                                    "group_size": 6,
+                                    "children": []
+                                },
+                                {
+                                    "ID": "Root_Personal Care_Cosmetics_Skin Care_Lotion & Moisturizer",
+                                    "duplication": "Y",
+                                    "type": "node",
+                                    "name": "Lotion & Moisturizer",
+                                    "group_size": 155,
+                                    "children": []
+                                },
+                                {
+                                    "ID": "Root_Personal Care_Cosmetics_Skin Care_Skin Care Masks & Peels",
+                                    "duplication": "Y",
+                                    "type": "node",
+                                    "name": "Skin Care Masks & Peels",
+                                    "group_size": 20,
+                                    "children": []
+                                },
+                                {
+                                    "ID": "Root_Personal Care_Cosmetics_Skin Care_Serum",
+                                    "duplication": "Y",
+                                    "type": "node",
+                                    "name": "Serum",
+                                    "group_size": 37,
+                                    "children": []
+                                },
+                                {
+                                    "ID": "Root_Personal Care_Cosmetics_Skin Care_Sunscreen",
+                                    "duplication": "Y",
+                                    "type": "node",
+                                    "name": "Sunscreen",
+                                    "group_size": 70,
+                                    "children": []
+                                },
+                                {
+                                    "ID": "Root_Personal Care_Cosmetics_Skin Care_Toners & Astringents",
+                                    "duplication": "Y",
+                                    "type": "node",
+                                    "name": "Toners & Astringents",
+                                    "group_size": 18,
+                                    "children": []
+                                },
+                                {
+                                    "ID": "Root_Personal Care_Cosmetics_Skin Care_Makeup Removers",
+                                    "duplication": "Y",
+                                    "type": "node",
+                                    "name": "Makeup Removers",
+                                    "group_size": 4,
+                                    "children": []
+                                },
+                                {
+                                    "ID": "Root_Personal Care_Cosmetics_Skin Care_After sun lotion",
+                                    "duplication": "Y",
+                                    "type": "node",
+                                    "name": "After sun lotion",
+                                    "group_size": 6,
+                                    "children": []
+                                },
+                                {
+                                    "ID": "Root_Personal Care_Cosmetics_Skin Care_Fluid",
+                                    "duplication": "Y",
+                                    "type": "node",
+                                    "name": "Fluid",
+                                    "group_size": 2,
+                                    "children": [
+                                        {
+                                            "ID": "Root_Personal Care_Cosmetics_Skin Care_Fluid_Anti Aging",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Anti Aging",
+                                            "group_size": 2,
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "ID": "Root_Personal Care_Cosmetics_Bath & Body",
+                            "duplication": "Y",
+                            "type": "node",
+                            "name": "Bath & Body",
+                            "group_size": 112,
+                            "children": [
+                                {
+                                    "ID": "Root_Personal Care_Cosmetics_Bath & Body_Body Wash",
+                                    "duplication": "Y",
+                                    "type": "node",
+                                    "name": "Body Wash",
+                                    "group_size": 64,
+                                    "children": [
+                                        {
+                                            "ID": "Root_Personal Care_Cosmetics_Bath & Body_Body Wash_Hand Soap",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Hand Soap",
+                                            "group_size": 16,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "Root_Personal Care_Cosmetics_Bath & Body_Body Wash_Powdered Hand Soap",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Powdered Hand Soap",
+                                            "group_size": 2,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "Root_Personal Care_Cosmetics_Bath & Body_Body Wash_Bar Soap",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Bar Soap",
+                                            "group_size": 8,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "Root_Personal Care_Cosmetics_Bath & Body_Body Wash_Foaming Bath",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Foaming Bath",
+                                            "group_size": 2,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "Root_Personal Care_Cosmetics_Bath & Body_Body Wash_Feminine hygiene",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Feminine hygiene",
+                                            "group_size": 2,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "ID": "Root_Personal Care_Cosmetics_Bath & Body_Moisturizer",
+                                    "duplication": "Y",
+                                    "type": "node",
+                                    "name": "Moisturizer",
+                                    "group_size": 44,
+                                    "children": [
+                                        {
+                                            "ID": "Root_Personal Care_Cosmetics_Bath & Body_Moisturizer_Eye cream",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Eye cream",
+                                            "group_size": 18,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "ID": "Root_Personal Care_Cosmetics_Bath & Body_Hand Creme",
+                                    "duplication": "Y",
+                                    "type": "node",
+                                    "name": "Hand Creme",
+                                    "group_size": 4,
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "ID": "Root_Personal Care_Cosmetics_Perfume & Cologne",
+                            "duplication": "Y",
+                            "type": "node",
+                            "name": "Perfume & Cologne",
+                            "group_size": 48,
+                            "children": []
+                        },
+                        {
+                            "ID": "Root_Personal Care_Cosmetics_Makeup",
+                            "duplication": "Y",
+                            "type": "node",
+                            "name": "Makeup",
+                            "group_size": 66,
+                            "children": [
+                                {
+                                    "ID": "Root_Personal Care_Cosmetics_Makeup_Eye Makeup",
+                                    "duplication": "Y",
+                                    "type": "node",
+                                    "name": "Eye Makeup",
+                                    "group_size": 16,
+                                    "children": [
+                                        {
+                                            "ID": "Root_Personal Care_Cosmetics_Makeup_Eye Makeup_Mascara",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Mascara",
+                                            "group_size": 16,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "ID": "Root_Personal Care_Cosmetics_Makeup_Face Makeup",
+                                    "duplication": "Y",
+                                    "type": "node",
+                                    "name": "Face Makeup",
+                                    "group_size": 12,
+                                    "children": [
+                                        {
+                                            "ID": "Root_Personal Care_Cosmetics_Makeup_Face Makeup_Foundations & Concealers",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Foundations & Concealers",
+                                            "group_size": 12,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "ID": "Root_Personal Care_Cosmetics_Makeup_Lip balm",
+                                    "duplication": "Y",
+                                    "type": "node",
+                                    "name": "Lip balm",
+                                    "group_size": 8,
+                                    "children": []
+                                },
+                                {
+                                    "ID": "Root_Personal Care_Cosmetics_Makeup_Lipstick",
+                                    "duplication": "Y",
+                                    "type": "node",
+                                    "name": "Lipstick",
+                                    "group_size": 16,
+                                    "children": []
+                                },
+                                {
+                                    "ID": "Root_Personal Care_Cosmetics_Makeup_Lipgloss",
+                                    "duplication": "Y",
+                                    "type": "node",
+                                    "name": "Lipgloss",
+                                    "group_size": 6,
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "ID": "Root_Personal Care_Cosmetics_Nail Care",
+                            "duplication": "Y",
+                            "type": "node",
+                            "name": "Nail Care",
+                            "group_size": 2,
+                            "children": [
+                                {
+                                    "ID": "Root_Personal Care_Cosmetics_Nail Care_Nail Polish",
+                                    "duplication": "Y",
+                                    "type": "node",
+                                    "name": "Nail Polish",
+                                    "group_size": 2,
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "ID": "Root_Personal Care_Hair Care",
+                    "duplication": "Y",
+                    "type": "node",
+                    "name": "Hair Care",
+                    "group_size": 196,
+                    "children": [
+                        {
+                            "ID": "Root_Personal Care_Hair Care_Shampoo & Conditioner",
+                            "duplication": "Y",
+                            "type": "node",
+                            "name": "Shampoo & Conditioner",
+                            "group_size": 94,
+                            "children": [
+                                {
+                                    "ID": "Root_Personal Care_Hair Care_Shampoo & Conditioner_Shampoo",
+                                    "duplication": "Y",
+                                    "type": "node",
+                                    "name": "Shampoo",
+                                    "group_size": 56,
+                                    "children": []
+                                },
+                                {
+                                    "ID": "Root_Personal Care_Hair Care_Shampoo & Conditioner_Conditioner",
+                                    "duplication": "Y",
+                                    "type": "node",
+                                    "name": "Conditioner",
+                                    "group_size": 38,
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "ID": "Root_Personal Care_Hair Care_Hair Styling Products",
+                            "duplication": "Y",
+                            "type": "node",
+                            "name": "Hair Styling Products",
+                            "group_size": 60,
+                            "children": [
+                                {
+                                    "ID": "Root_Personal Care_Hair Care_Hair Styling Products_Hairspray",
+                                    "duplication": "Y",
+                                    "type": "node",
+                                    "name": "Hairspray",
+                                    "group_size": 6,
+                                    "children": []
+                                },
+                                {
+                                    "ID": "Root_Personal Care_Hair Care_Hair Styling Products_Mousse",
+                                    "duplication": "Y",
+                                    "type": "node",
+                                    "name": "Mousse",
+                                    "group_size": 2,
+                                    "children": []
+                                },
+                                {
+                                    "ID": "Root_Personal Care_Hair Care_Hair Styling Products_Straightener",
+                                    "duplication": "Y",
+                                    "type": "node",
+                                    "name": "Straightener",
+                                    "group_size": 4,
+                                    "children": []
+                                },
+                                {
+                                    "ID": "Root_Personal Care_Hair Care_Hair Styling Products_Hairgel",
+                                    "duplication": "Y",
+                                    "type": "node",
+                                    "name": "Hairgel",
+                                    "group_size": 10,
+                                    "children": []
+                                },
+                                {
+                                    "ID": "Root_Personal Care_Hair Care_Hair Styling Products_Cream",
+                                    "duplication": "Y",
+                                    "type": "node",
+                                    "name": "Cream",
+                                    "group_size": 22,
+                                    "children": []
+                                },
+                                {
+                                    "ID": "Root_Personal Care_Hair Care_Hair Styling Products_Anti frizz product",
+                                    "duplication": "Y",
+                                    "type": "node",
+                                    "name": "Anti frizz product",
+                                    "group_size": 4,
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "ID": "Root_Personal Care_Hair Care_Toners",
+                            "duplication": "Y",
+                            "type": "node",
+                            "name": "Toners",
+                            "group_size": 2,
+                            "children": []
+                        },
+                        {
+                            "ID": "Root_Personal Care_Hair Care_Hair Repair",
+                            "duplication": "Y",
+                            "type": "node",
+                            "name": "Hair Repair",
+                            "group_size": 16,
+                            "children": [
+                                {
+                                    "ID": "Root_Personal Care_Hair Care_Hair Repair_Hair Oil",
+                                    "duplication": "Y",
+                                    "type": "node",
+                                    "name": "Hair Oil",
+                                    "group_size": 12,
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "ID": "Root_Personal Care_Hair Care_Hair masque",
+                            "duplication": "Y",
+                            "type": "node",
+                            "name": "Hair masque",
+                            "group_size": 4,
+                            "children": []
+                        },
+                        {
+                            "ID": "Root_Personal Care_Hair Care_Curl Cream",
+                            "duplication": "Y",
+                            "type": "node",
+                            "name": "Curl Cream",
+                            "group_size": 4,
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "ID": "Root_Personal Care_Deodorant & Anti-Perspirant",
+                    "duplication": "Y",
+                    "type": "node",
+                    "name": "Deodorant & Anti-Perspirant",
+                    "group_size": 2,
+                    "children": []
+                },
+                {
+                    "ID": "Root_Personal Care_Oral Care",
+                    "duplication": "Y",
+                    "type": "node",
+                    "name": "Oral Care",
+                    "group_size": 28,
+                    "children": [
+                        {
+                            "ID": "Root_Personal Care_Oral Care_Mouthwash",
+                            "duplication": "Y",
+                            "type": "node",
+                            "name": "Mouthwash",
+                            "group_size": 8,
+                            "children": []
+                        },
+                        {
+                            "ID": "Root_Personal Care_Oral Care_Toothpaste",
+                            "duplication": "Y",
+                            "type": "node",
+                            "name": "Toothpaste",
+                            "group_size": 20,
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "ID": "Root_Personal Care_Health Care",
+                    "duplication": "Y",
+                    "type": "node",
+                    "name": "Health Care",
+                    "group_size": 6,
+                    "children": [
+                        {
+                            "ID": "Root_Personal Care_Health Care_Hand sanitizer",
+                            "duplication": "Y",
+                            "type": "node",
+                            "name": "Hand sanitizer",
+                            "group_size": 2,
+                            "children": []
+                        },
+                        {
+                            "ID": "Root_Personal Care_Health Care_Spot Corrector",
+                            "duplication": "Y",
+                            "type": "node",
+                            "name": "Spot Corrector",
+                            "group_size": 2,
+                            "children": []
+                        },
+                        {
+                            "ID": "Root_Personal Care_Health Care_Pain Relieve",
+                            "duplication": "Y",
+                            "type": "node",
+                            "name": "Pain Relieve",
+                            "group_size": 2,
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "ID": "Root_Personal Care_Vision Care",
+                    "duplication": "Y",
+                    "type": "node",
+                    "name": "Vision Care",
+                    "group_size": 4,
+                    "children": [
+                        {
+                            "ID": "Root_Personal Care_Vision Care_Eye Drops & Lubricants",
+                            "duplication": "Y",
+                            "type": "node",
+                            "name": "Eye Drops & Lubricants",
+                            "group_size": 4,
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "ID": "Root_Personal Care_Shaving & Grooming",
+                    "duplication": "Y",
+                    "type": "node",
+                    "name": "Shaving & Grooming",
+                    "group_size": 4,
+                    "children": [
+                        {
+                            "ID": "Root_Personal Care_Shaving & Grooming_Hair Removal Cream",
+                            "duplication": "Y",
+                            "type": "node",
+                            "name": "Hair Removal Cream",
+                            "group_size": 2,
+                            "children": []
+                        },
+                        {
+                            "ID": "Root_Personal Care_Shaving & Grooming_Shaving Cream",
+                            "duplication": "Y",
+                            "type": "node",
+                            "name": "Shaving Cream",
+                            "group_size": 2,
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "ID": "Root_Personal Care_Pest Control",
+                    "duplication": "Y",
+                    "type": "node",
+                    "name": "Pest Control",
+                    "group_size": 4,
+                    "children": [
+                        {
+                            "ID": "Root_Personal Care_Pest Control_Repellents",
+                            "duplication": "Y",
+                            "type": "node",
+                            "name": "Repellents",
+                            "group_size": 4,
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "ID": "Root_Blank",
+            "duplication": "Y",
+            "type": "node",
+            "name": "Blank",
+            "group_size": 58,
+            "children": [
+                {
+                    "ID": "Root_Blank_Solvent Blank",
+                    "duplication": "Y",
+                    "type": "node",
+                    "name": "Solvent Blank",
+                    "group_size": 34,
+                    "children": []
+                },
+                {
+                    "ID": "Root_Blank_Method Blank",
+                    "duplication": "Y",
+                    "type": "node",
+                    "name": "Method Blank",
+                    "group_size": 24,
+                    "children": []
+                }
+            ]
+        },
+        {
+            "ID": "Root_Home & Garden",
+            "duplication": "Y",
+            "type": "node",
+            "name": "Home & Garden",
+            "group_size": 8,
+            "children": [
+                {
+                    "ID": "Root_Home & Garden_Household Supplies",
+                    "duplication": "Y",
+                    "type": "node",
+                    "name": "Household Supplies",
+                    "group_size": 8,
+                    "children": [
+                        {
+                            "ID": "Root_Home & Garden_Household Supplies_Household Cleaning Supplies",
+                            "duplication": "Y",
+                            "type": "node",
+                            "name": "Household Cleaning Supplies",
+                            "group_size": 8,
+                            "children": [
+                                {
+                                    "ID": "Root_Home & Garden_Household Supplies_Household Cleaning Supplies_Dish Washing Liquid",
+                                    "duplication": "Y",
+                                    "type": "node",
+                                    "name": "Dish Washing Liquid",
+                                    "group_size": 6,
+                                    "children": []
+                                },
+                                {
+                                    "ID": "Root_Home & Garden_Household Supplies_Household Cleaning Supplies_Laundry Detergent Sheets",
+                                    "duplication": "Y",
+                                    "type": "node",
+                                    "name": "Laundry Detergent Sheets",
+                                    "group_size": 2,
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
