@@ -402,7 +402,8 @@ if __name__ == "__main__":
         "--usi_or_lib_id",
         type=str,
         help="usi or GNPS library ID",
-        default="CCMSLIB00005435899",  # moroidin
+        default="mzspec:MSV000095003:P2_E1_584:scan:2609",  # personal care pos control
+        # default="CCMSLIB00005435899",  # moroidin
         # default="CCMSLIB00005883945",  # tryptophan 6
         # default="CCMSLIB00004679239", # commendamide
         # default="CCMSLIB00006582001",
