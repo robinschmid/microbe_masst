@@ -64,9 +64,17 @@ PERSONALCAREPRODUCT_MASST = SpecialMasst(
     tree_node_key="name",
     metadata_key="node_id",
 )
+MICROBIOME_MASST = SpecialMasst(
+    prefix="microbiome",
+    root="microbiome",
+    tree_file="../data/microbiome_masst_tree.json",
+    metadata_file="../data/microbiome_masst_table.tsv",
+    tree_node_key="name",
+    metadata_key="node_id",
+)
 
 URL = "https://fasst.gnps2.org/search"
-SPECIAL_MASSTS = [FOOD_MASST, MICROBE_MASST, PLANT_MASST, GLOBAL_MASST, PERSONALCAREPRODUCT_MASST]
+SPECIAL_MASSTS = [FOOD_MASST, MICROBE_MASST, PLANT_MASST, GLOBAL_MASST, PERSONALCAREPRODUCT_MASST, MICROBIOME_MASST]
 
 
 class DataBase(Enum):

@@ -148,6 +148,20 @@ def process_matches(
         compress_out_html=True,
     )
 
+    # microbiomeMASST
+    logger.debug("Exporting microbiomeMASST %s", compound_name)
+    create_enriched_masst_tree(
+        matches_df,
+        masst.MICROBIOME_MASST,
+        common_file=common_file,
+        lib_match_json=lib_match_json,
+        input_str=input_label,
+        parameter_str=params_label,
+        usi=usi,
+        format_out_json=False,
+        compress_out_html=True,
+    )
+
     # combined from all
     logger.debug("Exporting combined tree %s", compound_name)
     create_combined_masst_tree(
@@ -402,7 +416,8 @@ if __name__ == "__main__":
         "--usi_or_lib_id",
         type=str,
         help="usi or GNPS library ID",
-        default="mzspec:MSV000095003:P2_E1_584:scan:2609",  # personal care pos control
+        default='mzspec:MSV000095331:peak/mzML_3/Full_syncom_T72_drug_mix_4_1.mzML:scan:812'
+        # default="mzspec:MSV000095003:P2_E1_584:scan:2609",  # personal care pos control
         # default="CCMSLIB00005435899",  # moroidin
         # default="CCMSLIB00005883945",  # tryptophan 6
         # default="CCMSLIB00004679239", # commendamide

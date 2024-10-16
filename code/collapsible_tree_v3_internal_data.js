@@ -70,7 +70,8 @@ var combinedPieColorsDict = {
     "food": [combinedMatchColor, "gold"], // FFD700
     "personal care product": [combinedMatchColor, "#E8BAD8"],
     "microbes": [combinedMatchColor, "#BF2C84"],
-    "global": [combinedMatchColor, "#3391c1"]
+    "global": [combinedMatchColor, "#3391c1"],
+    "microbiome": [combinedMatchColor, "#F08976"]
 };
 
 // Calculate total nodes, max label length
@@ -275,7 +276,7 @@ var paramsLabel = "PARAMS_PLACEHOLDER";
 d3.select("#paramsDiv").append('label').text(paramsLabel)
 
 // initialize drop down style menu
-var allGroup = ["default", "microbes", "food", 'plants', 'personal care product', "contrast", "B+W"]
+var allGroup = ["default", "microbes", "food", 'plants', 'personal care product', 'microbiome', "contrast", "B+W"]
 
 // Initialize the button
 d3.select("#secondMenu").append('label').text("Style: ")
@@ -313,6 +314,8 @@ dropdownButton.on("change", function (d) {
         bgColor = "#BF2C84";
     } else if ("personal care product" === selectedOption) {
         bgColor = "#E8BAD8";
+    } else if ("microbiome" === selectedOption) {
+        bgColor = "#F08976";
     }
     else if ("contrast" === selectedOption) {
         noChildrenColor = "white";

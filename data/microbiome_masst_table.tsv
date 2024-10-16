@@ -1,0 +1,181 @@
+filepath	Filename	MassIVE	Taxaname_file	Taxaname_alternative	Taxa_NCBI	Taxa_Assigment	ReDU_Availability	Blank	QC	file_usi	Timepoint_h	Additifs	Timepoint	ID	node_id
+MSV000095331/peak/mzML_3/Full_syncom_T72_drug_mix_1_1.mzML	Full_syncom_T72_drug_mix_1_1	MSV000095331								mzspec:MSV000095331:Full_syncom_T72_drug_mix_1_1			72.0	17	Full SynCom Drug_mix1
+MSV000095331/peak/mzML_3/Full_syncom_T0_drug_mix_1_3.mzML	Full_syncom_T0_drug_mix_1_3	MSV000095331								mzspec:MSV000095331:Full_syncom_T0_drug_mix_1_3			0.0	17	Full SynCom Drug_mix1
+MSV000095331/peak/mzML_3/Full_syncom_T72_drug_mix_1_2.mzML	Full_syncom_T72_drug_mix_1_2	MSV000095331								mzspec:MSV000095331:Full_syncom_T72_drug_mix_1_2			72.0	17	Full SynCom Drug_mix1
+MSV000095331/peak/mzML_3/Full_syncom_T0_drug_mix_1_1.mzML	Full_syncom_T0_drug_mix_1_1	MSV000095331								mzspec:MSV000095331:Full_syncom_T0_drug_mix_1_1			0.0	17	Full SynCom Drug_mix1
+MSV000095331/peak/mzML_3/Full_syncom_T72_drug_mix_1_3.mzML	Full_syncom_T72_drug_mix_1_3	MSV000095331								mzspec:MSV000095331:Full_syncom_T72_drug_mix_1_3			72.0	17	Full SynCom Drug_mix1
+MSV000095331/peak/mzML_3/Full_syncom_T0_drug_mix_1_2.mzML	Full_syncom_T0_drug_mix_1_2	MSV000095331								mzspec:MSV000095331:Full_syncom_T0_drug_mix_1_2			0.0	17	Full SynCom Drug_mix1
+MSV000095331/peak/mzML_3/Full_syncom_T72_drug_mix_2_1.mzML	Full_syncom_T72_drug_mix_2_1	MSV000095331								mzspec:MSV000095331:Full_syncom_T72_drug_mix_2_1			72.0	18	Full SynCom Drug_mix2
+MSV000095331/peak/mzML_3/Full_syncom_T0_drug_mix_2_3.mzML	Full_syncom_T0_drug_mix_2_3	MSV000095331								mzspec:MSV000095331:Full_syncom_T0_drug_mix_2_3			0.0	18	Full SynCom Drug_mix2
+MSV000095331/peak/mzML_3/Full_syncom_T0_drug_mix_2_2.mzML	Full_syncom_T0_drug_mix_2_2	MSV000095331								mzspec:MSV000095331:Full_syncom_T0_drug_mix_2_2			0.0	18	Full SynCom Drug_mix2
+MSV000095331/peak/mzML_3/Full_syncom_T72_drug_mix_2_3.mzML	Full_syncom_T72_drug_mix_2_3	MSV000095331								mzspec:MSV000095331:Full_syncom_T72_drug_mix_2_3			72.0	18	Full SynCom Drug_mix2
+MSV000095331/peak/mzML_3/Full_syncom_T0_drug_mix_2_1.mzML	Full_syncom_T0_drug_mix_2_1	MSV000095331								mzspec:MSV000095331:Full_syncom_T0_drug_mix_2_1			0.0	18	Full SynCom Drug_mix2
+MSV000095331/peak/mzML_3/Full_syncom_T72_drug_mix_2_2.mzML	Full_syncom_T72_drug_mix_2_2	MSV000095331								mzspec:MSV000095331:Full_syncom_T72_drug_mix_2_2			72.0	18	Full SynCom Drug_mix2
+MSV000095331/peak/mzML_3/Full_syncom_T0_drug_mix_3_3.mzML	Full_syncom_T0_drug_mix_3_3	MSV000095331								mzspec:MSV000095331:Full_syncom_T0_drug_mix_3_3			0.0	19	Full SynCom Drug_mix3
+MSV000095331/peak/mzML_3/Full_syncom_T0_drug_mix_3_1.mzML	Full_syncom_T0_drug_mix_3_1	MSV000095331								mzspec:MSV000095331:Full_syncom_T0_drug_mix_3_1			0.0	19	Full SynCom Drug_mix3
+MSV000095331/peak/mzML_3/Full_syncom_T72_drug_mix_3_1.mzML	Full_syncom_T72_drug_mix_3_1	MSV000095331								mzspec:MSV000095331:Full_syncom_T72_drug_mix_3_1			72.0	19	Full SynCom Drug_mix3
+MSV000095331/peak/mzML_3/Full_syncom_T72_drug_mix_3_2.mzML	Full_syncom_T72_drug_mix_3_2	MSV000095331								mzspec:MSV000095331:Full_syncom_T72_drug_mix_3_2			72.0	19	Full SynCom Drug_mix3
+MSV000095331/peak/mzML_3/Full_syncom_T72_drug_mix_3_3.mzML	Full_syncom_T72_drug_mix_3_3	MSV000095331								mzspec:MSV000095331:Full_syncom_T72_drug_mix_3_3			72.0	19	Full SynCom Drug_mix3
+MSV000095331/peak/mzML_3/Full_syncom_T0_drug_mix_3_2.mzML	Full_syncom_T0_drug_mix_3_2	MSV000095331								mzspec:MSV000095331:Full_syncom_T0_drug_mix_3_2			0.0	19	Full SynCom Drug_mix3
+MSV000095331/peak/mzML_3/Full_syncom_T0_drug_mix_4_1.mzML	Full_syncom_T0_drug_mix_4_1	MSV000095331								mzspec:MSV000095331:Full_syncom_T0_drug_mix_4_1			0.0	20	Full SynCom Drug_mix4
+MSV000095331/peak/mzML_3/Full_syncom_T72_drug_mix_4_3.mzML	Full_syncom_T72_drug_mix_4_3	MSV000095331								mzspec:MSV000095331:Full_syncom_T72_drug_mix_4_3			72.0	20	Full SynCom Drug_mix4
+MSV000095331/peak/mzML_3/Full_syncom_T0_drug_mix_4_2.mzML	Full_syncom_T0_drug_mix_4_2	MSV000095331								mzspec:MSV000095331:Full_syncom_T0_drug_mix_4_2			0.0	20	Full SynCom Drug_mix4
+MSV000095331/peak/mzML_3/Full_syncom_T72_drug_mix_4_2.mzML	Full_syncom_T72_drug_mix_4_2	MSV000095331								mzspec:MSV000095331:Full_syncom_T72_drug_mix_4_2			72.0	20	Full SynCom Drug_mix4
+MSV000095331/peak/mzML_3/Full_syncom_T72_drug_mix_4_1.mzML	Full_syncom_T72_drug_mix_4_1	MSV000095331								mzspec:MSV000095331:Full_syncom_T72_drug_mix_4_1			72.0	20	Full SynCom Drug_mix4
+MSV000095331/peak/mzML_3/Full_syncom_T0_drug_mix_4_3.mzML	Full_syncom_T0_drug_mix_4_3	MSV000095331								mzspec:MSV000095331:Full_syncom_T0_drug_mix_4_3			0.0	20	Full SynCom Drug_mix4
+MSV000095331/peak/mzML_3/Full_syncom_T0_drug_mix_5_3.mzML	Full_syncom_T0_drug_mix_5_3	MSV000095331								mzspec:MSV000095331:Full_syncom_T0_drug_mix_5_3			0.0	21	Full SynCom Drug_mix5
+MSV000095331/peak/mzML_3/Full_syncom_T0_drug_mix_5_2.mzML	Full_syncom_T0_drug_mix_5_2	MSV000095331								mzspec:MSV000095331:Full_syncom_T0_drug_mix_5_2			0.0	21	Full SynCom Drug_mix5
+MSV000095331/peak/mzML_3/Full_syncom_T0_drug_mix_5_1.mzML	Full_syncom_T0_drug_mix_5_1	MSV000095331								mzspec:MSV000095331:Full_syncom_T0_drug_mix_5_1			0.0	21	Full SynCom Drug_mix5
+MSV000095331/peak/mzML_3/Full_syncom_T72_drug_mix_5_3.mzML	Full_syncom_T72_drug_mix_5_3	MSV000095331								mzspec:MSV000095331:Full_syncom_T72_drug_mix_5_3			72.0	21	Full SynCom Drug_mix5
+MSV000095331/peak/mzML_3/Full_syncom_T72_drug_mix_5_1.mzML	Full_syncom_T72_drug_mix_5_1	MSV000095331								mzspec:MSV000095331:Full_syncom_T72_drug_mix_5_1			72.0	21	Full SynCom Drug_mix5
+MSV000095331/peak/mzML_3/Full_syncom_T72_drug_mix_5_2.mzML	Full_syncom_T72_drug_mix_5_2	MSV000095331								mzspec:MSV000095331:Full_syncom_T72_drug_mix_5_2			72.0	21	Full SynCom Drug_mix5
+MSV000095331/peak/mzML_3/Syncom_red_T72_drug_mix_1_3.mzML	Syncom_red_T72_drug_mix_1_3	MSV000095331								mzspec:MSV000095331:Syncom_red_T72_drug_mix_1_3			72.0	22	Syncom_red Drug_mix1
+MSV000095331/peak/mzML_3/Syncom_red_T72_drug_mix_1_2.mzML	Syncom_red_T72_drug_mix_1_2	MSV000095331								mzspec:MSV000095331:Syncom_red_T72_drug_mix_1_2			72.0	22	Syncom_red Drug_mix1
+MSV000095331/peak/mzML_3/Syncom_red_T72_drug_mix_1_1.mzML	Syncom_red_T72_drug_mix_1_1	MSV000095331								mzspec:MSV000095331:Syncom_red_T72_drug_mix_1_1			72.0	22	Syncom_red Drug_mix1
+MSV000095331/peak/mzML_3/Syncom_red_T0_drug_mix_1_3.mzML	Syncom_red_T0_drug_mix_1_3	MSV000095331								mzspec:MSV000095331:Syncom_red_T0_drug_mix_1_3			0.0	22	Syncom_red Drug_mix1
+MSV000095331/peak/mzML_3/Syncom_red_T0_drug_mix_1_1.mzML	Syncom_red_T0_drug_mix_1_1	MSV000095331								mzspec:MSV000095331:Syncom_red_T0_drug_mix_1_1			0.0	22	Syncom_red Drug_mix1
+MSV000095331/peak/mzML_3/Syncom_red_T0_drug_mix_1_2.mzML	Syncom_red_T0_drug_mix_1_2	MSV000095331								mzspec:MSV000095331:Syncom_red_T0_drug_mix_1_2			0.0	22	Syncom_red Drug_mix1
+MSV000095331/peak/mzML_3/Syncom_red_T0_drug_mix_2_1.mzML	Syncom_red_T0_drug_mix_2_1	MSV000095331								mzspec:MSV000095331:Syncom_red_T0_drug_mix_2_1			0.0	23	Syncom_red Drug_mix2
+MSV000095331/peak/mzML_3/Syncom_red_T72_drug_mix_2_2.mzML	Syncom_red_T72_drug_mix_2_2	MSV000095331								mzspec:MSV000095331:Syncom_red_T72_drug_mix_2_2			72.0	23	Syncom_red Drug_mix2
+MSV000095331/peak/mzML_3/Syncom_red_T0_drug_mix_2_3.mzML	Syncom_red_T0_drug_mix_2_3	MSV000095331								mzspec:MSV000095331:Syncom_red_T0_drug_mix_2_3			0.0	23	Syncom_red Drug_mix2
+MSV000095331/peak/mzML_3/Syncom_red_T72_drug_mix_2_1.mzML	Syncom_red_T72_drug_mix_2_1	MSV000095331								mzspec:MSV000095331:Syncom_red_T72_drug_mix_2_1			72.0	23	Syncom_red Drug_mix2
+MSV000095331/peak/mzML_3/Syncom_red_T72_drug_mix_2_3.mzML	Syncom_red_T72_drug_mix_2_3	MSV000095331								mzspec:MSV000095331:Syncom_red_T72_drug_mix_2_3			72.0	23	Syncom_red Drug_mix2
+MSV000095331/peak/mzML_3/Syncom_red_T0_drug_mix_2_2.mzML	Syncom_red_T0_drug_mix_2_2	MSV000095331								mzspec:MSV000095331:Syncom_red_T0_drug_mix_2_2			0.0	23	Syncom_red Drug_mix2
+MSV000095331/peak/mzML_3/Syncom_red_T0_drug_mix_3_1.mzML	Syncom_red_T0_drug_mix_3_1	MSV000095331								mzspec:MSV000095331:Syncom_red_T0_drug_mix_3_1			0.0	24	Syncom_red Drug_mix3
+MSV000095331/peak/mzML_3/Syncom_red_T0_drug_mix_3_2.mzML	Syncom_red_T0_drug_mix_3_2	MSV000095331								mzspec:MSV000095331:Syncom_red_T0_drug_mix_3_2			0.0	24	Syncom_red Drug_mix3
+MSV000095331/peak/mzML_3/Syncom_red_T72_drug_mix_3_3.mzML	Syncom_red_T72_drug_mix_3_3	MSV000095331								mzspec:MSV000095331:Syncom_red_T72_drug_mix_3_3			72.0	24	Syncom_red Drug_mix3
+MSV000095331/peak/mzML_3/Syncom_red_T0_drug_mix_3_3.mzML	Syncom_red_T0_drug_mix_3_3	MSV000095331								mzspec:MSV000095331:Syncom_red_T0_drug_mix_3_3			0.0	24	Syncom_red Drug_mix3
+MSV000095331/peak/mzML_3/Syncom_red_T72_drug_mix_3_1.mzML	Syncom_red_T72_drug_mix_3_1	MSV000095331								mzspec:MSV000095331:Syncom_red_T72_drug_mix_3_1			72.0	24	Syncom_red Drug_mix3
+MSV000095331/peak/mzML_3/Syncom_red_T72_drug_mix_3_2.mzML	Syncom_red_T72_drug_mix_3_2	MSV000095331								mzspec:MSV000095331:Syncom_red_T72_drug_mix_3_2			72.0	24	Syncom_red Drug_mix3
+MSV000095331/peak/mzML_3/Syncom_red_T72_drug_mix_4_3.mzML	Syncom_red_T72_drug_mix_4_3	MSV000095331								mzspec:MSV000095331:Syncom_red_T72_drug_mix_4_3			72.0	25	Syncom_red Drug_mix4
+MSV000095331/peak/mzML_3/Syncom_red_T72_drug_mix_4_1.mzML	Syncom_red_T72_drug_mix_4_1	MSV000095331								mzspec:MSV000095331:Syncom_red_T72_drug_mix_4_1			72.0	25	Syncom_red Drug_mix4
+MSV000095331/peak/mzML_3/Syncom_red_T0_drug_mix_4_1.mzML	Syncom_red_T0_drug_mix_4_1	MSV000095331								mzspec:MSV000095331:Syncom_red_T0_drug_mix_4_1			0.0	25	Syncom_red Drug_mix4
+MSV000095331/peak/mzML_3/Syncom_red_T72_drug_mix_4_2.mzML	Syncom_red_T72_drug_mix_4_2	MSV000095331								mzspec:MSV000095331:Syncom_red_T72_drug_mix_4_2			72.0	25	Syncom_red Drug_mix4
+MSV000095331/peak/mzML_3/Syncom_red_T0_drug_mix_4_3.mzML	Syncom_red_T0_drug_mix_4_3	MSV000095331								mzspec:MSV000095331:Syncom_red_T0_drug_mix_4_3			0.0	25	Syncom_red Drug_mix4
+MSV000095331/peak/mzML_3/Syncom_red_T0_drug_mix_4_2.mzML	Syncom_red_T0_drug_mix_4_2	MSV000095331								mzspec:MSV000095331:Syncom_red_T0_drug_mix_4_2			0.0	25	Syncom_red Drug_mix4
+MSV000095331/peak/mzML_3/Syncom_red_T0_drug_mix_5_2.mzML	Syncom_red_T0_drug_mix_5_2	MSV000095331								mzspec:MSV000095331:Syncom_red_T0_drug_mix_5_2			0.0	26	Syncom_red Drug_mix5
+MSV000095331/peak/mzML_3/Syncom_red_T72_drug_mix_5_3.mzML	Syncom_red_T72_drug_mix_5_3	MSV000095331								mzspec:MSV000095331:Syncom_red_T72_drug_mix_5_3			72.0	26	Syncom_red Drug_mix5
+MSV000095331/peak/mzML_3/Syncom_red_T72_drug_mix_5_1.mzML	Syncom_red_T72_drug_mix_5_1	MSV000095331								mzspec:MSV000095331:Syncom_red_T72_drug_mix_5_1			72.0	26	Syncom_red Drug_mix5
+MSV000095331/peak/mzML_3/Syncom_red_T0_drug_mix_5_3.mzML	Syncom_red_T0_drug_mix_5_3	MSV000095331								mzspec:MSV000095331:Syncom_red_T0_drug_mix_5_3			0.0	26	Syncom_red Drug_mix5
+MSV000095331/peak/mzML_3/Syncom_red_T0_drug_mix_5_1.mzML	Syncom_red_T0_drug_mix_5_1	MSV000095331								mzspec:MSV000095331:Syncom_red_T0_drug_mix_5_1			0.0	26	Syncom_red Drug_mix5
+MSV000095331/peak/mzML_3/Syncom_red_T72_drug_mix_5_2.mzML	Syncom_red_T72_drug_mix_5_2	MSV000095331								mzspec:MSV000095331:Syncom_red_T72_drug_mix_5_2			72.0	26	Syncom_red Drug_mix5
+MSV000095331/peak/mzML_3/Group_1_fast_T0_drug_mix_1_1.mzML	Group_1_fast_T0_drug_mix_1_1	MSV000095331								mzspec:MSV000095331:Group_1_fast_T0_drug_mix_1_1			0.0	27	Group_1_fast Drug_mix1
+MSV000095331/peak/mzML_3/Group_1_fast_T48_drug_mix_1_2.mzML	Group_1_fast_T48_drug_mix_1_2	MSV000095331								mzspec:MSV000095331:Group_1_fast_T48_drug_mix_1_2			48.0	27	Group_1_fast Drug_mix1
+MSV000095331/peak/mzML_3/Group_1_fast_T48_drug_mix_1_1.mzML	Group_1_fast_T48_drug_mix_1_1	MSV000095331								mzspec:MSV000095331:Group_1_fast_T48_drug_mix_1_1			48.0	27	Group_1_fast Drug_mix1
+MSV000095331/peak/mzML_3/Group_1_fast_T0_drug_mix_1_2.mzML	Group_1_fast_T0_drug_mix_1_2	MSV000095331								mzspec:MSV000095331:Group_1_fast_T0_drug_mix_1_2			0.0	27	Group_1_fast Drug_mix1
+MSV000095331/peak/mzML_3/Group_1_fast_T0_drug_mix_1_3.mzML	Group_1_fast_T0_drug_mix_1_3	MSV000095331								mzspec:MSV000095331:Group_1_fast_T0_drug_mix_1_3			0.0	27	Group_1_fast Drug_mix1
+MSV000095331/peak/mzML_3/Group_1_fast_T48_drug_mix_1_3.mzML	Group_1_fast_T48_drug_mix_1_3	MSV000095331								mzspec:MSV000095331:Group_1_fast_T48_drug_mix_1_3			48.0	27	Group_1_fast Drug_mix1
+MSV000095331/peak/mzML_3/Group_1_fast_T48_drug_mix_2_3.mzML	Group_1_fast_T48_drug_mix_2_3	MSV000095331								mzspec:MSV000095331:Group_1_fast_T48_drug_mix_2_3			48.0	28	Group_1_fast Drug_mix2
+MSV000095331/peak/mzML_3/Group_1_fast_T48_drug_mix_2_1.mzML	Group_1_fast_T48_drug_mix_2_1	MSV000095331								mzspec:MSV000095331:Group_1_fast_T48_drug_mix_2_1			48.0	28	Group_1_fast Drug_mix2
+MSV000095331/peak/mzML_3/Group_1_fast_T0_drug_mix_2_3.mzML	Group_1_fast_T0_drug_mix_2_3	MSV000095331								mzspec:MSV000095331:Group_1_fast_T0_drug_mix_2_3			0.0	28	Group_1_fast Drug_mix2
+MSV000095331/peak/mzML_3/Group_1_fast_T0_drug_mix_2_1.mzML	Group_1_fast_T0_drug_mix_2_1	MSV000095331								mzspec:MSV000095331:Group_1_fast_T0_drug_mix_2_1			0.0	28	Group_1_fast Drug_mix2
+MSV000095331/peak/mzML_3/Group_1_fast_T48_drug_mix_2_2.mzML	Group_1_fast_T48_drug_mix_2_2	MSV000095331								mzspec:MSV000095331:Group_1_fast_T48_drug_mix_2_2			48.0	28	Group_1_fast Drug_mix2
+MSV000095331/peak/mzML_3/Group_1_fast_T0_drug_mix_2_2.mzML	Group_1_fast_T0_drug_mix_2_2	MSV000095331								mzspec:MSV000095331:Group_1_fast_T0_drug_mix_2_2			0.0	28	Group_1_fast Drug_mix2
+MSV000095331/peak/mzML_3/Group_1_fast_T48_drug_mix_3_2.mzML	Group_1_fast_T48_drug_mix_3_2	MSV000095331								mzspec:MSV000095331:Group_1_fast_T48_drug_mix_3_2			48.0	29	Group_1_fast Drug_mix3
+MSV000095331/peak/mzML_3/Group_1_fast_T48_drug_mix_3_1.mzML	Group_1_fast_T48_drug_mix_3_1	MSV000095331								mzspec:MSV000095331:Group_1_fast_T48_drug_mix_3_1			48.0	29	Group_1_fast Drug_mix3
+MSV000095331/peak/mzML_3/Group_1_fast_T0_drug_mix_3_3.mzML	Group_1_fast_T0_drug_mix_3_3	MSV000095331								mzspec:MSV000095331:Group_1_fast_T0_drug_mix_3_3			0.0	29	Group_1_fast Drug_mix3
+MSV000095331/peak/mzML_3/Group_1_fast_T0_drug_mix_3_1.mzML	Group_1_fast_T0_drug_mix_3_1	MSV000095331								mzspec:MSV000095331:Group_1_fast_T0_drug_mix_3_1			0.0	29	Group_1_fast Drug_mix3
+MSV000095331/peak/mzML_3/Group_1_fast_T48_drug_mix_3_3.mzML	Group_1_fast_T48_drug_mix_3_3	MSV000095331								mzspec:MSV000095331:Group_1_fast_T48_drug_mix_3_3			48.0	29	Group_1_fast Drug_mix3
+MSV000095331/peak/mzML_3/Group_1_fast_T0_drug_mix_3_2.mzML	Group_1_fast_T0_drug_mix_3_2	MSV000095331								mzspec:MSV000095331:Group_1_fast_T0_drug_mix_3_2			0.0	29	Group_1_fast Drug_mix3
+MSV000095331/peak/mzML_3/Group_1_fast_T48_drug_mix_4_3.mzML	Group_1_fast_T48_drug_mix_4_3	MSV000095331								mzspec:MSV000095331:Group_1_fast_T48_drug_mix_4_3			48.0	30	Group_1_fast Drug_mix4
+MSV000095331/peak/mzML_3/Group_1_fast_T0_drug_mix_4_2.mzML	Group_1_fast_T0_drug_mix_4_2	MSV000095331								mzspec:MSV000095331:Group_1_fast_T0_drug_mix_4_2			0.0	30	Group_1_fast Drug_mix4
+MSV000095331/peak/mzML_3/Group_1_fast_T48_drug_mix_4_2.mzML	Group_1_fast_T48_drug_mix_4_2	MSV000095331								mzspec:MSV000095331:Group_1_fast_T48_drug_mix_4_2			48.0	30	Group_1_fast Drug_mix4
+MSV000095331/peak/mzML_3/Group_1_fast_T0_drug_mix_4_1.mzML	Group_1_fast_T0_drug_mix_4_1	MSV000095331								mzspec:MSV000095331:Group_1_fast_T0_drug_mix_4_1			0.0	30	Group_1_fast Drug_mix4
+MSV000095331/peak/mzML_3/Group_1_fast_T0_drug_mix_4_3.mzML	Group_1_fast_T0_drug_mix_4_3	MSV000095331								mzspec:MSV000095331:Group_1_fast_T0_drug_mix_4_3			0.0	30	Group_1_fast Drug_mix4
+MSV000095331/peak/mzML_3/Group_1_fast_T48_drug_mix_4_1.mzML	Group_1_fast_T48_drug_mix_4_1	MSV000095331								mzspec:MSV000095331:Group_1_fast_T48_drug_mix_4_1			48.0	30	Group_1_fast Drug_mix4
+MSV000095331/peak/mzML_3/Group_1_fast_T0_drug_mix_5_3.mzML	Group_1_fast_T0_drug_mix_5_3	MSV000095331								mzspec:MSV000095331:Group_1_fast_T0_drug_mix_5_3			0.0	31	Group_1_fast Drug_mix5
+MSV000095331/peak/mzML_3/Group_1_fast_T0_drug_mix_5_1.mzML	Group_1_fast_T0_drug_mix_5_1	MSV000095331								mzspec:MSV000095331:Group_1_fast_T0_drug_mix_5_1			0.0	31	Group_1_fast Drug_mix5
+MSV000095331/peak/mzML_3/Group_1_fast_T48_drug_mix_5_1.mzML	Group_1_fast_T48_drug_mix_5_1	MSV000095331								mzspec:MSV000095331:Group_1_fast_T48_drug_mix_5_1			48.0	31	Group_1_fast Drug_mix5
+MSV000095331/peak/mzML_3/Group_1_fast_T0_drug_mix_5_2.mzML	Group_1_fast_T0_drug_mix_5_2	MSV000095331								mzspec:MSV000095331:Group_1_fast_T0_drug_mix_5_2			0.0	31	Group_1_fast Drug_mix5
+MSV000095331/peak/mzML_3/Group_1_fast_T48_drug_mix_5_2.mzML	Group_1_fast_T48_drug_mix_5_2	MSV000095331								mzspec:MSV000095331:Group_1_fast_T48_drug_mix_5_2			48.0	31	Group_1_fast Drug_mix5
+MSV000095331/peak/mzML_3/Group_1_fast_T48_drug_mix_5_3.mzML	Group_1_fast_T48_drug_mix_5_3	MSV000095331								mzspec:MSV000095331:Group_1_fast_T48_drug_mix_5_3			48.0	31	Group_1_fast Drug_mix5
+MSV000095331/peak/mzML_3/Group_2_medium_fast_T0_drug_mix_1_2.mzML	Group_2_medium_fast_T0_drug_mix_1_2	MSV000095331								mzspec:MSV000095331:Group_2_medium_fast_T0_drug_mix_1_2			0.0	32	Group_2_medium_fast Drug_mix1
+MSV000095331/peak/mzML_3/Group_2_medium_fast_T48_drug_mix_1_1.mzML	Group_2_medium_fast_T48_drug_mix_1_1	MSV000095331								mzspec:MSV000095331:Group_2_medium_fast_T48_drug_mix_1_1			48.0	32	Group_2_medium_fast Drug_mix1
+MSV000095331/peak/mzML_3/Group_2_medium_fast_T0_drug_mix_1_1.mzML	Group_2_medium_fast_T0_drug_mix_1_1	MSV000095331								mzspec:MSV000095331:Group_2_medium_fast_T0_drug_mix_1_1			0.0	32	Group_2_medium_fast Drug_mix1
+MSV000095331/peak/mzML_3/Group_2_medium_fast_T48_drug_mix_1_3.mzML	Group_2_medium_fast_T48_drug_mix_1_3	MSV000095331								mzspec:MSV000095331:Group_2_medium_fast_T48_drug_mix_1_3			48.0	32	Group_2_medium_fast Drug_mix1
+MSV000095331/peak/mzML_3/Group_2_medium_fast_T0_drug_mix_1_3.mzML	Group_2_medium_fast_T0_drug_mix_1_3	MSV000095331								mzspec:MSV000095331:Group_2_medium_fast_T0_drug_mix_1_3			0.0	32	Group_2_medium_fast Drug_mix1
+MSV000095331/peak/mzML_3/Group_2_medium_fast_T48_drug_mix_1_2.mzML	Group_2_medium_fast_T48_drug_mix_1_2	MSV000095331								mzspec:MSV000095331:Group_2_medium_fast_T48_drug_mix_1_2			48.0	32	Group_2_medium_fast Drug_mix1
+MSV000095331/peak/mzML_3/Group_2_medium_fast_T0_drug_mix_2_3.mzML	Group_2_medium_fast_T0_drug_mix_2_3	MSV000095331								mzspec:MSV000095331:Group_2_medium_fast_T0_drug_mix_2_3			0.0	33	Group_2_medium_fast Drug_mix2
+MSV000095331/peak/mzML_3/Group_2_medium_fast_T0_drug_mix_2_2.mzML	Group_2_medium_fast_T0_drug_mix_2_2	MSV000095331								mzspec:MSV000095331:Group_2_medium_fast_T0_drug_mix_2_2			0.0	33	Group_2_medium_fast Drug_mix2
+MSV000095331/peak/mzML_3/Group_2_medium_fast_T48_drug_mix_2_3.mzML	Group_2_medium_fast_T48_drug_mix_2_3	MSV000095331								mzspec:MSV000095331:Group_2_medium_fast_T48_drug_mix_2_3			48.0	33	Group_2_medium_fast Drug_mix2
+MSV000095331/peak/mzML_3/Group_2_medium_fast_T48_drug_mix_2_1.mzML	Group_2_medium_fast_T48_drug_mix_2_1	MSV000095331								mzspec:MSV000095331:Group_2_medium_fast_T48_drug_mix_2_1			48.0	33	Group_2_medium_fast Drug_mix2
+MSV000095331/peak/mzML_3/Group_2_medium_fast_T48_drug_mix_2_2.mzML	Group_2_medium_fast_T48_drug_mix_2_2	MSV000095331								mzspec:MSV000095331:Group_2_medium_fast_T48_drug_mix_2_2			48.0	33	Group_2_medium_fast Drug_mix2
+MSV000095331/peak/mzML_3/Group_2_medium_fast_T0_drug_mix_2_1.mzML	Group_2_medium_fast_T0_drug_mix_2_1	MSV000095331								mzspec:MSV000095331:Group_2_medium_fast_T0_drug_mix_2_1			0.0	33	Group_2_medium_fast Drug_mix2
+MSV000095331/peak/mzML_3/Group_2_medium_fast_T48_drug_mix_3_3.mzML	Group_2_medium_fast_T48_drug_mix_3_3	MSV000095331								mzspec:MSV000095331:Group_2_medium_fast_T48_drug_mix_3_3			48.0	34	Group_2_medium_fast Drug_mix3
+MSV000095331/peak/mzML_3/Group_2_medium_fast_T0_drug_mix_3_1.mzML	Group_2_medium_fast_T0_drug_mix_3_1	MSV000095331								mzspec:MSV000095331:Group_2_medium_fast_T0_drug_mix_3_1			0.0	34	Group_2_medium_fast Drug_mix3
+MSV000095331/peak/mzML_3/Group_2_medium_fast_T48_drug_mix_3_2.mzML	Group_2_medium_fast_T48_drug_mix_3_2	MSV000095331								mzspec:MSV000095331:Group_2_medium_fast_T48_drug_mix_3_2			48.0	34	Group_2_medium_fast Drug_mix3
+MSV000095331/peak/mzML_3/Group_2_medium_fast_T48_drug_mix_3_1.mzML	Group_2_medium_fast_T48_drug_mix_3_1	MSV000095331								mzspec:MSV000095331:Group_2_medium_fast_T48_drug_mix_3_1			48.0	34	Group_2_medium_fast Drug_mix3
+MSV000095331/peak/mzML_3/Group_2_medium_fast_T0_drug_mix_3_2.mzML	Group_2_medium_fast_T0_drug_mix_3_2	MSV000095331								mzspec:MSV000095331:Group_2_medium_fast_T0_drug_mix_3_2			0.0	34	Group_2_medium_fast Drug_mix3
+MSV000095331/peak/mzML_3/Group_2_medium_fast_T0_drug_mix_3_3.mzML	Group_2_medium_fast_T0_drug_mix_3_3	MSV000095331								mzspec:MSV000095331:Group_2_medium_fast_T0_drug_mix_3_3			0.0	34	Group_2_medium_fast Drug_mix3
+MSV000095331/peak/mzML_3/Group_2_medium_fast_T0_drug_mix_4_1.mzML	Group_2_medium_fast_T0_drug_mix_4_1	MSV000095331								mzspec:MSV000095331:Group_2_medium_fast_T0_drug_mix_4_1			0.0	35	Group_2_medium_fast Drug_mix4
+MSV000095331/peak/mzML_3/Group_2_medium_fast_T0_drug_mix_4_2.mzML	Group_2_medium_fast_T0_drug_mix_4_2	MSV000095331								mzspec:MSV000095331:Group_2_medium_fast_T0_drug_mix_4_2			0.0	35	Group_2_medium_fast Drug_mix4
+MSV000095331/peak/mzML_3/Group_2_medium_fast_T48_drug_mix_4_3.mzML	Group_2_medium_fast_T48_drug_mix_4_3	MSV000095331								mzspec:MSV000095331:Group_2_medium_fast_T48_drug_mix_4_3			48.0	35	Group_2_medium_fast Drug_mix4
+MSV000095331/peak/mzML_3/Group_2_medium_fast_T48_drug_mix_4_1.mzML	Group_2_medium_fast_T48_drug_mix_4_1	MSV000095331								mzspec:MSV000095331:Group_2_medium_fast_T48_drug_mix_4_1			48.0	35	Group_2_medium_fast Drug_mix4
+MSV000095331/peak/mzML_3/Group_2_medium_fast_T48_drug_mix_4_2.mzML	Group_2_medium_fast_T48_drug_mix_4_2	MSV000095331								mzspec:MSV000095331:Group_2_medium_fast_T48_drug_mix_4_2			48.0	35	Group_2_medium_fast Drug_mix4
+MSV000095331/peak/mzML_3/Group_2_medium_fast_T0_drug_mix_4_3.mzML	Group_2_medium_fast_T0_drug_mix_4_3	MSV000095331								mzspec:MSV000095331:Group_2_medium_fast_T0_drug_mix_4_3			0.0	35	Group_2_medium_fast Drug_mix4
+MSV000095331/peak/mzML_3/Group_2_medium_fast_T48_drug_mix_5_2.mzML	Group_2_medium_fast_T48_drug_mix_5_2	MSV000095331								mzspec:MSV000095331:Group_2_medium_fast_T48_drug_mix_5_2			48.0	36	Group_2_medium_fast Drug_mix5
+MSV000095331/peak/mzML_3/Group_2_medium_fast_T0_drug_mix_5_2.mzML	Group_2_medium_fast_T0_drug_mix_5_2	MSV000095331								mzspec:MSV000095331:Group_2_medium_fast_T0_drug_mix_5_2			0.0	36	Group_2_medium_fast Drug_mix5
+MSV000095331/peak/mzML_3/Group_2_medium_fast_T0_drug_mix_5_3.mzML	Group_2_medium_fast_T0_drug_mix_5_3	MSV000095331								mzspec:MSV000095331:Group_2_medium_fast_T0_drug_mix_5_3			0.0	36	Group_2_medium_fast Drug_mix5
+MSV000095331/peak/mzML_3/Group_2_medium_fast_T0_drug_mix_5_1.mzML	Group_2_medium_fast_T0_drug_mix_5_1	MSV000095331								mzspec:MSV000095331:Group_2_medium_fast_T0_drug_mix_5_1			0.0	36	Group_2_medium_fast Drug_mix5
+MSV000095331/peak/mzML_3/Group_2_medium_fast_T48_drug_mix_5_1.mzML	Group_2_medium_fast_T48_drug_mix_5_1	MSV000095331								mzspec:MSV000095331:Group_2_medium_fast_T48_drug_mix_5_1			48.0	36	Group_2_medium_fast Drug_mix5
+MSV000095331/peak/mzML_3/Group_2_medium_fast_T48_drug_mix_5_3.mzML	Group_2_medium_fast_T48_drug_mix_5_3	MSV000095331								mzspec:MSV000095331:Group_2_medium_fast_T48_drug_mix_5_3			48.0	36	Group_2_medium_fast Drug_mix5
+MSV000095331/peak/mzML_3/Group_3_medium_slow_T72_drug_mix_1_1.mzML	Group_3_medium_slow_T72_drug_mix_1_1	MSV000095331								mzspec:MSV000095331:Group_3_medium_slow_T72_drug_mix_1_1			72.0	37	Group_3_medium_slow Drug_mix1
+MSV000095331/peak/mzML_3/Group_3_medium_slow_T0_drug_mix_1_3.mzML	Group_3_medium_slow_T0_drug_mix_1_3	MSV000095331								mzspec:MSV000095331:Group_3_medium_slow_T0_drug_mix_1_3			0.0	37	Group_3_medium_slow Drug_mix1
+MSV000095331/peak/mzML_3/Group_3_medium_slow_T72_drug_mix_1_3.mzML	Group_3_medium_slow_T72_drug_mix_1_3	MSV000095331								mzspec:MSV000095331:Group_3_medium_slow_T72_drug_mix_1_3			72.0	37	Group_3_medium_slow Drug_mix1
+MSV000095331/peak/mzML_3/Group_3_medium_slow_T0_drug_mix_1_2.mzML	Group_3_medium_slow_T0_drug_mix_1_2	MSV000095331								mzspec:MSV000095331:Group_3_medium_slow_T0_drug_mix_1_2			0.0	37	Group_3_medium_slow Drug_mix1
+MSV000095331/peak/mzML_3/Group_3_medium_slow_T72_drug_mix_1_2.mzML	Group_3_medium_slow_T72_drug_mix_1_2	MSV000095331								mzspec:MSV000095331:Group_3_medium_slow_T72_drug_mix_1_2			72.0	37	Group_3_medium_slow Drug_mix1
+MSV000095331/peak/mzML_3/Group_3_medium_slow_T0_drug_mix_1_1.mzML	Group_3_medium_slow_T0_drug_mix_1_1	MSV000095331								mzspec:MSV000095331:Group_3_medium_slow_T0_drug_mix_1_1			0.0	37	Group_3_medium_slow Drug_mix1
+MSV000095331/peak/mzML_3/Group_3_medium_slow_T0_drug_mix_2_3.mzML	Group_3_medium_slow_T0_drug_mix_2_3	MSV000095331								mzspec:MSV000095331:Group_3_medium_slow_T0_drug_mix_2_3			0.0	38	Group_3_medium_slow Drug_mix2
+MSV000095331/peak/mzML_3/Group_3_medium_slow_T72_drug_mix_2_1.mzML	Group_3_medium_slow_T72_drug_mix_2_1	MSV000095331								mzspec:MSV000095331:Group_3_medium_slow_T72_drug_mix_2_1			72.0	38	Group_3_medium_slow Drug_mix2
+MSV000095331/peak/mzML_3/Group_3_medium_slow_T72_drug_mix_2_2.mzML	Group_3_medium_slow_T72_drug_mix_2_2	MSV000095331								mzspec:MSV000095331:Group_3_medium_slow_T72_drug_mix_2_2			72.0	38	Group_3_medium_slow Drug_mix2
+MSV000095331/peak/mzML_3/Group_3_medium_slow_T0_drug_mix_2_2.mzML	Group_3_medium_slow_T0_drug_mix_2_2	MSV000095331								mzspec:MSV000095331:Group_3_medium_slow_T0_drug_mix_2_2			0.0	38	Group_3_medium_slow Drug_mix2
+MSV000095331/peak/mzML_3/Group_3_medium_slow_T72_drug_mix_2_3.mzML	Group_3_medium_slow_T72_drug_mix_2_3	MSV000095331								mzspec:MSV000095331:Group_3_medium_slow_T72_drug_mix_2_3			72.0	38	Group_3_medium_slow Drug_mix2
+MSV000095331/peak/mzML_3/Group_3_medium_slow_T0_drug_mix_2_1.mzML	Group_3_medium_slow_T0_drug_mix_2_1	MSV000095331								mzspec:MSV000095331:Group_3_medium_slow_T0_drug_mix_2_1			0.0	38	Group_3_medium_slow Drug_mix2
+MSV000095331/peak/mzML_3/Group_3_medium_slow_T72_drug_mix_3_3.mzML	Group_3_medium_slow_T72_drug_mix_3_3	MSV000095331								mzspec:MSV000095331:Group_3_medium_slow_T72_drug_mix_3_3			72.0	39	Group_3_medium_slow Drug_mix3
+MSV000095331/peak/mzML_3/Group_3_medium_slow_T72_drug_mix_3_2.mzML	Group_3_medium_slow_T72_drug_mix_3_2	MSV000095331								mzspec:MSV000095331:Group_3_medium_slow_T72_drug_mix_3_2			72.0	39	Group_3_medium_slow Drug_mix3
+MSV000095331/peak/mzML_3/Group_3_medium_slow_T0_drug_mix_3_1.mzML	Group_3_medium_slow_T0_drug_mix_3_1	MSV000095331								mzspec:MSV000095331:Group_3_medium_slow_T0_drug_mix_3_1			0.0	39	Group_3_medium_slow Drug_mix3
+MSV000095331/peak/mzML_3/Group_3_medium_slow_T0_drug_mix_3_2.mzML	Group_3_medium_slow_T0_drug_mix_3_2	MSV000095331								mzspec:MSV000095331:Group_3_medium_slow_T0_drug_mix_3_2			0.0	39	Group_3_medium_slow Drug_mix3
+MSV000095331/peak/mzML_3/Group_3_medium_slow_T72_drug_mix_3_1.mzML	Group_3_medium_slow_T72_drug_mix_3_1	MSV000095331								mzspec:MSV000095331:Group_3_medium_slow_T72_drug_mix_3_1			72.0	39	Group_3_medium_slow Drug_mix3
+MSV000095331/peak/mzML_3/Group_3_medium_slow_T0_drug_mix_3_3.mzML	Group_3_medium_slow_T0_drug_mix_3_3	MSV000095331								mzspec:MSV000095331:Group_3_medium_slow_T0_drug_mix_3_3			0.0	39	Group_3_medium_slow Drug_mix3
+MSV000095331/peak/mzML_3/Group_3_medium_slow_T0_drug_mix_4_3.mzML	Group_3_medium_slow_T0_drug_mix_4_3	MSV000095331								mzspec:MSV000095331:Group_3_medium_slow_T0_drug_mix_4_3			0.0	40	Group_3_medium_slow Drug_mix4
+MSV000095331/peak/mzML_3/Group_3_medium_slow_T0_drug_mix_4_2.mzML	Group_3_medium_slow_T0_drug_mix_4_2	MSV000095331								mzspec:MSV000095331:Group_3_medium_slow_T0_drug_mix_4_2			0.0	40	Group_3_medium_slow Drug_mix4
+MSV000095331/peak/mzML_3/Group_3_medium_slow_T72_drug_mix_4_1.mzML	Group_3_medium_slow_T72_drug_mix_4_1	MSV000095331								mzspec:MSV000095331:Group_3_medium_slow_T72_drug_mix_4_1			72.0	40	Group_3_medium_slow Drug_mix4
+MSV000095331/peak/mzML_3/Group_3_medium_slow_T0_drug_mix_4_1.mzML	Group_3_medium_slow_T0_drug_mix_4_1	MSV000095331								mzspec:MSV000095331:Group_3_medium_slow_T0_drug_mix_4_1			0.0	40	Group_3_medium_slow Drug_mix4
+MSV000095331/peak/mzML_3/Group_3_medium_slow_T72_drug_mix_4_2.mzML	Group_3_medium_slow_T72_drug_mix_4_2	MSV000095331								mzspec:MSV000095331:Group_3_medium_slow_T72_drug_mix_4_2			72.0	40	Group_3_medium_slow Drug_mix4
+MSV000095331/peak/mzML_3/Group_3_medium_slow_T72_drug_mix_4_3.mzML	Group_3_medium_slow_T72_drug_mix_4_3	MSV000095331								mzspec:MSV000095331:Group_3_medium_slow_T72_drug_mix_4_3			72.0	40	Group_3_medium_slow Drug_mix4
+MSV000095331/peak/mzML_3/Group_3_medium_slow_T0_drug_mix_5_3.mzML	Group_3_medium_slow_T0_drug_mix_5_3	MSV000095331								mzspec:MSV000095331:Group_3_medium_slow_T0_drug_mix_5_3			0.0	41	Group_3_medium_slow Drug_mix5
+MSV000095331/peak/mzML_3/Group_3_medium_slow_T0_drug_mix_5_1.mzML	Group_3_medium_slow_T0_drug_mix_5_1	MSV000095331								mzspec:MSV000095331:Group_3_medium_slow_T0_drug_mix_5_1			0.0	41	Group_3_medium_slow Drug_mix5
+MSV000095331/peak/mzML_3/Group_3_medium_slow_T72_drug_mix_5_2.mzML	Group_3_medium_slow_T72_drug_mix_5_2	MSV000095331								mzspec:MSV000095331:Group_3_medium_slow_T72_drug_mix_5_2			72.0	41	Group_3_medium_slow Drug_mix5
+MSV000095331/peak/mzML_3/Group_3_medium_slow_T72_drug_mix_5_1.mzML	Group_3_medium_slow_T72_drug_mix_5_1	MSV000095331								mzspec:MSV000095331:Group_3_medium_slow_T72_drug_mix_5_1			72.0	41	Group_3_medium_slow Drug_mix5
+MSV000095331/peak/mzML_3/Group_3_medium_slow_T72_drug_mix_5_3.mzML	Group_3_medium_slow_T72_drug_mix_5_3	MSV000095331								mzspec:MSV000095331:Group_3_medium_slow_T72_drug_mix_5_3			72.0	41	Group_3_medium_slow Drug_mix5
+MSV000095331/peak/mzML_3/Group_3_medium_slow_T0_drug_mix_5_2.mzML	Group_3_medium_slow_T0_drug_mix_5_2	MSV000095331								mzspec:MSV000095331:Group_3_medium_slow_T0_drug_mix_5_2			0.0	41	Group_3_medium_slow Drug_mix5
+MSV000095331/peak/mzML_3/Group_4_slow_T72_drug_mix_1_2.mzML	Group_4_slow_T72_drug_mix_1_2	MSV000095331								mzspec:MSV000095331:Group_4_slow_T72_drug_mix_1_2			72.0	42	Group_4_slow Drug_mix1
+MSV000095331/peak/mzML_3/Group_4_slow_T72_drug_mix_1_1.mzML	Group_4_slow_T72_drug_mix_1_1	MSV000095331								mzspec:MSV000095331:Group_4_slow_T72_drug_mix_1_1			72.0	42	Group_4_slow Drug_mix1
+MSV000095331/peak/mzML_3/Group_4_slow_T72_drug_mix_1_3.mzML	Group_4_slow_T72_drug_mix_1_3	MSV000095331								mzspec:MSV000095331:Group_4_slow_T72_drug_mix_1_3			72.0	42	Group_4_slow Drug_mix1
+MSV000095331/peak/mzML_3/Group_4_slow_T0_drug_mix_1_2.mzML	Group_4_slow_T0_drug_mix_1_2	MSV000095331								mzspec:MSV000095331:Group_4_slow_T0_drug_mix_1_2			0.0	42	Group_4_slow Drug_mix1
+MSV000095331/peak/mzML_3/Group_4_slow_T0_drug_mix_1_3.mzML	Group_4_slow_T0_drug_mix_1_3	MSV000095331								mzspec:MSV000095331:Group_4_slow_T0_drug_mix_1_3			0.0	42	Group_4_slow Drug_mix1
+MSV000095331/peak/mzML_3/Group_4_slow_T0_drug_mix_1_1.mzML	Group_4_slow_T0_drug_mix_1_1	MSV000095331								mzspec:MSV000095331:Group_4_slow_T0_drug_mix_1_1			0.0	42	Group_4_slow Drug_mix1
+MSV000095331/peak/mzML_3/Group_4_slow_T0_drug_mix_2_1.mzML	Group_4_slow_T0_drug_mix_2_1	MSV000095331								mzspec:MSV000095331:Group_4_slow_T0_drug_mix_2_1			0.0	43	Group_4_slow Drug_mix2
+MSV000095331/peak/mzML_3/Group_4_slow_T0_drug_mix_2_3.mzML	Group_4_slow_T0_drug_mix_2_3	MSV000095331								mzspec:MSV000095331:Group_4_slow_T0_drug_mix_2_3			0.0	43	Group_4_slow Drug_mix2
+MSV000095331/peak/mzML_3/Group_4_slow_T72_drug_mix_2_3.mzML	Group_4_slow_T72_drug_mix_2_3	MSV000095331								mzspec:MSV000095331:Group_4_slow_T72_drug_mix_2_3			72.0	43	Group_4_slow Drug_mix2
+MSV000095331/peak/mzML_3/Group_4_slow_T72_drug_mix_2_2.mzML	Group_4_slow_T72_drug_mix_2_2	MSV000095331								mzspec:MSV000095331:Group_4_slow_T72_drug_mix_2_2			72.0	43	Group_4_slow Drug_mix2
+MSV000095331/peak/mzML_3/Group_4_slow_T72_drug_mix_2_1.mzML	Group_4_slow_T72_drug_mix_2_1	MSV000095331								mzspec:MSV000095331:Group_4_slow_T72_drug_mix_2_1			72.0	43	Group_4_slow Drug_mix2
+MSV000095331/peak/mzML_3/Group_4_slow_T0_drug_mix_2_2.mzML	Group_4_slow_T0_drug_mix_2_2	MSV000095331								mzspec:MSV000095331:Group_4_slow_T0_drug_mix_2_2			0.0	43	Group_4_slow Drug_mix2
+MSV000095331/peak/mzML_3/Group_4_slow_T72_drug_mix_3_2.mzML	Group_4_slow_T72_drug_mix_3_2	MSV000095331								mzspec:MSV000095331:Group_4_slow_T72_drug_mix_3_2			72.0	44	Group_4_slow Drug_mix3
+MSV000095331/peak/mzML_3/Group_4_slow_T0_drug_mix_3_2.mzML	Group_4_slow_T0_drug_mix_3_2	MSV000095331								mzspec:MSV000095331:Group_4_slow_T0_drug_mix_3_2			0.0	44	Group_4_slow Drug_mix3
+MSV000095331/peak/mzML_3/Group_4_slow_T0_drug_mix_3_1.mzML	Group_4_slow_T0_drug_mix_3_1	MSV000095331								mzspec:MSV000095331:Group_4_slow_T0_drug_mix_3_1			0.0	44	Group_4_slow Drug_mix3
+MSV000095331/peak/mzML_3/Group_4_slow_T72_drug_mix_3_3.mzML	Group_4_slow_T72_drug_mix_3_3	MSV000095331								mzspec:MSV000095331:Group_4_slow_T72_drug_mix_3_3			72.0	44	Group_4_slow Drug_mix3
+MSV000095331/peak/mzML_3/Group_4_slow_T72_drug_mix_3_1.mzML	Group_4_slow_T72_drug_mix_3_1	MSV000095331								mzspec:MSV000095331:Group_4_slow_T72_drug_mix_3_1			72.0	44	Group_4_slow Drug_mix3
+MSV000095331/peak/mzML_3/Group_4_slow_T0_drug_mix_3_3.mzML	Group_4_slow_T0_drug_mix_3_3	MSV000095331								mzspec:MSV000095331:Group_4_slow_T0_drug_mix_3_3			0.0	44	Group_4_slow Drug_mix3
+MSV000095331/peak/mzML_3/Group_4_slow_T0_drug_mix_4_2.mzML	Group_4_slow_T0_drug_mix_4_2	MSV000095331								mzspec:MSV000095331:Group_4_slow_T0_drug_mix_4_2			0.0	45	Group_4_slow Drug_mix4
+MSV000095331/peak/mzML_3/Group_4_slow_T72_drug_mix_4_3.mzML	Group_4_slow_T72_drug_mix_4_3	MSV000095331								mzspec:MSV000095331:Group_4_slow_T72_drug_mix_4_3			72.0	45	Group_4_slow Drug_mix4
+MSV000095331/peak/mzML_3/Group_4_slow_T0_drug_mix_4_3.mzML	Group_4_slow_T0_drug_mix_4_3	MSV000095331								mzspec:MSV000095331:Group_4_slow_T0_drug_mix_4_3			0.0	45	Group_4_slow Drug_mix4
+MSV000095331/peak/mzML_3/Group_4_slow_T72_drug_mix_4_1.mzML	Group_4_slow_T72_drug_mix_4_1	MSV000095331								mzspec:MSV000095331:Group_4_slow_T72_drug_mix_4_1			72.0	45	Group_4_slow Drug_mix4
+MSV000095331/peak/mzML_3/Group_4_slow_T0_drug_mix_4_1.mzML	Group_4_slow_T0_drug_mix_4_1	MSV000095331								mzspec:MSV000095331:Group_4_slow_T0_drug_mix_4_1			0.0	45	Group_4_slow Drug_mix4
+MSV000095331/peak/mzML_3/Group_4_slow_T72_drug_mix_4_2.mzML	Group_4_slow_T72_drug_mix_4_2	MSV000095331								mzspec:MSV000095331:Group_4_slow_T72_drug_mix_4_2			72.0	45	Group_4_slow Drug_mix4
+MSV000095331/peak/mzML_3/Group_4_slow_T72_drug_mix_5_1.mzML	Group_4_slow_T72_drug_mix_5_1	MSV000095331								mzspec:MSV000095331:Group_4_slow_T72_drug_mix_5_1			72.0	46	Group_4_slow Drug_mix5
+MSV000095331/peak/mzML_3/Group_4_slow_T0_drug_mix_5_2.mzML	Group_4_slow_T0_drug_mix_5_2	MSV000095331								mzspec:MSV000095331:Group_4_slow_T0_drug_mix_5_2			0.0	46	Group_4_slow Drug_mix5
+MSV000095331/peak/mzML_3/Group_4_slow_T72_drug_mix_5_2.mzML	Group_4_slow_T72_drug_mix_5_2	MSV000095331								mzspec:MSV000095331:Group_4_slow_T72_drug_mix_5_2			72.0	46	Group_4_slow Drug_mix5
+MSV000095331/peak/mzML_3/Group_4_slow_T0_drug_mix_5_3.mzML	Group_4_slow_T0_drug_mix_5_3	MSV000095331								mzspec:MSV000095331:Group_4_slow_T0_drug_mix_5_3			0.0	46	Group_4_slow Drug_mix5
+MSV000095331/peak/mzML_3/Group_4_slow_T0_drug_mix_5_1.mzML	Group_4_slow_T0_drug_mix_5_1	MSV000095331								mzspec:MSV000095331:Group_4_slow_T0_drug_mix_5_1			0.0	46	Group_4_slow Drug_mix5
+MSV000095331/peak/mzML_3/Group_4_slow_T72_drug_mix_5_3.mzML	Group_4_slow_T72_drug_mix_5_3	MSV000095331								mzspec:MSV000095331:Group_4_slow_T72_drug_mix_5_3			72.0	46	Group_4_slow Drug_mix5

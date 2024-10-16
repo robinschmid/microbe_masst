@@ -1,0 +1,379 @@
+{
+    "ID": "1",
+    "duplication": "Y",
+    "type": "node",
+    "name": "Root",
+    "group_size": 180,
+    "children": [
+        {
+            "ID": "2",
+            "duplication": "Y",
+            "type": "node",
+            "name": "Defined Community",
+            "group_size": 180,
+            "children": [
+                {
+                    "ID": "4",
+                    "duplication": "Y",
+                    "type": "node",
+                    "name": "Animal",
+                    "group_size": 180,
+                    "children": [
+                        {
+                            "ID": "6",
+                            "duplication": "Y",
+                            "type": "node",
+                            "name": "Skin",
+                            "group_size": 0,
+                            "children": []
+                        },
+                        {
+                            "ID": "7",
+                            "duplication": "Y",
+                            "type": "node",
+                            "name": "Feces",
+                            "group_size": 180,
+                            "children": [
+                                {
+                                    "ID": "11",
+                                    "duplication": "Y",
+                                    "type": "node",
+                                    "name": "Full SynCom",
+                                    "group_size": 30,
+                                    "children": [
+                                        {
+                                            "ID": "17",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Full SynCom Drug_mix1",
+                                            "group_size": 6,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "18",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Full SynCom Drug_mix2",
+                                            "group_size": 6,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "19",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Full SynCom Drug_mix3",
+                                            "group_size": 6,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "20",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Full SynCom Drug_mix4",
+                                            "group_size": 6,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "21",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Full SynCom Drug_mix5",
+                                            "group_size": 6,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "ID": "12",
+                                    "duplication": "Y",
+                                    "type": "node",
+                                    "name": "Syncom_red",
+                                    "group_size": 30,
+                                    "children": [
+                                        {
+                                            "ID": "22",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Syncom_red Drug_mix1",
+                                            "group_size": 6,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "23",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Syncom_red Drug_mix2",
+                                            "group_size": 6,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "24",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Syncom_red Drug_mix3",
+                                            "group_size": 6,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "25",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Syncom_red Drug_mix4",
+                                            "group_size": 6,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "26",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Syncom_red Drug_mix5",
+                                            "group_size": 6,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "ID": "13",
+                                    "duplication": "Y",
+                                    "type": "node",
+                                    "name": "Group_1_fast",
+                                    "group_size": 30,
+                                    "children": [
+                                        {
+                                            "ID": "27",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Group_1_fast Drug_mix1",
+                                            "group_size": 6,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "28",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Group_1_fast Drug_mix2",
+                                            "group_size": 6,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "29",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Group_1_fast Drug_mix3",
+                                            "group_size": 6,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "30",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Group_1_fast Drug_mix4",
+                                            "group_size": 6,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "31",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Group_1_fast Drug_mix5",
+                                            "group_size": 6,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "ID": "14",
+                                    "duplication": "Y",
+                                    "type": "node",
+                                    "name": "Group_2_medium_fast",
+                                    "group_size": 30,
+                                    "children": [
+                                        {
+                                            "ID": "32",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Group_2_medium_fast Drug_mix1",
+                                            "group_size": 6,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "33",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Group_2_medium_fast Drug_mix2",
+                                            "group_size": 6,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "34",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Group_2_medium_fast Drug_mix3",
+                                            "group_size": 6,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "35",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Group_2_medium_fast Drug_mix4",
+                                            "group_size": 6,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "36",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Group_2_medium_fast Drug_mix5",
+                                            "group_size": 6,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "ID": "15",
+                                    "duplication": "Y",
+                                    "type": "node",
+                                    "name": "Group_3_medium_slow",
+                                    "group_size": 30,
+                                    "children": [
+                                        {
+                                            "ID": "37",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Group_3_medium_slow Drug_mix1",
+                                            "group_size": 6,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "38",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Group_3_medium_slow Drug_mix2",
+                                            "group_size": 6,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "39",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Group_3_medium_slow Drug_mix3",
+                                            "group_size": 6,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "40",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Group_3_medium_slow Drug_mix4",
+                                            "group_size": 6,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "41",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Group_3_medium_slow Drug_mix5",
+                                            "group_size": 6,
+                                            "children": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "ID": "16",
+                                    "duplication": "Y",
+                                    "type": "node",
+                                    "name": "Group_4_slow",
+                                    "group_size": 30,
+                                    "children": [
+                                        {
+                                            "ID": "42",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Group_4_slow Drug_mix1",
+                                            "group_size": 6,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "43",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Group_4_slow Drug_mix2",
+                                            "group_size": 6,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "44",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Group_4_slow Drug_mix3",
+                                            "group_size": 6,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "45",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Group_4_slow Drug_mix4",
+                                            "group_size": 6,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "46",
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Group_4_slow Drug_mix5",
+                                            "group_size": 6,
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "ID": "8",
+                            "duplication": "Y",
+                            "type": "node",
+                            "name": "Urine",
+                            "group_size": 0,
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "ID": "5",
+                    "duplication": "Y",
+                    "type": "node",
+                    "name": "Plant",
+                    "group_size": 0,
+                    "children": [
+                        {
+                            "ID": "9",
+                            "duplication": "Y",
+                            "type": "node",
+                            "name": "Rhizosphere",
+                            "group_size": 0,
+                            "children": []
+                        },
+                        {
+                            "ID": "10",
+                            "duplication": "Y",
+                            "type": "node",
+                            "name": "Phyllosphere",
+                            "group_size": 0,
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "ID": "3",
+            "duplication": "Y",
+            "type": "node",
+            "name": "Undefined Community",
+            "group_size": 0,
+            "children": []
+        }
+    ]
+}
