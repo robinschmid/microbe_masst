@@ -30,6 +30,7 @@ def prepare_tree_df():
     tree_df = pd.read_csv('tree_df.tsv', sep='\t')
     tree_df['ID'] = tree_df['ID'].astype(int)
     tree_df['Parent_ID'] = tree_df['Parent_ID'].fillna(-1).astype(int)
+    tree_df['node_name'] = tree_df.apply(lambda x: x['SampleType'] + ' [' + str(x['Interventions']) + ']' if pd.notnull(x['Interventions']) else x['SampleType'], axis=1)
 
     # read metadata df
     file_info = pd.read_csv('file_info.tsv', sep='\t')
@@ -46,7 +47,7 @@ def prepare_tree_df():
 
     # Function to recursively calculate group size
     def calculate_group_size(node_id, id_counts):
-        node = tree_df[tree_df['ID'] == node_id].iloc[0]
+        # node = tree_df[tree_df['ID'] == node_id].iloc[0]
         children = tree_df[tree_df['Parent_ID'] == node_id]
 
         if children.empty:  # Leaf node
@@ -86,7 +87,7 @@ def build_tree_from_tsv_and_write_json(output_file_path):
                 "ID": str(child['ID']),
                 "duplication": "Y",
                 "type": "node",
-                "name": str(child['SampleType']),
+                "name": str(child['node_name']),
                 "group_size": int(child['Group_Size']),
                 "children": build_tree(df, child['ID'])
             }
