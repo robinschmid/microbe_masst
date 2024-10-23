@@ -13,7 +13,8 @@ def main():
     # read tree df
     tree_df = pd.read_csv('tree_df.tsv', sep='\t')
     tree_df['ID'] = tree_df['ID'].astype(int)
-    tree_df['node_name'] = tree_df.apply(lambda x: x['SampleType'] + ' [' + str(x['Interventions']) + ']' if pd.notnull(x['Interventions']) else x['SampleType'], axis=1)
+    # tree_df['node_name'] = tree_df.apply(lambda x: x['SampleType'] + ' [' + str(x['Interventions']) + ']' if pd.notnull(x['Interventions']) else x['SampleType'], axis=1)
+    tree_df['node_name'] = tree_df['SampleType']
 
     ### All mzML files should be linked to the lowest leaf nodes
     # remove files with IDs not in the lowest leaf nodes

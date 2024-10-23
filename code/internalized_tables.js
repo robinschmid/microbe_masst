@@ -25,6 +25,7 @@ function getFullMatches() {
             entry["Name"] = node.name ?? "";
             entry["NCBI"] = node.NCBI ?? "";
             entry["Rank"] = node.Rank ?? "";
+            entry["Interventions"] = node.Interventions ?? "";
             entry["Matches"] = node.matched_size;
             entry["Samples"] = node.group_size;
             try {
@@ -56,6 +57,7 @@ function getMatchedDatasets() {
                 entry["Name"] = node.name ?? "";
                 entry["NCBI"] = node.NCBI ?? "";
                 entry["Rank"] = node.Rank ?? "";
+                entry["Interventions"] = node.Interventions ?? "";
                 entry["Cosine"] = match["Cosine"] ?? "";
                 entry["Matching signals"] = match["Matching Peaks"] ?? "";
                 entry["USI"] = match["USI"] ?? "";

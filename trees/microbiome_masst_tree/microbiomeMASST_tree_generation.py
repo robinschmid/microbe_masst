@@ -30,7 +30,8 @@ def prepare_tree_df():
     tree_df = pd.read_csv('tree_df.tsv', sep='\t')
     tree_df['ID'] = tree_df['ID'].astype(int)
     tree_df['Parent_ID'] = tree_df['Parent_ID'].fillna(-1).astype(int)
-    tree_df['node_name'] = tree_df.apply(lambda x: x['SampleType'] + ' [' + str(x['Interventions']) + ']' if pd.notnull(x['Interventions']) else x['SampleType'], axis=1)
+    # tree_df['node_name'] = tree_df.apply(lambda x: x['SampleType'] + ' [' + str(x['Interventions']) + ']' if pd.notnull(x['Interventions']) else x['SampleType'], axis=1)
+    tree_df['node_name'] = tree_df['SampleType']
 
     # read metadata df
     file_info = pd.read_csv('file_info.tsv', sep='\t')
@@ -85,6 +86,8 @@ def build_tree_from_tsv_and_write_json(output_file_path):
         for _, child in children.iterrows():
             child_node = {
                 "ID": str(child['ID']),
+                "NCBI": str(child['Community_composition']) if pd.notnull(child['Community_composition']) else "NA",
+                "Interventions": str(child['Interventions']) if pd.notnull(child['Interventions']) else "NA",
                 "duplication": "Y",
                 "type": "node",
                 "name": str(child['node_name']),
