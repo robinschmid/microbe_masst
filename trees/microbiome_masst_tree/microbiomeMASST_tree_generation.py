@@ -86,8 +86,8 @@ def build_tree_from_tsv_and_write_json(output_file_path):
         for _, child in children.iterrows():
             child_node = {
                 "ID": str(child['ID']),
-                "NCBI": str(child['Community_composition']) if pd.notnull(child['Community_composition']) else "NA",
-                "Interventions": str(child['Interventions']) if pd.notnull(child['Interventions']) else "NA",
+                "NCBI": str(child['Community_composition']) if pd.notnull(child['Community_composition']) else None,
+                "Interventions": str(child['Interventions']) if pd.notnull(child['Interventions']) else None,
                 "duplication": "Y",
                 "type": "node",
                 "name": str(child['node_name']),
