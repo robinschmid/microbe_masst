@@ -106,11 +106,11 @@ def process_matches(
         compress_out_html=True,
     )
 
-    # globalMASST
-    logger.debug("Exporting globalMASST %s", compound_name)
+    # tissueMASST
+    logger.debug("Exporting tissueMASST %s", compound_name)
     create_enriched_masst_tree(
         matches_df,
-        masst.GLOBAL_MASST,
+        masst.TISSUE_MASST,
         common_file=common_file,
         lib_match_json=lib_match_json,
         input_str=input_label,

@@ -70,7 +70,7 @@ var combinedPieColorsDict = {
     "food": [combinedMatchColor, "gold"], // FFD700
     "personal care product": [combinedMatchColor, "#E8BAD8"],
     "microbes": [combinedMatchColor, "#BF2C84"],
-    "global": [combinedMatchColor, "#3391c1"],
+    "tissue": [combinedMatchColor, "#3391c1"],
     "microbiome": [combinedMatchColor, "#F08976"]
 };
 

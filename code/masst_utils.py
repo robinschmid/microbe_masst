@@ -48,11 +48,11 @@ PLANT_MASST = SpecialMasst(
     tree_node_key="NCBI",
     metadata_key="Taxa_NCBI",
 )
-GLOBAL_MASST = SpecialMasst(
-    prefix="global",
-    root="global",
-    tree_file="../data/global_masst_tree.json",
-    metadata_file="../data/global_masst_table.csv",
+TISSUE_MASST = SpecialMasst(
+    prefix="tissue",
+    root="tissue",
+    tree_file="../data/tissue_masst_tree.json",
+    metadata_file="../data/tissue_masst_table.csv",
     tree_node_key="ID",
     metadata_key="ID",
 )
@@ -74,7 +74,7 @@ MICROBIOME_MASST = SpecialMasst(
 )
 
 URL = "https://fasst.gnps2.org/search"
-SPECIAL_MASSTS = [FOOD_MASST, MICROBE_MASST, PLANT_MASST, GLOBAL_MASST, PERSONALCAREPRODUCT_MASST, MICROBIOME_MASST]
+SPECIAL_MASSTS = [FOOD_MASST, MICROBE_MASST, PLANT_MASST, TISSUE_MASST, PERSONALCAREPRODUCT_MASST, MICROBIOME_MASST]
 
 
 class DataBase(Enum):
