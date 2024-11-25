@@ -10,7 +10,7 @@ unique_ncbi <- data %>% distinct(Taxa_NCBI) %>% dplyr::filter(Taxa_NCBI != "QC")
 unique_ncbi$Taxa_NCBI <- as.numeric(unique_ncbi$Taxa_NCBI)
 
 # Classify nodes tree
-Sys.setenv(ENTREZ_KEY = "1fe3926142adbdbca5c501c115ffe8698f09")
+Sys.setenv(ENTREZ_KEY = "add_your_key")
 
 plant_lineage <- classification(unique_ncbi$Taxa_NCBI, db = 'ncbi', batch_size = 4) # it is slow and can return HTTP error
 plant_lineage_df <- do.call(rbind, plant_lineage) %>% distinct(id, .keep_all = TRUE)
