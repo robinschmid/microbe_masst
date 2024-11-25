@@ -70,51 +70,31 @@ def sort_metadata_rows(df):
 if __name__ == "__main__":
     # parsing the arguments (all optional)
     parser = argparse.ArgumentParser(description="Update metadata file and check")
-    # parser.add_argument(
-    #    "--metadata_file",
-    #    type=str,
-    #    help="input metadata table",
-    #    default="../data/plant_masst_table.csv",
-    #    #default="../data/microbe_masst_table.csv",
-    # )
-    # parser.add_argument(
-    #    "--output_file",
-    #    type=str,
-    #    help="output metadata table",
-    #    default="../data/plant_masst_table.csv",
-    #    #default="../data/microbe_masst_table.csv",
-    # )
+    # microbemasst
+    # parser.add_argument("--metadata_file", type=str, help="input metadata table",
+    #                     default="../data/microbe_masst_table.csv")
+    # parser.add_argument("--output_file", type=str, help="output metadata table",
+    #                     default="../data/microbe_masst_table.csv")
     # foodmasst
     # parser.add_argument('--metadata_file', type=str, help='input masst metadata',
     #                     default="../data/food_masst_table.csv")
     # parser.add_argument('--output_file', type=str, help='output masst metadata',
     #                     default="../data/food_masst_table.csv")
-    # globalmasst
-    # parser.add_argument(
-    #     "--metadata_file",
-    #     type=str,
-    #     help="input masst metadata",
-    #     default="../data/global_masst_table.csv",
-    # )
-    # parser.add_argument(
-    #     "--output_file",
-    #     type=str,
-    #     help="output masst metadata",
-    #     default="../data/global_masst_table.csv",
-    # )
-    # care product
-    parser.add_argument(
-        "--metadata_file",
-        type=str,
-        help="input masst metadata",
-        default="../data/personalCareProduct_masst_table.csv",
-    )
-    parser.add_argument(
-        "--output_file",
-        type=str,
-        help="output masst metadata",
-        default="../data/personalCareProduct_masst_table2.csv",
-    )
+    # plantmasst
+    parser.add_argument("--metadata_file", type=str, help="input masst metadata",
+                         default="../data/plant_masst_table.csv")
+    parser.add_argument("--output_file", type=str, help="output masst metadata",
+                         default="../data/plant_masst_table1.csv")
+    # tissuemasst
+    #parser.add_argument("--metadata_file", type=str, help="input masst metadata",
+    #                     default="../data/tissue_masst_table.csv")
+    #parser.add_argument("--output_file", type=str, help="output masst metadata",
+    #                     default="../data/tissue_masst_table1.csv")
+    # personalCareProductmasst
+    #parser.add_argument("--metadata_file", type=str, help="input masst metadata", \
+    #                    default="../data/personalCareProduct_masst_table.csv")
+    #parser.add_argument("--output_file", type=str, help="output masst metadata",
+    #                    default="../data/personalCareProduct_masst_table2.csv")
     args = parser.parse_args()
 
     try:
