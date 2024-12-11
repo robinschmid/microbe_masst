@@ -5,22 +5,25 @@ library(jsonlite)
 library(taxize)
 library(ggpubr)
 
-# Read latest ReDU file (downloaded on 25 Nov 2024)
-redu <- read.delim("ReDU_Nov24.tsv") #681,434 files
+# Read latest ReDU file (downloaded on 1 Dec 2024)
+redu <- read.delim("ReDU_Dec24.tsv") #687,585 files
 
 # Keep only samples with MSMS data obtained from humans, mice, or rats
 model_datasets <- redu %>% 
   dplyr::filter(str_detect(pattern = "Homo|Mus|Rat", NCBITaxonomy)) %>%
+  dplyr::filter(str_detect(pattern = "10088|10090|10095|10114|10116|1383439|63221|9606", NCBITaxonomy)) %>%
   distinct(ATTRIBUTE_DatasetAccession) %>% 
-  arrange(desc(ATTRIBUTE_DatasetAccession)) #1,669 datasets
+  arrange(desc(ATTRIBUTE_DatasetAccession)) #1,667 datasets
 
 redu_filter <- redu %>% 
-  dplyr::filter(MS2spectra_count > 0) %>% #135,258 files
-  dplyr::filter(ATTRIBUTE_DatasetAccession %in% model_datasets$ATTRIBUTE_DatasetAccession) %>% #54,807 files
+  dplyr::filter(MS2spectra_count > 0) %>% #138,767 files
+  dplyr::filter(ATTRIBUTE_DatasetAccession %in% model_datasets$ATTRIBUTE_DatasetAccession) %>% #48,615 files
   dplyr::filter(SampleTypeSub1 %in% c("biofluid", "blank_analysis", "blank_extraction", "blank_QC", 
-                                      "missing value", "tissue")) %>% #53,787 files
-  dplyr::filter(SampleType %in% c("animal", "blank_analysis", "blank_extraction", "blank_QC", "missing value")) %>% #48,225 files
-  dplyr::filter(str_detect(pattern = "9606|10088|10090|10116|10095|10114|63221|missing", NCBITaxonomy)) #45,876 files
+                                      "missing value", "tissue")) %>% #47,595 files
+  dplyr::filter(SampleType %in% c("animal", "blank_analysis", "blank_extraction", "blank_QC", "missing value")) %>% #47,585 files
+  dplyr::filter(!(str_detect(pattern = "gas", ChromatographyAndPhase))) %>%
+  dplyr::filter(str_detect(pattern = "mzML|mzXML", filename)) %>%
+  dplyr::filter(str_detect(pattern = "10088|10090|10095|10114|10116|1383439|63221|9606|missing", NCBITaxonomy)) #45,065 files
 
 tissuemasst <- redu_filter %>% dplyr::select(filename, ATTRIBUTE_DatasetAccession, SampleType, SampleTypeSub1,
                                              UBERONBodyPartName, HealthStatus, DOIDCommonName, NCBITaxonomy, 
@@ -57,13 +60,13 @@ tissuemasst <- redu_filter %>% dplyr::select(filename, ATTRIBUTE_DatasetAccessio
                                       TRUE ~ LifeStage)) %>%
   dplyr::mutate(ID = paste(UBERONBodyPartName, DOIDCommonName, NCBITaxonomy, BiologicalSex, LifeStage, sep = "_"))
 
-check <- tissuemasst %>% group_by(DOIDCommonName) %>% summarise(count = n()) %>% arrange(desc(count))
+check <- tissuemasst %>% group_by(NCBITaxonomy) %>% summarise(count = n()) %>% arrange(desc(count))
 
-write_csv(tissuemasst, "tissue_masst_table.csv")
+#write_csv(tissuemasst, "tissue_masst_table.csv")
 
 leaf_count <- tissuemasst %>% 
   group_by(UBERONBodyPartName, DOIDCommonName, NCBITaxonomy, BiologicalSex, LifeStage) %>%
   summarise(count = n()) %>% arrange(desc(count)) %>%
   dplyr::mutate(ID = paste(UBERONBodyPartName, DOIDCommonName, NCBITaxonomy, BiologicalSex, LifeStage, sep = "_"))
 
-write.csv(leaf_count, "tissue_masst_id_count.csv")
+#write.csv(leaf_count, "tissue_masst_id_count.csv")

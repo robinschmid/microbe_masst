@@ -81,15 +81,15 @@ if __name__ == "__main__":
     # parser.add_argument('--output_file', type=str, help='output masst metadata',
     #                     default="../data/food_masst_table.csv")
     # plantmasst
-    parser.add_argument("--metadata_file", type=str, help="input masst metadata",
-                         default="../data/plant_masst_table.csv")
-    parser.add_argument("--output_file", type=str, help="output masst metadata",
-                         default="../data/plant_masst_table1.csv")
-    # tissuemasst
     #parser.add_argument("--metadata_file", type=str, help="input masst metadata",
-    #                     default="../data/tissue_masst_table.csv")
+    #                     default="../data/plant_masst_table_full.csv")
     #parser.add_argument("--output_file", type=str, help="output masst metadata",
-    #                     default="../data/tissue_masst_table1.csv")
+    #                     default="../data/plant_masst_table.csv")
+    # tissuemasst
+    parser.add_argument("--metadata_file", type=str, help="input masst metadata",
+                         default="../data/tissue_masst_table_full.csv")
+    parser.add_argument("--output_file", type=str, help="output masst metadata",
+                         default="../data/tissue_masst_table.csv")
     # personalCareProductmasst
     #parser.add_argument("--metadata_file", type=str, help="input masst metadata", \
     #                    default="../data/personalCareProduct_masst_table.csv")
