@@ -1,359 +1,358 @@
-"","UBERONBodyPartName","NCBITaxonomy","DOIDCommonName","BiologicalSex","LifeStage","count","ID"
-"1","blank_qc","blank_qc","blank_qc","blank_qc","blank_qc",4923,"blank_qc_blank_qc_blank_qc_blank_qc_blank_qc"
-"2","unknown","Homo sapiens","unknown","unknown","unknown",2863,"unknown_Homo sapiens_unknown_unknown_unknown"
-"3","skin","Homo sapiens","healthy","male","unknown",2468,"skin_Homo sapiens_healthy_male_unknown"
-"4","blood serum","Homo sapiens","unknown","unknown","unknown",2147,"blood serum_Homo sapiens_unknown_unknown_unknown"
-"5","skin","Homo sapiens","healthy","female","unknown",2093,"skin_Homo sapiens_healthy_female_unknown"
-"6","blood plasma","Homo sapiens","unknown","unknown","unknown",1935,"blood plasma_Homo sapiens_unknown_unknown_unknown"
-"7","liver","Homo sapiens","unknown","unknown","unknown",1356,"liver_Homo sapiens_unknown_unknown_unknown"
-"8","oral cavity","Homo sapiens","unknown","unknown","unknown",977,"oral cavity_Homo sapiens_unknown_unknown_unknown"
-"9","skin","Homo sapiens","healthy","unknown","unknown",855,"skin_Homo sapiens_healthy_unknown_unknown"
-"10","feces","Mus musculus","unknown","unknown","unknown",710,"feces_Mus musculus_unknown_unknown_unknown"
-"11","feces","Homo sapiens","healthy","male","Infancy (<2 yrs)",668,"feces_Homo sapiens_healthy_male_Infancy (<2 yrs)"
-"12","liver","Mus musculus","unknown","unknown","unknown",649,"liver_Mus musculus_unknown_unknown_unknown"
-"13","feces","Homo sapiens","healthy","female","Infancy (<2 yrs)",635,"feces_Homo sapiens_healthy_female_Infancy (<2 yrs)"
-"14","feces","Mus musculus","healthy","male","unknown",601,"feces_Mus musculus_healthy_male_unknown"
-"15","skin","Homo sapiens","healthy","female","Early Adulthood (18 yrs < x <= 45 yrs)",591,"skin_Homo sapiens_healthy_female_Early Adulthood (18 yrs < x <= 45 yrs)"
-"16","unknown","Mus musculus","unknown","unknown","unknown",558,"unknown_Mus musculus_unknown_unknown_unknown"
-"17","feces","Rattus norvegicus","unknown","male","unknown",549,"feces_Rattus norvegicus_unknown_male_unknown"
-"18","feces","Homo sapiens","unknown","unknown","unknown",532,"feces_Homo sapiens_unknown_unknown_unknown"
-"19","blood plasma","Mus musculus","unknown","unknown","unknown",508,"blood plasma_Mus musculus_unknown_unknown_unknown"
-"20","feces","Mus musculus","unknown","male","unknown",488,"feces_Mus musculus_unknown_male_unknown"
-"21","feces","Mus musculus","obesity","male","unknown",451,"feces_Mus musculus_obesity_male_unknown"
-"22","heart","Mus musculus","Chagas disease","male","unknown",432,"heart_Mus musculus_Chagas disease_male_unknown"
-"23","feces","Homo sapiens","healthy","unknown","Infancy (<2 yrs)",425,"feces_Homo sapiens_healthy_unknown_Infancy (<2 yrs)"
-"24","skin","Homo sapiens","healthy","unknown","Infancy (<2 yrs)",400,"skin_Homo sapiens_healthy_unknown_Infancy (<2 yrs)"
-"25","oral cavity","Homo sapiens","healthy","unknown","Infancy (<2 yrs)",398,"oral cavity_Homo sapiens_healthy_unknown_Infancy (<2 yrs)"
-"26","lung","Mus musculus","acute illness","male","unknown",396,"lung_Mus musculus_acute illness_male_unknown"
-"27","urine","Homo sapiens","unknown","unknown","unknown",385,"urine_Homo sapiens_unknown_unknown_unknown"
-"28","blood serum","Mus musculus","unknown","unknown","unknown",377,"blood serum_Mus musculus_unknown_unknown_unknown"
-"29","feces","Mus musculus","Chagas disease","male","unknown",374,"feces_Mus musculus_Chagas disease_male_unknown"
-"30","brain","Homo sapiens","unknown","female","Later Adulthood (>65 yrs)",358,"brain_Homo sapiens_unknown_female_Later Adulthood (>65 yrs)"
-"31","biofluid","Mus musculus","unknown","male","unknown",339,"biofluid_Mus musculus_unknown_male_unknown"
-"32","unknown","Rattus norvegicus","unknown","unknown","unknown",329,"unknown_Rattus norvegicus_unknown_unknown_unknown"
-"33","feces","Homo sapiens","healthy","female","Early Adulthood (18 yrs < x <= 45 yrs)",326,"feces_Homo sapiens_healthy_female_Early Adulthood (18 yrs < x <= 45 yrs)"
-"34","milk","Homo sapiens","unknown","female","unknown",305,"milk_Homo sapiens_unknown_female_unknown"
-"35","feces","Mus musculus","unhealthy (NOS)","male","unknown",304,"feces_Mus musculus_unhealthy (NOS)_male_unknown"
-"36","brain","Homo sapiens","unknown","unknown","unknown",269,"brain_Homo sapiens_unknown_unknown_unknown"
-"37","caecum","Mus musculus","healthy","male","unknown",269,"caecum_Mus musculus_healthy_male_unknown"
-"38","feces","Homo sapiens","unhealthy (NOS)","female","Early Adulthood (18 yrs < x <= 45 yrs)",267,"feces_Homo sapiens_unhealthy (NOS)_female_Early Adulthood (18 yrs < x <= 45 yrs)"
-"39","feces","Homo sapiens","healthy","female","Middle Adulthood (45 yrs < x <= 65 yrs)",253,"feces_Homo sapiens_healthy_female_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"40","feces","Homo sapiens","unhealthy (NOS)","female","Middle Adulthood (45 yrs < x <= 65 yrs)",252,"feces_Homo sapiens_unhealthy (NOS)_female_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"41","colon","Mus musculus","unknown","unknown","unknown",236,"colon_Mus musculus_unknown_unknown_unknown"
-"42","feces","Homo sapiens","healthy","male","Early Adulthood (18 yrs < x <= 45 yrs)",221,"feces_Homo sapiens_healthy_male_Early Adulthood (18 yrs < x <= 45 yrs)"
-"43","bone tissue","Homo sapiens","unknown","unknown","unknown",219,"bone tissue_Homo sapiens_unknown_unknown_unknown"
-"44","skin","Homo sapiens","primary bacterial infectious disease","male","unknown",218,"skin_Homo sapiens_primary bacterial infectious disease_male_unknown"
-"45","feces","Homo sapiens","unhealthy (NOS)","male","Early Adulthood (18 yrs < x <= 45 yrs)",215,"feces_Homo sapiens_unhealthy (NOS)_male_Early Adulthood (18 yrs < x <= 45 yrs)"
-"46","blood plasma","Homo sapiens","unhealthy (NOS)","male","Early Adulthood (18 yrs < x <= 45 yrs)",211,"blood plasma_Homo sapiens_unhealthy (NOS)_male_Early Adulthood (18 yrs < x <= 45 yrs)"
-"47","blood","Homo sapiens","unknown","unknown","unknown",207,"blood_Homo sapiens_unknown_unknown_unknown"
-"48","feces","Mus musculus","healthy","female","unknown",194,"feces_Mus musculus_healthy_female_unknown"
-"49","feces","Homo sapiens","unhealthy (NOS)","male","Middle Adulthood (45 yrs < x <= 65 yrs)",192,"feces_Homo sapiens_unhealthy (NOS)_male_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"50","upper digestive tract","Mus musculus","unknown","female","unknown",187,"upper digestive tract_Mus musculus_unknown_female_unknown"
-"51","heart","Mus musculus","healthy","male","unknown",176,"heart_Mus musculus_healthy_male_unknown"
-"52","feces","Homo sapiens","healthy","male","Middle Adulthood (45 yrs < x <= 65 yrs)",175,"feces_Homo sapiens_healthy_male_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"53","caecum","Mus musculus","unknown","female","unknown",173,"caecum_Mus musculus_unknown_female_unknown"
-"54","brain","Mus musculus","unknown","unknown","unknown",164,"brain_Mus musculus_unknown_unknown_unknown"
-"55","liver","Mus musculus","unknown","female","unknown",157,"liver_Mus musculus_unknown_female_unknown"
-"56","skin","Homo sapiens","healthy","male","Early Adulthood (18 yrs < x <= 45 yrs)",151,"skin_Homo sapiens_healthy_male_Early Adulthood (18 yrs < x <= 45 yrs)"
-"57","brain","Homo sapiens","unknown","male","Later Adulthood (>65 yrs)",150,"brain_Homo sapiens_unknown_male_Later Adulthood (>65 yrs)"
-"58","lung","Mus musculus","unknown","female","unknown",143,"lung_Mus musculus_unknown_female_unknown"
-"59","colon","Mus musculus","unknown","female","unknown",141,"colon_Mus musculus_unknown_female_unknown"
-"60","biofluid","Mus musculus","unknown","female","unknown",132,"biofluid_Mus musculus_unknown_female_unknown"
-"61","feces","Homo sapiens","unhealthy (NOS)","male","Later Adulthood (>65 yrs)",132,"feces_Homo sapiens_unhealthy (NOS)_male_Later Adulthood (>65 yrs)"
-"62","erythrocyte","Homo sapiens","unknown","unknown","unknown",129,"erythrocyte_Homo sapiens_unknown_unknown_unknown"
-"63","ileum","Mus musculus","unknown","female","unknown",126,"ileum_Mus musculus_unknown_female_unknown"
-"64","jejunum","Mus musculus","unknown","female","unknown",126,"jejunum_Mus musculus_unknown_female_unknown"
-"65","duodenum","Mus musculus","unknown","female","unknown",124,"duodenum_Mus musculus_unknown_female_unknown"
-"66","feces","Homo sapiens","unhealthy (NOS)","female","Later Adulthood (>65 yrs)",124,"feces_Homo sapiens_unhealthy (NOS)_female_Later Adulthood (>65 yrs)"
-"67","brain","Mus musculus","unknown","female","unknown",120,"brain_Mus musculus_unknown_female_unknown"
-"68","heart","Mus musculus","unknown","female","unknown",119,"heart_Mus musculus_unknown_female_unknown"
-"69","feces","Rattus norvegicus","unhealthy (NOS)","male","unknown",118,"feces_Rattus norvegicus_unhealthy (NOS)_male_unknown"
-"70","skin","Homo sapiens","healthy","female","Middle Adulthood (45 yrs < x <= 65 yrs)",118,"skin_Homo sapiens_healthy_female_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"71","cerebrospinal fluid","Homo sapiens","unknown","unknown","unknown",116,"cerebrospinal fluid_Homo sapiens_unknown_unknown_unknown"
-"72","blood plasma","Homo sapiens","unhealthy (NOS)","female","Early Adulthood (18 yrs < x <= 45 yrs)",110,"blood plasma_Homo sapiens_unhealthy (NOS)_female_Early Adulthood (18 yrs < x <= 45 yrs)"
-"73","spinal cord","Mus musculus","unknown","unknown","unknown",110,"spinal cord_Mus musculus_unknown_unknown_unknown"
-"74","blood plasma","Homo sapiens","Kawasaki disease","unknown","unknown",108,"blood plasma_Homo sapiens_Kawasaki disease_unknown_unknown"
-"75","blood plasma","Homo sapiens","healthy","unknown","unknown",108,"blood plasma_Homo sapiens_healthy_unknown_unknown"
-"76","kidney","Mus musculus","unknown","unknown","unknown",107,"kidney_Mus musculus_unknown_unknown_unknown"
-"77","nasal cavity","Homo sapiens","primary bacterial infectious disease","male","unknown",104,"nasal cavity_Homo sapiens_primary bacterial infectious disease_male_unknown"
-"78","saliva","Homo sapiens","primary bacterial infectious disease","male","unknown",104,"saliva_Homo sapiens_primary bacterial infectious disease_male_unknown"
-"79","feces","Homo sapiens","Crohn's disease","male","unknown",101,"feces_Homo sapiens_Crohn's disease_male_unknown"
-"80","blood plasma","Homo sapiens","unhealthy (NOS)","unknown","unknown",100,"blood plasma_Homo sapiens_unhealthy (NOS)_unknown_unknown"
-"81","blood plasma","Mus musculus","healthy","female","unknown",96,"blood plasma_Mus musculus_healthy_female_unknown"
-"82","feces","Homo sapiens","Crohn's disease","female","unknown",96,"feces_Homo sapiens_Crohn's disease_female_unknown"
-"83","uterus","Mus musculus","unknown","female","unknown",93,"uterus_Mus musculus_unknown_female_unknown"
-"84","feces","Homo sapiens","healthy","female","unknown",91,"feces_Homo sapiens_healthy_female_unknown"
-"85","feces","Homo sapiens","unhealthy (NOS)","male","Adolescence (8 yrs < x <= 18 yrs)",91,"feces_Homo sapiens_unhealthy (NOS)_male_Adolescence (8 yrs < x <= 18 yrs)"
-"86","colon","Mus musculus","Chagas disease","male","unknown",87,"colon_Mus musculus_Chagas disease_male_unknown"
-"87","stomach","Mus musculus","unknown","female","unknown",87,"stomach_Mus musculus_unknown_female_unknown"
-"88","blood","Mus musculus","unknown","unknown","unknown",84,"blood_Mus musculus_unknown_unknown_unknown"
-"89","esophagus","Mus musculus","unknown","female","unknown",84,"esophagus_Mus musculus_unknown_female_unknown"
-"90","feces","Homo sapiens","healthy","male","unknown",83,"feces_Homo sapiens_healthy_male_unknown"
-"91","duodenum","Mus musculus","unknown","unknown","unknown",81,"duodenum_Mus musculus_unknown_unknown_unknown"
-"92","heart","Rattus norvegicus","unknown","unknown","unknown",80,"heart_Rattus norvegicus_unknown_unknown_unknown"
-"93","cerebrospinal fluid","Homo sapiens","Alzheimer's disease","male","Later Adulthood (>65 yrs)",70,"cerebrospinal fluid_Homo sapiens_Alzheimer's disease_male_Later Adulthood (>65 yrs)"
-"94","feces","Homo sapiens","ulcerative colitis","female","unknown",70,"feces_Homo sapiens_ulcerative colitis_female_unknown"
-"95","urine","Homo sapiens","healthy","female","unknown",70,"urine_Homo sapiens_healthy_female_unknown"
-"96","urine","Homo sapiens","healthy","male","unknown",70,"urine_Homo sapiens_healthy_male_unknown"
-"97","feces","Mus musculus","Alzheimer's disease","male","unknown",69,"feces_Mus musculus_Alzheimer's disease_male_unknown"
-"98","epithelial cell","Homo sapiens","unknown","unknown","unknown",68,"epithelial cell_Homo sapiens_unknown_unknown_unknown"
-"99","feces","Homo sapiens","inflammatory bowel disease","male","Middle Adulthood (45 yrs < x <= 65 yrs)",67,"feces_Homo sapiens_inflammatory bowel disease_male_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"100","skin","Homo sapiens","healthy","female","Early Childhood (2 yrs < x <=8 yrs)",67,"skin_Homo sapiens_healthy_female_Early Childhood (2 yrs < x <=8 yrs)"
-"101","feces","Homo sapiens","primary bacterial infectious disease","male","unknown",66,"feces_Homo sapiens_primary bacterial infectious disease_male_unknown"
-"102","feces","Homo sapiens","ulcerative colitis","male","unknown",66,"feces_Homo sapiens_ulcerative colitis_male_unknown"
-"103","feces","Homo sapiens","unhealthy (NOS)","male","Early Childhood (2 yrs < x <=8 yrs)",66,"feces_Homo sapiens_unhealthy (NOS)_male_Early Childhood (2 yrs < x <=8 yrs)"
-"104","feces","Mus musculus","Alzheimer's disease","female","unknown",66,"feces_Mus musculus_Alzheimer's disease_female_unknown"
-"105","saliva","Homo sapiens","obesity","female","Early Adulthood (18 yrs < x <= 45 yrs)",65,"saliva_Homo sapiens_obesity_female_Early Adulthood (18 yrs < x <= 45 yrs)"
-"106","kidney","Mus musculus","unknown","female","unknown",64,"kidney_Mus musculus_unknown_female_unknown"
-"107","skin","Mus musculus","unknown","female","unknown",64,"skin_Mus musculus_unknown_female_unknown"
-"108","feces","Homo sapiens","unhealthy (NOS)","male","unknown",63,"feces_Homo sapiens_unhealthy (NOS)_male_unknown"
-"109","blood plasma","Homo sapiens","acquired immunodeficiency syndrome","male","Middle Adulthood (45 yrs < x <= 65 yrs)",62,"blood plasma_Homo sapiens_acquired immunodeficiency syndrome_male_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"110","feces","Homo sapiens","unhealthy (NOS)","unknown","unknown",62,"feces_Homo sapiens_unhealthy (NOS)_unknown_unknown"
-"111","saliva","Homo sapiens","obesity","male","Middle Adulthood (45 yrs < x <= 65 yrs)",62,"saliva_Homo sapiens_obesity_male_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"112","feces","Homo sapiens","unhealthy (NOS)","female","Adolescence (8 yrs < x <= 18 yrs)",59,"feces_Homo sapiens_unhealthy (NOS)_female_Adolescence (8 yrs < x <= 18 yrs)"
-"113","feces","Homo sapiens","unhealthy (NOS)","female","unknown",59,"feces_Homo sapiens_unhealthy (NOS)_female_unknown"
-"114","skin","Mus musculus","unknown","unknown","unknown",59,"skin_Mus musculus_unknown_unknown_unknown"
-"115","milk","Homo sapiens","healthy","unknown","unknown",58,"milk_Homo sapiens_healthy_unknown_unknown"
-"116","vagina","Mus musculus","unknown","female","unknown",56,"vagina_Mus musculus_unknown_female_unknown"
-"117","skin","Homo sapiens","healthy","male","Middle Adulthood (45 yrs < x <= 65 yrs)",55,"skin_Homo sapiens_healthy_male_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"118","blood plasma","Homo sapiens","human immunodeficiency virus infectious disease","male","Early Adulthood (18 yrs < x <= 45 yrs)",54,"blood plasma_Homo sapiens_human immunodeficiency virus infectious disease_male_Early Adulthood (18 yrs < x <= 45 yrs)"
-"119","blood plasma","Rattus norvegicus","unknown","unknown","unknown",54,"blood plasma_Rattus norvegicus_unknown_unknown_unknown"
-"120","spleen","Mus musculus","unknown","female","unknown",53,"spleen_Mus musculus_unknown_female_unknown"
-"121","trachea","Mus musculus","unknown","female","unknown",53,"trachea_Mus musculus_unknown_female_unknown"
-"122","blood plasma","Homo sapiens","unknown","male","Early Adulthood (18 yrs < x <= 45 yrs)",52,"blood plasma_Homo sapiens_unknown_male_Early Adulthood (18 yrs < x <= 45 yrs)"
-"123","skin","Homo sapiens","healthy","female","Adolescence (8 yrs < x <= 18 yrs)",51,"skin_Homo sapiens_healthy_female_Adolescence (8 yrs < x <= 18 yrs)"
-"124","adrenal gland","Mus musculus","unknown","female","unknown",50,"adrenal gland_Mus musculus_unknown_female_unknown"
-"125","blood plasma","Homo sapiens","Alzheimer's disease","male","Later Adulthood (>65 yrs)",50,"blood plasma_Homo sapiens_Alzheimer's disease_male_Later Adulthood (>65 yrs)"
-"126","ovary","Mus musculus","unknown","female","unknown",50,"ovary_Mus musculus_unknown_female_unknown"
-"127","vagina","Homo sapiens","healthy","female","Early Adulthood (18 yrs < x <= 45 yrs)",50,"vagina_Homo sapiens_healthy_female_Early Adulthood (18 yrs < x <= 45 yrs)"
-"128","lower digestive tract","Mus musculus","unknown","female","unknown",49,"lower digestive tract_Mus musculus_unknown_female_unknown"
-"129","skin","Homo sapiens","healthy","male","Early Childhood (2 yrs < x <=8 yrs)",49,"skin_Homo sapiens_healthy_male_Early Childhood (2 yrs < x <=8 yrs)"
-"130","cortex","Rattus norvegicus","unknown","unknown","unknown",48,"cortex_Rattus norvegicus_unknown_unknown_unknown"
-"131","urine","Mus musculus","unknown","female","unknown",48,"urine_Mus musculus_unknown_female_unknown"
-"132","feces","Homo sapiens","unhealthy (NOS)","female","Early Childhood (2 yrs < x <=8 yrs)",47,"feces_Homo sapiens_unhealthy (NOS)_female_Early Childhood (2 yrs < x <=8 yrs)"
-"133","blood plasma","Homo sapiens","unknown","male","Middle Adulthood (45 yrs < x <= 65 yrs)",46,"blood plasma_Homo sapiens_unknown_male_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"134","saliva","Homo sapiens","obesity","female","Middle Adulthood (45 yrs < x <= 65 yrs)",46,"saliva_Homo sapiens_obesity_female_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"135","biofluid","Mus musculus","unknown","unknown","unknown",45,"biofluid_Mus musculus_unknown_unknown_unknown"
-"136","blood serum","Mus musculus","healthy","male","unknown",45,"blood serum_Mus musculus_healthy_male_unknown"
-"137","saliva","Homo sapiens","obesity","male","Early Adulthood (18 yrs < x <= 45 yrs)",45,"saliva_Homo sapiens_obesity_male_Early Adulthood (18 yrs < x <= 45 yrs)"
-"138","blood plasma","Homo sapiens","human immunodeficiency virus infectious disease","male","Middle Adulthood (45 yrs < x <= 65 yrs)",44,"blood plasma_Homo sapiens_human immunodeficiency virus infectious disease_male_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"139","blood serum","Rattus norvegicus","unknown","male","unknown",42,"blood serum_Rattus norvegicus_unknown_male_unknown"
-"140","feces","Homo sapiens","unknown","female","Middle Adulthood (45 yrs < x <= 65 yrs)",42,"feces_Homo sapiens_unknown_female_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"141","blood serum","Rattus norvegicus","unhealthy (NOS)","male","unknown",41,"blood serum_Rattus norvegicus_unhealthy (NOS)_male_unknown"
-"142","gallbladder","Mus musculus","unknown","unknown","unknown",40,"gallbladder_Mus musculus_unknown_unknown_unknown"
-"143","heart","Mus musculus","unknown","male","unknown",40,"heart_Mus musculus_unknown_male_unknown"
-"144","kidney","Rattus norvegicus","unknown","unknown","unknown",40,"kidney_Rattus norvegicus_unknown_unknown_unknown"
-"145","pancreas","Mus musculus","unknown","female","unknown",40,"pancreas_Mus musculus_unknown_female_unknown"
-"146","skin","Homo sapiens","healthy","male","Later Adulthood (>65 yrs)",40,"skin_Homo sapiens_healthy_male_Later Adulthood (>65 yrs)"
-"147","urine","Mus musculus","unknown","unknown","unknown",39,"urine_Mus musculus_unknown_unknown_unknown"
-"148","feces","Homo sapiens","healthy","male","Later Adulthood (>65 yrs)",38,"feces_Homo sapiens_healthy_male_Later Adulthood (>65 yrs)"
-"149","blood plasma","Mus musculus","unhealthy (NOS)","male","unknown",37,"blood plasma_Mus musculus_unhealthy (NOS)_male_unknown"
-"150","blood serum","Mus musculus","unhealthy (NOS)","male","unknown",37,"blood serum_Mus musculus_unhealthy (NOS)_male_unknown"
-"151","retina","Mus musculus","unknown","unknown","unknown",37,"retina_Mus musculus_unknown_unknown_unknown"
-"152","skin","Homo sapiens","healthy","male","Adolescence (8 yrs < x <= 18 yrs)",37,"skin_Homo sapiens_healthy_male_Adolescence (8 yrs < x <= 18 yrs)"
-"153","blood plasma","Mus musculus","healthy","male","unknown",36,"blood plasma_Mus musculus_healthy_male_unknown"
-"154","caecum","Mus musculus","unknown","unknown","unknown",36,"caecum_Mus musculus_unknown_unknown_unknown"
-"155","esophagus","Mus musculus","unknown","unknown","unknown",36,"esophagus_Mus musculus_unknown_unknown_unknown"
-"156","ileum","Mus musculus","unknown","unknown","unknown",36,"ileum_Mus musculus_unknown_unknown_unknown"
-"157","jejunum","Mus musculus","unknown","unknown","unknown",36,"jejunum_Mus musculus_unknown_unknown_unknown"
-"158","stomach","Mus musculus","unknown","unknown","unknown",36,"stomach_Mus musculus_unknown_unknown_unknown"
-"159","heart","Mus musculus","unknown","unknown","unknown",35,"heart_Mus musculus_unknown_unknown_unknown"
-"160","feces","Mus musculus","unknown","female","unknown",34,"feces_Mus musculus_unknown_female_unknown"
-"161","feces","Rattus norvegicus","healthy","male","unknown",34,"feces_Rattus norvegicus_healthy_male_unknown"
-"162","blood plasma","Homo sapiens","healthy","male","Early Adulthood (18 yrs < x <= 45 yrs)",33,"blood plasma_Homo sapiens_healthy_male_Early Adulthood (18 yrs < x <= 45 yrs)"
-"163","lung","Homo sapiens","unknown","unknown","unknown",33,"lung_Homo sapiens_unknown_unknown_unknown"
-"164","blood plasma","Homo sapiens","acquired immunodeficiency syndrome","male","Early Adulthood (18 yrs < x <= 45 yrs)",32,"blood plasma_Homo sapiens_acquired immunodeficiency syndrome_male_Early Adulthood (18 yrs < x <= 45 yrs)"
-"165","blood serum","Rattus norvegicus","unknown","unknown","unknown",32,"blood serum_Rattus norvegicus_unknown_unknown_unknown"
-"166","caecum","Mus musculus","healthy","female","unknown",32,"caecum_Mus musculus_healthy_female_unknown"
-"167","embryonic cell (metazoa)","Mus musculus","unknown","unknown","unknown",32,"embryonic cell (metazoa)_Mus musculus_unknown_unknown_unknown"
-"168","feces","Homo sapiens","healthy","male","Adolescence (8 yrs < x <= 18 yrs)",32,"feces_Homo sapiens_healthy_male_Adolescence (8 yrs < x <= 18 yrs)"
-"169","urine","Homo sapiens","unknown","female","Later Adulthood (>65 yrs)",31,"urine_Homo sapiens_unknown_female_Later Adulthood (>65 yrs)"
-"170","biofluid","Homo sapiens","osteoarthritis","unknown","unknown",30,"biofluid_Homo sapiens_osteoarthritis_unknown_unknown"
-"171","blood plasma","Homo sapiens","rheumatoid arthritis","female","Middle Adulthood (45 yrs < x <= 65 yrs)",30,"blood plasma_Homo sapiens_rheumatoid arthritis_female_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"172","feces","Homo sapiens","healthy","female","Later Adulthood (>65 yrs)",30,"feces_Homo sapiens_healthy_female_Later Adulthood (>65 yrs)"
-"173","nasal cavity","Homo sapiens","healthy","female","Early Adulthood (18 yrs < x <= 45 yrs)",30,"nasal cavity_Homo sapiens_healthy_female_Early Adulthood (18 yrs < x <= 45 yrs)"
-"174","thymus","Mus musculus","unknown","female","unknown",30,"thymus_Mus musculus_unknown_female_unknown"
-"175","urine","Homo sapiens","chronic illness","female","Later Adulthood (>65 yrs)",30,"urine_Homo sapiens_chronic illness_female_Later Adulthood (>65 yrs)"
-"176","anal region","Homo sapiens","healthy","female","Early Adulthood (18 yrs < x <= 45 yrs)",29,"anal region_Homo sapiens_healthy_female_Early Adulthood (18 yrs < x <= 45 yrs)"
-"177","blood serum","Mus musculus","unknown","female","unknown",29,"blood serum_Mus musculus_unknown_female_unknown"
-"178","esophagus","Mus musculus","Chagas disease","male","unknown",29,"esophagus_Mus musculus_Chagas disease_male_unknown"
-"179","gallbladder","Mus musculus","unknown","female","unknown",29,"gallbladder_Mus musculus_unknown_female_unknown"
-"180","blood plasma","Homo sapiens","unknown","female","Middle Adulthood (45 yrs < x <= 65 yrs)",28,"blood plasma_Homo sapiens_unknown_female_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"181","feces","Homo sapiens","unknown","female","Early Adulthood (18 yrs < x <= 45 yrs)",28,"feces_Homo sapiens_unknown_female_Early Adulthood (18 yrs < x <= 45 yrs)"
-"182","urine","Homo sapiens","chronic illness","male","Later Adulthood (>65 yrs)",28,"urine_Homo sapiens_chronic illness_male_Later Adulthood (>65 yrs)"
-"183","feces","Homo sapiens","diabetes mellitus","male","Adolescence (8 yrs < x <= 18 yrs)",27,"feces_Homo sapiens_diabetes mellitus_male_Adolescence (8 yrs < x <= 18 yrs)"
-"184","feces","Homo sapiens","healthy","female","Adolescence (8 yrs < x <= 18 yrs)",27,"feces_Homo sapiens_healthy_female_Adolescence (8 yrs < x <= 18 yrs)"
-"185","feces","Homo sapiens","rheumatoid arthritis","female","Middle Adulthood (45 yrs < x <= 65 yrs)",27,"feces_Homo sapiens_rheumatoid arthritis_female_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"186","megakaryocyte","Mus musculus","unknown","unknown","unknown",27,"megakaryocyte_Mus musculus_unknown_unknown_unknown"
-"187","saliva","Homo sapiens","healthy","female","Early Adulthood (18 yrs < x <= 45 yrs)",27,"saliva_Homo sapiens_healthy_female_Early Adulthood (18 yrs < x <= 45 yrs)"
-"188","oral cavity","Homo sapiens","healthy","female","Early Adulthood (18 yrs < x <= 45 yrs)",26,"oral cavity_Homo sapiens_healthy_female_Early Adulthood (18 yrs < x <= 45 yrs)"
-"189","urine","Homo sapiens","unknown","male","Middle Adulthood (45 yrs < x <= 65 yrs)",26,"urine_Homo sapiens_unknown_male_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"190","cerebrospinal fluid","Homo sapiens","Alzheimer's disease","female","Later Adulthood (>65 yrs)",25,"cerebrospinal fluid_Homo sapiens_Alzheimer's disease_female_Later Adulthood (>65 yrs)"
-"191","epithelial cell","Mus musculus","unknown","unknown","unknown",25,"epithelial cell_Mus musculus_unknown_unknown_unknown"
-"192","muscle of leg","Mus musculus","unknown","unknown","unknown",24,"muscle of leg_Mus musculus_unknown_unknown_unknown"
-"193","unknown","Homo sapiens neanderthalensis","unknown","unknown","unknown",24,"unknown_Homo sapiens neanderthalensis_unknown_unknown_unknown"
-"194","urine","Homo sapiens","healthy","male","Adolescence (8 yrs < x <= 18 yrs)",24,"urine_Homo sapiens_healthy_male_Adolescence (8 yrs < x <= 18 yrs)"
-"195","saliva","Homo sapiens","healthy","male","Early Adulthood (18 yrs < x <= 45 yrs)",23,"saliva_Homo sapiens_healthy_male_Early Adulthood (18 yrs < x <= 45 yrs)"
-"196","feces","Homo sapiens","unknown","male","Middle Adulthood (45 yrs < x <= 65 yrs)",22,"feces_Homo sapiens_unknown_male_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"197","heart","Homo sapiens","unknown","unknown","unknown",22,"heart_Homo sapiens_unknown_unknown_unknown"
-"198","blood","Mus musculus","unknown","female","unknown",21,"blood_Mus musculus_unknown_female_unknown"
-"199","brainstem","Mus musculus","unknown","unknown","unknown",21,"brainstem_Mus musculus_unknown_unknown_unknown"
-"200","feces","Homo sapiens","diabetes mellitus","female","Adolescence (8 yrs < x <= 18 yrs)",21,"feces_Homo sapiens_diabetes mellitus_female_Adolescence (8 yrs < x <= 18 yrs)"
-"201","ileum","Mus musculus","Alzheimer's disease","female","unknown",21,"ileum_Mus musculus_Alzheimer's disease_female_unknown"
-"202","ileum","Mus musculus","Alzheimer's disease","male","unknown",21,"ileum_Mus musculus_Alzheimer's disease_male_unknown"
-"203","urine","Homo sapiens","chronic illness","female","Middle Adulthood (45 yrs < x <= 65 yrs)",21,"urine_Homo sapiens_chronic illness_female_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"204","feces","Homo sapiens","unknown","male","Early Adulthood (18 yrs < x <= 45 yrs)",20,"feces_Homo sapiens_unknown_male_Early Adulthood (18 yrs < x <= 45 yrs)"
-"205","lung","Mus musculus","unknown","unknown","unknown",20,"lung_Mus musculus_unknown_unknown_unknown"
-"206","urine","Homo sapiens","diabetes mellitus","male","Adolescence (8 yrs < x <= 18 yrs)",20,"urine_Homo sapiens_diabetes mellitus_male_Adolescence (8 yrs < x <= 18 yrs)"
-"207","urine","Homo sapiens","healthy","female","Adolescence (8 yrs < x <= 18 yrs)",20,"urine_Homo sapiens_healthy_female_Adolescence (8 yrs < x <= 18 yrs)"
-"208","blood plasma","Homo sapiens","healthy","female","Early Adulthood (18 yrs < x <= 45 yrs)",19,"blood plasma_Homo sapiens_healthy_female_Early Adulthood (18 yrs < x <= 45 yrs)"
-"209","feces","Homo sapiens","unknown","female","Later Adulthood (>65 yrs)",19,"feces_Homo sapiens_unknown_female_Later Adulthood (>65 yrs)"
-"210","feces","Mus musculus","unhealthy (NOS)","female","unknown",19,"feces_Mus musculus_unhealthy (NOS)_female_unknown"
-"211","skin","Homo sapiens","healthy","female","Later Adulthood (>65 yrs)",19,"skin_Homo sapiens_healthy_female_Later Adulthood (>65 yrs)"
-"212","macrophage","Mus musculus","unknown","unknown","unknown",18,"macrophage_Mus musculus_unknown_unknown_unknown"
-"213","saliva","Homo sapiens","healthy","female","Middle Adulthood (45 yrs < x <= 65 yrs)",18,"saliva_Homo sapiens_healthy_female_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"214","skin","Homo sapiens","healthy","female","Infancy (<2 yrs)",18,"skin_Homo sapiens_healthy_female_Infancy (<2 yrs)"
-"215","urine","Homo sapiens","acute illness","female","Later Adulthood (>65 yrs)",18,"urine_Homo sapiens_acute illness_female_Later Adulthood (>65 yrs)"
-"216","urine","Homo sapiens","unknown","male","Later Adulthood (>65 yrs)",18,"urine_Homo sapiens_unknown_male_Later Adulthood (>65 yrs)"
-"217","blood plasma","Homo sapiens","Alzheimer's disease","female","Later Adulthood (>65 yrs)",17,"blood plasma_Homo sapiens_Alzheimer's disease_female_Later Adulthood (>65 yrs)"
-"218","urine","Homo sapiens","diabetes mellitus","female","Adolescence (8 yrs < x <= 18 yrs)",17,"urine_Homo sapiens_diabetes mellitus_female_Adolescence (8 yrs < x <= 18 yrs)"
-"219","uterine cervix","Mus musculus","unknown","female","unknown",17,"uterine cervix_Mus musculus_unknown_female_unknown"
-"220","blood plasma","Homo sapiens","osteoarthritis","female","Middle Adulthood (45 yrs < x <= 65 yrs)",16,"blood plasma_Homo sapiens_osteoarthritis_female_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"221","blood serum","Homo sapiens","osteoarthritis","female","Middle Adulthood (45 yrs < x <= 65 yrs)",16,"blood serum_Homo sapiens_osteoarthritis_female_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"222","colon","Mus musculus","unknown","male","unknown",16,"colon_Mus musculus_unknown_male_unknown"
-"223","liver","Mus musculus","unknown","male","unknown",16,"liver_Mus musculus_unknown_male_unknown"
-"224","upper digestive tract","Mus musculus","unknown","male","unknown",16,"upper digestive tract_Mus musculus_unknown_male_unknown"
-"225","urine","Homo sapiens","acute illness","male","Later Adulthood (>65 yrs)",16,"urine_Homo sapiens_acute illness_male_Later Adulthood (>65 yrs)"
-"226","bladder organ","Mus musculus","unknown","female","unknown",15,"bladder organ_Mus musculus_unknown_female_unknown"
-"227","colon","Mus musculus","healthy","male","unknown",15,"colon_Mus musculus_healthy_male_unknown"
-"228","skin","Homo sapiens","psoriasis","female","unknown",14,"skin_Homo sapiens_psoriasis_female_unknown"
-"229","urine","Homo sapiens","chronic illness","male","Middle Adulthood (45 yrs < x <= 65 yrs)",14,"urine_Homo sapiens_chronic illness_male_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"230","cerebrospinal fluid","Homo sapiens","Alzheimer's disease","male","Middle Adulthood (45 yrs < x <= 65 yrs)",13,"cerebrospinal fluid_Homo sapiens_Alzheimer's disease_male_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"231","feces","Homo sapiens","healthy","unknown","unknown",13,"feces_Homo sapiens_healthy_unknown_unknown"
-"232","feces","Homo sapiens","osteoarthritis","female","Middle Adulthood (45 yrs < x <= 65 yrs)",13,"feces_Homo sapiens_osteoarthritis_female_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"233","adipose tissue","Homo sapiens","obesity","unknown","unknown",12,"adipose tissue_Homo sapiens_obesity_unknown_unknown"
-"234","blood plasma","Homo sapiens","acquired immunodeficiency syndrome","female","Middle Adulthood (45 yrs < x <= 65 yrs)",12,"blood plasma_Homo sapiens_acquired immunodeficiency syndrome_female_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"235","blood plasma","Homo sapiens","osteoarthritis","male","Later Adulthood (>65 yrs)",12,"blood plasma_Homo sapiens_osteoarthritis_male_Later Adulthood (>65 yrs)"
-"236","blood plasma","Homo sapiens","rheumatoid arthritis","female","Early Adulthood (18 yrs < x <= 45 yrs)",12,"blood plasma_Homo sapiens_rheumatoid arthritis_female_Early Adulthood (18 yrs < x <= 45 yrs)"
-"237","blood plasma","Homo sapiens","rheumatoid arthritis","female","Later Adulthood (>65 yrs)",12,"blood plasma_Homo sapiens_rheumatoid arthritis_female_Later Adulthood (>65 yrs)"
-"238","blood serum","Homo sapiens","osteoarthritis","male","Later Adulthood (>65 yrs)",12,"blood serum_Homo sapiens_osteoarthritis_male_Later Adulthood (>65 yrs)"
-"239","esophagus","Mus musculus","unknown","male","unknown",12,"esophagus_Mus musculus_unknown_male_unknown"
-"240","feces","Homo sapiens","rheumatoid arthritis","female","Later Adulthood (>65 yrs)",12,"feces_Homo sapiens_rheumatoid arthritis_female_Later Adulthood (>65 yrs)"
-"241","saliva","Homo sapiens","dental caries","male","Early Childhood (2 yrs < x <=8 yrs)",12,"saliva_Homo sapiens_dental caries_male_Early Childhood (2 yrs < x <=8 yrs)"
-"242","saliva","Homo sapiens","osteoarthritis","female","Middle Adulthood (45 yrs < x <= 65 yrs)",12,"saliva_Homo sapiens_osteoarthritis_female_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"243","stem cell","Mus musculus","unknown","unknown","unknown",12,"stem cell_Mus musculus_unknown_unknown_unknown"
-"244","tissue","Mus musculus","unknown","unknown","unknown",12,"tissue_Mus musculus_unknown_unknown_unknown"
-"245","blood plasma","Homo sapiens","COVID-19","male","Later Adulthood (>65 yrs)",11,"blood plasma_Homo sapiens_COVID-19_male_Later Adulthood (>65 yrs)"
-"246","skin","Homo sapiens","healthy","male","Infancy (<2 yrs)",11,"skin_Homo sapiens_healthy_male_Infancy (<2 yrs)"
-"247","urine","Homo sapiens","hypertension","female","Later Adulthood (>65 yrs)",11,"urine_Homo sapiens_hypertension_female_Later Adulthood (>65 yrs)"
-"248","blood plasma","Homo sapiens","COVID-19","male","Middle Adulthood (45 yrs < x <= 65 yrs)",10,"blood plasma_Homo sapiens_COVID-19_male_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"249","saliva","Homo sapiens","healthy","male","Middle Adulthood (45 yrs < x <= 65 yrs)",10,"saliva_Homo sapiens_healthy_male_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"250","saliva","Homo sapiens","obesity","male","unknown",10,"saliva_Homo sapiens_obesity_male_unknown"
-"251","urine","Homo sapiens","acute illness","male","Middle Adulthood (45 yrs < x <= 65 yrs)",10,"urine_Homo sapiens_acute illness_male_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"252","eye","Mus musculus","unknown","unknown","unknown",9,"eye_Mus musculus_unknown_unknown_unknown"
-"253","feces","Homo sapiens","healthy","male","Early Childhood (2 yrs < x <=8 yrs)",9,"feces_Homo sapiens_healthy_male_Early Childhood (2 yrs < x <=8 yrs)"
-"254","feces","Homo sapiens","rheumatoid arthritis","female","Early Adulthood (18 yrs < x <= 45 yrs)",9,"feces_Homo sapiens_rheumatoid arthritis_female_Early Adulthood (18 yrs < x <= 45 yrs)"
-"255","oral cavity","Mus musculus","unknown","female","unknown",9,"oral cavity_Mus musculus_unknown_female_unknown"
-"256","testis","Mus musculus","unknown","unknown","unknown",9,"testis_Mus musculus_unknown_unknown_unknown"
-"257","blood plasma","Homo sapiens","COVID-19","female","Early Adulthood (18 yrs < x <= 45 yrs)",8,"blood plasma_Homo sapiens_COVID-19_female_Early Adulthood (18 yrs < x <= 45 yrs)"
-"258","blood plasma","Homo sapiens","COVID-19","female","Later Adulthood (>65 yrs)",8,"blood plasma_Homo sapiens_COVID-19_female_Later Adulthood (>65 yrs)"
-"259","blood plasma","Homo sapiens","acquired immunodeficiency syndrome","female","Early Adulthood (18 yrs < x <= 45 yrs)",8,"blood plasma_Homo sapiens_acquired immunodeficiency syndrome_female_Early Adulthood (18 yrs < x <= 45 yrs)"
-"260","blood plasma","Homo sapiens","osteoarthritis","female","Later Adulthood (>65 yrs)",8,"blood plasma_Homo sapiens_osteoarthritis_female_Later Adulthood (>65 yrs)"
-"261","hematopoietic stem cell","Mus musculus","unknown","unknown","unknown",8,"hematopoietic stem cell_Mus musculus_unknown_unknown_unknown"
-"262","saliva","Homo sapiens","healthy","female","Early Childhood (2 yrs < x <=8 yrs)",8,"saliva_Homo sapiens_healthy_female_Early Childhood (2 yrs < x <=8 yrs)"
-"263","saliva","Homo sapiens","osteoarthritis","male","Later Adulthood (>65 yrs)",8,"saliva_Homo sapiens_osteoarthritis_male_Later Adulthood (>65 yrs)"
-"264","vagina","Homo sapiens","healthy","female","Adolescence (8 yrs < x <= 18 yrs)",8,"vagina_Homo sapiens_healthy_female_Adolescence (8 yrs < x <= 18 yrs)"
-"265","blood plasma","Homo sapiens","healthy","male","unknown",7,"blood plasma_Homo sapiens_healthy_male_unknown"
-"266","blood serum","Homo sapiens","osteoarthritis","female","Later Adulthood (>65 yrs)",7,"blood serum_Homo sapiens_osteoarthritis_female_Later Adulthood (>65 yrs)"
-"267","feces","Homo sapiens","healthy","female","Early Childhood (2 yrs < x <=8 yrs)",7,"feces_Homo sapiens_healthy_female_Early Childhood (2 yrs < x <=8 yrs)"
-"268","feces","Homo sapiens","healthy","unknown","Adolescence (8 yrs < x <= 18 yrs)",7,"feces_Homo sapiens_healthy_unknown_Adolescence (8 yrs < x <= 18 yrs)"
-"269","feces","Homo sapiens","inflammatory bowel disease","female","Early Adulthood (18 yrs < x <= 45 yrs)",7,"feces_Homo sapiens_inflammatory bowel disease_female_Early Adulthood (18 yrs < x <= 45 yrs)"
-"270","feces","Homo sapiens","osteoarthritis","female","Later Adulthood (>65 yrs)",7,"feces_Homo sapiens_osteoarthritis_female_Later Adulthood (>65 yrs)"
-"271","feces","Homo sapiens","osteoarthritis","male","Later Adulthood (>65 yrs)",7,"feces_Homo sapiens_osteoarthritis_male_Later Adulthood (>65 yrs)"
-"272","saliva","Homo sapiens","healthy","female","Adolescence (8 yrs < x <= 18 yrs)",7,"saliva_Homo sapiens_healthy_female_Adolescence (8 yrs < x <= 18 yrs)"
-"273","urine","Homo sapiens","hypertension","male","Middle Adulthood (45 yrs < x <= 65 yrs)",7,"urine_Homo sapiens_hypertension_male_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"274","adipose tissue","Homo sapiens","unknown","unknown","unknown",6,"adipose tissue_Homo sapiens_unknown_unknown_unknown"
-"275","blood plasma","Homo sapiens","Alzheimer's disease","male","Middle Adulthood (45 yrs < x <= 65 yrs)",6,"blood plasma_Homo sapiens_Alzheimer's disease_male_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"276","blood plasma","Homo sapiens","COVID-19","female","Middle Adulthood (45 yrs < x <= 65 yrs)",6,"blood plasma_Homo sapiens_COVID-19_female_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"277","blood plasma","Homo sapiens","human immunodeficiency virus infectious disease","female","Middle Adulthood (45 yrs < x <= 65 yrs)",6,"blood plasma_Homo sapiens_human immunodeficiency virus infectious disease_female_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"278","blood plasma","Homo sapiens","unknown","female","Early Adulthood (18 yrs < x <= 45 yrs)",6,"blood plasma_Homo sapiens_unknown_female_Early Adulthood (18 yrs < x <= 45 yrs)"
-"279","blood plasma","Homo sapiens","unknown","male","Later Adulthood (>65 yrs)",6,"blood plasma_Homo sapiens_unknown_male_Later Adulthood (>65 yrs)"
-"280","feces","Homo sapiens","inflammatory bowel disease","female","Middle Adulthood (45 yrs < x <= 65 yrs)",6,"feces_Homo sapiens_inflammatory bowel disease_female_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"281","saliva","Homo sapiens","healthy","male","Early Childhood (2 yrs < x <=8 yrs)",6,"saliva_Homo sapiens_healthy_male_Early Childhood (2 yrs < x <=8 yrs)"
-"282","saliva","Homo sapiens","osteoarthritis","female","Later Adulthood (>65 yrs)",6,"saliva_Homo sapiens_osteoarthritis_female_Later Adulthood (>65 yrs)"
-"283","urine","Homo sapiens","hypertension","male","Later Adulthood (>65 yrs)",6,"urine_Homo sapiens_hypertension_male_Later Adulthood (>65 yrs)"
-"284","urine","Homo sapiens","unknown","male","Early Adulthood (18 yrs < x <= 45 yrs)",6,"urine_Homo sapiens_unknown_male_Early Adulthood (18 yrs < x <= 45 yrs)"
-"285","anal region","Homo sapiens","healthy","female","Adolescence (8 yrs < x <= 18 yrs)",5,"anal region_Homo sapiens_healthy_female_Adolescence (8 yrs < x <= 18 yrs)"
-"286","blood plasma","Homo sapiens","healthy","female","unknown",5,"blood plasma_Homo sapiens_healthy_female_unknown"
-"287","cerebrospinal fluid","Homo sapiens","Alzheimer's disease","female","Middle Adulthood (45 yrs < x <= 65 yrs)",5,"cerebrospinal fluid_Homo sapiens_Alzheimer's disease_female_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"288","esophagus","Mus musculus","healthy","male","unknown",5,"esophagus_Mus musculus_healthy_male_unknown"
-"289","feces","Homo sapiens","diabetes mellitus","female","Early Childhood (2 yrs < x <=8 yrs)",5,"feces_Homo sapiens_diabetes mellitus_female_Early Childhood (2 yrs < x <=8 yrs)"
-"290","feces","Homo sapiens","healthy","unknown","Early Childhood (2 yrs < x <=8 yrs)",5,"feces_Homo sapiens_healthy_unknown_Early Childhood (2 yrs < x <=8 yrs)"
-"291","feces","Homo sapiens","healthy","unknown","Middle Adulthood (45 yrs < x <= 65 yrs)",5,"feces_Homo sapiens_healthy_unknown_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"292","oral cavity","Homo sapiens","healthy","female","Adolescence (8 yrs < x <= 18 yrs)",5,"oral cavity_Homo sapiens_healthy_female_Adolescence (8 yrs < x <= 18 yrs)"
-"293","saliva","Homo sapiens","dental caries","female","Early Childhood (2 yrs < x <=8 yrs)",5,"saliva_Homo sapiens_dental caries_female_Early Childhood (2 yrs < x <=8 yrs)"
-"294","urine","Homo sapiens","diabetes mellitus","female","Early Childhood (2 yrs < x <=8 yrs)",5,"urine_Homo sapiens_diabetes mellitus_female_Early Childhood (2 yrs < x <=8 yrs)"
-"295","urine","Homo sapiens","healthy","male","Early Childhood (2 yrs < x <=8 yrs)",5,"urine_Homo sapiens_healthy_male_Early Childhood (2 yrs < x <=8 yrs)"
-"296","blood plasma","Homo sapiens","acquired immunodeficiency syndrome","male","Later Adulthood (>65 yrs)",4,"blood plasma_Homo sapiens_acquired immunodeficiency syndrome_male_Later Adulthood (>65 yrs)"
-"297","blood plasma","Homo sapiens","human immunodeficiency virus infectious disease","female","Early Adulthood (18 yrs < x <= 45 yrs)",4,"blood plasma_Homo sapiens_human immunodeficiency virus infectious disease_female_Early Adulthood (18 yrs < x <= 45 yrs)"
-"298","blood plasma","Homo sapiens","osteoarthritis","male","Middle Adulthood (45 yrs < x <= 65 yrs)",4,"blood plasma_Homo sapiens_osteoarthritis_male_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"299","blood serum","Homo sapiens","osteoarthritis","male","Middle Adulthood (45 yrs < x <= 65 yrs)",4,"blood serum_Homo sapiens_osteoarthritis_male_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"300","feces","Homo sapiens","inflammatory bowel disease","male","Early Adulthood (18 yrs < x <= 45 yrs)",4,"feces_Homo sapiens_inflammatory bowel disease_male_Early Adulthood (18 yrs < x <= 45 yrs)"
-"301","feces","Homo sapiens","inflammatory bowel disease","unknown","unknown",4,"feces_Homo sapiens_inflammatory bowel disease_unknown_unknown"
-"302","feces","Homo sapiens","unknown","male","Later Adulthood (>65 yrs)",4,"feces_Homo sapiens_unknown_male_Later Adulthood (>65 yrs)"
-"303","leukocyte","Homo sapiens","unknown","unknown","unknown",4,"leukocyte_Homo sapiens_unknown_unknown_unknown"
-"304","saliva","Homo sapiens","dental caries","male","Adolescence (8 yrs < x <= 18 yrs)",4,"saliva_Homo sapiens_dental caries_male_Adolescence (8 yrs < x <= 18 yrs)"
-"305","saliva","Homo sapiens","healthy","male","Adolescence (8 yrs < x <= 18 yrs)",4,"saliva_Homo sapiens_healthy_male_Adolescence (8 yrs < x <= 18 yrs)"
-"306","urine","Homo sapiens","chronic illness","female","Early Adulthood (18 yrs < x <= 45 yrs)",4,"urine_Homo sapiens_chronic illness_female_Early Adulthood (18 yrs < x <= 45 yrs)"
-"307","B cell","Mus musculus","unknown","unknown","unknown",3,"B cell_Mus musculus_unknown_unknown_unknown"
-"308","blood plasma","Homo sapiens","COVID-19","unknown","unknown",3,"blood plasma_Homo sapiens_COVID-19_unknown_unknown"
-"309","blood plasma","Homo sapiens","rheumatoid arthritis","male","Later Adulthood (>65 yrs)",3,"blood plasma_Homo sapiens_rheumatoid arthritis_male_Later Adulthood (>65 yrs)"
-"310","blood plasma","Homo sapiens","rheumatoid arthritis","male","Middle Adulthood (45 yrs < x <= 65 yrs)",3,"blood plasma_Homo sapiens_rheumatoid arthritis_male_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"311","blood plasma","Homo sapiens","unknown","unknown","Later Adulthood (>65 yrs)",3,"blood plasma_Homo sapiens_unknown_unknown_Later Adulthood (>65 yrs)"
-"312","blood plasma","Homo sapiens","unknown","unknown","Middle Adulthood (45 yrs < x <= 65 yrs)",3,"blood plasma_Homo sapiens_unknown_unknown_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"313","feces","Homo sapiens","rheumatoid arthritis","male","Later Adulthood (>65 yrs)",3,"feces_Homo sapiens_rheumatoid arthritis_male_Later Adulthood (>65 yrs)"
-"314","feces","Homo sapiens","unknown","female","Adolescence (8 yrs < x <= 18 yrs)",3,"feces_Homo sapiens_unknown_female_Adolescence (8 yrs < x <= 18 yrs)"
-"315","feces","Homo sapiens","unknown","unknown","Middle Adulthood (45 yrs < x <= 65 yrs)",3,"feces_Homo sapiens_unknown_unknown_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"316","nasal cavity","Homo sapiens","healthy","female","Adolescence (8 yrs < x <= 18 yrs)",3,"nasal cavity_Homo sapiens_healthy_female_Adolescence (8 yrs < x <= 18 yrs)"
-"317","neural stem cell","Mus musculus","unknown","unknown","unknown",3,"neural stem cell_Mus musculus_unknown_unknown_unknown"
-"318","saliva","Homo sapiens","dental caries","female","Adolescence (8 yrs < x <= 18 yrs)",3,"saliva_Homo sapiens_dental caries_female_Adolescence (8 yrs < x <= 18 yrs)"
-"319","skin","Homo sapiens","healthy","unknown","Early Adulthood (18 yrs < x <= 45 yrs)",3,"skin_Homo sapiens_healthy_unknown_Early Adulthood (18 yrs < x <= 45 yrs)"
-"320","urine","Homo sapiens","chronic illness","male","Early Adulthood (18 yrs < x <= 45 yrs)",3,"urine_Homo sapiens_chronic illness_male_Early Adulthood (18 yrs < x <= 45 yrs)"
-"321","blood plasma","Homo sapiens","Alzheimer's disease","unknown","unknown",2,"blood plasma_Homo sapiens_Alzheimer's disease_unknown_unknown"
-"322","blood plasma","Homo sapiens","COVID-19","male","Early Adulthood (18 yrs < x <= 45 yrs)",2,"blood plasma_Homo sapiens_COVID-19_male_Early Adulthood (18 yrs < x <= 45 yrs)"
-"323","blood plasma","Homo sapiens","healthy","female","Middle Adulthood (45 yrs < x <= 65 yrs)",2,"blood plasma_Homo sapiens_healthy_female_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"324","blood plasma","Homo sapiens","human immunodeficiency virus infectious disease","male","Adolescence (8 yrs < x <= 18 yrs)",2,"blood plasma_Homo sapiens_human immunodeficiency virus infectious disease_male_Adolescence (8 yrs < x <= 18 yrs)"
-"325","blood plasma","Homo sapiens","human immunodeficiency virus infectious disease","male","Later Adulthood (>65 yrs)",2,"blood plasma_Homo sapiens_human immunodeficiency virus infectious disease_male_Later Adulthood (>65 yrs)"
-"326","blood plasma","Homo sapiens","osteoarthritis","unknown","Middle Adulthood (45 yrs < x <= 65 yrs)",2,"blood plasma_Homo sapiens_osteoarthritis_unknown_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"327","blood serum","Homo sapiens","osteoarthritis","unknown","Middle Adulthood (45 yrs < x <= 65 yrs)",2,"blood serum_Homo sapiens_osteoarthritis_unknown_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"328","cerebrospinal fluid","Homo sapiens","Alzheimer's disease","unknown","unknown",2,"cerebrospinal fluid_Homo sapiens_Alzheimer's disease_unknown_unknown"
-"329","feces","Homo sapiens","diabetes mellitus","male","Early Childhood (2 yrs < x <=8 yrs)",2,"feces_Homo sapiens_diabetes mellitus_male_Early Childhood (2 yrs < x <=8 yrs)"
-"330","feces","Homo sapiens","inflammatory bowel disease","male","Later Adulthood (>65 yrs)",2,"feces_Homo sapiens_inflammatory bowel disease_male_Later Adulthood (>65 yrs)"
-"331","feces","Homo sapiens","osteoarthritis","male","Middle Adulthood (45 yrs < x <= 65 yrs)",2,"feces_Homo sapiens_osteoarthritis_male_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"332","feces","Homo sapiens","osteoarthritis","unknown","Middle Adulthood (45 yrs < x <= 65 yrs)",2,"feces_Homo sapiens_osteoarthritis_unknown_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"333","feces","Homo sapiens","unhealthy (NOS)","unknown","Middle Adulthood (45 yrs < x <= 65 yrs)",2,"feces_Homo sapiens_unhealthy (NOS)_unknown_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"334","feces","Homo sapiens","unknown","unknown","Early Adulthood (18 yrs < x <= 45 yrs)",2,"feces_Homo sapiens_unknown_unknown_Early Adulthood (18 yrs < x <= 45 yrs)"
-"335","saliva","Homo sapiens","osteoarthritis","male","Middle Adulthood (45 yrs < x <= 65 yrs)",2,"saliva_Homo sapiens_osteoarthritis_male_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"336","saliva","Homo sapiens","osteoarthritis","unknown","Middle Adulthood (45 yrs < x <= 65 yrs)",2,"saliva_Homo sapiens_osteoarthritis_unknown_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"337","urine","Homo sapiens","healthy","female","Early Childhood (2 yrs < x <=8 yrs)",2,"urine_Homo sapiens_healthy_female_Early Childhood (2 yrs < x <=8 yrs)"
-"338","urine","Homo sapiens","hypertension","male","Early Adulthood (18 yrs < x <= 45 yrs)",2,"urine_Homo sapiens_hypertension_male_Early Adulthood (18 yrs < x <= 45 yrs)"
-"339","vagina","Homo sapiens","healthy","female","Middle Adulthood (45 yrs < x <= 65 yrs)",2,"vagina_Homo sapiens_healthy_female_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"340","anal region","Homo sapiens","healthy","female","Middle Adulthood (45 yrs < x <= 65 yrs)",1,"anal region_Homo sapiens_healthy_female_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"341","blood plasma","Homo sapiens","Alzheimer's disease","female","Middle Adulthood (45 yrs < x <= 65 yrs)",1,"blood plasma_Homo sapiens_Alzheimer's disease_female_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"342","blood plasma","Homo sapiens","Alzheimer's disease","female","unknown",1,"blood plasma_Homo sapiens_Alzheimer's disease_female_unknown"
-"343","blood plasma","Homo sapiens","Alzheimer's disease","male","unknown",1,"blood plasma_Homo sapiens_Alzheimer's disease_male_unknown"
-"344","blood plasma","Mus musculus","unknown","male","unknown",1,"blood plasma_Mus musculus_unknown_male_unknown"
-"345","blood serum","Mus musculus","unknown","male","unknown",1,"blood serum_Mus musculus_unknown_male_unknown"
-"346","cerebrospinal fluid","Homo sapiens","Alzheimer's disease","female","unknown",1,"cerebrospinal fluid_Homo sapiens_Alzheimer's disease_female_unknown"
-"347","cerebrospinal fluid","Homo sapiens","Alzheimer's disease","male","unknown",1,"cerebrospinal fluid_Homo sapiens_Alzheimer's disease_male_unknown"
-"348","feces","Homo sapiens","diabetes mellitus","female","Early Adulthood (18 yrs < x <= 45 yrs)",1,"feces_Homo sapiens_diabetes mellitus_female_Early Adulthood (18 yrs < x <= 45 yrs)"
-"349","feces","Homo sapiens","healthy","unknown","Early Adulthood (18 yrs < x <= 45 yrs)",1,"feces_Homo sapiens_healthy_unknown_Early Adulthood (18 yrs < x <= 45 yrs)"
-"350","feces","Homo sapiens","healthy","unknown","Later Adulthood (>65 yrs)",1,"feces_Homo sapiens_healthy_unknown_Later Adulthood (>65 yrs)"
-"351","feces","Homo sapiens","unhealthy (NOS)","unknown","Early Adulthood (18 yrs < x <= 45 yrs)",1,"feces_Homo sapiens_unhealthy (NOS)_unknown_Early Adulthood (18 yrs < x <= 45 yrs)"
-"352","gallbladder","Rattus norvegicus","unknown","unknown","unknown",1,"gallbladder_Rattus norvegicus_unknown_unknown_unknown"
-"353","nasal cavity","Homo sapiens","healthy","female","Middle Adulthood (45 yrs < x <= 65 yrs)",1,"nasal cavity_Homo sapiens_healthy_female_Middle Adulthood (45 yrs < x <= 65 yrs)"
-"354","oral cavity","Homo sapiens","healthy","unknown","unknown",1,"oral cavity_Homo sapiens_healthy_unknown_unknown"
-"355","tissue","Mus musculus","Chagas disease","unknown","unknown",1,"tissue_Mus musculus_Chagas disease_unknown_unknown"
-"356","urine","Homo sapiens","diabetes mellitus","female","Early Adulthood (18 yrs < x <= 45 yrs)",1,"urine_Homo sapiens_diabetes mellitus_female_Early Adulthood (18 yrs < x <= 45 yrs)"
-"357","urine","Homo sapiens","diabetes mellitus","male","Early Childhood (2 yrs < x <=8 yrs)",1,"urine_Homo sapiens_diabetes mellitus_male_Early Childhood (2 yrs < x <=8 yrs)"
-"358","urine","Homo sapiens","unknown","male","unknown",1,"urine_Homo sapiens_unknown_male_unknown"
+NCBITaxonomy,UBERONBodyPartName,DOIDCommonName,BiologicalSex,LifeStage,count,ID
+blank_qc,blank_qc,blank_qc,blank_qc,blank_qc,4264,blank_qc_blank_qc_blank_qc_blank_qc_blank_qc
+Homo sapiens,unknown,unknown,unknown,unknown,2861,Homo sapiens_unknown_unknown_unknown_unknown
+Homo sapiens,skin,healthy,male,unknown,2468,Homo sapiens_skin_healthy_male_unknown
+Homo sapiens,blood serum,unknown,unknown,unknown,2147,Homo sapiens_blood serum_unknown_unknown_unknown
+Homo sapiens,skin,healthy,female,unknown,2093,Homo sapiens_skin_healthy_female_unknown
+Homo sapiens,blood plasma,unknown,unknown,unknown,1896,Homo sapiens_blood plasma_unknown_unknown_unknown
+Homo sapiens,liver,unknown,unknown,unknown,1356,Homo sapiens_liver_unknown_unknown_unknown
+Homo sapiens,oral cavity,unknown,unknown,unknown,977,Homo sapiens_oral cavity_unknown_unknown_unknown
+Homo sapiens,skin,healthy,unknown,unknown,855,Homo sapiens_skin_healthy_unknown_unknown
+Mus musculus,feces,unknown,unknown,unknown,710,Mus musculus_feces_unknown_unknown_unknown
+Homo sapiens,feces,healthy,male,Infancy (<2 yrs),668,Homo sapiens_feces_healthy_male_Infancy (<2 yrs)
+Mus musculus,liver,unknown,unknown,unknown,649,Mus musculus_liver_unknown_unknown_unknown
+Homo sapiens,feces,healthy,female,Infancy (<2 yrs),635,Homo sapiens_feces_healthy_female_Infancy (<2 yrs)
+Mus musculus,feces,healthy,male,unknown,601,Mus musculus_feces_healthy_male_unknown
+Homo sapiens,skin,healthy,female,Early Adulthood (18 yrs < x <= 45 yrs),591,Homo sapiens_skin_healthy_female_Early Adulthood (18 yrs < x <= 45 yrs)
+Rattus norvegicus,feces,unknown,male,unknown,549,Rattus norvegicus_feces_unknown_male_unknown
+Homo sapiens,feces,unknown,unknown,unknown,532,Homo sapiens_feces_unknown_unknown_unknown
+Mus musculus,blood plasma,unknown,unknown,unknown,508,Mus musculus_blood plasma_unknown_unknown_unknown
+Mus musculus,feces,unknown,male,unknown,488,Mus musculus_feces_unknown_male_unknown
+Mus musculus,unknown,unknown,unknown,unknown,473,Mus musculus_unknown_unknown_unknown_unknown
+Mus musculus,feces,obesity,male,unknown,451,Mus musculus_feces_obesity_male_unknown
+Mus musculus,heart,Chagas disease,male,unknown,432,Mus musculus_heart_Chagas disease_male_unknown
+Homo sapiens,feces,healthy,unknown,Infancy (<2 yrs),425,Homo sapiens_feces_healthy_unknown_Infancy (<2 yrs)
+Homo sapiens,skin,healthy,unknown,Infancy (<2 yrs),400,Homo sapiens_skin_healthy_unknown_Infancy (<2 yrs)
+Homo sapiens,oral cavity,healthy,unknown,Infancy (<2 yrs),398,Homo sapiens_oral cavity_healthy_unknown_Infancy (<2 yrs)
+Mus musculus,lung,acute illness,male,unknown,396,Mus musculus_lung_acute illness_male_unknown
+Homo sapiens,urine,unknown,unknown,unknown,385,Homo sapiens_urine_unknown_unknown_unknown
+Mus musculus,blood serum,unknown,unknown,unknown,377,Mus musculus_blood serum_unknown_unknown_unknown
+Mus musculus,feces,Chagas disease,male,unknown,374,Mus musculus_feces_Chagas disease_male_unknown
+Homo sapiens,brain,unknown,female,Later Adulthood (>65 yrs),358,Homo sapiens_brain_unknown_female_Later Adulthood (>65 yrs)
+Mus musculus,biofluid,unknown,male,unknown,339,Mus musculus_biofluid_unknown_male_unknown
+Rattus norvegicus,unknown,unknown,unknown,unknown,329,Rattus norvegicus_unknown_unknown_unknown_unknown
+Homo sapiens,feces,healthy,female,Early Adulthood (18 yrs < x <= 45 yrs),326,Homo sapiens_feces_healthy_female_Early Adulthood (18 yrs < x <= 45 yrs)
+Homo sapiens,milk,unknown,female,unknown,305,Homo sapiens_milk_unknown_female_unknown
+Mus musculus,feces,unhealthy (NOS),male,unknown,304,Mus musculus_feces_unhealthy (NOS)_male_unknown
+Homo sapiens,brain,unknown,unknown,unknown,269,Homo sapiens_brain_unknown_unknown_unknown
+Mus musculus,caecum,healthy,male,unknown,269,Mus musculus_caecum_healthy_male_unknown
+Homo sapiens,feces,unhealthy (NOS),female,Early Adulthood (18 yrs < x <= 45 yrs),267,Homo sapiens_feces_unhealthy (NOS)_female_Early Adulthood (18 yrs < x <= 45 yrs)
+Homo sapiens,feces,healthy,female,Middle Adulthood (45 yrs < x <= 65 yrs),253,Homo sapiens_feces_healthy_female_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,feces,unhealthy (NOS),female,Middle Adulthood (45 yrs < x <= 65 yrs),252,Homo sapiens_feces_unhealthy (NOS)_female_Middle Adulthood (45 yrs < x <= 65 yrs)
+Mus musculus,colon,unknown,unknown,unknown,236,Mus musculus_colon_unknown_unknown_unknown
+Homo sapiens,feces,healthy,male,Early Adulthood (18 yrs < x <= 45 yrs),221,Homo sapiens_feces_healthy_male_Early Adulthood (18 yrs < x <= 45 yrs)
+Homo sapiens,bone tissue,unknown,unknown,unknown,219,Homo sapiens_bone tissue_unknown_unknown_unknown
+Homo sapiens,skin,primary bacterial infectious disease,male,unknown,218,Homo sapiens_skin_primary bacterial infectious disease_male_unknown
+Homo sapiens,feces,unhealthy (NOS),male,Early Adulthood (18 yrs < x <= 45 yrs),215,Homo sapiens_feces_unhealthy (NOS)_male_Early Adulthood (18 yrs < x <= 45 yrs)
+Homo sapiens,blood plasma,unhealthy (NOS),male,Early Adulthood (18 yrs < x <= 45 yrs),211,Homo sapiens_blood plasma_unhealthy (NOS)_male_Early Adulthood (18 yrs < x <= 45 yrs)
+Homo sapiens,blood,unknown,unknown,unknown,207,Homo sapiens_blood_unknown_unknown_unknown
+Mus musculus,feces,healthy,female,unknown,194,Mus musculus_feces_healthy_female_unknown
+Homo sapiens,feces,unhealthy (NOS),male,Middle Adulthood (45 yrs < x <= 65 yrs),192,Homo sapiens_feces_unhealthy (NOS)_male_Middle Adulthood (45 yrs < x <= 65 yrs)
+Mus musculus,upper digestive tract,unknown,female,unknown,187,Mus musculus_upper digestive tract_unknown_female_unknown
+Mus musculus,heart,healthy,male,unknown,176,Mus musculus_heart_healthy_male_unknown
+Homo sapiens,feces,healthy,male,Middle Adulthood (45 yrs < x <= 65 yrs),175,Homo sapiens_feces_healthy_male_Middle Adulthood (45 yrs < x <= 65 yrs)
+Mus musculus,caecum,unknown,female,unknown,173,Mus musculus_caecum_unknown_female_unknown
+Mus musculus,brain,unknown,unknown,unknown,164,Mus musculus_brain_unknown_unknown_unknown
+Mus musculus,liver,unknown,female,unknown,157,Mus musculus_liver_unknown_female_unknown
+Homo sapiens,skin,healthy,male,Early Adulthood (18 yrs < x <= 45 yrs),151,Homo sapiens_skin_healthy_male_Early Adulthood (18 yrs < x <= 45 yrs)
+Homo sapiens,brain,unknown,male,Later Adulthood (>65 yrs),150,Homo sapiens_brain_unknown_male_Later Adulthood (>65 yrs)
+Mus musculus,lung,unknown,female,unknown,143,Mus musculus_lung_unknown_female_unknown
+Mus musculus,colon,unknown,female,unknown,141,Mus musculus_colon_unknown_female_unknown
+Homo sapiens,feces,unhealthy (NOS),male,Later Adulthood (>65 yrs),132,Homo sapiens_feces_unhealthy (NOS)_male_Later Adulthood (>65 yrs)
+Mus musculus,biofluid,unknown,female,unknown,132,Mus musculus_biofluid_unknown_female_unknown
+Homo sapiens,erythrocyte,unknown,unknown,unknown,129,Homo sapiens_erythrocyte_unknown_unknown_unknown
+Mus musculus,ileum,unknown,female,unknown,126,Mus musculus_ileum_unknown_female_unknown
+Mus musculus,jejunum,unknown,female,unknown,126,Mus musculus_jejunum_unknown_female_unknown
+Homo sapiens,feces,unhealthy (NOS),female,Later Adulthood (>65 yrs),124,Homo sapiens_feces_unhealthy (NOS)_female_Later Adulthood (>65 yrs)
+Mus musculus,duodenum,unknown,female,unknown,124,Mus musculus_duodenum_unknown_female_unknown
+Mus musculus,brain,unknown,female,unknown,120,Mus musculus_brain_unknown_female_unknown
+Mus musculus,heart,unknown,female,unknown,119,Mus musculus_heart_unknown_female_unknown
+Homo sapiens,skin,healthy,female,Middle Adulthood (45 yrs < x <= 65 yrs),118,Homo sapiens_skin_healthy_female_Middle Adulthood (45 yrs < x <= 65 yrs)
+Rattus norvegicus,feces,unhealthy (NOS),male,unknown,118,Rattus norvegicus_feces_unhealthy (NOS)_male_unknown
+Homo sapiens,cerebrospinal fluid,unknown,unknown,unknown,116,Homo sapiens_cerebrospinal fluid_unknown_unknown_unknown
+Homo sapiens,blood plasma,unhealthy (NOS),female,Early Adulthood (18 yrs < x <= 45 yrs),110,Homo sapiens_blood plasma_unhealthy (NOS)_female_Early Adulthood (18 yrs < x <= 45 yrs)
+Mus musculus,spinal cord,unknown,unknown,unknown,110,Mus musculus_spinal cord_unknown_unknown_unknown
+Homo sapiens,blood plasma,Kawasaki disease,unknown,unknown,108,Homo sapiens_blood plasma_Kawasaki disease_unknown_unknown
+Homo sapiens,blood plasma,healthy,unknown,unknown,108,Homo sapiens_blood plasma_healthy_unknown_unknown
+Mus musculus,kidney,unknown,unknown,unknown,107,Mus musculus_kidney_unknown_unknown_unknown
+Homo sapiens,nasal cavity,primary bacterial infectious disease,male,unknown,104,Homo sapiens_nasal cavity_primary bacterial infectious disease_male_unknown
+Homo sapiens,saliva,primary bacterial infectious disease,male,unknown,104,Homo sapiens_saliva_primary bacterial infectious disease_male_unknown
+Homo sapiens,feces,Crohn's disease,male,unknown,101,Homo sapiens_feces_Crohn's disease_male_unknown
+Homo sapiens,blood plasma,unhealthy (NOS),unknown,unknown,100,Homo sapiens_blood plasma_unhealthy (NOS)_unknown_unknown
+Homo sapiens,feces,Crohn's disease,female,unknown,96,Homo sapiens_feces_Crohn's disease_female_unknown
+Mus musculus,blood plasma,healthy,female,unknown,96,Mus musculus_blood plasma_healthy_female_unknown
+Mus musculus,uterus,unknown,female,unknown,93,Mus musculus_uterus_unknown_female_unknown
+Homo sapiens,feces,healthy,female,unknown,91,Homo sapiens_feces_healthy_female_unknown
+Homo sapiens,feces,unhealthy (NOS),male,Adolescence (8 yrs < x <= 18 yrs),91,Homo sapiens_feces_unhealthy (NOS)_male_Adolescence (8 yrs < x <= 18 yrs)
+Mus musculus,colon,Chagas disease,male,unknown,87,Mus musculus_colon_Chagas disease_male_unknown
+Mus musculus,stomach,unknown,female,unknown,87,Mus musculus_stomach_unknown_female_unknown
+Mus musculus,blood,unknown,unknown,unknown,84,Mus musculus_blood_unknown_unknown_unknown
+Mus musculus,esophagus,unknown,female,unknown,84,Mus musculus_esophagus_unknown_female_unknown
+Homo sapiens,feces,healthy,male,unknown,83,Homo sapiens_feces_healthy_male_unknown
+Mus musculus,duodenum,unknown,unknown,unknown,81,Mus musculus_duodenum_unknown_unknown_unknown
+Rattus norvegicus,heart,unknown,unknown,unknown,80,Rattus norvegicus_heart_unknown_unknown_unknown
+Homo sapiens,cerebrospinal fluid,Alzheimer's disease,male,Later Adulthood (>65 yrs),70,Homo sapiens_cerebrospinal fluid_Alzheimer's disease_male_Later Adulthood (>65 yrs)
+Homo sapiens,feces,ulcerative colitis,female,unknown,70,Homo sapiens_feces_ulcerative colitis_female_unknown
+Homo sapiens,urine,healthy,female,unknown,70,Homo sapiens_urine_healthy_female_unknown
+Homo sapiens,urine,healthy,male,unknown,70,Homo sapiens_urine_healthy_male_unknown
+Mus musculus,feces,Alzheimer's disease,male,unknown,69,Mus musculus_feces_Alzheimer's disease_male_unknown
+Homo sapiens,epithelial cell,unknown,unknown,unknown,68,Homo sapiens_epithelial cell_unknown_unknown_unknown
+Homo sapiens,feces,inflammatory bowel disease,male,Middle Adulthood (45 yrs < x <= 65 yrs),67,Homo sapiens_feces_inflammatory bowel disease_male_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,skin,healthy,female,Early Childhood (2 yrs < x <=8 yrs),67,Homo sapiens_skin_healthy_female_Early Childhood (2 yrs < x <=8 yrs)
+Homo sapiens,feces,primary bacterial infectious disease,male,unknown,66,Homo sapiens_feces_primary bacterial infectious disease_male_unknown
+Homo sapiens,feces,ulcerative colitis,male,unknown,66,Homo sapiens_feces_ulcerative colitis_male_unknown
+Homo sapiens,feces,unhealthy (NOS),male,Early Childhood (2 yrs < x <=8 yrs),66,Homo sapiens_feces_unhealthy (NOS)_male_Early Childhood (2 yrs < x <=8 yrs)
+Mus musculus,feces,Alzheimer's disease,female,unknown,66,Mus musculus_feces_Alzheimer's disease_female_unknown
+Homo sapiens,saliva,obesity,female,Early Adulthood (18 yrs < x <= 45 yrs),65,Homo sapiens_saliva_obesity_female_Early Adulthood (18 yrs < x <= 45 yrs)
+Mus musculus,kidney,unknown,female,unknown,64,Mus musculus_kidney_unknown_female_unknown
+Mus musculus,skin,unknown,female,unknown,64,Mus musculus_skin_unknown_female_unknown
+Homo sapiens,feces,unhealthy (NOS),male,unknown,63,Homo sapiens_feces_unhealthy (NOS)_male_unknown
+Homo sapiens,blood plasma,acquired immunodeficiency syndrome,male,Middle Adulthood (45 yrs < x <= 65 yrs),62,Homo sapiens_blood plasma_acquired immunodeficiency syndrome_male_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,feces,unhealthy (NOS),unknown,unknown,62,Homo sapiens_feces_unhealthy (NOS)_unknown_unknown
+Homo sapiens,saliva,obesity,male,Middle Adulthood (45 yrs < x <= 65 yrs),62,Homo sapiens_saliva_obesity_male_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,feces,unhealthy (NOS),female,Adolescence (8 yrs < x <= 18 yrs),59,Homo sapiens_feces_unhealthy (NOS)_female_Adolescence (8 yrs < x <= 18 yrs)
+Homo sapiens,feces,unhealthy (NOS),female,unknown,59,Homo sapiens_feces_unhealthy (NOS)_female_unknown
+Mus musculus,skin,unknown,unknown,unknown,59,Mus musculus_skin_unknown_unknown_unknown
+Homo sapiens,milk,healthy,unknown,unknown,58,Homo sapiens_milk_healthy_unknown_unknown
+Mus musculus,vagina,unknown,female,unknown,56,Mus musculus_vagina_unknown_female_unknown
+Homo sapiens,skin,healthy,male,Middle Adulthood (45 yrs < x <= 65 yrs),55,Homo sapiens_skin_healthy_male_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,blood plasma,human immunodeficiency virus infectious disease,male,Early Adulthood (18 yrs < x <= 45 yrs),54,Homo sapiens_blood plasma_human immunodeficiency virus infectious disease_male_Early Adulthood (18 yrs < x <= 45 yrs)
+Rattus norvegicus,blood plasma,unknown,unknown,unknown,54,Rattus norvegicus_blood plasma_unknown_unknown_unknown
+Mus musculus,spleen,unknown,female,unknown,53,Mus musculus_spleen_unknown_female_unknown
+Mus musculus,trachea,unknown,female,unknown,53,Mus musculus_trachea_unknown_female_unknown
+Homo sapiens,blood plasma,unknown,male,Early Adulthood (18 yrs < x <= 45 yrs),52,Homo sapiens_blood plasma_unknown_male_Early Adulthood (18 yrs < x <= 45 yrs)
+Homo sapiens,skin,healthy,female,Adolescence (8 yrs < x <= 18 yrs),51,Homo sapiens_skin_healthy_female_Adolescence (8 yrs < x <= 18 yrs)
+Homo sapiens,blood plasma,Alzheimer's disease,male,Later Adulthood (>65 yrs),50,Homo sapiens_blood plasma_Alzheimer's disease_male_Later Adulthood (>65 yrs)
+Homo sapiens,vagina,healthy,female,Early Adulthood (18 yrs < x <= 45 yrs),50,Homo sapiens_vagina_healthy_female_Early Adulthood (18 yrs < x <= 45 yrs)
+Mus musculus,adrenal gland,unknown,female,unknown,50,Mus musculus_adrenal gland_unknown_female_unknown
+Mus musculus,ovary,unknown,female,unknown,50,Mus musculus_ovary_unknown_female_unknown
+Homo sapiens,skin,healthy,male,Early Childhood (2 yrs < x <=8 yrs),49,Homo sapiens_skin_healthy_male_Early Childhood (2 yrs < x <=8 yrs)
+Mus musculus,lower digestive tract,unknown,female,unknown,49,Mus musculus_lower digestive tract_unknown_female_unknown
+Mus musculus,urine,unknown,female,unknown,48,Mus musculus_urine_unknown_female_unknown
+Rattus norvegicus,cortex,unknown,unknown,unknown,48,Rattus norvegicus_cortex_unknown_unknown_unknown
+Homo sapiens,feces,unhealthy (NOS),female,Early Childhood (2 yrs < x <=8 yrs),47,Homo sapiens_feces_unhealthy (NOS)_female_Early Childhood (2 yrs < x <=8 yrs)
+Homo sapiens,blood plasma,unknown,male,Middle Adulthood (45 yrs < x <= 65 yrs),46,Homo sapiens_blood plasma_unknown_male_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,saliva,obesity,female,Middle Adulthood (45 yrs < x <= 65 yrs),46,Homo sapiens_saliva_obesity_female_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,saliva,obesity,male,Early Adulthood (18 yrs < x <= 45 yrs),45,Homo sapiens_saliva_obesity_male_Early Adulthood (18 yrs < x <= 45 yrs)
+Mus musculus,biofluid,unknown,unknown,unknown,45,Mus musculus_biofluid_unknown_unknown_unknown
+Mus musculus,blood serum,healthy,male,unknown,45,Mus musculus_blood serum_healthy_male_unknown
+Homo sapiens,blood plasma,human immunodeficiency virus infectious disease,male,Middle Adulthood (45 yrs < x <= 65 yrs),44,Homo sapiens_blood plasma_human immunodeficiency virus infectious disease_male_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,feces,unknown,female,Middle Adulthood (45 yrs < x <= 65 yrs),42,Homo sapiens_feces_unknown_female_Middle Adulthood (45 yrs < x <= 65 yrs)
+Rattus norvegicus,blood serum,unknown,male,unknown,42,Rattus norvegicus_blood serum_unknown_male_unknown
+Rattus norvegicus,blood serum,unhealthy (NOS),male,unknown,41,Rattus norvegicus_blood serum_unhealthy (NOS)_male_unknown
+Homo sapiens,skin,healthy,male,Later Adulthood (>65 yrs),40,Homo sapiens_skin_healthy_male_Later Adulthood (>65 yrs)
+Mus musculus,gallbladder,unknown,unknown,unknown,40,Mus musculus_gallbladder_unknown_unknown_unknown
+Mus musculus,heart,unknown,male,unknown,40,Mus musculus_heart_unknown_male_unknown
+Mus musculus,pancreas,unknown,female,unknown,40,Mus musculus_pancreas_unknown_female_unknown
+Mus musculus,urine,unknown,unknown,unknown,39,Mus musculus_urine_unknown_unknown_unknown
+Homo sapiens,feces,healthy,male,Later Adulthood (>65 yrs),38,Homo sapiens_feces_healthy_male_Later Adulthood (>65 yrs)
+Homo sapiens,skin,healthy,male,Adolescence (8 yrs < x <= 18 yrs),37,Homo sapiens_skin_healthy_male_Adolescence (8 yrs < x <= 18 yrs)
+Mus musculus,blood plasma,unhealthy (NOS),male,unknown,37,Mus musculus_blood plasma_unhealthy (NOS)_male_unknown
+Mus musculus,blood serum,unhealthy (NOS),male,unknown,37,Mus musculus_blood serum_unhealthy (NOS)_male_unknown
+Mus musculus,retina,unknown,unknown,unknown,37,Mus musculus_retina_unknown_unknown_unknown
+Mus musculus,blood plasma,healthy,male,unknown,36,Mus musculus_blood plasma_healthy_male_unknown
+Mus musculus,caecum,unknown,unknown,unknown,36,Mus musculus_caecum_unknown_unknown_unknown
+Mus musculus,esophagus,unknown,unknown,unknown,36,Mus musculus_esophagus_unknown_unknown_unknown
+Mus musculus,ileum,unknown,unknown,unknown,36,Mus musculus_ileum_unknown_unknown_unknown
+Mus musculus,jejunum,unknown,unknown,unknown,36,Mus musculus_jejunum_unknown_unknown_unknown
+Mus musculus,stomach,unknown,unknown,unknown,36,Mus musculus_stomach_unknown_unknown_unknown
+Mus musculus,heart,unknown,unknown,unknown,35,Mus musculus_heart_unknown_unknown_unknown
+Mus musculus,feces,unknown,female,unknown,34,Mus musculus_feces_unknown_female_unknown
+Rattus norvegicus,feces,healthy,male,unknown,34,Rattus norvegicus_feces_healthy_male_unknown
+Homo sapiens,blood plasma,healthy,male,Early Adulthood (18 yrs < x <= 45 yrs),33,Homo sapiens_blood plasma_healthy_male_Early Adulthood (18 yrs < x <= 45 yrs)
+Homo sapiens,lung,unknown,unknown,unknown,33,Homo sapiens_lung_unknown_unknown_unknown
+Homo sapiens,blood plasma,acquired immunodeficiency syndrome,male,Early Adulthood (18 yrs < x <= 45 yrs),32,Homo sapiens_blood plasma_acquired immunodeficiency syndrome_male_Early Adulthood (18 yrs < x <= 45 yrs)
+Homo sapiens,feces,healthy,male,Adolescence (8 yrs < x <= 18 yrs),32,Homo sapiens_feces_healthy_male_Adolescence (8 yrs < x <= 18 yrs)
+Mus musculus,caecum,healthy,female,unknown,32,Mus musculus_caecum_healthy_female_unknown
+Mus musculus,embryonic cell (metazoa),unknown,unknown,unknown,32,Mus musculus_embryonic cell (metazoa)_unknown_unknown_unknown
+Rattus norvegicus,blood serum,unknown,unknown,unknown,32,Rattus norvegicus_blood serum_unknown_unknown_unknown
+Homo sapiens,urine,unknown,female,Later Adulthood (>65 yrs),31,Homo sapiens_urine_unknown_female_Later Adulthood (>65 yrs)
+Homo sapiens,biofluid,osteoarthritis,unknown,unknown,30,Homo sapiens_biofluid_osteoarthritis_unknown_unknown
+Homo sapiens,blood plasma,rheumatoid arthritis,female,Middle Adulthood (45 yrs < x <= 65 yrs),30,Homo sapiens_blood plasma_rheumatoid arthritis_female_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,feces,healthy,female,Later Adulthood (>65 yrs),30,Homo sapiens_feces_healthy_female_Later Adulthood (>65 yrs)
+Homo sapiens,nasal cavity,healthy,female,Early Adulthood (18 yrs < x <= 45 yrs),30,Homo sapiens_nasal cavity_healthy_female_Early Adulthood (18 yrs < x <= 45 yrs)
+Homo sapiens,urine,chronic illness,female,Later Adulthood (>65 yrs),30,Homo sapiens_urine_chronic illness_female_Later Adulthood (>65 yrs)
+Mus musculus,thymus,unknown,female,unknown,30,Mus musculus_thymus_unknown_female_unknown
+Homo sapiens,anal region,healthy,female,Early Adulthood (18 yrs < x <= 45 yrs),29,Homo sapiens_anal region_healthy_female_Early Adulthood (18 yrs < x <= 45 yrs)
+Mus musculus,blood serum,unknown,female,unknown,29,Mus musculus_blood serum_unknown_female_unknown
+Mus musculus,esophagus,Chagas disease,male,unknown,29,Mus musculus_esophagus_Chagas disease_male_unknown
+Mus musculus,gallbladder,unknown,female,unknown,29,Mus musculus_gallbladder_unknown_female_unknown
+Homo sapiens,blood plasma,unknown,female,Middle Adulthood (45 yrs < x <= 65 yrs),28,Homo sapiens_blood plasma_unknown_female_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,feces,unknown,female,Early Adulthood (18 yrs < x <= 45 yrs),28,Homo sapiens_feces_unknown_female_Early Adulthood (18 yrs < x <= 45 yrs)
+Homo sapiens,urine,chronic illness,male,Later Adulthood (>65 yrs),28,Homo sapiens_urine_chronic illness_male_Later Adulthood (>65 yrs)
+Homo sapiens,feces,diabetes mellitus,male,Adolescence (8 yrs < x <= 18 yrs),27,Homo sapiens_feces_diabetes mellitus_male_Adolescence (8 yrs < x <= 18 yrs)
+Homo sapiens,feces,healthy,female,Adolescence (8 yrs < x <= 18 yrs),27,Homo sapiens_feces_healthy_female_Adolescence (8 yrs < x <= 18 yrs)
+Homo sapiens,feces,rheumatoid arthritis,female,Middle Adulthood (45 yrs < x <= 65 yrs),27,Homo sapiens_feces_rheumatoid arthritis_female_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,saliva,healthy,female,Early Adulthood (18 yrs < x <= 45 yrs),27,Homo sapiens_saliva_healthy_female_Early Adulthood (18 yrs < x <= 45 yrs)
+Mus musculus,megakaryocyte,unknown,unknown,unknown,27,Mus musculus_megakaryocyte_unknown_unknown_unknown
+Homo sapiens,oral cavity,healthy,female,Early Adulthood (18 yrs < x <= 45 yrs),26,Homo sapiens_oral cavity_healthy_female_Early Adulthood (18 yrs < x <= 45 yrs)
+Homo sapiens,urine,unknown,male,Middle Adulthood (45 yrs < x <= 65 yrs),26,Homo sapiens_urine_unknown_male_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,cerebrospinal fluid,Alzheimer's disease,female,Later Adulthood (>65 yrs),25,Homo sapiens_cerebrospinal fluid_Alzheimer's disease_female_Later Adulthood (>65 yrs)
+Mus musculus,epithelial cell,unknown,unknown,unknown,25,Mus musculus_epithelial cell_unknown_unknown_unknown
+Homo sapiens,urine,healthy,male,Adolescence (8 yrs < x <= 18 yrs),24,Homo sapiens_urine_healthy_male_Adolescence (8 yrs < x <= 18 yrs)
+Homo sapiens neanderthalensis,unknown,unknown,unknown,unknown,24,Homo sapiens neanderthalensis_unknown_unknown_unknown_unknown
+Mus musculus,muscle of leg,unknown,unknown,unknown,24,Mus musculus_muscle of leg_unknown_unknown_unknown
+Homo sapiens,saliva,healthy,male,Early Adulthood (18 yrs < x <= 45 yrs),23,Homo sapiens_saliva_healthy_male_Early Adulthood (18 yrs < x <= 45 yrs)
+Homo sapiens,feces,unknown,male,Middle Adulthood (45 yrs < x <= 65 yrs),22,Homo sapiens_feces_unknown_male_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,heart,unknown,unknown,unknown,22,Homo sapiens_heart_unknown_unknown_unknown
+Homo sapiens,feces,diabetes mellitus,female,Adolescence (8 yrs < x <= 18 yrs),21,Homo sapiens_feces_diabetes mellitus_female_Adolescence (8 yrs < x <= 18 yrs)
+Homo sapiens,urine,chronic illness,female,Middle Adulthood (45 yrs < x <= 65 yrs),21,Homo sapiens_urine_chronic illness_female_Middle Adulthood (45 yrs < x <= 65 yrs)
+Mus musculus,blood,unknown,female,unknown,21,Mus musculus_blood_unknown_female_unknown
+Mus musculus,brainstem,unknown,unknown,unknown,21,Mus musculus_brainstem_unknown_unknown_unknown
+Mus musculus,ileum,Alzheimer's disease,female,unknown,21,Mus musculus_ileum_Alzheimer's disease_female_unknown
+Mus musculus,ileum,Alzheimer's disease,male,unknown,21,Mus musculus_ileum_Alzheimer's disease_male_unknown
+Homo sapiens,feces,unknown,male,Early Adulthood (18 yrs < x <= 45 yrs),20,Homo sapiens_feces_unknown_male_Early Adulthood (18 yrs < x <= 45 yrs)
+Homo sapiens,urine,diabetes mellitus,male,Adolescence (8 yrs < x <= 18 yrs),20,Homo sapiens_urine_diabetes mellitus_male_Adolescence (8 yrs < x <= 18 yrs)
+Homo sapiens,urine,healthy,female,Adolescence (8 yrs < x <= 18 yrs),20,Homo sapiens_urine_healthy_female_Adolescence (8 yrs < x <= 18 yrs)
+Mus musculus,lung,unknown,unknown,unknown,20,Mus musculus_lung_unknown_unknown_unknown
+Homo sapiens,blood plasma,healthy,female,Early Adulthood (18 yrs < x <= 45 yrs),19,Homo sapiens_blood plasma_healthy_female_Early Adulthood (18 yrs < x <= 45 yrs)
+Homo sapiens,feces,unknown,female,Later Adulthood (>65 yrs),19,Homo sapiens_feces_unknown_female_Later Adulthood (>65 yrs)
+Homo sapiens,skin,healthy,female,Later Adulthood (>65 yrs),19,Homo sapiens_skin_healthy_female_Later Adulthood (>65 yrs)
+Mus musculus,feces,unhealthy (NOS),female,unknown,19,Mus musculus_feces_unhealthy (NOS)_female_unknown
+Homo sapiens,saliva,healthy,female,Middle Adulthood (45 yrs < x <= 65 yrs),18,Homo sapiens_saliva_healthy_female_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,skin,healthy,female,Infancy (<2 yrs),18,Homo sapiens_skin_healthy_female_Infancy (<2 yrs)
+Homo sapiens,urine,acute illness,female,Later Adulthood (>65 yrs),18,Homo sapiens_urine_acute illness_female_Later Adulthood (>65 yrs)
+Homo sapiens,urine,unknown,male,Later Adulthood (>65 yrs),18,Homo sapiens_urine_unknown_male_Later Adulthood (>65 yrs)
+Mus musculus,macrophage,unknown,unknown,unknown,18,Mus musculus_macrophage_unknown_unknown_unknown
+Homo sapiens,blood plasma,Alzheimer's disease,female,Later Adulthood (>65 yrs),17,Homo sapiens_blood plasma_Alzheimer's disease_female_Later Adulthood (>65 yrs)
+Homo sapiens,urine,diabetes mellitus,female,Adolescence (8 yrs < x <= 18 yrs),17,Homo sapiens_urine_diabetes mellitus_female_Adolescence (8 yrs < x <= 18 yrs)
+Mus musculus,uterine cervix,unknown,female,unknown,17,Mus musculus_uterine cervix_unknown_female_unknown
+Homo sapiens,blood plasma,osteoarthritis,female,Middle Adulthood (45 yrs < x <= 65 yrs),16,Homo sapiens_blood plasma_osteoarthritis_female_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,blood serum,osteoarthritis,female,Middle Adulthood (45 yrs < x <= 65 yrs),16,Homo sapiens_blood serum_osteoarthritis_female_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,urine,acute illness,male,Later Adulthood (>65 yrs),16,Homo sapiens_urine_acute illness_male_Later Adulthood (>65 yrs)
+Mus musculus,colon,unknown,male,unknown,16,Mus musculus_colon_unknown_male_unknown
+Mus musculus,liver,unknown,male,unknown,16,Mus musculus_liver_unknown_male_unknown
+Mus musculus,upper digestive tract,unknown,male,unknown,16,Mus musculus_upper digestive tract_unknown_male_unknown
+Mus musculus,bladder organ,unknown,female,unknown,15,Mus musculus_bladder organ_unknown_female_unknown
+Mus musculus,colon,healthy,male,unknown,15,Mus musculus_colon_healthy_male_unknown
+Homo sapiens,skin,psoriasis,female,unknown,14,Homo sapiens_skin_psoriasis_female_unknown
+Homo sapiens,urine,chronic illness,male,Middle Adulthood (45 yrs < x <= 65 yrs),14,Homo sapiens_urine_chronic illness_male_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,cerebrospinal fluid,Alzheimer's disease,male,Middle Adulthood (45 yrs < x <= 65 yrs),13,Homo sapiens_cerebrospinal fluid_Alzheimer's disease_male_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,feces,healthy,unknown,unknown,13,Homo sapiens_feces_healthy_unknown_unknown
+Homo sapiens,feces,osteoarthritis,female,Middle Adulthood (45 yrs < x <= 65 yrs),13,Homo sapiens_feces_osteoarthritis_female_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,adipose tissue,obesity,unknown,unknown,12,Homo sapiens_adipose tissue_obesity_unknown_unknown
+Homo sapiens,blood plasma,acquired immunodeficiency syndrome,female,Middle Adulthood (45 yrs < x <= 65 yrs),12,Homo sapiens_blood plasma_acquired immunodeficiency syndrome_female_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,blood plasma,osteoarthritis,male,Later Adulthood (>65 yrs),12,Homo sapiens_blood plasma_osteoarthritis_male_Later Adulthood (>65 yrs)
+Homo sapiens,blood plasma,rheumatoid arthritis,female,Early Adulthood (18 yrs < x <= 45 yrs),12,Homo sapiens_blood plasma_rheumatoid arthritis_female_Early Adulthood (18 yrs < x <= 45 yrs)
+Homo sapiens,blood plasma,rheumatoid arthritis,female,Later Adulthood (>65 yrs),12,Homo sapiens_blood plasma_rheumatoid arthritis_female_Later Adulthood (>65 yrs)
+Homo sapiens,blood serum,osteoarthritis,male,Later Adulthood (>65 yrs),12,Homo sapiens_blood serum_osteoarthritis_male_Later Adulthood (>65 yrs)
+Homo sapiens,feces,rheumatoid arthritis,female,Later Adulthood (>65 yrs),12,Homo sapiens_feces_rheumatoid arthritis_female_Later Adulthood (>65 yrs)
+Homo sapiens,saliva,dental caries,male,Early Childhood (2 yrs < x <=8 yrs),12,Homo sapiens_saliva_dental caries_male_Early Childhood (2 yrs < x <=8 yrs)
+Homo sapiens,saliva,osteoarthritis,female,Middle Adulthood (45 yrs < x <= 65 yrs),12,Homo sapiens_saliva_osteoarthritis_female_Middle Adulthood (45 yrs < x <= 65 yrs)
+Mus musculus,esophagus,unknown,male,unknown,12,Mus musculus_esophagus_unknown_male_unknown
+Mus musculus,stem cell,unknown,unknown,unknown,12,Mus musculus_stem cell_unknown_unknown_unknown
+Mus musculus,tissue,unknown,unknown,unknown,12,Mus musculus_tissue_unknown_unknown_unknown
+Homo sapiens,blood plasma,COVID-19,male,Later Adulthood (>65 yrs),11,Homo sapiens_blood plasma_COVID-19_male_Later Adulthood (>65 yrs)
+Homo sapiens,skin,healthy,male,Infancy (<2 yrs),11,Homo sapiens_skin_healthy_male_Infancy (<2 yrs)
+Homo sapiens,urine,hypertension,female,Later Adulthood (>65 yrs),11,Homo sapiens_urine_hypertension_female_Later Adulthood (>65 yrs)
+Homo sapiens,blood plasma,COVID-19,male,Middle Adulthood (45 yrs < x <= 65 yrs),10,Homo sapiens_blood plasma_COVID-19_male_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,saliva,healthy,male,Middle Adulthood (45 yrs < x <= 65 yrs),10,Homo sapiens_saliva_healthy_male_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,saliva,obesity,male,unknown,10,Homo sapiens_saliva_obesity_male_unknown
+Homo sapiens,urine,acute illness,male,Middle Adulthood (45 yrs < x <= 65 yrs),10,Homo sapiens_urine_acute illness_male_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,feces,healthy,male,Early Childhood (2 yrs < x <=8 yrs),9,Homo sapiens_feces_healthy_male_Early Childhood (2 yrs < x <=8 yrs)
+Homo sapiens,feces,rheumatoid arthritis,female,Early Adulthood (18 yrs < x <= 45 yrs),9,Homo sapiens_feces_rheumatoid arthritis_female_Early Adulthood (18 yrs < x <= 45 yrs)
+Mus musculus,eye,unknown,unknown,unknown,9,Mus musculus_eye_unknown_unknown_unknown
+Mus musculus,oral cavity,unknown,female,unknown,9,Mus musculus_oral cavity_unknown_female_unknown
+Mus musculus,testis,unknown,unknown,unknown,9,Mus musculus_testis_unknown_unknown_unknown
+Homo sapiens,blood plasma,COVID-19,female,Early Adulthood (18 yrs < x <= 45 yrs),8,Homo sapiens_blood plasma_COVID-19_female_Early Adulthood (18 yrs < x <= 45 yrs)
+Homo sapiens,blood plasma,COVID-19,female,Later Adulthood (>65 yrs),8,Homo sapiens_blood plasma_COVID-19_female_Later Adulthood (>65 yrs)
+Homo sapiens,blood plasma,acquired immunodeficiency syndrome,female,Early Adulthood (18 yrs < x <= 45 yrs),8,Homo sapiens_blood plasma_acquired immunodeficiency syndrome_female_Early Adulthood (18 yrs < x <= 45 yrs)
+Homo sapiens,blood plasma,osteoarthritis,female,Later Adulthood (>65 yrs),8,Homo sapiens_blood plasma_osteoarthritis_female_Later Adulthood (>65 yrs)
+Homo sapiens,saliva,healthy,female,Early Childhood (2 yrs < x <=8 yrs),8,Homo sapiens_saliva_healthy_female_Early Childhood (2 yrs < x <=8 yrs)
+Homo sapiens,saliva,osteoarthritis,male,Later Adulthood (>65 yrs),8,Homo sapiens_saliva_osteoarthritis_male_Later Adulthood (>65 yrs)
+Homo sapiens,vagina,healthy,female,Adolescence (8 yrs < x <= 18 yrs),8,Homo sapiens_vagina_healthy_female_Adolescence (8 yrs < x <= 18 yrs)
+Mus musculus,hematopoietic stem cell,unknown,unknown,unknown,8,Mus musculus_hematopoietic stem cell_unknown_unknown_unknown
+Homo sapiens,blood plasma,healthy,male,unknown,7,Homo sapiens_blood plasma_healthy_male_unknown
+Homo sapiens,blood serum,osteoarthritis,female,Later Adulthood (>65 yrs),7,Homo sapiens_blood serum_osteoarthritis_female_Later Adulthood (>65 yrs)
+Homo sapiens,feces,healthy,female,Early Childhood (2 yrs < x <=8 yrs),7,Homo sapiens_feces_healthy_female_Early Childhood (2 yrs < x <=8 yrs)
+Homo sapiens,feces,healthy,unknown,Adolescence (8 yrs < x <= 18 yrs),7,Homo sapiens_feces_healthy_unknown_Adolescence (8 yrs < x <= 18 yrs)
+Homo sapiens,feces,inflammatory bowel disease,female,Early Adulthood (18 yrs < x <= 45 yrs),7,Homo sapiens_feces_inflammatory bowel disease_female_Early Adulthood (18 yrs < x <= 45 yrs)
+Homo sapiens,feces,osteoarthritis,female,Later Adulthood (>65 yrs),7,Homo sapiens_feces_osteoarthritis_female_Later Adulthood (>65 yrs)
+Homo sapiens,feces,osteoarthritis,male,Later Adulthood (>65 yrs),7,Homo sapiens_feces_osteoarthritis_male_Later Adulthood (>65 yrs)
+Homo sapiens,saliva,healthy,female,Adolescence (8 yrs < x <= 18 yrs),7,Homo sapiens_saliva_healthy_female_Adolescence (8 yrs < x <= 18 yrs)
+Homo sapiens,urine,hypertension,male,Middle Adulthood (45 yrs < x <= 65 yrs),7,Homo sapiens_urine_hypertension_male_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,adipose tissue,unknown,unknown,unknown,6,Homo sapiens_adipose tissue_unknown_unknown_unknown
+Homo sapiens,blood plasma,Alzheimer's disease,male,Middle Adulthood (45 yrs < x <= 65 yrs),6,Homo sapiens_blood plasma_Alzheimer's disease_male_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,blood plasma,COVID-19,female,Middle Adulthood (45 yrs < x <= 65 yrs),6,Homo sapiens_blood plasma_COVID-19_female_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,blood plasma,human immunodeficiency virus infectious disease,female,Middle Adulthood (45 yrs < x <= 65 yrs),6,Homo sapiens_blood plasma_human immunodeficiency virus infectious disease_female_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,blood plasma,unknown,female,Early Adulthood (18 yrs < x <= 45 yrs),6,Homo sapiens_blood plasma_unknown_female_Early Adulthood (18 yrs < x <= 45 yrs)
+Homo sapiens,blood plasma,unknown,male,Later Adulthood (>65 yrs),6,Homo sapiens_blood plasma_unknown_male_Later Adulthood (>65 yrs)
+Homo sapiens,feces,inflammatory bowel disease,female,Middle Adulthood (45 yrs < x <= 65 yrs),6,Homo sapiens_feces_inflammatory bowel disease_female_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,saliva,healthy,male,Early Childhood (2 yrs < x <=8 yrs),6,Homo sapiens_saliva_healthy_male_Early Childhood (2 yrs < x <=8 yrs)
+Homo sapiens,saliva,osteoarthritis,female,Later Adulthood (>65 yrs),6,Homo sapiens_saliva_osteoarthritis_female_Later Adulthood (>65 yrs)
+Homo sapiens,urine,hypertension,male,Later Adulthood (>65 yrs),6,Homo sapiens_urine_hypertension_male_Later Adulthood (>65 yrs)
+Homo sapiens,urine,unknown,male,Early Adulthood (18 yrs < x <= 45 yrs),6,Homo sapiens_urine_unknown_male_Early Adulthood (18 yrs < x <= 45 yrs)
+Homo sapiens,anal region,healthy,female,Adolescence (8 yrs < x <= 18 yrs),5,Homo sapiens_anal region_healthy_female_Adolescence (8 yrs < x <= 18 yrs)
+Homo sapiens,blood plasma,healthy,female,unknown,5,Homo sapiens_blood plasma_healthy_female_unknown
+Homo sapiens,cerebrospinal fluid,Alzheimer's disease,female,Middle Adulthood (45 yrs < x <= 65 yrs),5,Homo sapiens_cerebrospinal fluid_Alzheimer's disease_female_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,feces,diabetes mellitus,female,Early Childhood (2 yrs < x <=8 yrs),5,Homo sapiens_feces_diabetes mellitus_female_Early Childhood (2 yrs < x <=8 yrs)
+Homo sapiens,feces,healthy,unknown,Early Childhood (2 yrs < x <=8 yrs),5,Homo sapiens_feces_healthy_unknown_Early Childhood (2 yrs < x <=8 yrs)
+Homo sapiens,feces,healthy,unknown,Middle Adulthood (45 yrs < x <= 65 yrs),5,Homo sapiens_feces_healthy_unknown_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,oral cavity,healthy,female,Adolescence (8 yrs < x <= 18 yrs),5,Homo sapiens_oral cavity_healthy_female_Adolescence (8 yrs < x <= 18 yrs)
+Homo sapiens,saliva,dental caries,female,Early Childhood (2 yrs < x <=8 yrs),5,Homo sapiens_saliva_dental caries_female_Early Childhood (2 yrs < x <=8 yrs)
+Homo sapiens,urine,diabetes mellitus,female,Early Childhood (2 yrs < x <=8 yrs),5,Homo sapiens_urine_diabetes mellitus_female_Early Childhood (2 yrs < x <=8 yrs)
+Homo sapiens,urine,healthy,male,Early Childhood (2 yrs < x <=8 yrs),5,Homo sapiens_urine_healthy_male_Early Childhood (2 yrs < x <=8 yrs)
+Mus musculus,esophagus,healthy,male,unknown,5,Mus musculus_esophagus_healthy_male_unknown
+Homo sapiens,blood plasma,acquired immunodeficiency syndrome,male,Later Adulthood (>65 yrs),4,Homo sapiens_blood plasma_acquired immunodeficiency syndrome_male_Later Adulthood (>65 yrs)
+Homo sapiens,blood plasma,human immunodeficiency virus infectious disease,female,Early Adulthood (18 yrs < x <= 45 yrs),4,Homo sapiens_blood plasma_human immunodeficiency virus infectious disease_female_Early Adulthood (18 yrs < x <= 45 yrs)
+Homo sapiens,blood plasma,osteoarthritis,male,Middle Adulthood (45 yrs < x <= 65 yrs),4,Homo sapiens_blood plasma_osteoarthritis_male_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,blood serum,osteoarthritis,male,Middle Adulthood (45 yrs < x <= 65 yrs),4,Homo sapiens_blood serum_osteoarthritis_male_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,feces,inflammatory bowel disease,male,Early Adulthood (18 yrs < x <= 45 yrs),4,Homo sapiens_feces_inflammatory bowel disease_male_Early Adulthood (18 yrs < x <= 45 yrs)
+Homo sapiens,feces,inflammatory bowel disease,unknown,unknown,4,Homo sapiens_feces_inflammatory bowel disease_unknown_unknown
+Homo sapiens,feces,unknown,male,Later Adulthood (>65 yrs),4,Homo sapiens_feces_unknown_male_Later Adulthood (>65 yrs)
+Homo sapiens,leukocyte,unknown,unknown,unknown,4,Homo sapiens_leukocyte_unknown_unknown_unknown
+Homo sapiens,saliva,dental caries,male,Adolescence (8 yrs < x <= 18 yrs),4,Homo sapiens_saliva_dental caries_male_Adolescence (8 yrs < x <= 18 yrs)
+Homo sapiens,saliva,healthy,male,Adolescence (8 yrs < x <= 18 yrs),4,Homo sapiens_saliva_healthy_male_Adolescence (8 yrs < x <= 18 yrs)
+Homo sapiens,urine,chronic illness,female,Early Adulthood (18 yrs < x <= 45 yrs),4,Homo sapiens_urine_chronic illness_female_Early Adulthood (18 yrs < x <= 45 yrs)
+Homo sapiens,blood plasma,COVID-19,unknown,unknown,3,Homo sapiens_blood plasma_COVID-19_unknown_unknown
+Homo sapiens,blood plasma,rheumatoid arthritis,male,Later Adulthood (>65 yrs),3,Homo sapiens_blood plasma_rheumatoid arthritis_male_Later Adulthood (>65 yrs)
+Homo sapiens,blood plasma,rheumatoid arthritis,male,Middle Adulthood (45 yrs < x <= 65 yrs),3,Homo sapiens_blood plasma_rheumatoid arthritis_male_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,blood plasma,unknown,unknown,Later Adulthood (>65 yrs),3,Homo sapiens_blood plasma_unknown_unknown_Later Adulthood (>65 yrs)
+Homo sapiens,blood plasma,unknown,unknown,Middle Adulthood (45 yrs < x <= 65 yrs),3,Homo sapiens_blood plasma_unknown_unknown_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,feces,rheumatoid arthritis,male,Later Adulthood (>65 yrs),3,Homo sapiens_feces_rheumatoid arthritis_male_Later Adulthood (>65 yrs)
+Homo sapiens,feces,unknown,female,Adolescence (8 yrs < x <= 18 yrs),3,Homo sapiens_feces_unknown_female_Adolescence (8 yrs < x <= 18 yrs)
+Homo sapiens,feces,unknown,unknown,Middle Adulthood (45 yrs < x <= 65 yrs),3,Homo sapiens_feces_unknown_unknown_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,nasal cavity,healthy,female,Adolescence (8 yrs < x <= 18 yrs),3,Homo sapiens_nasal cavity_healthy_female_Adolescence (8 yrs < x <= 18 yrs)
+Homo sapiens,saliva,dental caries,female,Adolescence (8 yrs < x <= 18 yrs),3,Homo sapiens_saliva_dental caries_female_Adolescence (8 yrs < x <= 18 yrs)
+Homo sapiens,skin,healthy,unknown,Early Adulthood (18 yrs < x <= 45 yrs),3,Homo sapiens_skin_healthy_unknown_Early Adulthood (18 yrs < x <= 45 yrs)
+Homo sapiens,urine,chronic illness,male,Early Adulthood (18 yrs < x <= 45 yrs),3,Homo sapiens_urine_chronic illness_male_Early Adulthood (18 yrs < x <= 45 yrs)
+Mus musculus,B cell,unknown,unknown,unknown,3,Mus musculus_B cell_unknown_unknown_unknown
+Mus musculus,neural stem cell,unknown,unknown,unknown,3,Mus musculus_neural stem cell_unknown_unknown_unknown
+Homo sapiens,blood plasma,Alzheimer's disease,unknown,unknown,2,Homo sapiens_blood plasma_Alzheimer's disease_unknown_unknown
+Homo sapiens,blood plasma,COVID-19,male,Early Adulthood (18 yrs < x <= 45 yrs),2,Homo sapiens_blood plasma_COVID-19_male_Early Adulthood (18 yrs < x <= 45 yrs)
+Homo sapiens,blood plasma,healthy,female,Middle Adulthood (45 yrs < x <= 65 yrs),2,Homo sapiens_blood plasma_healthy_female_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,blood plasma,human immunodeficiency virus infectious disease,male,Adolescence (8 yrs < x <= 18 yrs),2,Homo sapiens_blood plasma_human immunodeficiency virus infectious disease_male_Adolescence (8 yrs < x <= 18 yrs)
+Homo sapiens,blood plasma,human immunodeficiency virus infectious disease,male,Later Adulthood (>65 yrs),2,Homo sapiens_blood plasma_human immunodeficiency virus infectious disease_male_Later Adulthood (>65 yrs)
+Homo sapiens,blood plasma,osteoarthritis,unknown,Middle Adulthood (45 yrs < x <= 65 yrs),2,Homo sapiens_blood plasma_osteoarthritis_unknown_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,blood serum,osteoarthritis,unknown,Middle Adulthood (45 yrs < x <= 65 yrs),2,Homo sapiens_blood serum_osteoarthritis_unknown_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,cerebrospinal fluid,Alzheimer's disease,unknown,unknown,2,Homo sapiens_cerebrospinal fluid_Alzheimer's disease_unknown_unknown
+Homo sapiens,feces,diabetes mellitus,male,Early Childhood (2 yrs < x <=8 yrs),2,Homo sapiens_feces_diabetes mellitus_male_Early Childhood (2 yrs < x <=8 yrs)
+Homo sapiens,feces,inflammatory bowel disease,male,Later Adulthood (>65 yrs),2,Homo sapiens_feces_inflammatory bowel disease_male_Later Adulthood (>65 yrs)
+Homo sapiens,feces,osteoarthritis,male,Middle Adulthood (45 yrs < x <= 65 yrs),2,Homo sapiens_feces_osteoarthritis_male_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,feces,osteoarthritis,unknown,Middle Adulthood (45 yrs < x <= 65 yrs),2,Homo sapiens_feces_osteoarthritis_unknown_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,feces,unhealthy (NOS),unknown,Middle Adulthood (45 yrs < x <= 65 yrs),2,Homo sapiens_feces_unhealthy (NOS)_unknown_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,feces,unknown,unknown,Early Adulthood (18 yrs < x <= 45 yrs),2,Homo sapiens_feces_unknown_unknown_Early Adulthood (18 yrs < x <= 45 yrs)
+Homo sapiens,saliva,osteoarthritis,male,Middle Adulthood (45 yrs < x <= 65 yrs),2,Homo sapiens_saliva_osteoarthritis_male_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,saliva,osteoarthritis,unknown,Middle Adulthood (45 yrs < x <= 65 yrs),2,Homo sapiens_saliva_osteoarthritis_unknown_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,urine,healthy,female,Early Childhood (2 yrs < x <=8 yrs),2,Homo sapiens_urine_healthy_female_Early Childhood (2 yrs < x <=8 yrs)
+Homo sapiens,urine,hypertension,male,Early Adulthood (18 yrs < x <= 45 yrs),2,Homo sapiens_urine_hypertension_male_Early Adulthood (18 yrs < x <= 45 yrs)
+Homo sapiens,vagina,healthy,female,Middle Adulthood (45 yrs < x <= 65 yrs),2,Homo sapiens_vagina_healthy_female_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,anal region,healthy,female,Middle Adulthood (45 yrs < x <= 65 yrs),1,Homo sapiens_anal region_healthy_female_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,blood plasma,Alzheimer's disease,female,Middle Adulthood (45 yrs < x <= 65 yrs),1,Homo sapiens_blood plasma_Alzheimer's disease_female_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,blood plasma,Alzheimer's disease,female,unknown,1,Homo sapiens_blood plasma_Alzheimer's disease_female_unknown
+Homo sapiens,blood plasma,Alzheimer's disease,male,unknown,1,Homo sapiens_blood plasma_Alzheimer's disease_male_unknown
+Homo sapiens,cerebrospinal fluid,Alzheimer's disease,female,unknown,1,Homo sapiens_cerebrospinal fluid_Alzheimer's disease_female_unknown
+Homo sapiens,cerebrospinal fluid,Alzheimer's disease,male,unknown,1,Homo sapiens_cerebrospinal fluid_Alzheimer's disease_male_unknown
+Homo sapiens,feces,diabetes mellitus,female,Early Adulthood (18 yrs < x <= 45 yrs),1,Homo sapiens_feces_diabetes mellitus_female_Early Adulthood (18 yrs < x <= 45 yrs)
+Homo sapiens,feces,healthy,unknown,Early Adulthood (18 yrs < x <= 45 yrs),1,Homo sapiens_feces_healthy_unknown_Early Adulthood (18 yrs < x <= 45 yrs)
+Homo sapiens,feces,healthy,unknown,Later Adulthood (>65 yrs),1,Homo sapiens_feces_healthy_unknown_Later Adulthood (>65 yrs)
+Homo sapiens,feces,unhealthy (NOS),unknown,Early Adulthood (18 yrs < x <= 45 yrs),1,Homo sapiens_feces_unhealthy (NOS)_unknown_Early Adulthood (18 yrs < x <= 45 yrs)
+Homo sapiens,nasal cavity,healthy,female,Middle Adulthood (45 yrs < x <= 65 yrs),1,Homo sapiens_nasal cavity_healthy_female_Middle Adulthood (45 yrs < x <= 65 yrs)
+Homo sapiens,oral cavity,healthy,unknown,unknown,1,Homo sapiens_oral cavity_healthy_unknown_unknown
+Homo sapiens,urine,diabetes mellitus,female,Early Adulthood (18 yrs < x <= 45 yrs),1,Homo sapiens_urine_diabetes mellitus_female_Early Adulthood (18 yrs < x <= 45 yrs)
+Homo sapiens,urine,diabetes mellitus,male,Early Childhood (2 yrs < x <=8 yrs),1,Homo sapiens_urine_diabetes mellitus_male_Early Childhood (2 yrs < x <=8 yrs)
+Homo sapiens,urine,unknown,male,unknown,1,Homo sapiens_urine_unknown_male_unknown
+Mus musculus,blood plasma,unknown,male,unknown,1,Mus musculus_blood plasma_unknown_male_unknown
+Mus musculus,blood serum,unknown,male,unknown,1,Mus musculus_blood serum_unknown_male_unknown
+Mus musculus,tissue,Chagas disease,unknown,unknown,1,Mus musculus_tissue_Chagas disease_unknown_unknown
+Rattus norvegicus,gallbladder,unknown,unknown,unknown,1,Rattus norvegicus_gallbladder_unknown_unknown_unknown
