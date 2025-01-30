@@ -1,17 +1,18 @@
 [![DOI](https://zenodo.org/badge/492844724.svg)](https://zenodo.org/badge/latestdoi/492844724)
 
-# Welcome to microbeMASST
-This repository contains code for the different domain-specific MASSTs currently under development in the Dorrestein Lab at UCSD. This includes microbeMASST, plantMASST, foodMASST, and globalMASST (temporary name). Aggregated outputs of the different MASSTs can be generated using metadataMASST.
+# Welcome to domainMASSTs
+This repository contains code and data for the different domain-specific MASSTs currently under development in the Dorrestein Lab at UC San Diego. This includes microbeMASST, plantMASST, foodMASST, and tissueMASST. Aggregated outputs of the domain MASSTs can be generated using metadataMASST.
 
 The code for the different standalone web applications, which allow for the search of one spectrum at a time, can be found in [GNPS_MASST](https://github.com/mwang87/GNPS_MASST)
 
-Find the web apps here:
+Web apps:
 1. [microbeMASST](https://masst.gnps2.org/microbemasst/)
 2. [plantMASST](https://masst.gnps2.org/plantmasst/)
 3. [foodMASST](https://masst.gnps2.org/foodmasst2/)
-4. [metadataMASST](https://masst.gnps2.org/metadatamasst/)
+4. [tissueMASST](https://masst.gnps2.org/tissuemasst/)
+5. [metadataMASST](https://masst.gnps2.org/metadatamasst/)
 
-Find the publications associated with the different MASSTs here: 
+Publications associated with the different domainMASSTs:
 1. [microbeMASST - Nature Microbiology](https://www.nature.com/articles/s41564-023-01575-9)
 2. [plantMASST - biorxiv](https://www.biorxiv.org/content/10.1101/2024.05.13.593988v1)
 3. [foodMASST - npj Science of Food](https://www.nature.com/articles/s41538-022-00137-3)
