@@ -6,6 +6,9 @@ from enum import Enum, auto
 import json
 import pandas as pd
 from dataclasses import dataclass
+
+from pandas import DataFrame
+
 import usi_utils
 
 logging.basicConfig(level=logging.DEBUG)
@@ -274,7 +277,7 @@ def extract_matches_from_masst_results(
     analog,
     limit_to_best_match_in_file: bool = False,
     add_dataset_titles=False,
-) -> pd.DataFrame:
+) -> DataFrame | tuple[DataFrame, DataFrame, DataFrame] | DataFrame:
     """
     :param results_dict: masst results
     :param add_dataset_titles: add dataset titles to each row
@@ -298,6 +301,7 @@ def extract_matches_from_masst_results(
         # fastMASST response is sometimes empty
         return masst_df
 
+    original_masst_df = masst_df.copy()
     masst_df = filter_matches(masst_df, precursor_mz_tol, min_matched_signals, analog)
     if add_dataset_titles:
         datasets = results_dict["grouped_by_dataset"]
@@ -313,11 +317,36 @@ def extract_matches_from_masst_results(
         masst_df["file_usi"] = [
             usi_utils.ensure_simple_file_usi(usi) for usi in masst_df["USI"]
         ]
-        masst_df = masst_df.sort_values(
-            by=["Cosine", "Matching Peaks"], ascending=[False, False]
-        ).drop_duplicates("file_usi")
-    return masst_df
+        original_masst_df["file_usi"] = [
+            usi_utils.ensure_simple_file_usi(usi) for usi in original_masst_df["USI"]]
 
+        if analog:
+            # for analog search we drop duplicates based on the rounded delta mass and file_usi
+            analog_masst_df = masst_df.copy()
+            analog_masst_df['rounded_delta'] = analog_masst_df['Delta Mass'].apply(lambda x: round(x, 0))
+            analog_masst_df = analog_masst_df.sort_values(
+                by=["Cosine", "Matching Peaks"], ascending=[False, False]
+            ).drop_duplicates(subset=['file_usi', 'rounded_delta'])
+
+            # we want also to export the results as before (eliminating duplicates based only on file_usi)
+            masst_df = masst_df.sort_values(
+                by=["Cosine", "Matching Peaks"], ascending=[False, False]
+            ).drop_duplicates("file_usi")
+
+            # storing original FasstMASST results
+            original_masst_df = original_masst_df.sort_values(
+                by=["Cosine", "Matching Peaks"], ascending=[False, False])
+
+            return masst_df, analog_masst_df, original_masst_df
+
+        else:
+            # if not analog=True, return only the best match in file
+            masst_df = masst_df.sort_values(
+                by=["Cosine", "Matching Peaks"], ascending=[False, False]
+            ).drop_duplicates("file_usi")
+            return masst_df
+    else:
+        return masst_df
 
 def extract_datasets_from_masst_results(
     results_dict, matches_df: pd.DataFrame

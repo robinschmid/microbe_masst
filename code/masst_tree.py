@@ -151,11 +151,8 @@ def export_metadata_matches(
         metadata_df = pd.read_csv(metadata_file)
 
     # join on the file usi
-    results_df = pd.concat(
-        [matches_df.set_index("file_usi"), metadata_df.set_index("file_usi")],
-        axis=1,
-        join="inner",
-    ).reset_index()
+    # results_df = matches_df.merge(metadata_df, on="file_usi", how="inner")
+    results_df = pd.merge(matches_df, metadata_df, on="file_usi", how="inner")
 
     # export file with ncbi, matched_size,
     if len(results_df) > 0:
