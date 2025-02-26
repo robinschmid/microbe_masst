@@ -97,7 +97,7 @@ def process_matches(
     # microbeMASST
     logger.debug("Exporting microbeMASST %s", compound_name)
     create_enriched_masst_tree(
-        unfiltered_matches_df,
+        filtered_matches_df,
         masst.MICROBE_MASST,
         common_file=common_file,
         lib_match_json=lib_match_json,
@@ -125,7 +125,7 @@ def process_matches(
     # plantMASST
     logger.debug("Exporting plantMASST %s", compound_name)
     create_enriched_masst_tree(
-        unfiltered_matches_df,
+        filtered_matches_df,
         masst.PLANT_MASST,
         common_file=common_file,
         lib_match_json=lib_match_json,
@@ -153,7 +153,7 @@ def process_matches(
     # tissueMASST
     logger.debug("Exporting tissueMASST %s", compound_name)
     create_enriched_masst_tree(
-        unfiltered_matches_df,
+        filtered_matches_df,
         masst.TISSUE_MASST,
         common_file=common_file,
         lib_match_json=lib_match_json,
@@ -181,7 +181,7 @@ def process_matches(
     # foodMASST
     logger.debug("Exporting foodMASST %s", compound_name)
     create_enriched_masst_tree(
-        unfiltered_matches_df,
+        filtered_matches_df,
         masst.FOOD_MASST,
         common_file=common_file,
         lib_match_json=lib_match_json,
@@ -209,7 +209,7 @@ def process_matches(
     # personalCareProductMASST
     logger.debug("Exporting personalCareProductMASST %s", compound_name)
     create_enriched_masst_tree(
-        unfiltered_matches_df,
+        filtered_matches_df,
         masst.PERSONALCAREPRODUCT_MASST,
         common_file=common_file,
         lib_match_json=lib_match_json,
@@ -237,7 +237,7 @@ def process_matches(
     # microbiomeMASST
     logger.debug("Exporting microbiomeMASST %s", compound_name)
     create_enriched_masst_tree(
-        unfiltered_matches_df,
+        filtered_matches_df,
         masst.MICROBIOME_MASST,
         common_file=common_file,
         lib_match_json=lib_match_json,
@@ -265,7 +265,7 @@ def process_matches(
     # combined from all
     logger.debug("Exporting combined tree %s", compound_name)
     create_combined_masst_tree(
-        unfiltered_matches_df,
+        filtered_matches_df,
         common_file=common_file,
         lib_match_json=lib_match_json,
         input_str=input_label,
