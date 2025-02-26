@@ -6,6 +6,10 @@ from enum import Enum, auto
 import json
 import pandas as pd
 from dataclasses import dataclass
+from typing import Optional
+
+from pandas import DataFrame
+
 import usi_utils
 
 logging.basicConfig(level=logging.DEBUG)
@@ -22,6 +26,13 @@ class SpecialMasst:
     metadata_file: str
     tree_node_key: str
     metadata_key: str
+
+
+@dataclass
+class MasstMatchResults:
+    filtered_masst_df: Optional[DataFrame] = None
+    unfiltered_masst_df: Optional[DataFrame] = None
+    analog_masst_df: Optional[DataFrame] = None
 
 
 MICROBE_MASST = SpecialMasst(
@@ -274,12 +285,14 @@ def extract_matches_from_masst_results(
     analog,
     limit_to_best_match_in_file: bool = False,
     add_dataset_titles=False,
-) -> pd.DataFrame:
+) -> MasstMatchResults:
     """
     :param results_dict: masst results
     :param add_dataset_titles: add dataset titles to each row
-    :return: DataFrame of the individual matches
+    :return: MasstMatchResults of the individual matches
     """
+    match_results = MasstMatchResults()
+
     masst_df = pd.DataFrame(results_dict["results"])
     try:
         masst_df.drop(
@@ -296,28 +309,47 @@ def extract_matches_from_masst_results(
         )
     except Exception as e:
         # fastMASST response is sometimes empty
-        return masst_df
+        match_results.unfiltered_masst_df = masst_df
+        return match_results
 
-    masst_df = filter_matches(masst_df, precursor_mz_tol, min_matched_signals, analog)
+    # Unfiltered contains all the MASST match_results
+    unfiltered_masst_df = masst_df.copy()
+    # Filtered contains the matches that are within the precursor mass tolerance
+    filtered_masst_df = filter_matches(masst_df, precursor_mz_tol, min_matched_signals, analog)
+
+    # create an usi column that only points to the dataset:file (not scan)
+    unfiltered_masst_df["file_usi"] = unfiltered_masst_df["USI"].apply(usi_utils.ensure_simple_file_usi)
+    filtered_masst_df["file_usi"] = filtered_masst_df["USI"].apply(usi_utils.ensure_simple_file_usi)
+
     if add_dataset_titles:
         datasets = results_dict["grouped_by_dataset"]
         dataset_info_dict = dict([(e["Dataset"], e["title"]) for e in datasets])
         # might not be in the df
-        masst_df.drop(columns=["mzs", "intensities"], inplace=True, axis=1)
+        filtered_masst_df.drop(columns=["mzs", "intensities"], inplace=True, axis=1)
 
-        for match in masst_df:
+        for match in filtered_masst_df:
             match["dataset_title"] = dataset_info_dict.get(match["Dataset"], None)
 
+    if analog:
+        # for analog search we drop duplicates based on the rounded delta mass and file_usi
+        analog_masst_df = filtered_masst_df.copy()
+        analog_masst_df['rounded_delta'] = analog_masst_df['Delta Mass'].apply(lambda x: round(x, 0))
+        analog_masst_df = analog_masst_df.sort_values(
+            by=["Cosine", "Matching Peaks"], ascending=[False, False]
+        ).drop_duplicates(subset=['file_usi', 'rounded_delta'])
+        match_results.analog_masst_df = analog_masst_df
+
+    unfiltered_masst_df = unfiltered_masst_df.sort_values(
+        by=["Cosine", "Matching Peaks"], ascending=[False, False])
+
     if limit_to_best_match_in_file:
-        # create a usi column that only points to the dataset:file (not scan)
-        masst_df["file_usi"] = [
-            usi_utils.ensure_simple_file_usi(usi) for usi in masst_df["USI"]
-        ]
-        masst_df = masst_df.sort_values(
+        filtered_masst_df = filtered_masst_df.sort_values(
             by=["Cosine", "Matching Peaks"], ascending=[False, False]
         ).drop_duplicates("file_usi")
-    return masst_df
 
+    match_results.filtered_masst_df = filtered_masst_df
+    match_results.unfiltered_masst_df = unfiltered_masst_df
+    return match_results
 
 def extract_datasets_from_masst_results(
     results_dict, matches_df: pd.DataFrame
