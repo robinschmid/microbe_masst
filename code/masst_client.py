@@ -56,33 +56,29 @@ def process_matches(
         add_dataset_titles=False,
     )
 
+    analog_matches_df = extracted_results.analog_masst_df
+    filtered_matches_df = extracted_results.filtered_masst_df
+    unfiltered_matches_df = extracted_results.unfiltered_masst_df
+    # Save analog results separately
     if analog:
-        matches_df, analog_matches_df, original_matches_df = extracted_results
-        # Save analog results separately
         analog_file = "{}_analog_matches.tsv".format(common_file)
         prepare_paths(file=analog_file)
         analog_matches_df[MATCH_COLUMNS + ["rounded_delta"]].to_csv(analog_file, index=False, sep="\t")
 
-        # Here we want to export the unfiltered results
-        masst_file = "{}_matches.tsv".format(common_file)
-        prepare_paths(file=masst_file)
-        matches_df[MATCH_COLUMNS].to_csv(masst_file, index=False, sep="\t")
-
         # Here we want to export all FasstMASST results
-        original_masst_file = "{}_unfiltered_matches.tsv".format(common_file)
-        prepare_paths(file=original_masst_file)
-        original_matches_df[MATCH_COLUMNS].to_csv(original_masst_file, index=False, sep="\t")
-    else:
-        matches_df = extracted_results
+        unfiltered_masst_file = "{}_unfiltered_matches.tsv".format(common_file)
+        prepare_paths(file=unfiltered_masst_file)
+        unfiltered_matches_df[MATCH_COLUMNS].to_csv(unfiltered_masst_file, index=False, sep="\t")
 
-        # always export match table even with 0 matches to mark that it was successful
-        masst_file = "{}_matches.tsv".format(common_file)
-        prepare_paths(file=masst_file)
-        matches_df[MATCH_COLUMNS].to_csv(masst_file, index=False, sep="\t")
+    # always export match table even with 0 matches to mark that it was successful
+    masst_file = "{}_matches.tsv".format(common_file)
+    prepare_paths(file=masst_file)
+    filtered_matches_df[MATCH_COLUMNS].to_csv(masst_file, index=False, sep="\t")
 
     lib_matches_df = masst.extract_matches_from_masst_results(
         library_matches, precursor_mz_tol, min_matched_signals, analog, False
-    )
+    ).filtered_masst_df
+
     if len(lib_matches_df) > 0:
         lib_matches_df[LIB_COLUMNS].to_csv(
             "{}_library.tsv".format(common_file), index=False, sep="\t"
@@ -91,7 +87,7 @@ def process_matches(
     if "grouped_by_dataset" not in matches:
         logger.debug("Missing datasets")
     # extract matches
-    datasets_df = masst.extract_datasets_from_masst_results(matches, matches_df)
+    datasets_df = masst.extract_datasets_from_masst_results(matches, unfiltered_matches_df)
     if len(datasets_df) > 0:
         datasets_df.to_csv("{}_datasets.tsv".format(common_file), index=False, sep="\t")
 
@@ -101,7 +97,7 @@ def process_matches(
     # microbeMASST
     logger.debug("Exporting microbeMASST %s", compound_name)
     create_enriched_masst_tree(
-        matches_df,
+        unfiltered_matches_df,
         masst.MICROBE_MASST,
         common_file=common_file,
         lib_match_json=lib_match_json,
@@ -129,7 +125,7 @@ def process_matches(
     # plantMASST
     logger.debug("Exporting plantMASST %s", compound_name)
     create_enriched_masst_tree(
-        matches_df,
+        unfiltered_matches_df,
         masst.PLANT_MASST,
         common_file=common_file,
         lib_match_json=lib_match_json,
@@ -157,7 +153,7 @@ def process_matches(
     # tissueMASST
     logger.debug("Exporting tissueMASST %s", compound_name)
     create_enriched_masst_tree(
-        matches_df,
+        unfiltered_matches_df,
         masst.TISSUE_MASST,
         common_file=common_file,
         lib_match_json=lib_match_json,
@@ -185,7 +181,7 @@ def process_matches(
     # foodMASST
     logger.debug("Exporting foodMASST %s", compound_name)
     create_enriched_masst_tree(
-        matches_df,
+        unfiltered_matches_df,
         masst.FOOD_MASST,
         common_file=common_file,
         lib_match_json=lib_match_json,
@@ -213,7 +209,7 @@ def process_matches(
     # personalCareProductMASST
     logger.debug("Exporting personalCareProductMASST %s", compound_name)
     create_enriched_masst_tree(
-        matches_df,
+        unfiltered_matches_df,
         masst.PERSONALCAREPRODUCT_MASST,
         common_file=common_file,
         lib_match_json=lib_match_json,
@@ -241,7 +237,7 @@ def process_matches(
     # microbiomeMASST
     logger.debug("Exporting microbiomeMASST %s", compound_name)
     create_enriched_masst_tree(
-        matches_df,
+        unfiltered_matches_df,
         masst.MICROBIOME_MASST,
         common_file=common_file,
         lib_match_json=lib_match_json,
@@ -269,7 +265,7 @@ def process_matches(
     # combined from all
     logger.debug("Exporting combined tree %s", compound_name)
     create_combined_masst_tree(
-        matches_df,
+        unfiltered_matches_df,
         common_file=common_file,
         lib_match_json=lib_match_json,
         input_str=input_label,
@@ -292,7 +288,7 @@ def process_matches(
             compress_out_html=True,
         )
 
-    return matches_df
+    return unfiltered_matches_df
 
 
 def common_base_file_name(compound_name, file_name):
