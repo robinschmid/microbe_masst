@@ -77,7 +77,7 @@ def process_matches(
 
     lib_matches_df = masst.extract_matches_from_masst_results(
         library_matches, precursor_mz_tol, min_matched_signals, analog, False
-    ).filtered_masst_df
+    ).unfiltered_masst_df
 
     if len(lib_matches_df) > 0:
         lib_matches_df[LIB_COLUMNS].to_csv(
