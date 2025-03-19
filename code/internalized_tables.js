@@ -60,6 +60,7 @@ function getMatchedDatasets() {
                 entry["Interventions"] = node.Interventions ?? "";
                 entry["Cosine"] = match["Cosine"] ?? "";
                 entry["Matching signals"] = match["Matching Peaks"] ?? "";
+                entry["Delta Mass"] = match["Delta Mass"] ?? "";
                 entry["USI"] = match["USI"] ?? "";
                 entry["MassIVE"] = match["USI"].split(":")[1] ?? "";
                 entry["File"] = match["USI"].split(":scan:")[0] ?? "";

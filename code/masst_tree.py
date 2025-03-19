@@ -163,7 +163,7 @@ def export_metadata_matches(
 def group_matches(special_masst: SpecialMasst, results_df) -> pd.DataFrame:
     grouped = results_df.groupby(special_masst.metadata_key)
     results_df = grouped.agg(matched_size=(special_masst.metadata_key, "size"))
-    results_df["matches_json"] = grouped[["USI", "Cosine", "Matching Peaks"]].apply(
+    results_df["matches_json"] = grouped[["USI", "Cosine", "Matching Peaks", "Delta Mass"]].apply(
         lambda x: x.to_json(orient="records")
     )
     return results_df.reset_index()
