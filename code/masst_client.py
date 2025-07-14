@@ -87,7 +87,7 @@ def process_matches(
     if "grouped_by_dataset" not in matches:
         logger.debug("Missing datasets")
     # extract matches
-    datasets_df = masst.extract_datasets_from_masst_results(matches, unfiltered_matches_df)
+    datasets_df = masst.extract_datasets_from_masst_results(matches, filtered_matches_df)
     if len(datasets_df) > 0:
         datasets_df.to_csv("{}_datasets.tsv".format(common_file), index=False, sep="\t")
 
