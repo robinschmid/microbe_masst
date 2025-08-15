@@ -46,7 +46,7 @@ def create_enriched_masst_tree(
         results_df = export_metadata_matches(special_masst, matches_df, out_counts_file)
         if len(results_df) <= 0:
             return None
-
+        
         results_df = group_matches(special_masst, results_df)
         # adds them to the json ontology
         json_ontology_extender.add_data_to_ontology_file(

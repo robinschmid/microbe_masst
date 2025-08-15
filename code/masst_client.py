@@ -679,9 +679,14 @@ if __name__ == "__main__":
         import pandas as pd
         results_df = pd.read_csv(
             args.input_usi_results_file, sep="\t", header=0, index_col=False
-        )        
+        )
+
+        # lets drop the ID column if it exists
+        if "ID" in results_df.columns:
+            results_df.drop(columns=["ID"], inplace=True, errors='ignore')
 
         matches["results"] = results_df.to_dict(orient="records")
+        
 
 
         process_matches(
