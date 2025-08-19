@@ -80,8 +80,8 @@ MICROBIOME_MASST = SpecialMasst(
     root="microbiome",
     tree_file="../data/microbiome_masst_tree.json",
     metadata_file="../data/microbiome_masst_table.tsv",
-    tree_node_key="name",
-    metadata_key="node_id",
+    tree_node_key="ID",
+    metadata_key="ID",
 )
 
 URL = "https://fasst.gnps2.org/search"

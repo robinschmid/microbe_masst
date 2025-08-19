@@ -26,6 +26,7 @@ function getFullMatches() {
             entry["NCBI"] = node.NCBI ?? "";
             entry["Rank"] = node.Rank ?? "";
             entry["Interventions"] = node.Interventions ?? "";
+            entry["Community_composition"] = node.Community_composition ?? "";
             entry["Matches"] = node.matched_size;
             entry["Samples"] = node.group_size;
             try {
@@ -58,6 +59,7 @@ function getMatchedDatasets() {
                 entry["NCBI"] = node.NCBI ?? "";
                 entry["Rank"] = node.Rank ?? "";
                 entry["Interventions"] = node.Interventions ?? "";
+                entry["Community_composition"] = node.Community_composition ?? "";
                 entry["Cosine"] = match["Cosine"] ?? "";
                 entry["Matching signals"] = match["Matching Peaks"] ?? "";
                 entry["Delta Mass"] = match["Delta Mass"] ?? "";

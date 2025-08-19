@@ -27,16 +27,12 @@ class TreeNode:
 
 def prepare_tree_df():
     # read tree df
-    tree_df = pd.read_csv('tree_df.tsv', sep='\t')
-    tree_df['ID'] = tree_df['ID'].astype(int)
-    tree_df['Parent_ID'] = tree_df['Parent_ID'].fillna(-1).astype(int)
-    # tree_df['node_name'] = tree_df.apply(lambda x: x['SampleType'] + ' [' + str(x['Interventions']) + ']' if pd.notnull(x['Interventions']) else x['SampleType'], axis=1)
-    tree_df['node_name'] = tree_df['SampleType']
+    tree_df = pd.read_csv('tree_df.csv', dtype={'ID': 'string', 'Parent_ID': 'string'}, low_memory=False)
+    tree_df['Parent_ID'] = tree_df['Parent_ID'].fillna('-1')
 
     # read metadata df
-    file_info = pd.read_csv('file_info.tsv', sep='\t')
-    file_info = file_info[pd.notnull(file_info['ID'])].reset_index(drop=True)
-    file_info['ID'] = file_info['ID'].astype(int)
+    file_info = pd.read_csv('file_info.csv', dtype={'ID': 'string'}, low_memory=False)
+    file_info = file_info[file_info['ID'].notnull()].reset_index(drop=True)
 
     ### All mzML files should be linked to the lowest leaf nodes
     # remove files with IDs not in the lowest leaf nodes
@@ -45,6 +41,13 @@ def prepare_tree_df():
 
     # Count files for each ID
     id_counts = file_info['ID'].value_counts()
+
+    ######## add interventions from file_info to tree_df ########
+    file_info.drop_duplicates(subset=['ID'], inplace=True)
+    # Create a mapping from ID to interventions
+    id_to_interventions = dict(zip(file_info['ID'], file_info['Intervention_specific']))
+    # Map interventions to tree_df
+    tree_df['Interventions'] = tree_df['ID'].map(id_to_interventions)
 
     # Function to recursively calculate group size
     def calculate_group_size(node_id, id_counts):
@@ -77,7 +80,7 @@ def build_tree_from_tsv_and_write_json(output_file_path):
     # Read the tree dataframe
     df = pd.read_csv('tree_df_group_size.tsv', sep='\t')
 
-    def build_tree(df, parent_id=-1):
+    def build_tree(df, parent_id='-1'):
         children = df[df['Parent_ID'] == parent_id]
         if children.empty:
             return []
@@ -86,11 +89,12 @@ def build_tree_from_tsv_and_write_json(output_file_path):
         for _, child in children.iterrows():
             child_node = {
                 "ID": str(child['ID']),
-                "NCBI": str(child['Community_composition']) if pd.notnull(child['Community_composition']) else None,
+                "NCBI": str(child['NCBITaxonomy']) if pd.notnull(child['NCBITaxonomy']) else None,
                 "Interventions": str(child['Interventions']) if pd.notnull(child['Interventions']) else None,
+                "Community_composition": str(child['Community_composition']) if pd.notnull(child['Community_composition']) else None,
                 "duplication": "Y",
                 "type": "node",
-                "name": str(child['node_name']),
+                "name": str(child['SampleType']),
                 "group_size": int(child['Group_Size']),
                 "children": build_tree(df, child['ID'])
             }
@@ -106,6 +110,8 @@ def build_tree_from_tsv_and_write_json(output_file_path):
 
 
 if __name__ == '__main__':
+    import os
+    os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
     prepare_tree_df()
 
