@@ -26,7 +26,7 @@ if __name__ == "__main__":
                 mz_tol=0.02,
                 precursor_mz_tol=0.02,
                 min_matched_signals=3,
-                database=masst_utils.DataBase.metabolomicspanrepo_index_latest,
+                database=masst_utils.DataBase.metabolomicspanrepo_index_nightly,
                 parallel_queries=5,
                 skip_existing=True,
                 analog=False,
