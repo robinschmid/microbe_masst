@@ -294,28 +294,30 @@ def extract_matches_from_masst_results(
     match_results = MasstMatchResults()
 
     masst_df = pd.DataFrame(results_dict["results"])
-    try:
-        columns_to_drop = [
-            "Unit Delta Mass",
-            "Query Scan", 
-            "Query Filename",
-            "Index UnitPM",
-            "Index IdxInUnitPM",
-            "Filtered Input Spectrum Path",
-        ]
-        # Only drop columns that actually exist in the DataFrame
-        existing_columns_to_drop = [col for col in columns_to_drop if col in masst_df.columns]
-        
-        if existing_columns_to_drop:
-            masst_df.drop(
-                columns=existing_columns_to_drop,
-                inplace=True,
-                axis=1,
-            )
-    except Exception as e:
+    
+    if masst_df.empty:
         # fastMASST response is sometimes empty
         match_results.unfiltered_masst_df = masst_df
         return match_results
+
+    # drop unnecessary columns
+    columns_to_drop = [
+        "Unit Delta Mass",
+        "Query Scan", 
+        "Query Filename",
+        "Index UnitPM",
+        "Index IdxInUnitPM",
+        "Filtered Input Spectrum Path",
+    ]
+    # Only drop columns that actually exist in the DataFrame
+    existing_columns_to_drop = [col for col in columns_to_drop if col in masst_df.columns]
+    
+    if existing_columns_to_drop:
+        masst_df.drop(
+            columns=existing_columns_to_drop,
+            inplace=True,
+            axis=1,
+        )
 
     # Unfiltered contains all the MASST match_results
     unfiltered_masst_df = masst_df.copy()
