@@ -87,9 +87,12 @@ def process_matches(
     if "grouped_by_dataset" not in matches:
         logger.debug("Missing datasets")
     # extract matches
-    datasets_df = masst.extract_datasets_from_masst_results(matches, unfiltered_matches_df)
-    if len(datasets_df) > 0:
-        datasets_df.to_csv("{}_datasets.tsv".format(common_file), index=False, sep="\t")
+    try:
+        datasets_df = masst.extract_datasets_from_masst_results(matches, unfiltered_matches_df)
+        if len(datasets_df) > 0:
+            datasets_df.to_csv("{}_datasets.tsv".format(common_file), index=False, sep="\t")
+    except:
+        pass
 
     # add library matches to table
     lib_match_json = lib_matches_df.to_json(orient="records")
@@ -525,6 +528,14 @@ def create_params_label(
 if __name__ == "__main__":
     # parsing the arguments (all optional)
     parser = argparse.ArgumentParser(description="Run fast microbeMASST in batch")
+
+    parser.add_argument(
+        "--mode",
+        type=str,
+        help="should we be doing the query and drawing or just drawing",
+        default='query_and_draw',  # query_and_draw, or draw
+    )
+
     parser.add_argument(
         "--usi_or_lib_id",
         type=str,
@@ -589,42 +600,107 @@ if __name__ == "__main__":
         default="200",
     )
 
+    # Parameters for just drawing
+    parser.add_argument(
+        "--input_usi_results_file",
+        type=str,
+        help="Input USI results file",
+        default=None,
+    )
+
     args = parser.parse_args()
 
-    try:
+    if args.mode == 'query_and_draw':
+        logger.info("Running fastMASST query and drawing")
+
+        try:
+            usi_or_lib_id = args.usi_or_lib_id
+            compound_name = args.compound_name
+            out_file = args.out_file
+
+            # MASST parameters
+            precursor_mz_tol = args.precursor_mz_tol
+            mz_tol = args.mz_tol
+            min_cos = args.min_cos
+            min_matched_signals = args.min_matched_signals
+            analog = args.analog
+            analog_mass_below = args.analog_mass_below
+            analog_mass_above = args.analog_mass_above
+            database = args.database
+            library = args.library
+
+            query_usi_or_id(
+                out_file,
+                usi_or_lib_id,
+                compound_name,
+                precursor_mz_tol=precursor_mz_tol,
+                mz_tol=mz_tol,
+                min_cos=min_cos,
+                min_matched_signals=min_matched_signals,
+                analog=analog,
+                analog_mass_below=analog_mass_below,
+                analog_mass_above=analog_mass_above,
+                database=database,
+                library=library,
+            )
+        except Exception as e:
+            # exit with error
+            logger.exception(e)
+            sys.exit(1)
+    elif args.mode == 'draw':
+        logger.info("Running fastMASST drawing")
+
+        file_name = args.out_file
         usi_or_lib_id = args.usi_or_lib_id
         compound_name = args.compound_name
-        out_file = args.out_file
-
-        # MASST parameters
         precursor_mz_tol = args.precursor_mz_tol
-        mz_tol = args.mz_tol
-        min_cos = args.min_cos
         min_matched_signals = args.min_matched_signals
         analog = args.analog
-        analog_mass_below = args.analog_mass_below
-        analog_mass_above = args.analog_mass_above
-        database = args.database
-        library = args.library
-
-        query_usi_or_id(
-            out_file,
-            usi_or_lib_id,
-            compound_name,
-            precursor_mz_tol=precursor_mz_tol,
-            mz_tol=mz_tol,
-            min_cos=min_cos,
-            min_matched_signals=min_matched_signals,
-            analog=analog,
-            analog_mass_below=analog_mass_below,
-            analog_mass_above=analog_mass_above,
-            database=database,
-            library=library,
+        precursor_mz_tol = args.precursor_mz_tol
+        mz_tol = args.mz_tol
+        params_label = create_params_label(
+            analog,
+            0,
+            0,
+            0,
+            0,
+            mz_tol,
+            precursor_mz_tol,
         )
-    except Exception as e:
-        # exit with error
-        logger.exception(e)
-        sys.exit(1)
+        input_label = "ID: {};  Descriptor: {}".format(usi_or_lib_id, compound_name)
+
+        # creating the results
+        library_matches = {}
+        library_matches["results"] = []
+
+
+        matches = {}
+
+        import pandas as pd
+        results_df = pd.read_csv(
+            args.input_usi_results_file, sep="\t", header=0, index_col=False
+        )
+
+        # lets drop the ID column if it exists
+        if "ID" in results_df.columns:
+            results_df.drop(columns=["ID"], inplace=True, errors='ignore')
+
+        matches["results"] = results_df.to_dict(orient="records")
+        
+
+
+        process_matches(
+            file_name,
+            compound_name,
+            matches,
+            library_matches,
+            precursor_mz_tol,
+            min_matched_signals,
+            analog,
+            input_label,
+            params_label,
+            usi_utils.ensure_usi(usi_or_lib_id),
+        )
 
     # exit with OK
     sys.exit(0)
