@@ -80,8 +80,8 @@ MICROBIOME_MASST = SpecialMasst(
     root="microbiome",
     tree_file="../data/microbiome_masst_tree.json",
     metadata_file="../data/microbiome_masst_table.tsv",
-    tree_node_key="name",
-    metadata_key="node_id",
+    tree_node_key="ID",
+    metadata_key="ID",
 )
 
 URL = "https://fasst.gnps2.org/search"
@@ -89,7 +89,7 @@ SPECIAL_MASSTS = [FOOD_MASST, MICROBE_MASST, PLANT_MASST, TISSUE_MASST, PERSONAL
 
 
 class DataBase(Enum):
-    metabolomicspanrepo_index_latest = auto()  # all gnps data
+    metabolomicspanrepo_index_nightly = auto()  # all gnps data
     gnpsdata_index = auto()  # all gnps data
     gnpsdata_index_11_25_23 = auto()  # all gnps data
     gnpslibrary = auto()  # gnps library
@@ -108,7 +108,7 @@ def fast_masst(
     analog=False,
     analog_mass_below=130,
     analog_mass_above=200,
-    database=DataBase.metabolomicspanrepo_index_latest,
+    database=DataBase.metabolomicspanrepo_index_nightly,
 ):
     if str(usi_or_lib_id).startswith("CCMS"):
         # handle library ID
@@ -148,7 +148,7 @@ def fast_masst_spectrum(
     analog=False,
     analog_mass_below=130,
     analog_mass_above=200,
-    database=DataBase.metabolomicspanrepo_index_latest,
+    database=DataBase.metabolomicspanrepo_index_nightly,
     min_signals=3,
 ):
     """
@@ -195,7 +195,7 @@ def fast_masst_spectrum_dict(
     analog=False,
     analog_mass_below=130,
     analog_mass_above=200,
-    database=DataBase.metabolomicspanrepo_index_latest,
+    database=DataBase.metabolomicspanrepo_index_nightly,
     min_signals=3,
 ):
     """
@@ -266,16 +266,24 @@ def _fast_masst(params):
 def filter_matches(df, precursor_mz_tol, min_matched_signals, analog):
     # DO NOT FILTER BY MZ FOR ANALOG
     if analog:
-        return df.loc[df["Matching Peaks"] >= min_matched_signals]
+        if "Matching Peaks" in df.columns:
+            # filter by matching peaks
+            return df.loc[df["Matching Peaks"] >= min_matched_signals]
+        else:
+            # no matching peaks column, return all
+            return df
     else:
-        return df.loc[
-            (
-                df["Delta Mass"].between(
-                    -precursor_mz_tol, precursor_mz_tol, inclusive="both"
+        if "Delta Mass" in df.columns:
+            return df.loc[
+                (
+                    df["Delta Mass"].between(
+                        -precursor_mz_tol, precursor_mz_tol, inclusive="both"
+                    )
                 )
-            )
-            & (df["Matching Peaks"] >= min_matched_signals)
-        ]
+                & (df["Matching Peaks"] >= min_matched_signals)
+            ]
+        else:
+            return df
 
 
 def extract_matches_from_masst_results(
@@ -294,22 +302,37 @@ def extract_matches_from_masst_results(
     match_results = MasstMatchResults()
 
     masst_df = pd.DataFrame(results_dict["results"])
-    try:
-        masst_df.drop(
-            columns=[
-                "Unit Delta Mass",
-                "Query Scan",
-                "Query Filename",
-                "Index UnitPM",
-                "Index IdxInUnitPM",
-                "Filtered Input Spectrum Path",
-            ],
-            inplace=True,
-            axis=1,
-        )
-    except Exception as e:
+    
+    if masst_df.empty:
         # fastMASST response is sometimes empty
         match_results.unfiltered_masst_df = masst_df
+        return match_results
+
+    # drop unnecessary columns
+    columns_to_drop = [
+        "Unit Delta Mass",
+        "Query Scan", 
+        "Query Filename",
+        "Index UnitPM",
+        "Index IdxInUnitPM",
+        "Filtered Input Spectrum Path",
+    ]
+    # Only drop columns that actually exist in the DataFrame
+    existing_columns_to_drop = [col for col in columns_to_drop if col in masst_df.columns]
+    
+    if existing_columns_to_drop:
+        masst_df.drop(
+            columns=existing_columns_to_drop,
+            inplace=True,
+            axis=1,
+            errors='ignore'
+        )
+
+    
+    # empty 
+    if len(masst_df) == 0:
+        match_results.unfiltered_masst_df = masst_df
+        match_results.filtered_masst_df = masst_df
         return match_results
 
     # Unfiltered contains all the MASST match_results
@@ -364,7 +387,7 @@ def extract_datasets_from_masst_results(
 
 # example
 # https://fastlibrarysearch.ucsd.edu/fastsearch/?usi1=mzspec%3AGNPS%3AGNPS-LIBRARY%3Aaccession%3ACCMSLIB00000579622
-# &precursor_mz=183.078&charge=1&library_select=metabolomicspanrepo_index_latest&analog_select=No&delta_mass_below=130&delta_mass_above
+# &precursor_mz=183.078&charge=1&library_select=metabolomicspanrepo_index_nightly&analog_select=No&delta_mass_below=130&delta_mass_above
 # =200&pm_tolerance=0.05&fragment_tolerance=0.05&cosine_threshold=0.7&use_peaks=3#%7B%22peaks%22%3A%20%2280.9734
 # %5Ct955969.8%5Cn81.9816%5Ct542119.2%5Cn98.9841%5Ct483893630.0%5Cn116.9947%5Ct1605324.2%5Cn127.0155%5Ct182958080.0
 # %5Cn131.0102%5Ct878951.4%5Cn155.0467%5Ct73527150.0%5Cn183.0781%5Ct16294011.0%22%7D
