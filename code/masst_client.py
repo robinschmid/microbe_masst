@@ -325,7 +325,7 @@ def query_usi_or_id(
         logger.debug("Query fastMASST id:%s  of %s", usi_or_lib_id, compound_name)
 
         if database is None:
-            database = masst.DataBase.metabolomicspanrepo_index_latest
+            database = masst.DataBase.metabolomicspanrepo_index_nightly
 
         matches = masst.fast_masst(
             usi_or_lib_id,
@@ -419,7 +419,7 @@ def query_spectrum(
     # might raise exception for service
     try:
         if database is None:
-            database = masst.DataBase.metabolomicspanrepo_index_latest
+            database = masst.DataBase.metabolomicspanrepo_index_nightly
 
         matches, filtered_dps = masst.fast_masst_spectrum(
             mzs=mzs,
@@ -562,7 +562,7 @@ if __name__ == "__main__":
         "--database",
         type=str,
         help="fasst database for public data",
-        default="metabolomicspanrepo_index_latest",
+        default="metabolomicspanrepo_index_nightly",
     )
     parser.add_argument(
         "--library", type=str, help="fasst library for reference spectra", default=None

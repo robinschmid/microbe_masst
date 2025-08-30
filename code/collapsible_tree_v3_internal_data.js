@@ -728,6 +728,7 @@ function update(source) {
                 + (d.NCBI != null ? "<br/>NCBI: " + d.NCBI : "")
                 + (d.Rank != null ? "<br/>Rank: " + d.Rank : "")
                 + (d.Interventions != null ? "<br/>Interventions: " + d.Interventions : "")
+                + (d.Community_composition != null ? "<br/>Community composition: " + d.Community_composition : "")
                 + (d.matched_size > 0 ? "<br/>Matching samples: " + d.matched_size : "")
                 + (d.group_size > 0 ? "<br/>Available samples: " + d.group_size : "")
                 + (d.occurrence_fraction > 0 ? "<br/>Occurrence: " + formatDecimals(d.occurrence_fraction, 3) : "")
