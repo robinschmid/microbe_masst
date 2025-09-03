@@ -266,16 +266,24 @@ def _fast_masst(params):
 def filter_matches(df, precursor_mz_tol, min_matched_signals, analog):
     # DO NOT FILTER BY MZ FOR ANALOG
     if analog:
-        return df.loc[df["Matching Peaks"] >= min_matched_signals]
+        if "Matching Peaks" in df.columns:
+            # filter by matching peaks
+            return df.loc[df["Matching Peaks"] >= min_matched_signals]
+        else:
+            # no matching peaks column, return all
+            return df
     else:
-        return df.loc[
-            (
-                df["Delta Mass"].between(
-                    -precursor_mz_tol, precursor_mz_tol, inclusive="both"
+        if "Delta Mass" in df.columns:
+            return df.loc[
+                (
+                    df["Delta Mass"].between(
+                        -precursor_mz_tol, precursor_mz_tol, inclusive="both"
+                    )
                 )
-            )
-            & (df["Matching Peaks"] >= min_matched_signals)
-        ]
+                & (df["Matching Peaks"] >= min_matched_signals)
+            ]
+        else:
+            return df
 
 
 def extract_matches_from_masst_results(
@@ -317,7 +325,15 @@ def extract_matches_from_masst_results(
             columns=existing_columns_to_drop,
             inplace=True,
             axis=1,
+            errors='ignore'
         )
+
+    
+    # empty 
+    if len(masst_df) == 0:
+        match_results.unfiltered_masst_df = masst_df
+        match_results.filtered_masst_df = masst_df
+        return match_results
 
     # Unfiltered contains all the MASST match_results
     unfiltered_masst_df = masst_df.copy()

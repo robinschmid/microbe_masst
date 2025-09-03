@@ -17,6 +17,20 @@ Publications associated with the different domainMASSTs:
 2. [plantMASST - biorxiv](https://www.biorxiv.org/content/10.1101/2024.05.13.593988v1)
 3. [foodMASST - npj Science of Food](https://www.nature.com/articles/s41538-022-00137-3)
 
+## Hello World Running
+
+This will run
+```
+python ./masst_client.py --usi_or_lib_id mzspec:MSV000095331:peak/mzML_3/Full_syncom_T72_drug_mix_2_2.mzML:scan:2176 --out_file temp/output
+```
+
+This will run if you a table of results
+```
+python ./masst_client.py --mode draw --input_usi_results_file ../output/fastMASST_matches.tsv --out_file temp/temp
+```
+
+
+
 # Fast Search via microbeMASST enables batch search of multiple spectra against multiple domain-specific MASSTs at once
 
 Running [jobs.py](https://github.com/robinschmid/microbe_masst/blob/master/code/jobs.py) allows you to leverage the [Fast Search API](https://fasst.gnps2.org/fastsearch/) and execute a batch search of multiple MS/MS spectra against the current indexed data in GNPS/MassIVE (November 2023) and generate multiple outputs for all the listed domain-specific MASSTs simultaneously.
