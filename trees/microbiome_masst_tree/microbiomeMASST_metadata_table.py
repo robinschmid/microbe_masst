@@ -18,6 +18,9 @@ def main(out_path):
     parent_ids = list(set(tree_df['Parent_ID']))
     parent_ids = [x for x in parent_ids if pd.notnull(x)]
     df = df[~df['ID'].isin(parent_ids)].reset_index(drop=True)
+    
+    # dereplicate by file_usi and ID
+    df = df.drop_duplicates(subset=['file_usi', 'ID']).reset_index(drop=True)
 
     df.to_csv(out_path, sep='\t', index=False)
 

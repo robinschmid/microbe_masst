@@ -31,13 +31,7 @@ def prepare_tree_df():
     tree_df['Parent_ID'] = tree_df['Parent_ID'].fillna('-1')
 
     # read metadata df
-    file_info = pd.read_csv('file_info.csv', dtype={'ID': 'string'}, low_memory=False)
-    file_info = file_info[file_info['ID'].notnull()].reset_index(drop=True)
-
-    ### All mzML files should be linked to the lowest leaf nodes
-    # remove files with IDs not in the lowest leaf nodes
-    parent_ids = set(tree_df['Parent_ID'])
-    file_info = file_info[~file_info['ID'].isin(parent_ids)].reset_index(drop=True)
+    file_info = pd.read_csv('../../data/microbiome_masst_table.tsv', dtype={'ID': 'string'}, sep='\t', low_memory=False)
 
     # Count files for each ID
     id_counts = file_info['ID'].value_counts()
