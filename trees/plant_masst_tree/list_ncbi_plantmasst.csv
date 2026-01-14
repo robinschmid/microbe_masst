@@ -5273,7 +5273,6 @@ Rubus argutus,species,59490
 Salvia splendens,species,180675
 Sesamum radiatum,species,300843
 Setaria italica,species,4555
-Setaria viridis,species,4556
 Sinapis alba,species,3728
 Sinapis,genus,3727
 Solanum bulbocastanum,species,147425
@@ -5517,6 +5516,7 @@ Oryza barthii,species,65489
 Penstemon eatonii,species,388140
 Petunia x hybrida,species,4102
 Portulaca oleracea subsp. sativa,subspecies,1150915
+Setaria viridis,species,4556
 Steinchisma laxum,species,158129
 Steinchisma,genus,158161
 Talinum paniculatum,species,107604
@@ -5566,7 +5566,6 @@ Hydrangea quercifolia,species,60124
 Ipomoea lobata,species,89650
 Ipomoea quamoclit,species,89660
 Jacaranda mimosifolia,species,185774
-Lagerstroemia indica,species,141186
 Leonotis nepetifolia,species,483799
 Leonotis,genus,378903
 Leontopodium nivale subsp. alpinum,subspecies,49078
@@ -5647,27 +5646,13 @@ Pistacia terebinthus,species,434238
 Origanum syriacum,species,1082757
 Hypericum triquetrifolium,species,282558
 Achillea fragrantissima,species,282738
-Chromochloris zofingiensis,species,31302
-Chlorophyta,phylum,3041
-Chlorophyceae,class,3166
-Sphaeropleales,order,35491
-Chromochloridaceae,family,1656248
-Chromochloris,genus,1399958
 Ribes uva-crispa,species,135518
 Pinus nigra,species,58042
-Chlorella,genus,3071
-Trebouxiophyceae,class,75966
-Chlorellales,order,35460
-Chlorellaceae,family,35461
-Parachlorella,genus,247501
 Quercus glauca,species,103489
 Daphniphyllum oldhamii,species,1008903
 Daphniphyllaceae,family,4386
 Daphniphyllum,genus,4387
 Schima superba,species,59677
-Dunaliella,genus,3044
-Chlamydomonadales,order,3042
-Dunaliellaceae,family,3043
 Riccia cavernosa,species,122636
 Ricciaceae,family,41842
 Riccia,genus,41843
@@ -5862,11 +5847,6 @@ Espeletia barclayana,species,1933514
 Libanothamnus,genus,185169
 Cynodon transvaalensis,species,75728
 Cynodon,genus,15437
-Micromonas pusilla,species,38833
-Mamiellophyceae,class,1035538
-Mamiellales,order,13792
-Mamiellaceae,family,41873
-Micromonas,genus,38832
 Pinus pinaster,species,71647
 Pitcairnia flammea,species,1093657
 Pitcairnia,genus,49526
