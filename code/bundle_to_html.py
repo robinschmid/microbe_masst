@@ -125,7 +125,12 @@ def build_dist_html(input_html, output_html, replace_dict=None, compress=False):
         try:
             import minify_html
 
-            out_text = minify_html.minify(out_text, minify_js=True, minify_css=True)
+            try:
+                out_text = minify_html.minify(out_text, minify_js=True, minify_css=True)
+            except BaseException:
+                # Fallback: minify without JS if JS minification causes a panic
+                logger.warning("JS minification failed, retrying without JS minification.")
+                out_text = minify_html.minify(out_text, minify_js=False, minify_css=True)
 
         except Exception as e:
             logger.warning("Error during output compression.")
