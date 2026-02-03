@@ -6,7 +6,7 @@
     "duplication": "Y",
     "type": "node",
     "name": "Root",
-    "group_size": 170528,
+    "group_size": 170499,
     "children": [
         {
             "ID": "2",
@@ -16,7 +16,7 @@
             "duplication": "Y",
             "type": "node",
             "name": "Origin",
-            "group_size": 44612,
+            "group_size": 44172,
             "children": [
                 {
                     "ID": "3",
@@ -26,7 +26,7 @@
                     "duplication": "Y",
                     "type": "node",
                     "name": "Host",
-                    "group_size": 30542,
+                    "group_size": 30080,
                     "children": [
                         {
                             "ID": "8",
@@ -36,7 +36,7 @@
                             "duplication": "Y",
                             "type": "node",
                             "name": "Host human",
-                            "group_size": 11736,
+                            "group_size": 11593,
                             "children": [
                                 {
                                     "ID": "3384191",
@@ -357,7 +357,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "human parasite infection",
-                                    "group_size": 1171,
+                                    "group_size": 1141,
                                     "children": [
                                         {
                                             "ID": "3384232",
@@ -367,7 +367,7 @@
                                             "duplication": "Y",
                                             "type": "node",
                                             "name": "Trypanosoma cruzi",
-                                            "group_size": 1171,
+                                            "group_size": 1141,
                                             "children": []
                                         }
                                     ]
@@ -915,7 +915,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "very low birth weight infants",
-                                    "group_size": 530,
+                                    "group_size": 476,
                                     "children": []
                                 },
                                 {
@@ -926,7 +926,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "enzyme replacement therapy",
-                                    "group_size": 96,
+                                    "group_size": 37,
                                     "children": []
                                 },
                                 {
@@ -983,7 +983,7 @@
                             "duplication": "Y",
                             "type": "node",
                             "name": "Host mice",
-                            "group_size": 17576,
+                            "group_size": 17257,
                             "children": [
                                 {
                                     "ID": "3384206",
@@ -993,7 +993,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "mice diet",
-                                    "group_size": 4047,
+                                    "group_size": 3856,
                                     "children": [
                                         {
                                             "ID": "3384238",
@@ -1014,7 +1014,7 @@
                                             "duplication": "Y",
                                             "type": "node",
                                             "name": "high-fat",
-                                            "group_size": 778,
+                                            "group_size": 776,
                                             "children": []
                                         },
                                         {
@@ -1091,7 +1091,7 @@
                                             "duplication": "Y",
                                             "type": "node",
                                             "name": "iron",
-                                            "group_size": 315,
+                                            "group_size": 126,
                                             "children": []
                                         },
                                         {
@@ -2141,7 +2141,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "genetics",
-                                    "group_size": 2804,
+                                    "group_size": 2802,
                                     "children": [
                                         {
                                             "ID": "3384273",
@@ -2162,7 +2162,7 @@
                                             "duplication": "Y",
                                             "type": "node",
                                             "name": "cardiovascular disease, atherosclerosis and fat metabolism (ApoE)",
-                                            "group_size": 179,
+                                            "group_size": 177,
                                             "children": []
                                         },
                                         {
@@ -2252,7 +2252,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "mice drug",
-                                    "group_size": 4386,
+                                    "group_size": 4260,
                                     "children": [
                                         {
                                             "ID": "3384262",
@@ -2334,12 +2334,12 @@
                                         {
                                             "ID": "3384269",
                                             "NCBI": null,
-                                            "Interventions": "streptozotocin",
+                                            "Interventions": null,
                                             "Community_composition": null,
                                             "duplication": "Y",
                                             "type": "node",
                                             "name": "streptozotocin",
-                                            "group_size": 126,
+                                            "group_size": 0,
                                             "children": []
                                         },
                                         {
@@ -3153,7 +3153,7 @@
                     "duplication": "Y",
                     "type": "node",
                     "name": "Protein screening",
-                    "group_size": 328,
+                    "group_size": 453,
                     "children": [
                         {
                             "ID": "3384190",
@@ -3163,7 +3163,7 @@
                             "duplication": "Y",
                             "type": "node",
                             "name": "bile salt hydrolase",
-                            "group_size": 328,
+                            "group_size": 453,
                             "children": [
                                 {
                                     "ID": "3384304",
@@ -3206,7 +3206,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A069S9I0_Phocaeicola vulgatus str. 3975 RP4",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3217,7 +3217,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A078S2R5_Bacteroides uniformis str. 3978 T3 ii",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3228,7 +3228,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A096B1U0_Flavonifractor plautii 1_3_50AFAA",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3239,7 +3239,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A096DGB7_Flavonifractor plautii 1_3_50AFAA",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3250,7 +3250,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A096KTH7_Collinsella sp. 4_8_47FAA",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3261,7 +3261,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A0B8QU93_Lactococcus lactis subsp. lactis",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3272,7 +3272,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A0D8IVP2_Ruthenibacterium lactatiformans",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3283,7 +3283,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A0F0CI09_Clostridium sp. FS41",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3294,7 +3294,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A0F5JPH2_Parabacteroides goldsteinii DSM 19448 = WAL 12034",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3305,7 +3305,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A0G8G768_Ligilactobacillus ruminis",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3316,7 +3316,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A0M6WH75_Roseburia faecis",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3327,7 +3327,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A0M6WMX1_Roseburia inulinivorans",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3338,7 +3338,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A0M6WSM3_Agathobacter rectalis",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3349,7 +3349,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A0P0FKS2_Bacteroides cellulosilyticus",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3360,7 +3360,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A0P0LK75_Phocaeicola vulgatus",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3371,7 +3371,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A0S2W269_Intestinimonas butyriciproducens",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3382,7 +3382,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A173ZD58_Hungatella hathewayi",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3393,7 +3393,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A174CW35_Parabacteroides distasonis",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3404,7 +3404,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A174DZA2_Fusicatenibacter saccharivorans",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3415,7 +3415,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A174MBD8_[Clostridium] symbiosum",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3426,7 +3426,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A174YG41_Lachnospira pectinoschiza",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3437,7 +3437,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A174Z2R4_Lachnospira eligens",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3448,7 +3448,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A174ZD20_[Eubacterium] siraeum",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3459,7 +3459,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1C5L0B6_uncultured Blautia sp.",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3470,7 +3470,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1C5LGL2_uncultured Blautia sp.",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3481,7 +3481,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1C5M2J2_uncultured Ruminococcus sp.",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3492,7 +3492,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1C5MIH1_uncultured Clostridium sp.",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3503,7 +3503,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1C5MV31_uncultured Clostridium sp.",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3514,7 +3514,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1C5PCN0_uncultured Clostridium sp.",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3525,7 +3525,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1C5QNJ0_uncultured Ruminococcus sp.",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3536,7 +3536,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1C5S406_uncultured Eubacterium sp.",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3547,7 +3547,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1C5V0T2_uncultured Roseburia sp.",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3558,7 +3558,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1C5VKY6_uncultured Coprococcus sp.",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3569,7 +3569,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1C5X749_uncultured Ruminococcus sp.",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3580,7 +3580,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1C6A728_uncultured Clostridium sp.",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3591,7 +3591,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1C6E6X3_uncultured Ruminococcus sp.",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3602,7 +3602,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1C6E707_uncultured Blautia sp.",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3613,7 +3613,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1C6FDU7_uncultured Ruminococcus sp.",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3624,7 +3624,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1C7H271_Bacteroides caecimuris",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3635,7 +3635,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1D2WV04_Methanobrevibacter sp. A54",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3646,7 +3646,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1E3ADP5_Eisenbergiella tayi",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3657,7 +3657,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1I4P275_Marinobacter zhejiangensis",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3668,7 +3668,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1M3L7G3_Dysgonomonas sp. 37-18",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3679,7 +3679,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1N6ECR1_Halodesulfovibrio marinisediminis DSM 17456",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3690,7 +3690,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1Q6E5Z9_Alistipes sp. 56_11",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3701,7 +3701,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1Q6F0C9_Collinsella sp. 60_9",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3712,7 +3712,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1Q6JXM9_Clostridium sp. 26_21",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3723,7 +3723,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1Q6K9G3_Clostridium sp. 42_12",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3734,7 +3734,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1Q6M5M7_Clostridium sp. CAG:307_30_263",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3745,7 +3745,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1Q6PYZ4_Faecalibacterium sp. CAG:74_58_120",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3756,7 +3756,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1Q6RAM4_Phascolarctobacterium succinatutens",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3767,7 +3767,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1Q6SNA2_Roseburia sp. CAG:10041_57",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3778,7 +3778,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1Y3QT37_Alistipes onderdonkii",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3789,7 +3789,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1Y3TDY5_Massilimicrobiota sp. An80",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3800,7 +3800,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1Y3VSR9_Butyricimonas sp. An62",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3811,7 +3811,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1Y3YYW1_Bacteroides clarus",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3822,7 +3822,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A2S7KLN3_Aureitalea marina",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3833,7 +3833,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A2S8G2H3_Blastopirellula marina",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3844,7 +3844,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A2S8GTJ2_Blastopirellula marina",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3855,7 +3855,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A2T3FKY8_Clostridium fessum",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3866,7 +3866,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A2V1JL81_Eubacterium ramulus",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3877,7 +3877,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A316LWP8_Lachnospiraceae bacterium",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3888,7 +3888,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A316Q414_Eggerthellales bacterium",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3899,7 +3899,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A316R4M9_Clostridiales bacterium",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3910,7 +3910,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A317T5Z6_Prosthecochloris marina",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3921,7 +3921,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A349QN89_Roseburia sp.",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3932,7 +3932,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A350RPF7_Butyrivibrio sp.",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3943,7 +3943,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A350THC0_Oscillibacter sp.",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3954,7 +3954,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A357TLK7_Oscillospiraceae bacterium",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3965,7 +3965,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A357TN00_Oscillospiraceae bacterium",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3976,7 +3976,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A358VEZ8_Lachnospiraceae bacterium",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3987,7 +3987,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A373HJM3_Catenibacterium sp. AM22-15",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -3998,7 +3998,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A395V718_Roseburia hominis",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4009,7 +4009,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A395WCM1_Holdemanella biformis",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4020,7 +4020,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A396KEZ6_Clostridium sp. AM22-11AC",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4031,7 +4031,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A3D0HN78_Lachnospiraceae bacterium",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4042,7 +4042,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A3D3YKZ5_Alistipes communis",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4053,7 +4053,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A3D4LSP0_Lachnospiraceae bacterium",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4064,7 +4064,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A3E2MNL2_Mycobacterium marinum",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4075,7 +4075,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A3E2XR62_Coprococcus catus",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4086,7 +4086,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A3E4KT54_Bacteroides intestinalis",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4097,7 +4097,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A3E4LQA4_[Ruminococcus] lactaris",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4108,7 +4108,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A3N2MZX6_Muribaculaceae bacterium Isolate-102 (HZI)",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4119,7 +4119,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A3Q0NGD6_Listeria monocytogenes EGD",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4130,7 +4130,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A3R6IUG4_Clostridiaceae bacterium AF42-6",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4141,7 +4141,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A412TTM9_Odoribacter splanchnicus",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4152,7 +4152,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A413RDG7_Eubacterium ventriosum",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4163,7 +4163,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A414M9L3_Bacteroides eggerthii",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4174,7 +4174,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A414Q275_Fusobacterium mortiferum",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4185,7 +4185,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A416W0A8_Eubacterium sp. AF15-50",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4196,7 +4196,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A416W4H5_Odoribacter sp. AF15-53",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4207,7 +4207,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A5C2BYC4_Francisella marina",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4218,7 +4218,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A5C2C0X5_Francisella marina",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4229,7 +4229,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A5C2C1U8_Francisella marina",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4240,7 +4240,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A6B3M9R4_Symploca sp. SIO2E9",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4251,7 +4251,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A6B3MYR8_Moorena sp. SIO4A1",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4262,7 +4262,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A6B3PBB6_Okeania sp. SIO1F9",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4273,7 +4273,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A6B3PFJ7_Okeania sp. SIO1F9",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4284,7 +4284,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A6I3NAM9_Turicibacter sanguinis",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4295,7 +4295,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A6N3FX58_Paraprevotella clara",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4306,7 +4306,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A7K1GNS5_Myroides pelagicus",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4317,7 +4317,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A7W2FPE8_Vibrio marinisediminis",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4328,7 +4328,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A848U0C2_Maribacter sp.",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4339,7 +4339,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A8D5FTP2_Desulfomarina profundi",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4350,7 +4350,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A8J7U9Z7_Candidatus Homeothermus sp.",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4361,7 +4361,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A942AQR8_Barnesiella sp.",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4372,7 +4372,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A952U252_Candidatus Obscuribacterales bacterium",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4383,7 +4383,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A6LC91_Parabacteroides distasonis ATCC 8503",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4394,7 +4394,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A7A5K1_Bifidobacterium adolescentis L2-32",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4405,7 +4405,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A7VQ44_[Clostridium] leptum DSM 753",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4416,7 +4416,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "B0MC37_Anaerostipes caccae L1-92",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4427,7 +4427,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "B5D243_Phocaeicola plebeius DSM 17135",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4438,7 +4438,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "B7AVX6_[Bacteroides] pectinophilus ATCC 43243",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4449,7 +4449,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "C0CIF5_Blautia hydrogenotrophica DSM 10507",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4460,7 +4460,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "C0ERS1_Anaerobutyricum hallii DSM 3353",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4471,7 +4471,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "G5H9N3_Alistipes indistinctus YIT 12060",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4482,7 +4482,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "G5H9U7_Alistipes indistinctus YIT 12060",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4493,7 +4493,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "H1DEM8_Odoribacter laneus YIT 12061",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4504,7 +4504,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "M7X2M2_Mariniradius saccharolyticus AK6",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4515,7 +4515,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "P12256_Lysinibacillus sphaericus",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4526,7 +4526,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "Q8Y5J3_Listeria monocytogenes EGD-e",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4537,7 +4537,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "Q8Y9S7_Listeria monocytogenes EGD-e",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4548,7 +4548,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "Q9KK62_Bifidobacterium longum",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4559,7 +4559,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "R7PBA0_Prevotella sp. CAG:617",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 },
                                 {
@@ -4570,7 +4570,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "U2D571_Blautia sp. KLE 1732",
-                                    "group_size": 2,
+                                    "group_size": 3,
                                     "children": []
                                 }
                             ]
@@ -4585,7 +4585,7 @@
                     "duplication": "Y",
                     "type": "node",
                     "name": "Microbial",
-                    "group_size": 9686,
+                    "group_size": 9583,
                     "children": [
                         {
                             "ID": "17",
@@ -8219,7 +8219,7 @@
                             "duplication": "Y",
                             "type": "node",
                             "name": "Defined_monocultures",
-                            "group_size": 7679,
+                            "group_size": 7592,
                             "children": [
                                 {
                                     "ID": "38",
@@ -8229,7 +8229,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "Bacteria",
-                                    "group_size": 7679,
+                                    "group_size": 7592,
                                     "children": [
                                         {
                                             "ID": "1783272",
@@ -8239,7 +8239,7 @@
                                             "duplication": "Y",
                                             "type": "node",
                                             "name": "Bacillati",
-                                            "group_size": 4238,
+                                            "group_size": 4178,
                                             "children": [
                                                 {
                                                     "ID": "1239",
@@ -8249,7 +8249,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "Bacillota",
-                                                    "group_size": 3578,
+                                                    "group_size": 3524,
                                                     "children": [
                                                         {
                                                             "ID": "91061",
@@ -8259,7 +8259,7 @@
                                                             "duplication": "Y",
                                                             "type": "node",
                                                             "name": "Bacilli",
-                                                            "group_size": 545,
+                                                            "group_size": 539,
                                                             "children": [
                                                                 {
                                                                     "ID": "1385",
@@ -8444,7 +8444,7 @@
                                                                     "duplication": "Y",
                                                                     "type": "node",
                                                                     "name": "Lactobacillales",
-                                                                    "group_size": 94,
+                                                                    "group_size": 88,
                                                                     "children": [
                                                                         {
                                                                             "ID": "1300",
@@ -8559,7 +8559,7 @@
                                                                             "duplication": "Y",
                                                                             "type": "node",
                                                                             "name": "Lactobacillaceae",
-                                                                            "group_size": 45,
+                                                                            "group_size": 42,
                                                                             "children": [
                                                                                 {
                                                                                     "ID": "1578",
@@ -8788,7 +8788,7 @@
                                                                                     "duplication": "Y",
                                                                                     "type": "node",
                                                                                     "name": "Ligilactobacillus",
-                                                                                    "group_size": 5,
+                                                                                    "group_size": 2,
                                                                                     "children": [
                                                                                         {
                                                                                             "ID": "1623",
@@ -8798,17 +8798,17 @@
                                                                                             "duplication": "Y",
                                                                                             "type": "node",
                                                                                             "name": "Ligilactobacillus ruminis",
-                                                                                            "group_size": 5,
+                                                                                            "group_size": 2,
                                                                                             "children": [
                                                                                                 {
                                                                                                     "ID": "525362",
                                                                                                     "NCBI": "strain",
-                                                                                                    "Interventions": null,
+                                                                                                    "Interventions": "TCA,TCDCA,TDCA,3alpha_12K,TLCA",
                                                                                                     "Community_composition": null,
                                                                                                     "duplication": "Y",
                                                                                                     "type": "node",
                                                                                                     "name": "Ligilactobacillus ruminis ATCC 25644",
-                                                                                                    "group_size": 5,
+                                                                                                    "group_size": 2,
                                                                                                     "children": []
                                                                                                 }
                                                                                             ]
@@ -8939,7 +8939,7 @@
                                                                             "duplication": "Y",
                                                                             "type": "node",
                                                                             "name": "Carnobacteriaceae",
-                                                                            "group_size": 5,
+                                                                            "group_size": 2,
                                                                             "children": [
                                                                                 {
                                                                                     "ID": "117563",
@@ -8949,7 +8949,7 @@
                                                                                     "duplication": "Y",
                                                                                     "type": "node",
                                                                                     "name": "Granulicatella",
-                                                                                    "group_size": 5,
+                                                                                    "group_size": 2,
                                                                                     "children": [
                                                                                         {
                                                                                             "ID": "46124",
@@ -8959,7 +8959,7 @@
                                                                                             "duplication": "Y",
                                                                                             "type": "node",
                                                                                             "name": "Granulicatella adiacens",
-                                                                                            "group_size": 5,
+                                                                                            "group_size": 2,
                                                                                             "children": [
                                                                                                 {
                                                                                                     "ID": "638301",
@@ -8969,7 +8969,7 @@
                                                                                                     "duplication": "Y",
                                                                                                     "type": "node",
                                                                                                     "name": "G000160675 | Granulicatella adiacens ATCC 49175",
-                                                                                                    "group_size": 5,
+                                                                                                    "group_size": 2,
                                                                                                     "children": []
                                                                                                 }
                                                                                             ]
@@ -8990,7 +8990,7 @@
                                                             "duplication": "Y",
                                                             "type": "node",
                                                             "name": "Clostridia",
-                                                            "group_size": 2997,
+                                                            "group_size": 2955,
                                                             "children": [
                                                                 {
                                                                     "ID": "186802",
@@ -9000,7 +9000,7 @@
                                                                     "duplication": "Y",
                                                                     "type": "node",
                                                                     "name": "Eubacteriales",
-                                                                    "group_size": 891,
+                                                                    "group_size": 876,
                                                                     "children": [
                                                                         {
                                                                             "ID": "31979",
@@ -9326,7 +9326,7 @@
                                                                             "duplication": "Y",
                                                                             "type": "node",
                                                                             "name": "Eubacteriaceae",
-                                                                            "group_size": 5,
+                                                                            "group_size": 2,
                                                                             "children": [
                                                                                 {
                                                                                     "ID": "1730",
@@ -9336,7 +9336,7 @@
                                                                                     "duplication": "Y",
                                                                                     "type": "node",
                                                                                     "name": "Eubacterium",
-                                                                                    "group_size": 5,
+                                                                                    "group_size": 2,
                                                                                     "children": [
                                                                                         {
                                                                                             "ID": "39496",
@@ -9346,17 +9346,17 @@
                                                                                             "duplication": "Y",
                                                                                             "type": "node",
                                                                                             "name": "Eubacterium ventriosum",
-                                                                                            "group_size": 5,
+                                                                                            "group_size": 2,
                                                                                             "children": [
                                                                                                 {
                                                                                                     "ID": "411463",
                                                                                                     "NCBI": "strain",
-                                                                                                    "Interventions": null,
+                                                                                                    "Interventions": "TCA,TCDCA,TDCA,3alpha_12K,TLCA",
                                                                                                     "Community_composition": null,
                                                                                                     "duplication": "Y",
                                                                                                     "type": "node",
                                                                                                     "name": "G000153885 | Eubacterium ventriosum ATCC 27560",
-                                                                                                    "group_size": 5,
+                                                                                                    "group_size": 2,
                                                                                                     "children": []
                                                                                                 }
                                                                                             ]
@@ -9408,7 +9408,7 @@
                                                                             "duplication": "Y",
                                                                             "type": "node",
                                                                             "name": "Oscillospiraceae",
-                                                                            "group_size": 56,
+                                                                            "group_size": 44,
                                                                             "children": [
                                                                                 {
                                                                                     "ID": "1263",
@@ -9418,7 +9418,7 @@
                                                                                     "duplication": "Y",
                                                                                     "type": "node",
                                                                                     "name": "Ruminococcus",
-                                                                                    "group_size": 35,
+                                                                                    "group_size": 32,
                                                                                     "children": [
                                                                                         {
                                                                                             "ID": "1265",
@@ -9474,7 +9474,7 @@
                                                                                             "duplication": "Y",
                                                                                             "type": "node",
                                                                                             "name": "Ruminococcus gauvreauii",
-                                                                                            "group_size": 5,
+                                                                                            "group_size": 2,
                                                                                             "children": [
                                                                                                 {
                                                                                                     "ID": "1123075",
@@ -9484,7 +9484,7 @@
                                                                                                     "duplication": "Y",
                                                                                                     "type": "node",
                                                                                                     "name": "G000425525 | Ruminococcus gauvreauii DSM 19829",
-                                                                                                    "group_size": 5,
+                                                                                                    "group_size": 2,
                                                                                                     "children": []
                                                                                                 }
                                                                                             ]
@@ -9499,7 +9499,7 @@
                                                                                     "duplication": "Y",
                                                                                     "type": "node",
                                                                                     "name": "Faecalibacterium",
-                                                                                    "group_size": 7,
+                                                                                    "group_size": 4,
                                                                                     "children": [
                                                                                         {
                                                                                             "ID": "853",
@@ -9509,7 +9509,7 @@
                                                                                             "duplication": "Y",
                                                                                             "type": "node",
                                                                                             "name": "Faecalibacterium prausnitzii",
-                                                                                            "group_size": 7,
+                                                                                            "group_size": 4,
                                                                                             "children": [
                                                                                                 {
                                                                                                     "ID": "27768",
@@ -9519,7 +9519,7 @@
                                                                                                     "duplication": "Y",
                                                                                                     "type": "node",
                                                                                                     "name": "G010509575 | Faecalibacterium Prausnitzii ATCC 27768",
-                                                                                                    "group_size": 7,
+                                                                                                    "group_size": 4,
                                                                                                     "children": []
                                                                                                 }
                                                                                             ]
@@ -9673,7 +9673,7 @@
                                                                                     "duplication": "Y",
                                                                                     "type": "node",
                                                                                     "name": "Oscillibacter",
-                                                                                    "group_size": 5,
+                                                                                    "group_size": 2,
                                                                                     "children": [
                                                                                         {
                                                                                             "ID": "2629304",
@@ -9683,7 +9683,7 @@
                                                                                             "duplication": "Y",
                                                                                             "type": "node",
                                                                                             "name": "unclassified Oscillibacter",
-                                                                                            "group_size": 5,
+                                                                                            "group_size": 2,
                                                                                             "children": [
                                                                                                 {
                                                                                                     "ID": "1226322",
@@ -9693,7 +9693,7 @@
                                                                                                     "duplication": "Y",
                                                                                                     "type": "node",
                                                                                                     "name": "Oscillibacter sp. KLE 1728",
-                                                                                                    "group_size": 5,
+                                                                                                    "group_size": 2,
                                                                                                     "children": []
                                                                                                 }
                                                                                             ]
@@ -9708,7 +9708,7 @@
                                                                                     "duplication": "Y",
                                                                                     "type": "node",
                                                                                     "name": "Oscillospiraceae incertae sedis",
-                                                                                    "group_size": 7,
+                                                                                    "group_size": 4,
                                                                                     "children": [
                                                                                         {
                                                                                             "ID": "1535",
@@ -9741,7 +9741,7 @@
                                                                                             "duplication": "Y",
                                                                                             "type": "node",
                                                                                             "name": "Eubacterium siraeum",
-                                                                                            "group_size": 3,
+                                                                                            "group_size": 0,
                                                                                             "children": [
                                                                                                 {
                                                                                                     "ID": "428128",
@@ -9751,7 +9751,7 @@
                                                                                                     "duplication": "Y",
                                                                                                     "type": "node",
                                                                                                     "name": "G000382085 | Eubacterium siraeum DSM 15702",
-                                                                                                    "group_size": 3,
+                                                                                                    "group_size": 0,
                                                                                                     "children": []
                                                                                                 }
                                                                                             ]
@@ -9957,7 +9957,7 @@
                                                                     "duplication": "Y",
                                                                     "type": "node",
                                                                     "name": "Lachnospirales",
-                                                                    "group_size": 2084,
+                                                                    "group_size": 2057,
                                                                     "children": [
                                                                         {
                                                                             "ID": "186803",
@@ -9967,7 +9967,7 @@
                                                                             "duplication": "Y",
                                                                             "type": "node",
                                                                             "name": "Lachnospiraceae",
-                                                                            "group_size": 2084,
+                                                                            "group_size": 2057,
                                                                             "children": [
                                                                                 {
                                                                                     "ID": "841",
@@ -9977,7 +9977,7 @@
                                                                                     "duplication": "Y",
                                                                                     "type": "node",
                                                                                     "name": "Roseburia",
-                                                                                    "group_size": 5,
+                                                                                    "group_size": 2,
                                                                                     "children": [
                                                                                         {
                                                                                             "ID": "166486",
@@ -9987,7 +9987,7 @@
                                                                                             "duplication": "Y",
                                                                                             "type": "node",
                                                                                             "name": "Roseburia intestinalis",
-                                                                                            "group_size": 3,
+                                                                                            "group_size": 0,
                                                                                             "children": [
                                                                                                 {
                                                                                                     "ID": "536231",
@@ -9997,7 +9997,7 @@
                                                                                                     "duplication": "Y",
                                                                                                     "type": "node",
                                                                                                     "name": "G000156535 | Roseburia intestinalis L1-82",
-                                                                                                    "group_size": 3,
+                                                                                                    "group_size": 0,
                                                                                                     "children": []
                                                                                                 }
                                                                                             ]
@@ -10163,7 +10163,7 @@
                                                                                     "duplication": "Y",
                                                                                     "type": "node",
                                                                                     "name": "Dorea",
-                                                                                    "group_size": 396,
+                                                                                    "group_size": 393,
                                                                                     "children": [
                                                                                         {
                                                                                             "ID": "39486",
@@ -10196,7 +10196,7 @@
                                                                                             "duplication": "Y",
                                                                                             "type": "node",
                                                                                             "name": "Dorea longicatena",
-                                                                                            "group_size": 5,
+                                                                                            "group_size": 2,
                                                                                             "children": [
                                                                                                 {
                                                                                                     "ID": "411462",
@@ -10206,7 +10206,7 @@
                                                                                                     "duplication": "Y",
                                                                                                     "type": "node",
                                                                                                     "name": "G000154065 | Dorea longicatena DSM 13814",
-                                                                                                    "group_size": 5,
+                                                                                                    "group_size": 2,
                                                                                                     "children": []
                                                                                                 }
                                                                                             ]
@@ -10221,7 +10221,7 @@
                                                                                     "duplication": "Y",
                                                                                     "type": "node",
                                                                                     "name": "Anaerostipes",
-                                                                                    "group_size": 5,
+                                                                                    "group_size": 2,
                                                                                     "children": [
                                                                                         {
                                                                                             "ID": "105841",
@@ -10231,17 +10231,17 @@
                                                                                             "duplication": "Y",
                                                                                             "type": "node",
                                                                                             "name": "Anaerostipes caccae",
-                                                                                            "group_size": 5,
+                                                                                            "group_size": 2,
                                                                                             "children": [
                                                                                                 {
                                                                                                     "ID": "411490",
                                                                                                     "NCBI": "strain",
-                                                                                                    "Interventions": null,
+                                                                                                    "Interventions": "TCA,TCDCA,TDCA,3alpha_12K,TLCA",
                                                                                                     "Community_composition": null,
                                                                                                     "duplication": "Y",
                                                                                                     "type": "node",
                                                                                                     "name": "G000154305 | Anaerostipes caccae L1-92",
-                                                                                                    "group_size": 5,
+                                                                                                    "group_size": 2,
                                                                                                     "children": []
                                                                                                 }
                                                                                             ]
@@ -10569,7 +10569,7 @@
                                                                                     "duplication": "Y",
                                                                                     "type": "node",
                                                                                     "name": "Hungatella",
-                                                                                    "group_size": 5,
+                                                                                    "group_size": 2,
                                                                                     "children": [
                                                                                         {
                                                                                             "ID": "154046",
@@ -10579,7 +10579,7 @@
                                                                                             "duplication": "Y",
                                                                                             "type": "node",
                                                                                             "name": "Hungatella hathewayi",
-                                                                                            "group_size": 5,
+                                                                                            "group_size": 2,
                                                                                             "children": [
                                                                                                 {
                                                                                                     "ID": "566550",
@@ -10589,7 +10589,7 @@
                                                                                                     "duplication": "Y",
                                                                                                     "type": "node",
                                                                                                     "name": "G000160095 | Hungatella hathewayi DSM 13479",
-                                                                                                    "group_size": 5,
+                                                                                                    "group_size": 2,
                                                                                                     "children": []
                                                                                                 }
                                                                                             ]
@@ -10604,7 +10604,7 @@
                                                                                     "duplication": "Y",
                                                                                     "type": "node",
                                                                                     "name": "Agathobacter",
-                                                                                    "group_size": 5,
+                                                                                    "group_size": 2,
                                                                                     "children": [
                                                                                         {
                                                                                             "ID": "39491",
@@ -10614,7 +10614,7 @@
                                                                                             "duplication": "Y",
                                                                                             "type": "node",
                                                                                             "name": "Agathobacter rectalis",
-                                                                                            "group_size": 5,
+                                                                                            "group_size": 2,
                                                                                             "children": [
                                                                                                 {
                                                                                                     "ID": "515619",
@@ -10624,7 +10624,7 @@
                                                                                                     "duplication": "Y",
                                                                                                     "type": "node",
                                                                                                     "name": "G000020605 | Agathobacter rectalis ATCC 33656",
-                                                                                                    "group_size": 5,
+                                                                                                    "group_size": 2,
                                                                                                     "children": []
                                                                                                 }
                                                                                             ]
@@ -10639,7 +10639,7 @@
                                                                                     "duplication": "Y",
                                                                                     "type": "node",
                                                                                     "name": "Mediterraneibacter",
-                                                                                    "group_size": 14,
+                                                                                    "group_size": 11,
                                                                                     "children": [
                                                                                         {
                                                                                             "ID": "33038",
@@ -10695,17 +10695,17 @@
                                                                                             "duplication": "Y",
                                                                                             "type": "node",
                                                                                             "name": "Ruminococcus lactaris",
-                                                                                            "group_size": 5,
+                                                                                            "group_size": 2,
                                                                                             "children": [
                                                                                                 {
                                                                                                     "ID": "471875",
                                                                                                     "NCBI": "strain",
-                                                                                                    "Interventions": null,
+                                                                                                    "Interventions": "TCA,TCDCA,TDCA,3alpha_12K,TLCA",
                                                                                                     "Community_composition": null,
                                                                                                     "duplication": "Y",
                                                                                                     "type": "node",
                                                                                                     "name": "G000155205 | Ruminococcus lactaris ATCC 29176",
-                                                                                                    "group_size": 5,
+                                                                                                    "group_size": 2,
                                                                                                     "children": []
                                                                                                 }
                                                                                             ]
@@ -10755,7 +10755,7 @@
                                                                                     "duplication": "Y",
                                                                                     "type": "node",
                                                                                     "name": "Lacrimispora",
-                                                                                    "group_size": 5,
+                                                                                    "group_size": 2,
                                                                                     "children": [
                                                                                         {
                                                                                             "ID": "84030",
@@ -10765,17 +10765,17 @@
                                                                                             "duplication": "Y",
                                                                                             "type": "node",
                                                                                             "name": "Lacrimispora saccharolytica",
-                                                                                            "group_size": 5,
+                                                                                            "group_size": 2,
                                                                                             "children": [
                                                                                                 {
                                                                                                     "ID": "610130",
                                                                                                     "NCBI": "strain",
-                                                                                                    "Interventions": null,
+                                                                                                    "Interventions": "TCA,TCDCA,TDCA,3alpha_12K,TLCA",
                                                                                                     "Community_composition": null,
                                                                                                     "duplication": "Y",
                                                                                                     "type": "node",
                                                                                                     "name": "G000144625 | Clostridium saccharolyticum WM1",
-                                                                                                    "group_size": 5,
+                                                                                                    "group_size": 2,
                                                                                                     "children": []
                                                                                                 }
                                                                                             ]
@@ -10790,7 +10790,7 @@
                                                                                     "duplication": "Y",
                                                                                     "type": "node",
                                                                                     "name": "Enterocloster",
-                                                                                    "group_size": 788,
+                                                                                    "group_size": 782,
                                                                                     "children": [
                                                                                         {
                                                                                             "ID": "208479",
@@ -10800,7 +10800,7 @@
                                                                                             "duplication": "Y",
                                                                                             "type": "node",
                                                                                             "name": "Enterocloster bolteae",
-                                                                                            "group_size": 783,
+                                                                                            "group_size": 780,
                                                                                             "children": [
                                                                                                 {
                                                                                                     "ID": "411902",
@@ -10810,7 +10810,7 @@
                                                                                                     "duplication": "Y",
                                                                                                     "type": "node",
                                                                                                     "name": "G000154365 | Enterocloster bolteae ATCC BAA-613",
-                                                                                                    "group_size": 783,
+                                                                                                    "group_size": 780,
                                                                                                     "children": []
                                                                                                 }
                                                                                             ]
@@ -10823,17 +10823,17 @@
                                                                                             "duplication": "Y",
                                                                                             "type": "node",
                                                                                             "name": "Enterocloster asparagiformis",
-                                                                                            "group_size": 5,
+                                                                                            "group_size": 2,
                                                                                             "children": [
                                                                                                 {
                                                                                                     "ID": "518636",
                                                                                                     "NCBI": "strain",
-                                                                                                    "Interventions": null,
+                                                                                                    "Interventions": "TCA,TCDCA,TDCA,3alpha_12K,TLCA",
                                                                                                     "Community_composition": null,
                                                                                                     "duplication": "Y",
                                                                                                     "type": "node",
                                                                                                     "name": "G000158075 | Clostridium asparagiforme DSM 15981",
-                                                                                                    "group_size": 5,
+                                                                                                    "group_size": 2,
                                                                                                     "children": []
                                                                                                 }
                                                                                             ]
@@ -10889,7 +10889,7 @@
                                                             "duplication": "Y",
                                                             "type": "node",
                                                             "name": "Erysipelotrichia",
-                                                            "group_size": 13,
+                                                            "group_size": 10,
                                                             "children": [
                                                                 {
                                                                     "ID": "526525",
@@ -10899,7 +10899,7 @@
                                                                     "duplication": "Y",
                                                                     "type": "node",
                                                                     "name": "Erysipelotrichales",
-                                                                    "group_size": 13,
+                                                                    "group_size": 10,
                                                                     "children": [
                                                                         {
                                                                             "ID": "128827",
@@ -11061,7 +11061,7 @@
                                                                             "duplication": "Y",
                                                                             "type": "node",
                                                                             "name": "Coprobacillaceae",
-                                                                            "group_size": 11,
+                                                                            "group_size": 8,
                                                                             "children": [
                                                                                 {
                                                                                     "ID": "135858",
@@ -11071,7 +11071,7 @@
                                                                                     "duplication": "Y",
                                                                                     "type": "node",
                                                                                     "name": "Catenibacterium",
-                                                                                    "group_size": 5,
+                                                                                    "group_size": 2,
                                                                                     "children": [
                                                                                         {
                                                                                             "ID": "100886",
@@ -11081,7 +11081,7 @@
                                                                                             "duplication": "Y",
                                                                                             "type": "node",
                                                                                             "name": "Catenibacterium mitsuokai",
-                                                                                            "group_size": 5,
+                                                                                            "group_size": 2,
                                                                                             "children": [
                                                                                                 {
                                                                                                     "ID": "451640",
@@ -11091,7 +11091,7 @@
                                                                                                     "duplication": "Y",
                                                                                                     "type": "node",
                                                                                                     "name": "G025148785 | Catenibacterium mitsuokai DSM 15897",
-                                                                                                    "group_size": 5,
+                                                                                                    "group_size": 2,
                                                                                                     "children": []
                                                                                                 }
                                                                                             ]
@@ -11170,7 +11170,7 @@
                                                             "duplication": "Y",
                                                             "type": "node",
                                                             "name": "Negativicutes",
-                                                            "group_size": 19,
+                                                            "group_size": 16,
                                                             "children": [
                                                                 {
                                                                     "ID": "909929",
@@ -11180,7 +11180,7 @@
                                                                     "duplication": "Y",
                                                                     "type": "node",
                                                                     "name": "Selenomonadales",
-                                                                    "group_size": 3,
+                                                                    "group_size": 0,
                                                                     "children": [
                                                                         {
                                                                             "ID": "1843491",
@@ -11190,7 +11190,7 @@
                                                                             "duplication": "Y",
                                                                             "type": "node",
                                                                             "name": "Selenomonadaceae",
-                                                                            "group_size": 3,
+                                                                            "group_size": 0,
                                                                             "children": [
                                                                                 {
                                                                                     "ID": "52225",
@@ -11200,7 +11200,7 @@
                                                                                     "duplication": "Y",
                                                                                     "type": "node",
                                                                                     "name": "Mitsuokella",
-                                                                                    "group_size": 3,
+                                                                                    "group_size": 0,
                                                                                     "children": [
                                                                                         {
                                                                                             "ID": "52226",
@@ -11210,7 +11210,7 @@
                                                                                             "duplication": "Y",
                                                                                             "type": "node",
                                                                                             "name": "Mitsuokella multacida",
-                                                                                            "group_size": 3,
+                                                                                            "group_size": 0,
                                                                                             "children": [
                                                                                                 {
                                                                                                     "ID": "500635",
@@ -11220,7 +11220,7 @@
                                                                                                     "duplication": "Y",
                                                                                                     "type": "node",
                                                                                                     "name": "G000155955 | Mitsuokella multacida DSM 20544",
-                                                                                                    "group_size": 3,
+                                                                                                    "group_size": 0,
                                                                                                     "children": []
                                                                                                 }
                                                                                             ]
@@ -11455,7 +11455,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "Actinomycetota",
-                                                    "group_size": 660,
+                                                    "group_size": 654,
                                                     "children": [
                                                         {
                                                             "ID": "1760",
@@ -11465,7 +11465,7 @@
                                                             "duplication": "Y",
                                                             "type": "node",
                                                             "name": "Actinomycetes",
-                                                            "group_size": 241,
+                                                            "group_size": 238,
                                                             "children": [
                                                                 {
                                                                     "ID": "85004",
@@ -11475,7 +11475,7 @@
                                                                     "duplication": "Y",
                                                                     "type": "node",
                                                                     "name": "Bifidobacteriales",
-                                                                    "group_size": 217,
+                                                                    "group_size": 214,
                                                                     "children": [
                                                                         {
                                                                             "ID": "31953",
@@ -11485,7 +11485,7 @@
                                                                             "duplication": "Y",
                                                                             "type": "node",
                                                                             "name": "Bifidobacteriaceae",
-                                                                            "group_size": 217,
+                                                                            "group_size": 214,
                                                                             "children": [
                                                                                 {
                                                                                     "ID": "1678",
@@ -11495,7 +11495,7 @@
                                                                                     "duplication": "Y",
                                                                                     "type": "node",
                                                                                     "name": "Bifidobacterium",
-                                                                                    "group_size": 217,
+                                                                                    "group_size": 214,
                                                                                     "children": [
                                                                                         {
                                                                                             "ID": "1680",
@@ -11596,17 +11596,17 @@
                                                                                             "duplication": "Y",
                                                                                             "type": "node",
                                                                                             "name": "Bifidobacterium pseudocatenulatum",
-                                                                                            "group_size": 5,
+                                                                                            "group_size": 2,
                                                                                             "children": [
                                                                                                 {
                                                                                                     "ID": "547043",
                                                                                                     "NCBI": "strain",
-                                                                                                    "Interventions": null,
+                                                                                                    "Interventions": "TCA,TCDCA,TDCA,3alpha_12K,TLCA",
                                                                                                     "Community_composition": null,
                                                                                                     "duplication": "Y",
                                                                                                     "type": "node",
                                                                                                     "name": "G001025215 | Bifidobacterium pseudocatenulatum DSM 20438 = JCM 1200 = LMG 10505",
-                                                                                                    "group_size": 5,
+                                                                                                    "group_size": 2,
                                                                                                     "children": []
                                                                                                 }
                                                                                             ]
@@ -11851,7 +11851,7 @@
                                                             "duplication": "Y",
                                                             "type": "node",
                                                             "name": "Coriobacteriia",
-                                                            "group_size": 419,
+                                                            "group_size": 416,
                                                             "children": [
                                                                 {
                                                                     "ID": "84999",
@@ -11861,7 +11861,7 @@
                                                                     "duplication": "Y",
                                                                     "type": "node",
                                                                     "name": "Coriobacteriales",
-                                                                    "group_size": 10,
+                                                                    "group_size": 7,
                                                                     "children": [
                                                                         {
                                                                             "ID": "84107",
@@ -11871,7 +11871,7 @@
                                                                             "duplication": "Y",
                                                                             "type": "node",
                                                                             "name": "Coriobacteriaceae",
-                                                                            "group_size": 10,
+                                                                            "group_size": 7,
                                                                             "children": [
                                                                                 {
                                                                                     "ID": "102106",
@@ -11881,7 +11881,7 @@
                                                                                     "duplication": "Y",
                                                                                     "type": "node",
                                                                                     "name": "Collinsella",
-                                                                                    "group_size": 10,
+                                                                                    "group_size": 7,
                                                                                     "children": [
                                                                                         {
                                                                                             "ID": "74426",
@@ -11891,7 +11891,7 @@
                                                                                             "duplication": "Y",
                                                                                             "type": "node",
                                                                                             "name": "Collinsella aerofaciens",
-                                                                                            "group_size": 9,
+                                                                                            "group_size": 6,
                                                                                             "children": [
                                                                                                 {
                                                                                                     "ID": "411903",
@@ -11901,7 +11901,7 @@
                                                                                                     "duplication": "Y",
                                                                                                     "type": "node",
                                                                                                     "name": "G000169035 | Collinsella aerofaciens ATCC 25986",
-                                                                                                    "group_size": 9,
+                                                                                                    "group_size": 6,
                                                                                                     "children": []
                                                                                                 }
                                                                                             ]
@@ -12137,7 +12137,7 @@
                                             "duplication": "Y",
                                             "type": "node",
                                             "name": "Pseudomonadati",
-                                            "group_size": 3437,
+                                            "group_size": 3410,
                                             "children": [
                                                 {
                                                     "ID": "976",
@@ -12147,7 +12147,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "Bacteroidota",
-                                                    "group_size": 3023,
+                                                    "group_size": 2996,
                                                     "children": [
                                                         {
                                                             "ID": "200643",
@@ -12157,7 +12157,7 @@
                                                             "duplication": "Y",
                                                             "type": "node",
                                                             "name": "Bacteroidia",
-                                                            "group_size": 3023,
+                                                            "group_size": 2996,
                                                             "children": [
                                                                 {
                                                                     "ID": "171549",
@@ -12167,7 +12167,7 @@
                                                                     "duplication": "Y",
                                                                     "type": "node",
                                                                     "name": "Bacteroidales",
-                                                                    "group_size": 3023,
+                                                                    "group_size": 2996,
                                                                     "children": [
                                                                         {
                                                                             "ID": "815",
@@ -12177,7 +12177,7 @@
                                                                             "duplication": "Y",
                                                                             "type": "node",
                                                                             "name": "Bacteroidaceae",
-                                                                            "group_size": 2526,
+                                                                            "group_size": 2502,
                                                                             "children": [
                                                                                 {
                                                                                     "ID": "816",
@@ -12187,7 +12187,7 @@
                                                                                     "duplication": "Y",
                                                                                     "type": "node",
                                                                                     "name": "Bacteroides",
-                                                                                    "group_size": 2068,
+                                                                                    "group_size": 2050,
                                                                                     "children": [
                                                                                         {
                                                                                             "ID": "817",
@@ -12202,7 +12202,7 @@
                                                                                                 {
                                                                                                     "ID": "43859",
                                                                                                     "NCBI": "strain",
-                                                                                                    "Interventions": "4DDT, 4DDE, 4DDD, endosulfan, dichlorvos, mirex, chlopyriphos, malathion, malaoxon, methylparathion, monocrotophos, permethrin, cyhalothrin, cypermethrin, deltamethrin, atrazine, azoxystrobin, fipronil",
+                                                                                                    "Interventions": null,
                                                                                                     "Community_composition": null,
                                                                                                     "duplication": "Y",
                                                                                                     "type": "node",
@@ -12276,7 +12276,7 @@
                                                                                             "duplication": "Y",
                                                                                             "type": "node",
                                                                                             "name": "Bacteroides uniformis",
-                                                                                            "group_size": 402,
+                                                                                            "group_size": 399,
                                                                                             "children": [
                                                                                                 {
                                                                                                     "ID": "48",
@@ -12297,7 +12297,7 @@
                                                                                                     "duplication": "Y",
                                                                                                     "type": "node",
                                                                                                     "name": "G000154205 | Bacteroides uniformis ATCC 8492",
-                                                                                                    "group_size": 398,
+                                                                                                    "group_size": 395,
                                                                                                     "children": []
                                                                                                 }
                                                                                             ]
@@ -12310,17 +12310,17 @@
                                                                                             "duplication": "Y",
                                                                                             "type": "node",
                                                                                             "name": "Bacteroides eggerthii",
-                                                                                            "group_size": 5,
+                                                                                            "group_size": 2,
                                                                                             "children": [
                                                                                                 {
                                                                                                     "ID": "483216",
                                                                                                     "NCBI": "strain",
-                                                                                                    "Interventions": null,
+                                                                                                    "Interventions": "TCA,TCDCA,TDCA,3alpha_12K,TLCA",
                                                                                                     "Community_composition": null,
                                                                                                     "duplication": "Y",
                                                                                                     "type": "node",
                                                                                                     "name": "G000155815 | Bacteroides eggerthii DSM 20697",
-                                                                                                    "group_size": 5,
+                                                                                                    "group_size": 2,
                                                                                                     "children": []
                                                                                                 }
                                                                                             ]
@@ -12333,7 +12333,7 @@
                                                                                             "duplication": "Y",
                                                                                             "type": "node",
                                                                                             "name": "Bacteroides ovatus",
-                                                                                            "group_size": 417,
+                                                                                            "group_size": 414,
                                                                                             "children": [
                                                                                                 {
                                                                                                     "ID": "411476",
@@ -12343,7 +12343,7 @@
                                                                                                     "duplication": "Y",
                                                                                                     "type": "node",
                                                                                                     "name": "G000154125 | Bacteroides ovatus ATCC 8483",
-                                                                                                    "group_size": 417,
+                                                                                                    "group_size": 414,
                                                                                                     "children": []
                                                                                                 }
                                                                                             ]
@@ -12425,7 +12425,7 @@
                                                                                             "duplication": "Y",
                                                                                             "type": "node",
                                                                                             "name": "Bacteroides intestinalis",
-                                                                                            "group_size": 23,
+                                                                                            "group_size": 20,
                                                                                             "children": [
                                                                                                 {
                                                                                                     "ID": "471870",
@@ -12435,7 +12435,7 @@
                                                                                                     "duplication": "Y",
                                                                                                     "type": "node",
                                                                                                     "name": "G000172175 | Bacteroides intestinalis DSM 17393",
-                                                                                                    "group_size": 23,
+                                                                                                    "group_size": 20,
                                                                                                     "children": []
                                                                                                 }
                                                                                             ]
@@ -12471,17 +12471,17 @@
                                                                                             "duplication": "Y",
                                                                                             "type": "node",
                                                                                             "name": "Bacteroides xylanisolvens",
-                                                                                            "group_size": 5,
+                                                                                            "group_size": 2,
                                                                                             "children": [
                                                                                                 {
                                                                                                     "ID": "3384290",
                                                                                                     "NCBI": null,
-                                                                                                    "Interventions": null,
+                                                                                                    "Interventions": "TCA,TCDCA,TDCA,3alpha_12K,TLCA",
                                                                                                     "Community_composition": null,
                                                                                                     "duplication": "Y",
                                                                                                     "type": "node",
                                                                                                     "name": "Bacteroides xylanisolvens DSM 18836",
-                                                                                                    "group_size": 5,
+                                                                                                    "group_size": 2,
                                                                                                     "children": []
                                                                                                 }
                                                                                             ]
@@ -12517,7 +12517,7 @@
                                                                                             "duplication": "Y",
                                                                                             "type": "node",
                                                                                             "name": "unclassified Bacteroides",
-                                                                                            "group_size": 11,
+                                                                                            "group_size": 8,
                                                                                             "children": [
                                                                                                 {
                                                                                                     "ID": "457395",
@@ -12560,7 +12560,7 @@
                                                                                                     "duplication": "Y",
                                                                                                     "type": "node",
                                                                                                     "name": "Bacteroides sp. 3_1_19",
-                                                                                                    "group_size": 5,
+                                                                                                    "group_size": 2,
                                                                                                     "children": []
                                                                                                 }
                                                                                             ]
@@ -12575,7 +12575,7 @@
                                                                                     "duplication": "Y",
                                                                                     "type": "node",
                                                                                     "name": "Phocaeicola",
-                                                                                    "group_size": 458,
+                                                                                    "group_size": 452,
                                                                                     "children": [
                                                                                         {
                                                                                             "ID": "821",
@@ -12677,7 +12677,7 @@
                                                                                             "duplication": "Y",
                                                                                             "type": "node",
                                                                                             "name": "Phocaeicola dorei",
-                                                                                            "group_size": 26,
+                                                                                            "group_size": 20,
                                                                                             "children": [
                                                                                                 {
                                                                                                     "ID": "483217",
@@ -12687,18 +12687,18 @@
                                                                                                     "duplication": "Y",
                                                                                                     "type": "node",
                                                                                                     "name": "G000156075 | Phocaeicola dorei DSM 17855",
-                                                                                                    "group_size": 21,
+                                                                                                    "group_size": 18,
                                                                                                     "children": []
                                                                                                 },
                                                                                                 {
                                                                                                     "ID": "556260",
                                                                                                     "NCBI": "strain",
-                                                                                                    "Interventions": null,
+                                                                                                    "Interventions": "TCA,TCDCA,TDCA,3alpha_12K,TLCA",
                                                                                                     "Community_composition": null,
                                                                                                     "duplication": "Y",
                                                                                                     "type": "node",
                                                                                                     "name": "G000158335 | Phocaeicola dorei 5_1_36/D4",
-                                                                                                    "group_size": 5,
+                                                                                                    "group_size": 2,
                                                                                                     "children": []
                                                                                                 }
                                                                                             ]
@@ -13225,7 +13225,7 @@
                                                                             "duplication": "Y",
                                                                             "type": "node",
                                                                             "name": "Odoribacteraceae",
-                                                                            "group_size": 7,
+                                                                            "group_size": 4,
                                                                             "children": [
                                                                                 {
                                                                                     "ID": "283168",
@@ -13270,7 +13270,7 @@
                                                                                     "duplication": "Y",
                                                                                     "type": "node",
                                                                                     "name": "Butyricimonas",
-                                                                                    "group_size": 5,
+                                                                                    "group_size": 2,
                                                                                     "children": [
                                                                                         {
                                                                                             "ID": "544645",
@@ -13280,17 +13280,17 @@
                                                                                             "duplication": "Y",
                                                                                             "type": "node",
                                                                                             "name": "Butyricimonas virosa",
-                                                                                            "group_size": 5,
+                                                                                            "group_size": 2,
                                                                                             "children": [
                                                                                                 {
                                                                                                     "ID": "1121130",
                                                                                                     "NCBI": "strain",
-                                                                                                    "Interventions": null,
+                                                                                                    "Interventions": "TCA,TCDCA,TDCA,3alpha_12K,TLCA",
                                                                                                     "Community_composition": null,
                                                                                                     "duplication": "Y",
                                                                                                     "type": "node",
                                                                                                     "name": "G000519105 | Butyricimonas virosa DSM 23226",
-                                                                                                    "group_size": 5,
+                                                                                                    "group_size": 2,
                                                                                                     "children": []
                                                                                                 }
                                                                                             ]
@@ -14222,7 +14222,7 @@
                             "duplication": "Y",
                             "type": "node",
                             "name": "QC_pool_monoculture",
-                            "group_size": 101,
+                            "group_size": 89,
                             "children": []
                         },
                         {
@@ -14233,7 +14233,7 @@
                             "duplication": "Y",
                             "type": "node",
                             "name": "QC_blank_monoculture",
-                            "group_size": 190,
+                            "group_size": 187,
                             "children": []
                         },
                         {
@@ -14244,7 +14244,7 @@
                             "duplication": "Y",
                             "type": "node",
                             "name": "Media_control_monoculture",
-                            "group_size": 59,
+                            "group_size": 58,
                             "children": []
                         },
                         {
@@ -15736,7 +15736,7 @@
             "duplication": "Y",
             "type": "node",
             "name": "Health phenotype",
-            "group_size": 52880,
+            "group_size": 52551,
             "children": [
                 {
                     "ID": "Caenorhabditis elegans",
@@ -15769,7 +15769,7 @@
                     "duplication": "Y",
                     "type": "node",
                     "name": "Homo sapiens",
-                    "group_size": 40598,
+                    "group_size": 40463,
                     "children": [
                         {
                             "ID": "Homo sapiens_healthy",
@@ -15779,7 +15779,7 @@
                             "duplication": "Y",
                             "type": "node",
                             "name": "Homo sapiens_healthy",
-                            "group_size": 14567,
+                            "group_size": 14605,
                             "children": []
                         },
                         {
@@ -15812,7 +15812,7 @@
                             "duplication": "Y",
                             "type": "node",
                             "name": "Homo sapiens_human immunodeficiency virus infectious disease",
-                            "group_size": 788,
+                            "group_size": 693,
                             "children": []
                         },
                         {
@@ -15856,7 +15856,7 @@
                             "duplication": "Y",
                             "type": "node",
                             "name": "Homo sapiens_inflammatory bowel disease",
-                            "group_size": 693,
+                            "group_size": 615,
                             "children": []
                         },
                         {
@@ -16123,7 +16123,7 @@
                     "duplication": "Y",
                     "type": "node",
                     "name": "Mus musculus",
-                    "group_size": 9879,
+                    "group_size": 9700,
                     "children": [
                         {
                             "ID": "Mus musculus_unknown",
@@ -16227,12 +16227,12 @@
                         {
                             "ID": "Mus musculus_atherosclerosis",
                             "NCBI": null,
-                            "Interventions": "cardiovascular disease, atherosclerosis and fat metabolism (ApoE)",
+                            "Interventions": null,
                             "Community_composition": null,
                             "duplication": "Y",
                             "type": "node",
                             "name": "Mus musculus_atherosclerosis",
-                            "group_size": 179,
+                            "group_size": 0,
                             "children": []
                         },
                         {
@@ -16312,7 +16312,7 @@
                     "duplication": "Y",
                     "type": "node",
                     "name": "Sus scrofa",
-                    "group_size": 15,
+                    "group_size": 0,
                     "children": [
                         {
                             "ID": "Sus scrofa_unknown",
@@ -16322,7 +16322,7 @@
                             "duplication": "Y",
                             "type": "node",
                             "name": "Sus scrofa_unknown",
-                            "group_size": 15,
+                            "group_size": 0,
                             "children": []
                         }
                     ]
@@ -16360,7 +16360,7 @@
             "duplication": "Y",
             "type": "node",
             "name": "blank",
-            "group_size": 5445,
+            "group_size": 5604,
             "children": []
         },
         {
@@ -16371,7 +16371,7 @@
             "duplication": "Y",
             "type": "node",
             "name": "Organ_homo sapiens",
-            "group_size": 48884,
+            "group_size": 49437,
             "children": [
                 {
                     "ID": "Homo sapiens_feces",
@@ -16381,7 +16381,7 @@
                     "duplication": "Y",
                     "type": "node",
                     "name": "Homo sapiens_feces",
-                    "group_size": 12507,
+                    "group_size": 12501,
                     "children": []
                 },
                 {
@@ -16392,7 +16392,7 @@
                     "duplication": "Y",
                     "type": "node",
                     "name": "Homo sapiens_blood plasma",
-                    "group_size": 5860,
+                    "group_size": 5956,
                     "children": []
                 },
                 {
@@ -16403,7 +16403,7 @@
                     "duplication": "Y",
                     "type": "node",
                     "name": "Homo sapiens_blood serum",
-                    "group_size": 8930,
+                    "group_size": 9026,
                     "children": []
                 },
                 {
@@ -16414,7 +16414,7 @@
                     "duplication": "Y",
                     "type": "node",
                     "name": "Homo sapiens_not applicable",
-                    "group_size": 21,
+                    "group_size": 24,
                     "children": []
                 },
                 {
@@ -16436,7 +16436,7 @@
                     "duplication": "Y",
                     "type": "node",
                     "name": "Homo sapiens_urine",
-                    "group_size": 2976,
+                    "group_size": 2979,
                     "children": []
                 },
                 {
@@ -16557,7 +16557,7 @@
                     "duplication": "Y",
                     "type": "node",
                     "name": "Homo sapiens_milk",
-                    "group_size": 2956,
+                    "group_size": 3317,
                     "children": []
                 },
                 {
@@ -16746,7 +16746,7 @@
             "duplication": "Y",
             "type": "node",
             "name": "Organ_rodents",
-            "group_size": 18546,
+            "group_size": 18574,
             "children": [
                 {
                     "ID": "Mus musculus_feces",
@@ -16894,12 +16894,12 @@
                 {
                     "ID": "Mus musculus_uterine cervix",
                     "NCBI": null,
-                    "Interventions": null,
+                    "Interventions": "specific pathogen free",
                     "Community_composition": null,
                     "duplication": "Y",
                     "type": "node",
                     "name": "Mus musculus_uterine cervix",
-                    "group_size": 17,
+                    "group_size": 21,
                     "children": []
                 },
                 {
@@ -16971,12 +16971,12 @@
                 {
                     "ID": "Mus musculus_adrenal gland",
                     "NCBI": null,
-                    "Interventions": null,
+                    "Interventions": "specific pathogen free",
                     "Community_composition": null,
                     "duplication": "Y",
                     "type": "node",
                     "name": "Mus musculus_adrenal gland",
-                    "group_size": 34,
+                    "group_size": 42,
                     "children": []
                 },
                 {
@@ -17092,12 +17092,12 @@
                 {
                     "ID": "Mus musculus_urine",
                     "NCBI": null,
-                    "Interventions": "glycine",
+                    "Interventions": "specific pathogen free",
                     "Community_composition": null,
                     "duplication": "Y",
                     "type": "node",
                     "name": "Mus musculus_urine",
-                    "group_size": 1090,
+                    "group_size": 1094,
                     "children": []
                 },
                 {
@@ -17356,12 +17356,12 @@
                 {
                     "ID": "germ_free_Mus musculus_uterine cervix",
                     "NCBI": null,
-                    "Interventions": null,
+                    "Interventions": "germ_free",
                     "Community_composition": null,
                     "duplication": "Y",
                     "type": "node",
                     "name": "germ_free_Mus musculus_uterine cervix",
-                    "group_size": 0,
+                    "group_size": 4,
                     "children": []
                 },
                 {
@@ -17477,12 +17477,12 @@
                 {
                     "ID": "germ_free_Mus musculus_adrenal gland",
                     "NCBI": null,
-                    "Interventions": null,
+                    "Interventions": "germ_free",
                     "Community_composition": null,
                     "duplication": "Y",
                     "type": "node",
                     "name": "germ_free_Mus musculus_adrenal gland",
-                    "group_size": 0,
+                    "group_size": 8,
                     "children": []
                 },
                 {
