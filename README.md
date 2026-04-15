@@ -1,58 +1,55 @@
 [![DOI](https://zenodo.org/badge/492844724.svg)](https://zenodo.org/badge/latestdoi/492844724)
 
 # Welcome to domainMASSTs
-This repository contains code and data for the different domain-specific MASSTs currently under development in the Dorrestein Lab at UC San Diego. This includes microbeMASST, plantMASST, foodMASST, and tissueMASST. Aggregated outputs of the domain MASSTs can be generated using metadataMASST.
+This repository contains the code and data for the different domain-specific MASSTs currently under development in the Dorrestein Lab at UC San Diego. This includes microbeMASST, plantMASST, tissueMASST, microbiomeMASST, and foodMASST. Aggregated search outputs can be generated and visualized using metadataMASST.
 
-The code for the different standalone web applications, which allow for the search of one spectrum at a time, can be found in [GNPS_MASST](https://github.com/mwang87/GNPS_MASST)
+The code for the different standalone web applications, which allow users to search one spectrum at a time, can be found in [GNPS_MASST](https://github.com/mwang87/GNPS_MASST)
 
-Web apps:
+Standalone Web Apps:
 1. [microbeMASST](https://masst.gnps2.org/microbemasst/)
 2. [plantMASST](https://masst.gnps2.org/plantmasst/)
-3. [foodMASST](https://masst.gnps2.org/foodmasst2/)
-4. [tissueMASST](https://masst.gnps2.org/tissuemasst/)
-5. [metadataMASST](https://masst.gnps2.org/metadatamasst/)
+3. [tissueMASST](https://masst.gnps2.org/tissuemasst/)
+4. [microbiomeMASST](https://masst.gnps2.org/microbiomemasst/)
+5. [foodMASST](https://masst.gnps2.org/foodmasst2/)
+6. [metadataMASST](https://masst.gnps2.org/metadatamasst/)
 
-Publications associated with the different domainMASSTs:
+Publications associated with the search tools:
 1. [microbeMASST - Nature Microbiology](https://www.nature.com/articles/s41564-023-01575-9)
-2. [plantMASST - biorxiv](https://www.biorxiv.org/content/10.1101/2024.05.13.593988v1)
-3. [foodMASST - npj Science of Food](https://www.nature.com/articles/s41538-022-00137-3)
+2. [plantMASST - bioRxiv](https://www.biorxiv.org/content/10.1101/2024.05.13.593988v1)
+3. [tissueMASST - bioRxiv](https://www.biorxiv.org/content/10.1101/2025.04.28.651123v1.abstract)
+4. [microbiomeMASST - bioRxiv](https://www.biorxiv.org/content/10.64898/2026.02.04.703849v1.abstract)
+5. [foodMASST - npj Science of Food](https://www.nature.com/articles/s41538-022-00137-3)
 
-## Hello World Running
+# Batch search of multiple spectra against all domainMASSTs
 
-This will run
-```
-python ./masst_client.py --usi_or_lib_id mzspec:MSV000095331:peak/mzML_3/Full_syncom_T72_drug_mix_2_2.mzML:scan:2176 --out_file temp/output
-```
+Running [jobs.py](https://github.com/robinschmid/microbe_masst/blob/master/code/jobs.py) allows users to leverage the [Fast Search API](https://fasst.gnps2.org/fastsearch/) and execute a batch search of multiple MS/MS spectra against the current indexed data in GNPS/MassIVE, Metabolomics Workbench, Metabolights, and NORMAN and generate multiple outputs for all listed domainMASSTs simultaneously.
 
-This will run if you a table of results
-```
-python ./masst_client.py --mode draw --input_usi_results_file ../output/fastMASST_matches.tsv --out_file temp/temp
-```
-
-
-
-# Fast Search via microbeMASST enables batch search of multiple spectra against multiple domain-specific MASSTs at once
-
-Running [jobs.py](https://github.com/robinschmid/microbe_masst/blob/master/code/jobs.py) allows you to leverage the [Fast Search API](https://fasst.gnps2.org/fastsearch/) and execute a batch search of multiple MS/MS spectra against the current indexed data in GNPS/MassIVE (November 2023) and generate multiple outputs for all the listed domain-specific MASSTs simultaneously.
-
-1. A series of interactive HTML files trees will be generated for each domain-specific MASST ending with _domain.html (e.g., _microbe.html)
-2. A series of JSON files of the tree will be generated (e.g., _microbe.json)
-3. A _matches.tsv file will be generated, containing all the scans found to match your spectrum of interest in the data that have been indexed. This will include also samples that are not part of the listed domain-specific MASSTs. 
-4. A _library.tsv file will be generated, containing a list of spectra from the [GNPS libraries](https://library.gnps2.org/) found to match your spectrum of interest. This enables level 2 annotation according the Metabolomics Standards Initiative. 
-5. A _datasets.tsv file will be generated, containing number of samples found to be matching your spectrum per dataset included in the current index. 
+1. A series of interactive HTML trees files will be generated for each domain-specific MASST ending with _domain.html (e.g., _microbe.html)
+2. A series of JSON files for the different trees will be generated (e.g., _microbe.json)
+3. A _matches.tsv file will be generated. This contains all the scans found to match your searched spectrum of interest in the data that have been currently indexed. This includes also samples that are not part of the curated domain-specific MASSTs. 
+4. A _library.tsv file will be generated. This contains a list of spectra from the [GNPS libraries](https://library.gnps2.org/) found to match your spectrum of interest. This enables a Level 2 annotation according the Metabolomics Standards Initiative. 
+5. A _datasets.tsv file will be generated. This contains the number of unique samples found to be matching your searched spectrum in each currently indexed dataset. 
 6. A series of _count_domain.tsv files will be generated, containing information on matches found for each specific domain MASST.
 
 ## Execute batch run
 
 1. Navigate to the [jobs.py](https://github.com/robinschmid/microbe_masst/blob/master/code/jobs.py) and add entries to the files list as `("input_directory/input_file", "output_directory/output_prefix)`
-2. Check and adjust, based on your research question, the different parameters for the search, such as minimum cosine score, mz tolerance and number of minimum matching peaks.
+2. Check and adjust the different parameters for the search, such as minimum cosine score, mz tolerance, and number of minimum matching peaks based on your research question.
 3. Run [jobs.py](https://github.com/robinschmid/microbe_masst/blob/master/code/jobs.py)
 
 ### Note:
 
 1. You can run either a single .mgf file generated via [MZmine](https://github.com/mzmine/mzmine), from the molecular networking in GNPS workflow, or a list of [USIs](https://www.nature.com/articles/s41592-021-01184-6) provided either via a .csv or .tsv file.
-2. Make sure to run [jobs.py](https://github.com/robinschmid/microbe_masst/blob/master/code/jobs.py) **_a couple of times_**, until no new output is generated by having the option: `skip_existing=True`. Due to the Fast Search API some of the entries will fail. Nevertheless sequent re-runs should catch all the possible matches.
+2. Make sure to run [jobs.py](https://github.com/robinschmid/microbe_masst/blob/master/code/jobs.py) **_a couple of times_**, until no new output is generated by having the option: `skip_existing=True`. Due to the Fast Search API some of the entries will fail. Nevertheless sequent re-runs should catch all the possible matches. (This should not be an issue anymore)
 3. Please make user to use **_Python 3.10_**
+
+# Lineages
+
+Within the folder lineages you can find the complete lineage information of each NCBI taxonomy IDs used in microbeMASST and plantMASST. These tools currently cover
+| Tool | Kingdom | Phylum | Class | Order | Family | Genus | Species | Strain |
+|---|---|---|---|---|---|---|---|---|
+| microbeMASST | 8 | 20 | 48 | 124 | 278 | 561 | 1379 | 542 |
+| plantMASST | 1 | 1 | 11 | 81 | 319 | 1796 | 3712 | NA |
 
 # How to cite?
 
