@@ -11,6 +11,8 @@ from typing import Optional
 from pandas import DataFrame
 
 import usi_utils
+import os
+import time
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
@@ -84,7 +86,8 @@ MICROBIOME_MASST = SpecialMasst(
     metadata_key="ID",
 )
 
-URL = "https://fasst.gnps2.org/search"
+# URL = "https://fasst.gnps2.org/search" # old API
+HOST = "https://api.fasst.gnps2.org"  # new API
 SPECIAL_MASSTS = [FOOD_MASST, MICROBE_MASST, PLANT_MASST, TISSUE_MASST, PERSONALCAREPRODUCT_MASST, MICROBIOME_MASST]
 
 
@@ -249,18 +252,68 @@ def fast_masst_spectrum_dict(
         raise e
 
 
-def _fast_masst(params):
-    """
+# old API
+# def _fast_masst(params):
+#     """
 
-    :param params: dict of the query input and parameters
-    :return: dict with the masst results. [results] contains the individual matches, [grouped_by_dataset] contains
-    all datasets and their titles
+#     :param params: dict of the query input and parameters
+#     :return: dict with the masst results. [results] contains the individual matches, [grouped_by_dataset] contains
+#     all datasets and their titles
+#     """
+#     search_api_response = requests.post(URL, data=params, timeout=300)
+#     logging.debug("fastMASST response={}".format(search_api_response.status_code))
+#     search_api_response.raise_for_status()
+#     search_api_response_json = search_api_response.json()
+#     return search_api_response_json
+
+
+# new API
+def _fast_masst(params, host: str = HOST, blocking: bool = True, timeout: int = 5):
     """
-    search_api_response = requests.post(URL, data=params, timeout=300)
-    logging.debug("fastMASST response={}".format(search_api_response.status_code))
-    search_api_response.raise_for_status()
-    search_api_response_json = search_api_response.json()
-    return search_api_response_json
+    :param params: dict of the query input and parameters
+    :param host: base URL for the MASST API endpoint
+    :param blocking: whether to wait for results or return immediately with task_id
+    :param timeout: request timeout in seconds
+    :return: dict with the MASST results. [results] contains the individual matches, [grouped_by_dataset] contains
+             all datasets and their titles
+    """
+    query_url = os.path.join(host, "search")
+
+    r = requests.post(query_url, json=params, timeout=timeout)
+    logging.debug("fastMASST response={}".format(r.status_code))
+    r.raise_for_status()
+
+    task_id = r.json()["id"]
+    params["task_id"] = task_id
+
+    if not blocking:
+        params["status"] = "PENDING"
+        return params
+
+    return blocking_for_results(params, host=host)
+
+def blocking_for_results(query_parameters_dictionary, host: str = HOST):
+    task_id = query_parameters_dictionary["task_id"]
+
+    retries_max = 120
+    current_retries = 0
+    while True:
+        logging.debug(f"WAITING FOR RESULTS, retries {current_retries}, taskid: {task_id}")
+
+        r = requests.get(os.path.join(host, f"search/result/{task_id}"), timeout=30)
+        r.raise_for_status()
+        payload = r.json()
+
+        # still running?
+        if isinstance(payload, dict) and payload.get("status") == "PENDING":
+            time.sleep(1)
+            current_retries += 1
+            if current_retries >= retries_max:
+                logging.exception("Timeout waiting for results from FASST API")
+                raise TimeoutError("Timeout waiting for results from FASST API")
+            continue
+
+        return payload
 
 
 def filter_matches(df, precursor_mz_tol, min_matched_signals, analog):
@@ -392,7 +445,7 @@ def extract_datasets_from_masst_results(
 # %5Ct955969.8%5Cn81.9816%5Ct542119.2%5Cn98.9841%5Ct483893630.0%5Cn116.9947%5Ct1605324.2%5Cn127.0155%5Ct182958080.0
 # %5Cn131.0102%5Ct878951.4%5Cn155.0467%5Ct73527150.0%5Cn183.0781%5Ct16294011.0%22%7D
 if __name__ == "__main__":
-    usi = "mzspec:GNPS:GNPS-LIBRARY:accession:CCMSLIB00005883948"
+    usi = "mzspec:MSV000099690:Tomatidine_PEA.mzML:scan:907"
     matches = fast_masst(usi)
 
     print(len(matches))
