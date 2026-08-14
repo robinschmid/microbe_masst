@@ -292,6 +292,11 @@ def _fast_masst(params, host: str = HOST, blocking: bool = True, timeout: int = 
 
     return blocking_for_results(params, host=host)
 
+# terminal failure states, so a dead task is not polled until the retry budget runs
+# out. NOT_FOUND is returned with HTTP 200 for an unknown task id
+FAILED_STATES = {"FAILURE", "FAILED", "REVOKED", "ERROR", "NOT_FOUND"}
+
+
 def blocking_for_results(query_parameters_dictionary, host: str = HOST):
     task_id = query_parameters_dictionary["task_id"]
 
@@ -304,16 +309,28 @@ def blocking_for_results(query_parameters_dictionary, host: str = HOST):
         r.raise_for_status()
         payload = r.json()
 
-        # still running?
-        if isinstance(payload, dict) and payload.get("status") == "PENDING":
-            time.sleep(1)
-            current_retries += 1
-            if current_retries >= retries_max:
-                logging.exception("Timeout waiting for results from FASST API")
-                raise TimeoutError("Timeout waiting for results from FASST API")
-            continue
+        # a finished task carries the matches, an empty search still has an empty
+        # [results] list. Anything else is an intermediate status payload (PENDING,
+        # RUNNING, ...), so wait on the presence of the results rather than on the
+        # set of status strings the API happens to use
+        if not isinstance(payload, dict) or "results" in payload:
+            return payload
 
-        return payload
+        # "error" catches failures reported with HTTP 200 and a status this does
+        # not know about yet
+        if payload.get("status") in FAILED_STATES or "error" in payload:
+            # logged because callers commonly swallow exceptions, which would
+            # otherwise hide the failure entirely
+            logging.warning("FASST API task %s failed: %s", task_id, payload)
+            raise RuntimeError(
+                "FASST API task {} failed: {}".format(task_id, payload)
+            )
+
+        time.sleep(1)
+        current_retries += 1
+        if current_retries >= retries_max:
+            logging.exception("Timeout waiting for results from FASST API")
+            raise TimeoutError("Timeout waiting for results from FASST API")
 
 
 def filter_matches(df, precursor_mz_tol, min_matched_signals, analog):

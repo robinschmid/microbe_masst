@@ -348,8 +348,9 @@ def query_usi_or_id(
 
         if len(matches["results"]) == 0:
             export_empty_masst_results(compound_name, file_name)
-            # succeeded with 0 matches
-            # currently fastMASST returns empty response without results dictionary
+            # succeeded with 0 matches. fastMASST returns the regular payload with
+            # every list empty, [results] included, so this is a valid empty search
+            # and not a failed one
             return True
 
         if library is None:
