@@ -33,6 +33,11 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.*/
 // const treeData = [];
 
 const root = PLACEHOLDER_JSON_DATA;
+// The combined metadataMASST view keeps its existing presentation, including
+// its microbiome branch. Only standalone microbiomeMASST opts in here.
+// Keep this as an identifier until bundling inserts the boolean; a comparison
+// between string placeholders can be folded to false by JavaScript minification.
+const isMicrobiomeView = MICROBIOME_VIEW_PLACEHOLDER;
 
 visitAll(root, node => node.originalChildren = node.children);
 
@@ -41,14 +46,14 @@ const isNodeDragActive = false;
 
 // char width - distance between categories
 var charWidth = 2.4;
-var lineHeight = 40;
+var lineHeight = isMicrobiomeView ? 48 : 40;
 
 // label font size
 var labelSize = 12;
 
 // base radius
-var isScalingActive = false;
-var sizeOption = "Ratio";
+var isScalingActive = isMicrobiomeView;
+var sizeOption = isMicrobiomeView ? "Samples" : "Ratio";
 const maxRadius = 20;
 var radius = 6;
 
@@ -138,7 +143,17 @@ function expandAllAndUpdate() {
 function toggleScalingAndUpdate() {
     if (root) {
         isScalingActive = !isScalingActive;
+        updateScalingButton();
         update(root);
+    }
+}
+
+function updateScalingButton() {
+    if (isMicrobiomeView) {
+        d3.select("#secondMenu input[onclick='toggleScalingAndUpdate()']")
+            .property("value", "Scale: " + (isScalingActive ? "ON" : "OFF"))
+            .attr("aria-pressed", isScalingActive)
+            .attr("title", "Toggle node scaling using the selected Size for option");
     }
 }
 
@@ -187,6 +202,11 @@ function showMatchedTree() {
 }
 
 // define the character width -> space between classes
+if (isMicrobiomeView) {
+    d3.select("#inputCharWidth").property("value", charWidth)
+        .attr("title", "Horizontal spacing (default 2.4)");
+    d3.select("#inputHeight").property("value", lineHeight);
+}
 d3.select("#inputCharWidth").on("input", function (d) {
     setCharWidth(this.value);
 });
@@ -271,6 +291,11 @@ dropdownTree.on("change", function (d) {
 var inputLabel = "INPUT_LABEL_PLACEHOLDER";
 var inputUsi = "USI_LABEL_PLACEHOLDER";
 d3.select("#titleDiv").append('label').text(inputLabel)
+if (isMicrobiomeView) {
+    d3.select("#titleDiv").append("div")
+        .style("font", "12px sans-serif")
+        .text("Node labels: matched/available LC-MS/MS files. Occurrence = matched / available. N/A = no available files.");
+}
 
 var paramsLabel = "PARAMS_PLACEHOLDER";
 d3.select("#paramsDiv").append('label').text(paramsLabel)
@@ -354,6 +379,9 @@ sizeCombo // Add a button
     .attr("value", function (d) {
         return d;
     }) // corresponding value returned by the button
+
+sizeCombo.property("value", sizeOption);
+updateScalingButton();
 
 // When the button is changed, update style
 sizeCombo.on("change", function (d) {
@@ -672,6 +700,49 @@ function formatDecimals2(value, decimals) {
     return Number(value).toFixed(decimals);
 }
 
+function formatFileCounts(d) {
+    return d.group_size > 0 ? (d.matched_size || 0) + "/" + d.group_size : "N/A";
+}
+
+function formatNodeLabel(d) {
+    return isMicrobiomeView ? d.name + " [" + formatFileCounts(d) + "]" : d.name;
+}
+
+function formatOccurrence(d) {
+    if (!(d.group_size > 0)) {
+        return "N/A (no files available)";
+    }
+    // Significant figures keep rare, positive matches from rounding to 0%.
+    var percent = Number((100 * (d.matched_size || 0) / d.group_size).toPrecision(3));
+    return formatFileCounts(d) + " files (" + percent + "%)";
+}
+
+function nodeLabelOffset(d) {
+    var offset = isMicrobiomeView ? calcRadius(d) + 4 : 10;
+    return d.children || d._children ? -offset : offset;
+}
+
+function microbiomeColumnPositions(nodes) {
+    var context = document.createElement("canvas").getContext("2d");
+    context.font = labelSize + "px sans-serif";
+    var extents = [];
+    nodes.forEach(function (d) {
+        var padding = calcRadius(d) + 4;
+        var column = extents[d.depth] || {left: 0, right: 0};
+        column.left = Math.max(column.left, padding);
+        column.right = Math.max(column.right, padding);
+        var labelSide = d.children || d._children ? "left" : "right";
+        column[labelSide] = Math.max(column[labelSide], padding + context.measureText(formatNodeLabel(d)).width);
+        extents[d.depth] = column;
+    });
+    var positions = [0];
+    for (var depth = 1; depth < extents.length; depth++) {
+        positions[depth] = positions[depth - 1]
+            + (extents[depth - 1].right + extents[depth].left + 16) * charWidth / 2.4;
+    }
+    return positions;
+}
+
 // update view
 function update(source) {
     // Compute the new height, function counts total children of root node and sets tree height accordingly.
@@ -690,15 +761,25 @@ function update(source) {
     };
     childCount(0, root);
     var newHeight = d3.max(levelWidth) * lineHeight; // 25 pixels per line
-    tree = tree.size([newHeight, viewerWidth]);
+    if (isMicrobiomeView) {
+        // A fixed tree height can squeeze nearby branches together. Use a
+        // minimum distance between nodes that clears even the largest circles.
+        var nodeSpacing = Math.max(+lineHeight, 2 * (isScalingActive ? maxRadius : radius) + 8, +labelSize + 8);
+        tree = tree.nodeSize([nodeSpacing, 0]);
+    } else {
+        tree = tree.size([newHeight, viewerWidth]);
+    }
 
     // Compute the new tree layout.
     var nodes = tree.nodes(root).reverse(),
         links = tree.links(nodes);
 
-    // Set widths between levels based on maxLabelLength.
+    // Size microbiome columns from visible labels, so a long label in a deep
+    // branch does not spread every level of the tree apart.
+    var columnPositions = isMicrobiomeView ? microbiomeColumnPositions(nodes) : null;
+    // Set widths between levels based on maxLabelLength for the other views.
     nodes.forEach(function (d) {
-        d.y = (d.depth * (maxLabelLength * charWidth)); //maxLabelLength * 10px
+        d.y = isMicrobiomeView ? columnPositions[d.depth] : (d.depth * (maxLabelLength * charWidth));
         // alternatively to keep a fixed scale one can set a fixed depth per level
         // Normalize for fixed-depth by commenting out below line
         // d.y = (d.depth * 500); //500px per level.
@@ -729,9 +810,10 @@ function update(source) {
                 + (d.Rank != null ? "<br/>Rank: " + d.Rank : "")
                 + (d.Interventions != null ? "<br/>Interventions: " + d.Interventions : "")
                 + (d.Community_composition != null ? "<br/>Community composition: " + d.Community_composition : "")
-                + (d.matched_size > 0 ? "<br/>Matching samples: " + d.matched_size : "")
+                + (isMicrobiomeView ? "<br/>Occurrence (matched/available LC-MS/MS files): " + formatOccurrence(d)
+                : (d.matched_size > 0 ? "<br/>Matching samples: " + d.matched_size : "")
                 + (d.group_size > 0 ? "<br/>Available samples: " + d.group_size : "")
-                + (d.occurrence_fraction > 0 ? "<br/>Occurrence: " + formatDecimals(d.occurrence_fraction, 3) : "")
+                + (d.occurrence_fraction > 0 ? "<br/>Occurrence: " + formatDecimals(d.occurrence_fraction, 3) : ""))
             )
                 .style("left", (d3.event.pageX) + "px")
                 .style("top", (d3.event.pageY - 28) + "px");
@@ -776,17 +858,13 @@ function update(source) {
 
 
     nodeEnter.append("text")
-        .attr("x", function (d) {
-            return d.children || d._children ? -10 : 10;
-        })
+        .attr("x", nodeLabelOffset)
         .attr("dy", ".35em")
         .attr('class', 'nodeText')
         .attr("text-anchor", function (d) {
             return d.children || d._children ? "end" : "start";
         })
-        .text(function (d) {
-            return d.name;
-        })
+        .text(formatNodeLabel)
         .style("fill-opacity", 0)
         .style("font-size", labelSize);
 
@@ -806,15 +884,11 @@ function update(source) {
 
     // Update the text to reflect whether node has children or not.
     node.select('text')
-        .attr("x", function (d) {
-            return d.children || d._children ? -10 : 10;
-        })
+        .attr("x", nodeLabelOffset)
         .attr("text-anchor", function (d) {
             return d.children || d._children ? "end" : "start";
         })
-        .text(function (d) {
-            return d.name;
-        });
+        .text(formatNodeLabel);
 
     // update pie charts
     // node.select("g path.nodePie")
@@ -1108,7 +1182,16 @@ function centerLeftNode(source) {
     scale = zoomListener.scale();
     x = -source.y0;
     y = -source.x0;
-    x = x * scale + 40;
+    var leftMargin = 40;
+    if (isMicrobiomeView) {
+        var sourceLabel = svgGroup.selectAll("g.node")
+            .filter(function (d) { return d === source; })
+            .select("text").node();
+        if (sourceLabel) {
+            leftMargin = Math.max(leftMargin, 12 - sourceLabel.getBBox().x * scale);
+        }
+    }
+    x = x * scale + leftMargin;
     y = y * scale + viewerHeight / 2;
     d3.select('g').transition()
         .duration(duration)

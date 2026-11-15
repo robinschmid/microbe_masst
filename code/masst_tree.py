@@ -38,6 +38,7 @@ def create_enriched_masst_tree(
             "INPUT_LABEL_PLACEHOLDER": input_str,
             "USI_LABEL_PLACEHOLDER": usi if usi else "",
             "PARAMS_PLACEHOLDER": parameter_str,
+            "MICROBIOME_VIEW_PLACEHOLDER": json.dumps(special_masst.prefix == "microbiome"),
         }
 
         prepare_paths(files=[out_counts_file, out_html, out_json_tree])
@@ -128,6 +129,7 @@ def create_combined_masst_tree(
             "INPUT_LABEL_PLACEHOLDER": input_str,
             "USI_LABEL_PLACEHOLDER": usi if usi else "",
             "PARAMS_PLACEHOLDER": parameter_str,
+            "MICROBIOME_VIEW_PLACEHOLDER": json.dumps(False),
         }
 
         # bundles the final html
