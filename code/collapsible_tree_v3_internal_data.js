@@ -38,6 +38,7 @@ const root = PLACEHOLDER_JSON_DATA;
 // Keep this as an identifier until bundling inserts the boolean; a comparison
 // between string placeholders can be folded to false by JavaScript minification.
 const isMicrobiomeView = MICROBIOME_VIEW_PLACEHOLDER;
+const sparseCoverageFileThreshold = 10;
 
 visitAll(root, node => node.originalChildren = node.children);
 
@@ -294,7 +295,7 @@ d3.select("#titleDiv").append('label').text(inputLabel)
 if (isMicrobiomeView) {
     d3.select("#titleDiv").append("div")
         .style("font", "12px sans-serif")
-        .text("Node labels: matched/available LC-MS/MS files. Occurrence = matched / available. N/A = no available files.");
+        .text("Node labels: matched/available LC-MS/MS files. Occurrence = matched / available. N/A = no available files. Dashed outline: fewer than " + sparseCoverageFileThreshold + " available files.");
 }
 
 var paramsLabel = "PARAMS_PLACEHOLDER";
@@ -722,6 +723,15 @@ function nodeLabelOffset(d) {
     return d.children || d._children ? -offset : offset;
 }
 
+function hasSparseCoverage(d) {
+    return isMicrobiomeView && Number.isFinite(d.group_size)
+        && d.group_size >= 0 && d.group_size < sparseCoverageFileThreshold;
+}
+
+function nodeOutlineColor(d) {
+    return hasSparseCoverage(d) ? "none" : nodeStrokeColor;
+}
+
 function microbiomeColumnPositions(nodes) {
     var context = document.createElement("canvas").getContext("2d");
     context.font = labelSize + "px sans-serif";
@@ -827,7 +837,7 @@ function update(source) {
     nodeEnter.append("circle")
         .attr('class', 'nodeCircle')
         .attr("r", 0)
-        .style("stroke", nodeStrokeColor)
+        .style("stroke", nodeOutlineColor)
         .style("fill", function (d) {
             return d._children ? hasChildrenColor : noChildrenColor;
         });
@@ -856,6 +866,19 @@ function update(source) {
             return d3.svg.arc().outerRadius(calcRadius(d.data))(d);
         });
 
+
+    // Draw a quiet dashed border above the pie sectors so it stays visible.
+    if (isMicrobiomeView) {
+        nodeEnter.filter(hasSparseCoverage).append("circle")
+            .attr("class", "sparseCoverageOutline")
+            .attr("r", 0)
+            .style("fill", "none")
+            .style("stroke", nodeStrokeColor)
+            .style("stroke-width", 1)
+            .style("stroke-dasharray", "2,2")
+            .style("stroke-opacity", 0.8)
+            .style("pointer-events", "none");
+    }
 
     nodeEnter.append("text")
         .attr("x", nodeLabelOffset)
@@ -920,7 +943,7 @@ function update(source) {
             // set the radius if matches larger : otherwise default to X
             return calcRadius(d);
         })
-        .style("stroke", nodeStrokeColor)
+        .style("stroke", nodeOutlineColor)
         .style("fill", function (d) {
             // set fill color depending on matches and children
             var matches = d.matched_size
@@ -965,6 +988,12 @@ function update(source) {
             }
             return pieColors[d.data.index];
         });
+
+    if (isMicrobiomeView) {
+        nodeUpdate.select("circle.sparseCoverageOutline")
+            .attr("r", function (d) { return calcRadius(d) + 0.5; })
+            .style("stroke", nodeStrokeColor);
+    }
 
     // Transition exiting nodes to the parent's new position.
     var nodeExit = node.exit().transition()
