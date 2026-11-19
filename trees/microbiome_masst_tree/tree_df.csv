@@ -805,7 +805,7 @@ Homo sapiens_leukocyte,3384401,Homo sapiens_leukocyte,NA,NA,NA,NA,NA,NA
 Mus musculus_feces,3384402,Mus musculus_feces,NA,NA,NA,NA,NA,NA
 Mus musculus_ileum,3384402,Mus musculus_ileum,NA,NA,NA,NA,NA,NA
 Mus musculus_cecum,3384402,Mus musculus_cecum,NA,NA,NA,NA,NA,NA
-Mus musculus_serum,3384402,Mus musculus_serum,NA,NA,NA,NA,NA,NA
+Mus musculus_blood serum,3384402,Mus musculus_blood serum,NA,NA,NA,NA,NA,NA
 Mus musculus_gallbladder,3384402,Mus musculus_gallbladder,NA,NA,NA,NA,NA,NA
 Mus musculus_duodenum,3384402,Mus musculus_duodenum,NA,NA,NA,NA,NA,NA
 Mus musculus_liver,3384402,Mus musculus_liver,NA,NA,NA,NA,NA,NA
@@ -838,7 +838,7 @@ Mus musculus_placenta,3384402,Mus musculus_placenta,NA,NA,NA,NA,NA,NA
 Mus musculus_embryo,3384402,Mus musculus_embryo,NA,NA,NA,NA,NA,NA
 Mus musculus_amniotic_fluid,3384402,Mus musculus_amniotic_fluid,NA,NA,NA,NA,NA,NA
 Mus musculus_saliva,3384402,Mus musculus_saliva,NA,NA,NA,NA,NA,NA
-Mus musculus_plasma,3384402,Mus musculus_plasma,NA,NA,NA,NA,NA,NA
+Mus musculus_blood plasma,3384402,Mus musculus_blood plasma,NA,NA,NA,NA,NA,NA
 Mus musculus_not_specified,3384402,Mus musculus_not_specified,NA,NA,NA,NA,NA,NA
 Mus musculus_large_intestine,3384402,Mus musculus_large_intestine,NA,NA,NA,NA,NA,NA
 Mus musculus_large_intestine_contents,3384402,Mus musculus_large_intestine_contents,NA,NA,NA,NA,NA,NA
@@ -851,7 +851,7 @@ Mus musculus_Dorsal root ganglia,3384402,Mus musculus_Dorsal root ganglia,NA,NA,
 Mus musculus_Sciatic nerve,3384402,Mus musculus_Sciatic nerve,NA,NA,NA,NA,NA,NA
 Mus musculus_hippocampus,3384402,Mus musculus_hippocampus,NA,NA,NA,NA,NA,NA
 Mus musculus_striatum,3384402,Mus musculus_striatum,NA,NA,NA,NA,NA,NA
-Mus musculus_blank,3384402,Mus musculus_blank,NA,NA,NA,NA,NA,NA
+Mus musculus_blank_qc,3384402,Mus musculus_blank_qc,NA,NA,NA,NA,NA,NA
 Rattus norvegicus_feces,3384402,Rattus norvegicus_feces,NA,NA,NA,NA,NA,NA
 Sus scrofa_adipose tissue,3384403,Sus scrofa_adipose tissue,NA,NA,NA,NA,NA,NA
 Sus scrofa_aortic,3384403,Sus scrofa_aortic,NA,NA,NA,NA,NA,NA
@@ -1079,25 +1079,25 @@ germ_free_Mus musculus_blood,3384402,germ_free_Mus musculus_blood,NA,NA,NA,NA,NA
 3384713,3384198,human_aging_90_95,NA,NA,NA,NA,NA,NA
 3384714,3384198,human_aging_95_100,NA,NA,NA,NA,NA,NA
 3384715,20,colon_simulator,NA,NA,NA,NA,NA,NA
-3384716,3384713,Accending_V1_pH_5.5_24_Control,NA,NA,NA,NA,NA,NA
-3384717,3384713,Accending_V1_pH_5.5_24_polydextrose_fiber,NA,NA,NA,NA,NA,NA
-3384718,3384713,Accending_V1_pH_5.5_48_Control,NA,NA,NA,NA,NA,NA
-3384719,3384713,Accending_V1_pH_5.5_48_polydextrose_fiber,NA,NA,NA,NA,NA,NA
-3384720,3384713,colon_simulator_blank,NA,NA,NA,NA,NA,NA
-3384721,3384713,colon_simulator_medium,NA,NA,NA,NA,NA,NA
-3384722,3384713,colon_simulator_Qc_pool,NA,NA,NA,NA,NA,NA
-3384723,3384713,Decending_V3_pH_6.5_24_Control,NA,NA,NA,NA,NA,NA
-3384724,3384713,Decending_V3_pH_6.5_24_polydextrose_fiber,NA,NA,NA,NA,NA,NA
-3384725,3384713,Decending_V3_pH_6.5_48_Control,NA,NA,NA,NA,NA,NA
-3384726,3384713,Decending_V3_pH_6.5_48_polydextrose_fiber,NA,NA,NA,NA,NA,NA
-3384727,3384713,Sigmoid_V4_pH_7_24_Control,NA,NA,NA,NA,NA,NA
-3384728,3384713,Sigmoid_V4_pH_7_24_polydextrose_fiber,NA,NA,NA,NA,NA,NA
-3384729,3384713,Sigmoid_V4_pH_7_48_Control,NA,NA,NA,NA,NA,NA
-3384730,3384713,Sigmoid_V4_pH_7_48_polydextrose_fiber,NA,NA,NA,NA,NA,NA
-3384731,3384713,Transverse _V2_pH_6_24_Control,NA,NA,NA,NA,NA,NA
-3384732,3384713,Transverse _V2_pH_6_24_polydextrose_fiber,NA,NA,NA,NA,NA,NA
-3384733,3384713,Transverse _V2_pH_6_48_Control,NA,NA,NA,NA,NA,NA
-3384734,3384713,Transverse _V2_pH_6_48_polydextrose_fiber,NA,NA,NA,NA,NA,NA
+3384716,3384715,Accending_V1_pH_5.5_24_Control,NA,NA,NA,NA,NA,NA
+3384717,3384715,Accending_V1_pH_5.5_24_polydextrose_fiber,NA,NA,NA,NA,NA,NA
+3384718,3384715,Accending_V1_pH_5.5_48_Control,NA,NA,NA,NA,NA,NA
+3384719,3384715,Accending_V1_pH_5.5_48_polydextrose_fiber,NA,NA,NA,NA,NA,NA
+3384720,3384715,colon_simulator_blank,NA,NA,NA,NA,NA,NA
+3384721,3384715,colon_simulator_medium,NA,NA,NA,NA,NA,NA
+3384722,3384715,colon_simulator_Qc_pool,NA,NA,NA,NA,NA,NA
+3384723,3384715,Decending_V3_pH_6.5_24_Control,NA,NA,NA,NA,NA,NA
+3384724,3384715,Decending_V3_pH_6.5_24_polydextrose_fiber,NA,NA,NA,NA,NA,NA
+3384725,3384715,Decending_V3_pH_6.5_48_Control,NA,NA,NA,NA,NA,NA
+3384726,3384715,Decending_V3_pH_6.5_48_polydextrose_fiber,NA,NA,NA,NA,NA,NA
+3384727,3384715,Sigmoid_V4_pH_7_24_Control,NA,NA,NA,NA,NA,NA
+3384728,3384715,Sigmoid_V4_pH_7_24_polydextrose_fiber,NA,NA,NA,NA,NA,NA
+3384729,3384715,Sigmoid_V4_pH_7_48_Control,NA,NA,NA,NA,NA,NA
+3384730,3384715,Sigmoid_V4_pH_7_48_polydextrose_fiber,NA,NA,NA,NA,NA,NA
+3384731,3384715,Transverse _V2_pH_6_24_Control,NA,NA,NA,NA,NA,NA
+3384732,3384715,Transverse _V2_pH_6_24_polydextrose_fiber,NA,NA,NA,NA,NA,NA
+3384733,3384715,Transverse _V2_pH_6_48_Control,NA,NA,NA,NA,NA,NA
+3384734,3384715,Transverse _V2_pH_6_48_polydextrose_fiber,NA,NA,NA,NA,NA,NA
 3384735,3384292,Bacteroides_caccae_CDHMUM8_drug_T0,NA,NA,NA,NA,NA,NA
 3384736,3384292,Bacteroides_caccae_CDHMUM8_drug_T72,NA,NA,NA,NA,NA,NA
 3384737,3384292,Bacteroides_caccae_CDHMUM8_T0,NA,NA,NA,NA,NA,NA
@@ -1595,3 +1595,20 @@ Q8Y9S7,3384190,Q8Y9S7_Listeria monocytogenes EGD-e,NA,NA,NA,NA,NA,NA
 Q9KK62,3384190,Q9KK62_Bifidobacterium longum,NA,NA,NA,NA,NA,NA
 R7PBA0,3384190,R7PBA0_Prevotella sp. CAG:617,NA,NA,NA,NA,NA,NA
 U2D571,3384190,U2D571_Blautia sp. KLE 1732,NA,NA,NA,NA,NA,NA
+3385052,1,Organ_animal,NA,NA,NA,NA,NA,NA
+animal_bile,3385052,animal_bile,NA,NA,NA,NA,NA,NA
+3385053,3384198,human_aging_Lactiplantibacillus plantarum,NA,NA,NA,NA,NA,NA
+animal_feces,3385052,animal_feces,NA,NA,NA,NA,NA,NA
+animal_intestine,3385052,animal_intestine,NA,NA,NA,NA,NA,NA
+animal_gallbladder,3385052,animal_gallbladder,NA,NA,NA,NA,NA,NA
+animal_liver,3385052,animal_liver,NA,NA,NA,NA,NA,NA
+3385054,1685,Bifidobacterium breve (strain not specified),NA,NA,NA,NA,NA,NA
+3385055,216816,Bifidobacterium longum (strain not specified),NA,NA,NA,NA,NA,NA
+3385056,28026,Bifidobacterium pseudocatenulatum (strain not specified),NA,NA,NA,NA,NA,NA
+3385057,1678,Bifidobacterium faecale,species,NA,NA,NA,NA,NA
+3385058,1678,Bifidobacterium stercoris,species,NA,NA,NA,NA,NA
+3385059,3384216,mice sleep disruption (group not specified),NA,NA,NA,NA,NA,NA
+3385060,3384213,"cardiovascular disease, atherosclerosis and fat metabolism (ApoE), hypoxia, hypercapnia",NA,NA,NA,NA,NA,NA
+3385061,3384247,10090|Mus musculus_feces_light,NA,NA,NA,NA,NA,NA
+3385062,3384247,10090|Mus musculus_feces_dark,NA,NA,NA,NA,NA,NA
+3385063,3384198,human_aging_poolQC,NA,NA,NA,NA,NA,NA

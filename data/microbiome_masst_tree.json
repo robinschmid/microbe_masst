@@ -6,7 +6,7 @@
     "duplication": "Y",
     "type": "node",
     "name": "Root",
-    "group_size": 170499,
+    "group_size": 181000,
     "children": [
         {
             "ID": "2",
@@ -16,7 +16,7 @@
             "duplication": "Y",
             "type": "node",
             "name": "Origin",
-            "group_size": 44172,
+            "group_size": 47576,
             "children": [
                 {
                     "ID": "3",
@@ -26,7 +26,7 @@
                     "duplication": "Y",
                     "type": "node",
                     "name": "Host",
-                    "group_size": 30080,
+                    "group_size": 32974,
                     "children": [
                         {
                             "ID": "8",
@@ -36,7 +36,7 @@
                             "duplication": "Y",
                             "type": "node",
                             "name": "Host human",
-                            "group_size": 11593,
+                            "group_size": 12940,
                             "children": [
                                 {
                                     "ID": "3384191",
@@ -46,7 +46,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "human diet",
-                                    "group_size": 1409,
+                                    "group_size": 1623,
                                     "children": [
                                         {
                                             "ID": "3384222",
@@ -56,7 +56,7 @@
                                             "duplication": "Y",
                                             "type": "node",
                                             "name": "anti-inflammatory",
-                                            "group_size": 144,
+                                            "group_size": 358,
                                             "children": []
                                         },
                                         {
@@ -449,7 +449,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "human aging",
-                                    "group_size": 1283,
+                                    "group_size": 2416,
                                     "children": [
                                         {
                                             "ID": "3384698",
@@ -624,218 +624,8 @@
                                             "duplication": "Y",
                                             "type": "node",
                                             "name": "human_aging_90_95",
-                                            "group_size": 55,
-                                            "children": [
-                                                {
-                                                    "ID": "3384716",
-                                                    "NCBI": null,
-                                                    "Interventions": null,
-                                                    "Community_composition": null,
-                                                    "duplication": "Y",
-                                                    "type": "node",
-                                                    "name": "Accending_V1_pH_5.5_24_Control",
-                                                    "group_size": 1,
-                                                    "children": []
-                                                },
-                                                {
-                                                    "ID": "3384717",
-                                                    "NCBI": null,
-                                                    "Interventions": null,
-                                                    "Community_composition": null,
-                                                    "duplication": "Y",
-                                                    "type": "node",
-                                                    "name": "Accending_V1_pH_5.5_24_polydextrose_fiber",
-                                                    "group_size": 2,
-                                                    "children": []
-                                                },
-                                                {
-                                                    "ID": "3384718",
-                                                    "NCBI": null,
-                                                    "Interventions": null,
-                                                    "Community_composition": null,
-                                                    "duplication": "Y",
-                                                    "type": "node",
-                                                    "name": "Accending_V1_pH_5.5_48_Control",
-                                                    "group_size": 2,
-                                                    "children": []
-                                                },
-                                                {
-                                                    "ID": "3384719",
-                                                    "NCBI": null,
-                                                    "Interventions": null,
-                                                    "Community_composition": null,
-                                                    "duplication": "Y",
-                                                    "type": "node",
-                                                    "name": "Accending_V1_pH_5.5_48_polydextrose_fiber",
-                                                    "group_size": 6,
-                                                    "children": []
-                                                },
-                                                {
-                                                    "ID": "3384720",
-                                                    "NCBI": null,
-                                                    "Interventions": null,
-                                                    "Community_composition": null,
-                                                    "duplication": "Y",
-                                                    "type": "node",
-                                                    "name": "colon_simulator_blank",
-                                                    "group_size": 0,
-                                                    "children": []
-                                                },
-                                                {
-                                                    "ID": "3384721",
-                                                    "NCBI": null,
-                                                    "Interventions": null,
-                                                    "Community_composition": null,
-                                                    "duplication": "Y",
-                                                    "type": "node",
-                                                    "name": "colon_simulator_medium",
-                                                    "group_size": 3,
-                                                    "children": []
-                                                },
-                                                {
-                                                    "ID": "3384722",
-                                                    "NCBI": null,
-                                                    "Interventions": null,
-                                                    "Community_composition": null,
-                                                    "duplication": "Y",
-                                                    "type": "node",
-                                                    "name": "colon_simulator_Qc_pool",
-                                                    "group_size": 8,
-                                                    "children": []
-                                                },
-                                                {
-                                                    "ID": "3384723",
-                                                    "NCBI": null,
-                                                    "Interventions": null,
-                                                    "Community_composition": null,
-                                                    "duplication": "Y",
-                                                    "type": "node",
-                                                    "name": "Decending_V3_pH_6.5_24_Control",
-                                                    "group_size": 1,
-                                                    "children": []
-                                                },
-                                                {
-                                                    "ID": "3384724",
-                                                    "NCBI": null,
-                                                    "Interventions": null,
-                                                    "Community_composition": null,
-                                                    "duplication": "Y",
-                                                    "type": "node",
-                                                    "name": "Decending_V3_pH_6.5_24_polydextrose_fiber",
-                                                    "group_size": 2,
-                                                    "children": []
-                                                },
-                                                {
-                                                    "ID": "3384725",
-                                                    "NCBI": null,
-                                                    "Interventions": null,
-                                                    "Community_composition": null,
-                                                    "duplication": "Y",
-                                                    "type": "node",
-                                                    "name": "Decending_V3_pH_6.5_48_Control",
-                                                    "group_size": 2,
-                                                    "children": []
-                                                },
-                                                {
-                                                    "ID": "3384726",
-                                                    "NCBI": null,
-                                                    "Interventions": null,
-                                                    "Community_composition": null,
-                                                    "duplication": "Y",
-                                                    "type": "node",
-                                                    "name": "Decending_V3_pH_6.5_48_polydextrose_fiber",
-                                                    "group_size": 6,
-                                                    "children": []
-                                                },
-                                                {
-                                                    "ID": "3384727",
-                                                    "NCBI": null,
-                                                    "Interventions": null,
-                                                    "Community_composition": null,
-                                                    "duplication": "Y",
-                                                    "type": "node",
-                                                    "name": "Sigmoid_V4_pH_7_24_Control",
-                                                    "group_size": 1,
-                                                    "children": []
-                                                },
-                                                {
-                                                    "ID": "3384728",
-                                                    "NCBI": null,
-                                                    "Interventions": null,
-                                                    "Community_composition": null,
-                                                    "duplication": "Y",
-                                                    "type": "node",
-                                                    "name": "Sigmoid_V4_pH_7_24_polydextrose_fiber",
-                                                    "group_size": 2,
-                                                    "children": []
-                                                },
-                                                {
-                                                    "ID": "3384729",
-                                                    "NCBI": null,
-                                                    "Interventions": null,
-                                                    "Community_composition": null,
-                                                    "duplication": "Y",
-                                                    "type": "node",
-                                                    "name": "Sigmoid_V4_pH_7_48_Control",
-                                                    "group_size": 2,
-                                                    "children": []
-                                                },
-                                                {
-                                                    "ID": "3384730",
-                                                    "NCBI": null,
-                                                    "Interventions": null,
-                                                    "Community_composition": null,
-                                                    "duplication": "Y",
-                                                    "type": "node",
-                                                    "name": "Sigmoid_V4_pH_7_48_polydextrose_fiber",
-                                                    "group_size": 6,
-                                                    "children": []
-                                                },
-                                                {
-                                                    "ID": "3384731",
-                                                    "NCBI": null,
-                                                    "Interventions": null,
-                                                    "Community_composition": null,
-                                                    "duplication": "Y",
-                                                    "type": "node",
-                                                    "name": "Transverse _V2_pH_6_24_Control",
-                                                    "group_size": 1,
-                                                    "children": []
-                                                },
-                                                {
-                                                    "ID": "3384732",
-                                                    "NCBI": null,
-                                                    "Interventions": null,
-                                                    "Community_composition": null,
-                                                    "duplication": "Y",
-                                                    "type": "node",
-                                                    "name": "Transverse _V2_pH_6_24_polydextrose_fiber",
-                                                    "group_size": 2,
-                                                    "children": []
-                                                },
-                                                {
-                                                    "ID": "3384733",
-                                                    "NCBI": null,
-                                                    "Interventions": null,
-                                                    "Community_composition": null,
-                                                    "duplication": "Y",
-                                                    "type": "node",
-                                                    "name": "Transverse _V2_pH_6_48_Control",
-                                                    "group_size": 2,
-                                                    "children": []
-                                                },
-                                                {
-                                                    "ID": "3384734",
-                                                    "NCBI": null,
-                                                    "Interventions": null,
-                                                    "Community_composition": null,
-                                                    "duplication": "Y",
-                                                    "type": "node",
-                                                    "name": "Transverse _V2_pH_6_48_polydextrose_fiber",
-                                                    "group_size": 6,
-                                                    "children": []
-                                                }
-                                            ]
+                                            "group_size": 15,
+                                            "children": []
                                         },
                                         {
                                             "ID": "3384714",
@@ -846,6 +636,28 @@
                                             "type": "node",
                                             "name": "human_aging_95_100",
                                             "group_size": 8,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "3385053",
+                                            "NCBI": null,
+                                            "Interventions": "Lactiplantibacillus plantarum",
+                                            "Community_composition": null,
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "human_aging_Lactiplantibacillus plantarum",
+                                            "group_size": 1092,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "3385063",
+                                            "NCBI": null,
+                                            "Interventions": "human_aging_poolQC",
+                                            "Community_composition": null,
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "human_aging_poolQC",
+                                            "group_size": 81,
                                             "children": []
                                         }
                                     ]
@@ -983,7 +795,7 @@
                             "duplication": "Y",
                             "type": "node",
                             "name": "Host mice",
-                            "group_size": 17257,
+                            "group_size": 18804,
                             "children": [
                                 {
                                     "ID": "3384206",
@@ -993,7 +805,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "mice diet",
-                                    "group_size": 3856,
+                                    "group_size": 4407,
                                     "children": [
                                         {
                                             "ID": "3384238",
@@ -1102,7 +914,7 @@
                                             "duplication": "Y",
                                             "type": "node",
                                             "name": "Time restricted feeding",
-                                            "group_size": 0,
+                                            "group_size": 551,
                                             "children": [
                                                 {
                                                     "ID": "3384548",
@@ -1112,7 +924,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_Jejunum_contents",
-                                                    "group_size": 0,
+                                                    "group_size": 4,
                                                     "children": []
                                                 },
                                                 {
@@ -1123,7 +935,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_Jejunum_contents_0",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1134,7 +946,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_Jejunum_contents_12",
-                                                    "group_size": 0,
+                                                    "group_size": 4,
                                                     "children": []
                                                 },
                                                 {
@@ -1145,7 +957,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_Jejunum_contents_16",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1156,7 +968,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_Jejunum_contents_20",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1167,7 +979,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_Jejunum_contents_4",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1178,7 +990,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_Jejunum_contents_8",
-                                                    "group_size": 0,
+                                                    "group_size": 3,
                                                     "children": []
                                                 },
                                                 {
@@ -1189,7 +1001,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_blood",
-                                                    "group_size": 0,
+                                                    "group_size": 4,
                                                     "children": []
                                                 },
                                                 {
@@ -1200,7 +1012,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_blood_0",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1211,7 +1023,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_blood_12",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1222,7 +1034,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_blood_16",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1233,7 +1045,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_blood_20",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1244,7 +1056,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_blood_4",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1255,7 +1067,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_blood_8",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1266,7 +1078,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_brain",
-                                                    "group_size": 0,
+                                                    "group_size": 4,
                                                     "children": []
                                                 },
                                                 {
@@ -1277,7 +1089,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_brain_0",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1288,7 +1100,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_brain_12",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1299,7 +1111,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_brain_16",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1310,7 +1122,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_brain_20",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1321,7 +1133,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_brain_4",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1332,7 +1144,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_brain_8",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1343,7 +1155,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_cecal_contents",
-                                                    "group_size": 0,
+                                                    "group_size": 4,
                                                     "children": []
                                                 },
                                                 {
@@ -1354,7 +1166,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_cecal_contents_0",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1365,7 +1177,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_cecal_contents_12",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1376,7 +1188,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_cecal_contents_16",
-                                                    "group_size": 0,
+                                                    "group_size": 4,
                                                     "children": []
                                                 },
                                                 {
@@ -1387,7 +1199,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_cecal_contents_20",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1398,7 +1210,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_cecal_contents_4",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1409,7 +1221,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_cecal_contents_8",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1420,7 +1232,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_cecum",
-                                                    "group_size": 0,
+                                                    "group_size": 4,
                                                     "children": []
                                                 },
                                                 {
@@ -1431,7 +1243,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_cecum_0",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1442,7 +1254,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_cecum_12",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1453,7 +1265,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_cecum_16",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1464,7 +1276,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_cecum_20",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1475,7 +1287,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_cecum_4",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1486,7 +1298,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_cecum_8",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1497,7 +1309,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_colon",
-                                                    "group_size": 0,
+                                                    "group_size": 4,
                                                     "children": []
                                                 },
                                                 {
@@ -1508,7 +1320,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_colon_0",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1519,7 +1331,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_colon_12",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1530,7 +1342,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_colon_16",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1541,7 +1353,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_colon_20",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1552,7 +1364,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_colon_4",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1563,7 +1375,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_colon_8",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1574,7 +1386,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_colon_contents",
-                                                    "group_size": 0,
+                                                    "group_size": 2,
                                                     "children": []
                                                 },
                                                 {
@@ -1585,7 +1397,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_colon_contents_0",
-                                                    "group_size": 0,
+                                                    "group_size": 4,
                                                     "children": []
                                                 },
                                                 {
@@ -1596,7 +1408,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_colon_contents_12",
-                                                    "group_size": 0,
+                                                    "group_size": 3,
                                                     "children": []
                                                 },
                                                 {
@@ -1607,7 +1419,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_colon_contents_16",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1618,7 +1430,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_colon_contents_20",
-                                                    "group_size": 0,
+                                                    "group_size": 2,
                                                     "children": []
                                                 },
                                                 {
@@ -1629,7 +1441,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_colon_contents_4",
-                                                    "group_size": 0,
+                                                    "group_size": 4,
                                                     "children": []
                                                 },
                                                 {
@@ -1640,7 +1452,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_colon_contents_8",
-                                                    "group_size": 0,
+                                                    "group_size": 2,
                                                     "children": []
                                                 },
                                                 {
@@ -1651,7 +1463,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_feces",
-                                                    "group_size": 0,
+                                                    "group_size": 150,
                                                     "children": []
                                                 },
                                                 {
@@ -1662,7 +1474,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_feces_0",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1673,7 +1485,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_feces_12",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1684,7 +1496,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_feces_16",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1695,7 +1507,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_feces_20",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1706,7 +1518,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_feces_4",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1717,7 +1529,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_feces_8",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1728,7 +1540,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_ileal_contents",
-                                                    "group_size": 0,
+                                                    "group_size": 4,
                                                     "children": []
                                                 },
                                                 {
@@ -1739,7 +1551,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_ileal_contents_0",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1750,7 +1562,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_ileal_contents_12",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1761,7 +1573,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_ileal_contents_16",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1772,7 +1584,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_ileal_contents_20",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1783,7 +1595,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_ileal_contents_4",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1794,7 +1606,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_ileal_contents_8",
-                                                    "group_size": 0,
+                                                    "group_size": 4,
                                                     "children": []
                                                 },
                                                 {
@@ -1805,7 +1617,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_liver",
-                                                    "group_size": 0,
+                                                    "group_size": 4,
                                                     "children": []
                                                 },
                                                 {
@@ -1816,7 +1628,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_liver_0",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1827,7 +1639,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_liver_12",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1838,7 +1650,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_liver_16",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1849,7 +1661,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_liver_20",
-                                                    "group_size": 0,
+                                                    "group_size": 7,
                                                     "children": []
                                                 },
                                                 {
@@ -1860,7 +1672,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_liver_4",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
                                                     "children": []
                                                 },
                                                 {
@@ -1871,7 +1683,29 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "10090|Mus musculus_liver_8",
-                                                    "group_size": 0,
+                                                    "group_size": 5,
+                                                    "children": []
+                                                },
+                                                {
+                                                    "ID": "3385061",
+                                                    "NCBI": null,
+                                                    "Interventions": "Time restricted feeding",
+                                                    "Community_composition": null,
+                                                    "duplication": "Y",
+                                                    "type": "node",
+                                                    "name": "10090|Mus musculus_feces_light",
+                                                    "group_size": 40,
+                                                    "children": []
+                                                },
+                                                {
+                                                    "ID": "3385062",
+                                                    "NCBI": null,
+                                                    "Interventions": "Time restricted feeding",
+                                                    "Community_composition": null,
+                                                    "duplication": "Y",
+                                                    "type": "node",
+                                                    "name": "10090|Mus musculus_feces_dark",
+                                                    "group_size": 40,
                                                     "children": []
                                                 }
                                             ]
@@ -2040,7 +1874,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "Gnotobiotic",
-                                    "group_size": 1227,
+                                    "group_size": 1246,
                                     "children": [
                                         {
                                             "ID": "3384257",
@@ -2072,7 +1906,7 @@
                                             "duplication": "Y",
                                             "type": "node",
                                             "name": "germ_free",
-                                            "group_size": 422,
+                                            "group_size": 441,
                                             "children": []
                                         },
                                         {
@@ -2107,7 +1941,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "mice primary bacterial infectious disease",
-                                    "group_size": 549,
+                                    "group_size": 773,
                                     "children": [
                                         {
                                             "ID": "3384271",
@@ -2117,7 +1951,7 @@
                                             "duplication": "Y",
                                             "type": "node",
                                             "name": "Salmonella",
-                                            "group_size": 434,
+                                            "group_size": 658,
                                             "children": []
                                         },
                                         {
@@ -2420,7 +2254,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "Obstructive sleep apnea",
-                                    "group_size": 238,
+                                    "group_size": 546,
                                     "children": [
                                         {
                                             "ID": "3384285",
@@ -2431,6 +2265,17 @@
                                             "type": "node",
                                             "name": "hypoxia, hypercapnia",
                                             "group_size": 238,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "3385060",
+                                            "NCBI": null,
+                                            "Interventions": "cardiovascular disease, atherosclerosis and fat metabolism (ApoE), hypoxia, hypercapnia",
+                                            "Community_composition": null,
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "cardiovascular disease, atherosclerosis and fat metabolism (ApoE), hypoxia, hypercapnia",
+                                            "group_size": 308,
                                             "children": []
                                         }
                                     ]
@@ -2489,7 +2334,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "mice sleep disruption",
-                                    "group_size": 96,
+                                    "group_size": 541,
                                     "children": [
                                         {
                                             "ID": "3384803",
@@ -2555,6 +2400,17 @@
                                             "type": "node",
                                             "name": "pre mice sleep disruption",
                                             "group_size": 20,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "3385059",
+                                            "NCBI": null,
+                                            "Interventions": "mice sleep disruption (group not specified)",
+                                            "Community_composition": null,
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "mice sleep disruption (group not specified)",
+                                            "group_size": 445,
                                             "children": []
                                         }
                                     ]
@@ -3153,7 +3009,7 @@
                     "duplication": "Y",
                     "type": "node",
                     "name": "Protein screening",
-                    "group_size": 453,
+                    "group_size": 751,
                     "children": [
                         {
                             "ID": "3384190",
@@ -3163,7 +3019,7 @@
                             "duplication": "Y",
                             "type": "node",
                             "name": "bile salt hydrolase",
-                            "group_size": 453,
+                            "group_size": 751,
                             "children": [
                                 {
                                     "ID": "3384304",
@@ -3173,7 +3029,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "QC_pool_BSH",
-                                    "group_size": 0,
+                                    "group_size": 48,
                                     "children": []
                                 },
                                 {
@@ -3206,7 +3062,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A069S9I0_Phocaeicola vulgatus str. 3975 RP4",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3217,7 +3073,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A078S2R5_Bacteroides uniformis str. 3978 T3 ii",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3228,7 +3084,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A096B1U0_Flavonifractor plautii 1_3_50AFAA",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3239,7 +3095,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A096DGB7_Flavonifractor plautii 1_3_50AFAA",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3250,7 +3106,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A096KTH7_Collinsella sp. 4_8_47FAA",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3261,7 +3117,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A0B8QU93_Lactococcus lactis subsp. lactis",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3272,7 +3128,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A0D8IVP2_Ruthenibacterium lactatiformans",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3283,7 +3139,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A0F0CI09_Clostridium sp. FS41",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3294,7 +3150,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A0F5JPH2_Parabacteroides goldsteinii DSM 19448 = WAL 12034",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3305,7 +3161,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A0G8G768_Ligilactobacillus ruminis",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3316,7 +3172,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A0M6WH75_Roseburia faecis",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3327,7 +3183,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A0M6WMX1_Roseburia inulinivorans",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3338,7 +3194,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A0M6WSM3_Agathobacter rectalis",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3349,7 +3205,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A0P0FKS2_Bacteroides cellulosilyticus",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3360,7 +3216,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A0P0LK75_Phocaeicola vulgatus",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3371,7 +3227,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A0S2W269_Intestinimonas butyriciproducens",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3382,7 +3238,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A173ZD58_Hungatella hathewayi",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3393,7 +3249,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A174CW35_Parabacteroides distasonis",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3404,7 +3260,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A174DZA2_Fusicatenibacter saccharivorans",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3415,7 +3271,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A174MBD8_[Clostridium] symbiosum",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3426,7 +3282,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A174YG41_Lachnospira pectinoschiza",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3437,7 +3293,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A174Z2R4_Lachnospira eligens",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3448,7 +3304,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A174ZD20_[Eubacterium] siraeum",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3459,7 +3315,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1C5L0B6_uncultured Blautia sp.",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3470,7 +3326,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1C5LGL2_uncultured Blautia sp.",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3481,7 +3337,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1C5M2J2_uncultured Ruminococcus sp.",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3492,7 +3348,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1C5MIH1_uncultured Clostridium sp.",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3503,7 +3359,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1C5MV31_uncultured Clostridium sp.",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3514,7 +3370,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1C5PCN0_uncultured Clostridium sp.",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3525,7 +3381,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1C5QNJ0_uncultured Ruminococcus sp.",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3536,7 +3392,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1C5S406_uncultured Eubacterium sp.",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3547,7 +3403,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1C5V0T2_uncultured Roseburia sp.",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3558,7 +3414,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1C5VKY6_uncultured Coprococcus sp.",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3569,7 +3425,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1C5X749_uncultured Ruminococcus sp.",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3580,7 +3436,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1C6A728_uncultured Clostridium sp.",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3591,7 +3447,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1C6E6X3_uncultured Ruminococcus sp.",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3602,7 +3458,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1C6E707_uncultured Blautia sp.",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3613,7 +3469,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1C6FDU7_uncultured Ruminococcus sp.",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3624,7 +3480,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1C7H271_Bacteroides caecimuris",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3635,7 +3491,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1D2WV04_Methanobrevibacter sp. A54",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3646,7 +3502,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1E3ADP5_Eisenbergiella tayi",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3657,7 +3513,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1I4P275_Marinobacter zhejiangensis",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3668,7 +3524,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1M3L7G3_Dysgonomonas sp. 37-18",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3679,7 +3535,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1N6ECR1_Halodesulfovibrio marinisediminis DSM 17456",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3690,7 +3546,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1Q6E5Z9_Alistipes sp. 56_11",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3701,7 +3557,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1Q6F0C9_Collinsella sp. 60_9",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3712,7 +3568,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1Q6JXM9_Clostridium sp. 26_21",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3723,7 +3579,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1Q6K9G3_Clostridium sp. 42_12",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3734,7 +3590,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1Q6M5M7_Clostridium sp. CAG:307_30_263",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3745,7 +3601,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1Q6PYZ4_Faecalibacterium sp. CAG:74_58_120",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3756,7 +3612,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1Q6RAM4_Phascolarctobacterium succinatutens",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3767,7 +3623,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1Q6SNA2_Roseburia sp. CAG:10041_57",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3778,7 +3634,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1Y3QT37_Alistipes onderdonkii",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3789,7 +3645,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1Y3TDY5_Massilimicrobiota sp. An80",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3800,7 +3656,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1Y3VSR9_Butyricimonas sp. An62",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3811,7 +3667,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A1Y3YYW1_Bacteroides clarus",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3822,7 +3678,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A2S7KLN3_Aureitalea marina",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3833,7 +3689,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A2S8G2H3_Blastopirellula marina",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3844,7 +3700,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A2S8GTJ2_Blastopirellula marina",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3855,7 +3711,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A2T3FKY8_Clostridium fessum",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3866,7 +3722,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A2V1JL81_Eubacterium ramulus",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3877,7 +3733,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A316LWP8_Lachnospiraceae bacterium",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3888,7 +3744,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A316Q414_Eggerthellales bacterium",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3899,7 +3755,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A316R4M9_Clostridiales bacterium",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3910,7 +3766,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A317T5Z6_Prosthecochloris marina",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3921,7 +3777,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A349QN89_Roseburia sp.",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3932,7 +3788,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A350RPF7_Butyrivibrio sp.",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3943,7 +3799,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A350THC0_Oscillibacter sp.",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3954,7 +3810,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A357TLK7_Oscillospiraceae bacterium",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3965,7 +3821,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A357TN00_Oscillospiraceae bacterium",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3976,7 +3832,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A358VEZ8_Lachnospiraceae bacterium",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3987,7 +3843,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A373HJM3_Catenibacterium sp. AM22-15",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -3998,7 +3854,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A395V718_Roseburia hominis",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4009,7 +3865,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A395WCM1_Holdemanella biformis",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4020,7 +3876,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A396KEZ6_Clostridium sp. AM22-11AC",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4031,7 +3887,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A3D0HN78_Lachnospiraceae bacterium",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4042,7 +3898,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A3D3YKZ5_Alistipes communis",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4053,7 +3909,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A3D4LSP0_Lachnospiraceae bacterium",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4064,7 +3920,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A3E2MNL2_Mycobacterium marinum",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4075,7 +3931,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A3E2XR62_Coprococcus catus",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4086,7 +3942,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A3E4KT54_Bacteroides intestinalis",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4097,7 +3953,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A3E4LQA4_[Ruminococcus] lactaris",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4108,7 +3964,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A3N2MZX6_Muribaculaceae bacterium Isolate-102 (HZI)",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4119,7 +3975,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A3Q0NGD6_Listeria monocytogenes EGD",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4130,7 +3986,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A3R6IUG4_Clostridiaceae bacterium AF42-6",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4141,7 +3997,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A412TTM9_Odoribacter splanchnicus",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4152,7 +4008,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A413RDG7_Eubacterium ventriosum",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4163,7 +4019,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A414M9L3_Bacteroides eggerthii",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4174,7 +4030,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A414Q275_Fusobacterium mortiferum",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4185,7 +4041,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A416W0A8_Eubacterium sp. AF15-50",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4196,7 +4052,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A416W4H5_Odoribacter sp. AF15-53",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4207,7 +4063,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A5C2BYC4_Francisella marina",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4218,7 +4074,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A5C2C0X5_Francisella marina",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4229,7 +4085,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A5C2C1U8_Francisella marina",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4240,7 +4096,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A6B3M9R4_Symploca sp. SIO2E9",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4251,7 +4107,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A6B3MYR8_Moorena sp. SIO4A1",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4262,7 +4118,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A6B3PBB6_Okeania sp. SIO1F9",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4273,7 +4129,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A6B3PFJ7_Okeania sp. SIO1F9",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4284,7 +4140,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A6I3NAM9_Turicibacter sanguinis",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4295,7 +4151,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A6N3FX58_Paraprevotella clara",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4306,7 +4162,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A7K1GNS5_Myroides pelagicus",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4317,7 +4173,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A7W2FPE8_Vibrio marinisediminis",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4328,7 +4184,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A848U0C2_Maribacter sp.",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4339,7 +4195,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A8D5FTP2_Desulfomarina profundi",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4350,7 +4206,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A8J7U9Z7_Candidatus Homeothermus sp.",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4361,7 +4217,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A942AQR8_Barnesiella sp.",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4372,7 +4228,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A0A952U252_Candidatus Obscuribacterales bacterium",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4383,7 +4239,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A6LC91_Parabacteroides distasonis ATCC 8503",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4394,7 +4250,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A7A5K1_Bifidobacterium adolescentis L2-32",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4405,7 +4261,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "A7VQ44_[Clostridium] leptum DSM 753",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4416,7 +4272,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "B0MC37_Anaerostipes caccae L1-92",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4427,7 +4283,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "B5D243_Phocaeicola plebeius DSM 17135",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4438,7 +4294,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "B7AVX6_[Bacteroides] pectinophilus ATCC 43243",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4449,7 +4305,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "C0CIF5_Blautia hydrogenotrophica DSM 10507",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4460,7 +4316,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "C0ERS1_Anaerobutyricum hallii DSM 3353",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4471,7 +4327,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "G5H9N3_Alistipes indistinctus YIT 12060",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4482,7 +4338,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "G5H9U7_Alistipes indistinctus YIT 12060",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4493,7 +4349,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "H1DEM8_Odoribacter laneus YIT 12061",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4504,7 +4360,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "M7X2M2_Mariniradius saccharolyticus AK6",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4515,7 +4371,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "P12256_Lysinibacillus sphaericus",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4526,7 +4382,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "Q8Y5J3_Listeria monocytogenes EGD-e",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4537,7 +4393,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "Q8Y9S7_Listeria monocytogenes EGD-e",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4548,7 +4404,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "Q9KK62_Bifidobacterium longum",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4559,7 +4415,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "R7PBA0_Prevotella sp. CAG:617",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 },
                                 {
@@ -4570,7 +4426,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "U2D571_Blautia sp. KLE 1732",
-                                    "group_size": 3,
+                                    "group_size": 5,
                                     "children": []
                                 }
                             ]
@@ -4585,7 +4441,7 @@
                     "duplication": "Y",
                     "type": "node",
                     "name": "Microbial",
-                    "group_size": 9583,
+                    "group_size": 9795,
                     "children": [
                         {
                             "ID": "17",
@@ -8174,7 +8030,7 @@
                             "duplication": "Y",
                             "type": "node",
                             "name": "Undefined_Community",
-                            "group_size": 0,
+                            "group_size": 55,
                             "children": [
                                 {
                                     "ID": "3384295",
@@ -8206,8 +8062,218 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "colon_simulator",
-                                    "group_size": 0,
-                                    "children": []
+                                    "group_size": 55,
+                                    "children": [
+                                        {
+                                            "ID": "3384716",
+                                            "NCBI": null,
+                                            "Interventions": null,
+                                            "Community_composition": null,
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Accending_V1_pH_5.5_24_Control",
+                                            "group_size": 1,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "3384717",
+                                            "NCBI": null,
+                                            "Interventions": null,
+                                            "Community_composition": null,
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Accending_V1_pH_5.5_24_polydextrose_fiber",
+                                            "group_size": 2,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "3384718",
+                                            "NCBI": null,
+                                            "Interventions": null,
+                                            "Community_composition": null,
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Accending_V1_pH_5.5_48_Control",
+                                            "group_size": 2,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "3384719",
+                                            "NCBI": null,
+                                            "Interventions": null,
+                                            "Community_composition": null,
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Accending_V1_pH_5.5_48_polydextrose_fiber",
+                                            "group_size": 6,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "3384720",
+                                            "NCBI": null,
+                                            "Interventions": null,
+                                            "Community_composition": null,
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "colon_simulator_blank",
+                                            "group_size": 0,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "3384721",
+                                            "NCBI": null,
+                                            "Interventions": null,
+                                            "Community_composition": null,
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "colon_simulator_medium",
+                                            "group_size": 3,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "3384722",
+                                            "NCBI": null,
+                                            "Interventions": null,
+                                            "Community_composition": null,
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "colon_simulator_Qc_pool",
+                                            "group_size": 8,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "3384723",
+                                            "NCBI": null,
+                                            "Interventions": null,
+                                            "Community_composition": null,
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Decending_V3_pH_6.5_24_Control",
+                                            "group_size": 1,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "3384724",
+                                            "NCBI": null,
+                                            "Interventions": null,
+                                            "Community_composition": null,
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Decending_V3_pH_6.5_24_polydextrose_fiber",
+                                            "group_size": 2,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "3384725",
+                                            "NCBI": null,
+                                            "Interventions": null,
+                                            "Community_composition": null,
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Decending_V3_pH_6.5_48_Control",
+                                            "group_size": 2,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "3384726",
+                                            "NCBI": null,
+                                            "Interventions": null,
+                                            "Community_composition": null,
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Decending_V3_pH_6.5_48_polydextrose_fiber",
+                                            "group_size": 6,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "3384727",
+                                            "NCBI": null,
+                                            "Interventions": null,
+                                            "Community_composition": null,
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Sigmoid_V4_pH_7_24_Control",
+                                            "group_size": 1,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "3384728",
+                                            "NCBI": null,
+                                            "Interventions": null,
+                                            "Community_composition": null,
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Sigmoid_V4_pH_7_24_polydextrose_fiber",
+                                            "group_size": 2,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "3384729",
+                                            "NCBI": null,
+                                            "Interventions": null,
+                                            "Community_composition": null,
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Sigmoid_V4_pH_7_48_Control",
+                                            "group_size": 2,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "3384730",
+                                            "NCBI": null,
+                                            "Interventions": null,
+                                            "Community_composition": null,
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Sigmoid_V4_pH_7_48_polydextrose_fiber",
+                                            "group_size": 6,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "3384731",
+                                            "NCBI": null,
+                                            "Interventions": null,
+                                            "Community_composition": null,
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Transverse _V2_pH_6_24_Control",
+                                            "group_size": 1,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "3384732",
+                                            "NCBI": null,
+                                            "Interventions": null,
+                                            "Community_composition": null,
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Transverse _V2_pH_6_24_polydextrose_fiber",
+                                            "group_size": 2,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "3384733",
+                                            "NCBI": null,
+                                            "Interventions": null,
+                                            "Community_composition": null,
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Transverse _V2_pH_6_48_Control",
+                                            "group_size": 2,
+                                            "children": []
+                                        },
+                                        {
+                                            "ID": "3384734",
+                                            "NCBI": null,
+                                            "Interventions": null,
+                                            "Community_composition": null,
+                                            "duplication": "Y",
+                                            "type": "node",
+                                            "name": "Transverse _V2_pH_6_48_polydextrose_fiber",
+                                            "group_size": 6,
+                                            "children": []
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -8219,7 +8285,7 @@
                             "duplication": "Y",
                             "type": "node",
                             "name": "Defined_monocultures",
-                            "group_size": 7592,
+                            "group_size": 7652,
                             "children": [
                                 {
                                     "ID": "38",
@@ -8229,7 +8295,7 @@
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "Bacteria",
-                                    "group_size": 7592,
+                                    "group_size": 7652,
                                     "children": [
                                         {
                                             "ID": "1783272",
@@ -8239,7 +8305,7 @@
                                             "duplication": "Y",
                                             "type": "node",
                                             "name": "Bacillati",
-                                            "group_size": 4178,
+                                            "group_size": 4238,
                                             "children": [
                                                 {
                                                     "ID": "1239",
@@ -11455,7 +11521,7 @@
                                                     "duplication": "Y",
                                                     "type": "node",
                                                     "name": "Actinomycetota",
-                                                    "group_size": 654,
+                                                    "group_size": 714,
                                                     "children": [
                                                         {
                                                             "ID": "1760",
@@ -11465,7 +11531,7 @@
                                                             "duplication": "Y",
                                                             "type": "node",
                                                             "name": "Actinomycetes",
-                                                            "group_size": 238,
+                                                            "group_size": 298,
                                                             "children": [
                                                                 {
                                                                     "ID": "85004",
@@ -11475,7 +11541,7 @@
                                                                     "duplication": "Y",
                                                                     "type": "node",
                                                                     "name": "Bifidobacteriales",
-                                                                    "group_size": 214,
+                                                                    "group_size": 274,
                                                                     "children": [
                                                                         {
                                                                             "ID": "31953",
@@ -11485,7 +11551,7 @@
                                                                             "duplication": "Y",
                                                                             "type": "node",
                                                                             "name": "Bifidobacteriaceae",
-                                                                            "group_size": 214,
+                                                                            "group_size": 274,
                                                                             "children": [
                                                                                 {
                                                                                     "ID": "1678",
@@ -11495,7 +11561,7 @@
                                                                                     "duplication": "Y",
                                                                                     "type": "node",
                                                                                     "name": "Bifidobacterium",
-                                                                                    "group_size": 214,
+                                                                                    "group_size": 274,
                                                                                     "children": [
                                                                                         {
                                                                                             "ID": "1680",
@@ -11539,7 +11605,7 @@
                                                                                             "duplication": "Y",
                                                                                             "type": "node",
                                                                                             "name": "Bifidobacterium breve",
-                                                                                            "group_size": 6,
+                                                                                            "group_size": 18,
                                                                                             "children": [
                                                                                                 {
                                                                                                     "ID": "518634",
@@ -11561,6 +11627,17 @@
                                                                                                     "type": "node",
                                                                                                     "name": "G001025175 | Bifidobacterium breve EX336960VC19",
                                                                                                     "group_size": 4,
+                                                                                                    "children": []
+                                                                                                },
+                                                                                                {
+                                                                                                    "ID": "3385054",
+                                                                                                    "NCBI": null,
+                                                                                                    "Interventions": null,
+                                                                                                    "Community_composition": null,
+                                                                                                    "duplication": "Y",
+                                                                                                    "type": "node",
+                                                                                                    "name": "Bifidobacterium breve (strain not specified)",
+                                                                                                    "group_size": 12,
                                                                                                     "children": []
                                                                                                 }
                                                                                             ]
@@ -11596,7 +11673,7 @@
                                                                                             "duplication": "Y",
                                                                                             "type": "node",
                                                                                             "name": "Bifidobacterium pseudocatenulatum",
-                                                                                            "group_size": 2,
+                                                                                            "group_size": 14,
                                                                                             "children": [
                                                                                                 {
                                                                                                     "ID": "547043",
@@ -11607,6 +11684,17 @@
                                                                                                     "type": "node",
                                                                                                     "name": "G001025215 | Bifidobacterium pseudocatenulatum DSM 20438 = JCM 1200 = LMG 10505",
                                                                                                     "group_size": 2,
+                                                                                                    "children": []
+                                                                                                },
+                                                                                                {
+                                                                                                    "ID": "3385056",
+                                                                                                    "NCBI": null,
+                                                                                                    "Interventions": null,
+                                                                                                    "Community_composition": null,
+                                                                                                    "duplication": "Y",
+                                                                                                    "type": "node",
+                                                                                                    "name": "Bifidobacterium pseudocatenulatum (strain not specified)",
+                                                                                                    "group_size": 12,
                                                                                                     "children": []
                                                                                                 }
                                                                                             ]
@@ -11619,7 +11707,7 @@
                                                                                             "duplication": "Y",
                                                                                             "type": "node",
                                                                                             "name": "Bifidobacterium longum",
-                                                                                            "group_size": 4,
+                                                                                            "group_size": 16,
                                                                                             "children": [
                                                                                                 {
                                                                                                     "ID": "1679",
@@ -11643,8 +11731,41 @@
                                                                                                             "children": []
                                                                                                         }
                                                                                                     ]
+                                                                                                },
+                                                                                                {
+                                                                                                    "ID": "3385055",
+                                                                                                    "NCBI": null,
+                                                                                                    "Interventions": null,
+                                                                                                    "Community_composition": null,
+                                                                                                    "duplication": "Y",
+                                                                                                    "type": "node",
+                                                                                                    "name": "Bifidobacterium longum (strain not specified)",
+                                                                                                    "group_size": 12,
+                                                                                                    "children": []
                                                                                                 }
                                                                                             ]
+                                                                                        },
+                                                                                        {
+                                                                                            "ID": "3385057",
+                                                                                            "NCBI": "species",
+                                                                                            "Interventions": null,
+                                                                                            "Community_composition": null,
+                                                                                            "duplication": "Y",
+                                                                                            "type": "node",
+                                                                                            "name": "Bifidobacterium faecale",
+                                                                                            "group_size": 12,
+                                                                                            "children": []
+                                                                                        },
+                                                                                        {
+                                                                                            "ID": "3385058",
+                                                                                            "NCBI": "species",
+                                                                                            "Interventions": null,
+                                                                                            "Community_composition": null,
+                                                                                            "duplication": "Y",
+                                                                                            "type": "node",
+                                                                                            "name": "Bifidobacterium stercoris",
+                                                                                            "group_size": 12,
+                                                                                            "children": []
                                                                                         }
                                                                                     ]
                                                                                 }
@@ -14222,7 +14343,7 @@
                             "duplication": "Y",
                             "type": "node",
                             "name": "QC_pool_monoculture",
-                            "group_size": 89,
+                            "group_size": 100,
                             "children": []
                         },
                         {
@@ -14233,7 +14354,7 @@
                             "duplication": "Y",
                             "type": "node",
                             "name": "QC_blank_monoculture",
-                            "group_size": 187,
+                            "group_size": 195,
                             "children": []
                         },
                         {
@@ -14244,7 +14365,7 @@
                             "duplication": "Y",
                             "type": "node",
                             "name": "Media_control_monoculture",
-                            "group_size": 58,
+                            "group_size": 64,
                             "children": []
                         },
                         {
@@ -14255,28 +14376,28 @@
                             "duplication": "Y",
                             "type": "node",
                             "name": "food_b",
-                            "group_size": 96,
+                            "group_size": 168,
                             "children": [
                                 {
                                     "ID": "3384330",
                                     "NCBI": null,
-                                    "Interventions": null,
+                                    "Interventions": "ketchup_0",
                                     "Community_composition": null,
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "ketchup_0",
-                                    "group_size": 0,
+                                    "group_size": 4,
                                     "children": []
                                 },
                                 {
                                     "ID": "3384331",
                                     "NCBI": null,
-                                    "Interventions": null,
+                                    "Interventions": "lettuce_72",
                                     "Community_composition": null,
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "lettuce_72",
-                                    "group_size": 0,
+                                    "group_size": 4,
                                     "children": []
                                 },
                                 {
@@ -14293,23 +14414,23 @@
                                 {
                                     "ID": "3384333",
                                     "NCBI": null,
-                                    "Interventions": null,
+                                    "Interventions": "buns_0",
                                     "Community_composition": null,
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "buns_0",
-                                    "group_size": 0,
+                                    "group_size": 4,
                                     "children": []
                                 },
                                 {
                                     "ID": "3384334",
                                     "NCBI": null,
-                                    "Interventions": null,
+                                    "Interventions": "Mayonnaise_0",
                                     "Community_composition": null,
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "Mayonnaise_0",
-                                    "group_size": 0,
+                                    "group_size": 4,
                                     "children": []
                                 },
                                 {
@@ -14381,12 +14502,12 @@
                                 {
                                     "ID": "3384341",
                                     "NCBI": null,
-                                    "Interventions": null,
+                                    "Interventions": "beef_72",
                                     "Community_composition": null,
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "beef_72",
-                                    "group_size": 0,
+                                    "group_size": 4,
                                     "children": []
                                 },
                                 {
@@ -14403,12 +14524,12 @@
                                 {
                                     "ID": "3384343",
                                     "NCBI": null,
-                                    "Interventions": null,
+                                    "Interventions": "buns_72",
                                     "Community_composition": null,
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "buns_72",
-                                    "group_size": 0,
+                                    "group_size": 4,
                                     "children": []
                                 },
                                 {
@@ -14447,12 +14568,12 @@
                                 {
                                     "ID": "3384347",
                                     "NCBI": null,
-                                    "Interventions": null,
+                                    "Interventions": "pickles_0",
                                     "Community_composition": null,
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "pickles_0",
-                                    "group_size": 0,
+                                    "group_size": 4,
                                     "children": []
                                 },
                                 {
@@ -14469,12 +14590,12 @@
                                 {
                                     "ID": "3384349",
                                     "NCBI": null,
-                                    "Interventions": null,
+                                    "Interventions": "tomato_0",
                                     "Community_composition": null,
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "tomato_0",
-                                    "group_size": 0,
+                                    "group_size": 4,
                                     "children": []
                                 },
                                 {
@@ -14502,23 +14623,23 @@
                                 {
                                     "ID": "3384352",
                                     "NCBI": null,
-                                    "Interventions": null,
+                                    "Interventions": "ketchup_72",
                                     "Community_composition": null,
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "ketchup_72",
-                                    "group_size": 0,
+                                    "group_size": 4,
                                     "children": []
                                 },
                                 {
                                     "ID": "3384353",
                                     "NCBI": null,
-                                    "Interventions": null,
+                                    "Interventions": "lettuce_0",
                                     "Community_composition": null,
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "lettuce_0",
-                                    "group_size": 0,
+                                    "group_size": 4,
                                     "children": []
                                 },
                                 {
@@ -14535,12 +14656,12 @@
                                 {
                                     "ID": "3384355",
                                     "NCBI": null,
-                                    "Interventions": null,
+                                    "Interventions": "Cheese_0",
                                     "Community_composition": null,
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "Cheese_0",
-                                    "group_size": 0,
+                                    "group_size": 4,
                                     "children": []
                                 },
                                 {
@@ -14579,12 +14700,12 @@
                                 {
                                     "ID": "3384359",
                                     "NCBI": null,
-                                    "Interventions": null,
+                                    "Interventions": "pickles_72",
                                     "Community_composition": null,
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "pickles_72",
-                                    "group_size": 0,
+                                    "group_size": 4,
                                     "children": []
                                 },
                                 {
@@ -14612,23 +14733,23 @@
                                 {
                                     "ID": "3384362",
                                     "NCBI": null,
-                                    "Interventions": null,
+                                    "Interventions": "Mayonnaise_72",
                                     "Community_composition": null,
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "Mayonnaise_72",
-                                    "group_size": 0,
+                                    "group_size": 4,
                                     "children": []
                                 },
                                 {
                                     "ID": "3384363",
                                     "NCBI": null,
-                                    "Interventions": null,
+                                    "Interventions": "beef_0",
                                     "Community_composition": null,
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "beef_0",
-                                    "group_size": 0,
+                                    "group_size": 4,
                                     "children": []
                                 },
                                 {
@@ -14645,12 +14766,12 @@
                                 {
                                     "ID": "3384365",
                                     "NCBI": null,
-                                    "Interventions": null,
+                                    "Interventions": "Cheese_72",
                                     "Community_composition": null,
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "Cheese_72",
-                                    "group_size": 0,
+                                    "group_size": 4,
                                     "children": []
                                 },
                                 {
@@ -14678,12 +14799,12 @@
                                 {
                                     "ID": "3384368",
                                     "NCBI": null,
-                                    "Interventions": null,
+                                    "Interventions": "fries_72",
                                     "Community_composition": null,
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "fries_72",
-                                    "group_size": 0,
+                                    "group_size": 4,
                                     "children": []
                                 },
                                 {
@@ -14700,12 +14821,12 @@
                                 {
                                     "ID": "3384370",
                                     "NCBI": null,
-                                    "Interventions": null,
+                                    "Interventions": "fries_0",
                                     "Community_composition": null,
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "fries_0",
-                                    "group_size": 0,
+                                    "group_size": 4,
                                     "children": []
                                 },
                                 {
@@ -14733,12 +14854,12 @@
                                 {
                                     "ID": "3384373",
                                     "NCBI": null,
-                                    "Interventions": null,
+                                    "Interventions": "tomato_72",
                                     "Community_composition": null,
                                     "duplication": "Y",
                                     "type": "node",
                                     "name": "tomato_72",
-                                    "group_size": 0,
+                                    "group_size": 4,
                                     "children": []
                                 }
                             ]
@@ -15736,7 +15857,7 @@
             "duplication": "Y",
             "type": "node",
             "name": "Health phenotype",
-            "group_size": 52551,
+            "group_size": 53239,
             "children": [
                 {
                     "ID": "Caenorhabditis elegans",
@@ -15769,7 +15890,7 @@
                     "duplication": "Y",
                     "type": "node",
                     "name": "Homo sapiens",
-                    "group_size": 40463,
+                    "group_size": 41028,
                     "children": [
                         {
                             "ID": "Homo sapiens_healthy",
@@ -15823,7 +15944,7 @@
                             "duplication": "Y",
                             "type": "node",
                             "name": "Homo sapiens_osteoarthritis",
-                            "group_size": 963,
+                            "group_size": 1017,
                             "children": []
                         },
                         {
@@ -15966,7 +16087,7 @@
                             "duplication": "Y",
                             "type": "node",
                             "name": "Homo sapiens_rheumatoid arthritis",
-                            "group_size": 333,
+                            "group_size": 693,
                             "children": []
                         },
                         {
@@ -16032,7 +16153,7 @@
                             "duplication": "Y",
                             "type": "node",
                             "name": "Homo sapiens_Chagas disease",
-                            "group_size": 259,
+                            "group_size": 410,
                             "children": []
                         },
                         {
@@ -16123,7 +16244,7 @@
                     "duplication": "Y",
                     "type": "node",
                     "name": "Mus musculus",
-                    "group_size": 9700,
+                    "group_size": 9808,
                     "children": [
                         {
                             "ID": "Mus musculus_unknown",
@@ -16166,7 +16287,7 @@
                             "duplication": "Y",
                             "type": "node",
                             "name": "Mus musculus_Chagas disease",
-                            "group_size": 1332,
+                            "group_size": 1440,
                             "children": []
                         },
                         {
@@ -16312,7 +16433,7 @@
                     "duplication": "Y",
                     "type": "node",
                     "name": "Sus scrofa",
-                    "group_size": 0,
+                    "group_size": 15,
                     "children": [
                         {
                             "ID": "Sus scrofa_unknown",
@@ -16322,7 +16443,7 @@
                             "duplication": "Y",
                             "type": "node",
                             "name": "Sus scrofa_unknown",
-                            "group_size": 0,
+                            "group_size": 15,
                             "children": []
                         }
                     ]
@@ -16360,7 +16481,7 @@
             "duplication": "Y",
             "type": "node",
             "name": "blank",
-            "group_size": 5604,
+            "group_size": 5724,
             "children": []
         },
         {
@@ -16371,7 +16492,7 @@
             "duplication": "Y",
             "type": "node",
             "name": "Organ_homo sapiens",
-            "group_size": 49437,
+            "group_size": 50821,
             "children": [
                 {
                     "ID": "Homo sapiens_feces",
@@ -16381,7 +16502,7 @@
                     "duplication": "Y",
                     "type": "node",
                     "name": "Homo sapiens_feces",
-                    "group_size": 12501,
+                    "group_size": 12861,
                     "children": []
                 },
                 {
@@ -16392,7 +16513,7 @@
                     "duplication": "Y",
                     "type": "node",
                     "name": "Homo sapiens_blood plasma",
-                    "group_size": 5956,
+                    "group_size": 6970,
                     "children": []
                 },
                 {
@@ -16414,7 +16535,7 @@
                     "duplication": "Y",
                     "type": "node",
                     "name": "Homo sapiens_not applicable",
-                    "group_size": 24,
+                    "group_size": 34,
                     "children": []
                 },
                 {
@@ -16746,7 +16867,7 @@
             "duplication": "Y",
             "type": "node",
             "name": "Organ_rodents",
-            "group_size": 18574,
+            "group_size": 21741,
             "children": [
                 {
                     "ID": "Mus musculus_feces",
@@ -16756,7 +16877,7 @@
                     "duplication": "Y",
                     "type": "node",
                     "name": "Mus musculus_feces",
-                    "group_size": 7158,
+                    "group_size": 7382,
                     "children": []
                 },
                 {
@@ -16782,14 +16903,14 @@
                     "children": []
                 },
                 {
-                    "ID": "Mus musculus_serum",
+                    "ID": "Mus musculus_blood serum",
                     "NCBI": null,
                     "Interventions": null,
                     "Community_composition": null,
                     "duplication": "Y",
                     "type": "node",
-                    "name": "Mus musculus_serum",
-                    "group_size": 0,
+                    "name": "Mus musculus_blood serum",
+                    "group_size": 1407,
                     "children": []
                 },
                 {
@@ -17125,12 +17246,12 @@
                 {
                     "ID": "Mus musculus_amniotic_fluid",
                     "NCBI": null,
-                    "Interventions": null,
+                    "Interventions": "6PPD_6PPPDQ",
                     "Community_composition": null,
                     "duplication": "Y",
                     "type": "node",
                     "name": "Mus musculus_amniotic_fluid",
-                    "group_size": 0,
+                    "group_size": 4,
                     "children": []
                 },
                 {
@@ -17145,14 +17266,14 @@
                     "children": []
                 },
                 {
-                    "ID": "Mus musculus_plasma",
+                    "ID": "Mus musculus_blood plasma",
                     "NCBI": null,
-                    "Interventions": null,
+                    "Interventions": "Control",
                     "Community_composition": null,
                     "duplication": "Y",
                     "type": "node",
-                    "name": "Mus musculus_plasma",
-                    "group_size": 0,
+                    "name": "Mus musculus_blood plasma",
+                    "group_size": 1253,
                     "children": []
                 },
                 {
@@ -17169,12 +17290,12 @@
                 {
                     "ID": "Mus musculus_large_intestine",
                     "NCBI": null,
-                    "Interventions": null,
+                    "Interventions": "Trypanosoma cruzi",
                     "Community_composition": null,
                     "duplication": "Y",
                     "type": "node",
                     "name": "Mus musculus_large_intestine",
-                    "group_size": 0,
+                    "group_size": 216,
                     "children": []
                 },
                 {
@@ -17288,14 +17409,14 @@
                     "children": []
                 },
                 {
-                    "ID": "Mus musculus_blank",
+                    "ID": "Mus musculus_blank_qc",
                     "NCBI": null,
                     "Interventions": null,
                     "Community_composition": null,
                     "duplication": "Y",
                     "type": "node",
-                    "name": "Mus musculus_blank",
-                    "group_size": 0,
+                    "name": "Mus musculus_blank_qc",
+                    "group_size": 63,
                     "children": []
                 },
                 {
@@ -17946,6 +18067,73 @@
                     "type": "node",
                     "name": "Sus scrofa_urine",
                     "group_size": 7,
+                    "children": []
+                }
+            ]
+        },
+        {
+            "ID": "3385052",
+            "NCBI": null,
+            "Interventions": null,
+            "Community_composition": null,
+            "duplication": "Y",
+            "type": "node",
+            "name": "Organ_animal",
+            "group_size": 1738,
+            "children": [
+                {
+                    "ID": "animal_bile",
+                    "NCBI": null,
+                    "Interventions": null,
+                    "Community_composition": null,
+                    "duplication": "Y",
+                    "type": "node",
+                    "name": "animal_bile",
+                    "group_size": 1606,
+                    "children": []
+                },
+                {
+                    "ID": "animal_feces",
+                    "NCBI": null,
+                    "Interventions": null,
+                    "Community_composition": null,
+                    "duplication": "Y",
+                    "type": "node",
+                    "name": "animal_feces",
+                    "group_size": 108,
+                    "children": []
+                },
+                {
+                    "ID": "animal_intestine",
+                    "NCBI": null,
+                    "Interventions": null,
+                    "Community_composition": null,
+                    "duplication": "Y",
+                    "type": "node",
+                    "name": "animal_intestine",
+                    "group_size": 18,
+                    "children": []
+                },
+                {
+                    "ID": "animal_gallbladder",
+                    "NCBI": null,
+                    "Interventions": null,
+                    "Community_composition": null,
+                    "duplication": "Y",
+                    "type": "node",
+                    "name": "animal_gallbladder",
+                    "group_size": 5,
+                    "children": []
+                },
+                {
+                    "ID": "animal_liver",
+                    "NCBI": null,
+                    "Interventions": null,
+                    "Community_composition": null,
+                    "duplication": "Y",
+                    "type": "node",
+                    "name": "animal_liver",
+                    "group_size": 1,
                     "children": []
                 }
             ]
